@@ -237,6 +237,7 @@ class I2PManager(object):
             self.log.error("I2P reset circuits error: %s" % res)
 
     def addOnion(self):
+        print 'dddxwicht'
         if len(self.privatekeys) >= config.i2p_hs_limit:
             return random.choice(self.privatekeys.keys())
 

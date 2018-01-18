@@ -70,6 +70,8 @@ class FileServer(ConnectionServer):
 
         if config.tor == "always":  # Port opening won't work in Tor mode
             return False
+        elif config.i2p == "always":
+            return False
 
         self.log.info("Trying to open port using UpnpPunch...")
         try:
@@ -121,8 +123,9 @@ class FileServer(ConnectionServer):
         if res is None:  # Nobody answered
             return self.testOpenportPortchecker(port)  # Fallback to centralized service
         if res["status"] == "closed":
-            if config.tor != "always":
+            if config.tor != "always" and config.i2p != "always":
                 self.log.info("[BAD :(] %s says that your port %s is closed" % (random_peer.ip, port))
+
             if port == self.port:
                 self.port_opened = False  # Self port, update port_opened status
                 config.ip_external = res["ip_external"]
@@ -147,7 +150,7 @@ class FileServer(ConnectionServer):
             data = ""
 
         if "open" not in message:
-            if config.tor != "always":
+            if config.tor != "always" and config.i2p != "always":
                 self.log.info("[BAD :(] Port closed: %s" % message)
             if port == self.port:
                 self.port_opened = False  # Self port, update port_opened status
@@ -180,7 +183,7 @@ class FileServer(ConnectionServer):
             message = "Error: %s" % Debug.formatException(err)
 
         if "Success" not in message:
-            if config.tor != "always":
+            if config.tor != "always" and config.i2p != "always":
                 self.log.info("[BAD :(] Port closed: %s" % message)
             if port == self.port:
                 self.port_opened = False  # Self port, update port_opened status
@@ -233,7 +236,11 @@ class FileServer(ConnectionServer):
             if force_port_check:
                 self.port_opened = None
             self.openport()
+            port_opened = True
             if self.port_opened is False:
+                port_opened = False
+            
+            if not port_opened:
                 self.tor_manager.startOnions()
                 self.i2p_manager.startOnions()
 

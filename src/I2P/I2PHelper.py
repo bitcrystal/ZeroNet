@@ -747,8 +747,8 @@ class i2p_bob:
            ret["entrys_2"]["QUIET"] = ret["entrys_2"]["QUIET"] == 'true'
         return ret
 
-    def load(self,check=True):
-        if self.started:
+    def load(self,check=True,check_start=True):
+        if self.started and check_start:
            return True
         # load connection
         self.i2p_sock_load = i2p_socket()
@@ -758,14 +758,23 @@ class i2p_bob:
         data = Replacer(data,b'\r\n',b' ')
         data = Replacer(data,b'\n', b' ')
         if not data.startswith(b'BOB 00.00.10 OK'):
-            print("ERROR _1")
-            li2p["started"] = False
-            self.seti2p_bob(li2p)
+            retv = False
+            if not self.started:
+               print("ERROR _1")
+               li2p["started"] = False
+               self.seti2p_bob(li2p)
+            else:
+               retv = True
             self.i2p_sock_load.i2p_close()
-            return False
+            return retv
 
         ret = self.get_data_message(self.i2p_sock_load)
         rows = ret["rows"]
+        if not check_start:
+           if rows > 1 and self.started: 
+            self.i2p_sock_load.i2p_close()
+            return True
+
         entrys_1_len = ret["entrys_1_len"]
         entrys_2_len = ret["entrys_2_len"]
         msg = ret["msg"]
@@ -979,7 +988,107 @@ class i2p_bob:
                  data = self.i2p_sock_load.i2p_receive_until_linefeed_counted()
                  if data.startswith(b'OK'):
                     ret["e_running"][erunkey] = True
-              
+
+        if rows < 2 and not check_start:
+           # out connection
+
+           in_is_out = False
+           if li2p["in_is_out"]:
+              in_is_out = True
+           
+           if (not in_is_out) and (li2p["insrvid"] == li2p["outsrvid"]) and (li2p["inpkey"] == li2p["outpkey"]):
+              in_is_out = True
+              li2p["in_is_out"] = in_is_out
+
+           if in_is_out:
+              quiet = li2p["quiet_in"] or li2p["quiet_out"]
+              li2p["quiet_in"] = li2p["quiet_out"] = quiet
+
+           self.seti2p_bob(li2p)
+
+           command = b'setnick'
+           param = li2p["outsrvid"]
+           
+           self.i2p_sock_load.i2p_send((b'%s %s\n' % (command,param)))
+           data = self.i2p_sock_load.i2p_receive_until_linefeed_counted()
+
+           command = b'setkeys'
+           param = li2p["outpkey"]
+
+           self.i2p_sock_load.i2p_send((b'%s %s\n' % (command,param)))
+           data = self.i2p_sock_load.i2p_receive_until_linefeed_counted()
+
+           command = b'quiet'   
+           param = li2p["quiet_out"]
+
+           self.i2p_sock_load.i2p_send((b'%s %s\n' % (command,param)))
+           data = self.i2p_sock_load.i2p_receive_until_linefeed_counted()
+
+           if not (li2p["outhost"] == "not_set" or li2p["outhost"] == b'not_set'):
+              command = b'outhost'
+              param = li2p["outhost"]
+
+              self.i2p_sock_load.i2p_send((b'%s %s\n' % (command,param)))
+              data = self.i2p_sock_load.i2p_receive_until_linefeed_counted()
+
+           if not (li2p["outport"] == "not_set" or li2p["outport"] == b'not_set'):
+              command = b'outport'
+              param = li2p["outport"]
+
+              self.i2p_sock_load.i2p_send((b'%s %s\n' % (command,param)))
+              data = self.i2p_sock_load.i2p_receive_until_linefeed_counted()
+
+           # in connection
+           
+           if not in_is_out:
+              command = b'start'
+
+              self.i2p_sock_load.i2p_send((b'%s\n' % (command)))
+              data = self.i2p_sock_load.i2p_receive_until_linefeed_counted()
+
+              command = b'setnick'   
+              param = li2p["insrvid"]
+
+              self.i2p_sock_load.i2p_send((b'%s %s\n' % (command,param)))
+              data = self.i2p_sock_load.i2p_receive_until_linefeed_counted()
+
+              command = b'setkeys'   
+              param = li2p["inpkey"]
+
+              self.i2p_sock_load.i2p_send((b'%s %s\n' % (command,param)))
+              data = self.i2p_sock_load.i2p_receive_until_linefeed_counted()
+          
+              command = b'quiet'
+              param = li2p["quiet_in"]
+
+              self.i2p_sock_load.i2p_send((b'%s %s\n' % (command,param)))
+              data = self.i2p_sock_load.i2p_receive_until_linefeed_counted()
+
+
+           if not (li2p["inhost"] == "not_set" or li2p["inhost"] == b'not_set'):
+              command = b'inhost'
+              param = li2p["inhost"]
+
+              self.i2p_sock_load.i2p_send((b'%s %s\n' % (command,param)))
+              data = self.i2p_sock_load.i2p_receive_until_linefeed_counted()
+         
+           if not (li2p["inport"] == "not_set" or li2p["inport"] == b'not_set'):
+              command = b'inport'
+              param = li2p["inport"]
+
+              self.i2p_sock_load.i2p_send((b'%s %s\n' % (command,param)))
+              data = self.i2p_sock_load.i2p_receive_until_linefeed_counted()
+
+           command = b'start'           
+  
+           self.i2p_sock_load.i2p_send((b'%s\n' % (command)))
+           data = self.i2p_sock_load.i2p_receive_until_linefeed_counted()
+
+           li2p["started"] = False
+           self.seti2p_bob(li2p)
+           self.i2p_sock_load.i2p_close()
+           return self.load()
+
        
         if (ret["e_running"]["out_1"] or ret["e_running"]["out_2"]) and (ret["e_running"]["in_1"] or ret["e_running"]["in_2"]):
            li2p["started"] = True
@@ -1422,15 +1531,15 @@ class FakeI2PTor:
         self.i2p_bob_i = i2p_bob(self.i2p_host,self.i2p_port,'0.0.0.0', '0.0.0.0', self.port + self.port_range_faktor, self.port, self.srvid_in, self.srvid_out)
         reti = self.i2p_bob_i.loadsi2p_bob(ret["i2p"])
         self.i2p_bob_i.seti2p_bob(reti)
-        self.start()        
+        self.start(True,False)        
 
-    def reload(self):
-        self.i2p_bob_i.load()
+    def reload(self,check=True,check_start=True):
+        self.i2p_bob_i.load(check,check_start)
         self.i2p_bob_i.stop()
         self.i2p_bob_i.start()
 
-    def start(self):
-        self.i2p_bob_i.load()
+    def start(self,check=True,check_start=True):
+        self.i2p_bob_i.load(check,check_start)
         self.i2p_bob_i.start()
 
     def stop(self): 
@@ -1504,6 +1613,7 @@ class Client_Thread:
                 self.onion_provider = {}
                 self.onions = []
                 self.cf=cf
+                self.os=None
                 self.port_range_faktor = port_range_faktor
                 self.authenticate = False
                 self.scf=(b'250-AUTH METHODS=COOKIE,SAFECOOKIE COOKIEFILE="%s.i2p.auth"\r\n' % self.cf)
@@ -1594,7 +1704,6 @@ class Client_Thread:
                                 ret = self.loads(nr)
                                 self.loads_onion(ret)
                                 self.onions = []
-                                self.authenticate = True
                                 for k in self.onion:
                                     v = self.onion[k]
                                     n = FakeI2PTor()
@@ -1602,6 +1711,7 @@ class Client_Thread:
                                     self.onions.append(n)
                                     if(len(v) > 5):
                                        self.port_range_faktor = self.port_range_faktor + 1
+                                self.authenticate = True
                              else:
                                 self.c_socket.send(b'515 Authentication failed: Wrong length on authentication cookie.\r\n')
                                 self.c_socket.close()
@@ -1610,7 +1720,7 @@ class Client_Thread:
                               self.c_socket.close()
                       else:
                            self.c_socket.send(b'515 Authentication failed: Wrong length on authentication cookie.\r\n')
-                           self.c_socket.close()   
+                           self.c_socket.close() 
                 elif data.startswith(b'GETINFO version'):
                    self.c_socket.send(b'250-version=0.2.7.5\r\n')
                    self.c_socket.send(b'250 OK\r\n')
@@ -1634,6 +1744,19 @@ class Client_Thread:
                    self.save_state((b'%s.i2p' % self.cf),state)
                    self.save_md5_state((b'%s.i2p.auth' % self.cf),state)
                    self.ut()
+                elif data.startswith(b'ADD_ONION NEW:REST port='):
+                   if not self.authenticate: 
+                      self.c_socket.send(b'514 Authentication required\r\n')
+                      self.c_socket.close()
+                      return
+
+                   onion_strings = {}   
+                   for s in self.onions:
+                       onion_strings[s.getSrvIdAddrOnion()] = s.getSrvIdPkey()
+                   str = dump_array(onion_strings)
+                   self.c_socket.send((b'250-ServiceID=%s\r\n' % b'global'))
+                   self.c_socket.send((b'250-PrivateKey=BEST:%s\r\n' % str))
+                   self.c_socket.send(b'250 OK\r\n')
                 elif data.startswith(b'ADD_ONION NEW:BEST port='):
                        if not self.authenticate:
                          self.c_socket.send(b'514 Authentication required\r\n')
@@ -1752,6 +1875,10 @@ class Client_Thread:
 	def _print_debug(self, s):
 		if self.debug: self._print(s)
 
+        def dump_array(self,array):
+            str = binascii.b2a_base64(json.dumps(array))
+            return str
+      
         def dump(self):
             uret = {}
             uret["onion"] = self.onion
