@@ -20,25 +20,43 @@ def importErrors():
 # Process result got back from tracker
 def processPeerRes(site, peers):
     added = 0
-    # Ip4
+    have_ip4 = "ip4" in peers
+    have_onion = "onion" in peers
+    have_i2p = "i2p" in peers
+    
+    #Ip4
     found_ip4 = 0
-    for packed_address in peers["ip4"]:
-        found_ip4 += 1
-        peer_ip, peer_port = helper.unpackAddress(packed_address)
-        if site.addPeer(peer_ip, peer_port):
-            added += 1
+    if have_ip4:
+       for packed_address in peers["ip4"]:
+          found_ip4 += 1
+          peer_ip, peer_port = helper.unpackAddress(packed_address)
+          if site.addPeer(peer_ip, peer_port):
+             added += 1
+
     # Onion
     found_onion = 0
-    for packed_address in peers["onion"]:
-        found_onion += 1
-        peer_onion, peer_port = helper.unpackOnionAddress(packed_address)
-        if site.addPeer(peer_onion, peer_port):
-            added += 1
+    if have_onion: 
+       for packed_address in peers["onion"]:
+          found_onion += 1
+          peer_onion, peer_port = helper.unpackOnionAddress(packed_address)
+          if site.addPeer(peer_onion, peer_port):
+             added += 1
+
+    # I2P
+    found_i2p = 0
+    if have_i2p:
+       for packed_address in peers["i2p"]:
+          found_i2p += 1
+          peer_i2p, peer_port = helper.unpackI2PAddress(packed_address)
+          if site.addPeer(peer_i2p, peer_port):
+             added += 1
+
+
 
     if added:
         site.worker_manager.onPeers()
         site.updateWebsocket(peers_added=added)
-        site.log.debug("Found %s ip4, %s onion peers, new: %s" % (found_ip4, found_onion, added))
+        site.log.debug("Found %s ip4, %s onion peers, %s i2p peers, new: %s" % (found_ip4, found_onion, found_i2p, added))
 
 
 @PluginManager.registerTo("Site")

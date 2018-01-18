@@ -266,7 +266,7 @@ class I2PManager(object):
         res = self.request("DEL_ONION %s" % address)
         if "250 OK" in res:
             del self.privatekeys[address]
-            self.setStatus("OK (%s i2ps running)" % len(self.privatekeys))
+            self.setStatus(u"OK (%s i2ps running)" % len(self.privatekeys))
             return True
         else:
             self.setStatus(u"DelI2P error (%s)" % res)

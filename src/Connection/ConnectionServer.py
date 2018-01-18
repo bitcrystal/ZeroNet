@@ -24,6 +24,15 @@ class ConnectionServer:
         self.log = logging.getLogger("ConnServer")
         self.port_opened = None
 
+        config_tor = None
+        config_i2p = None
+
+        if config.tor == "disable":
+           config_tor = "disabled"
+ 
+        if config.i2p == "disable":
+           config_i2p = "disabled"
+
         if config.tor != "disabled":
             self.tor_manager = TorManager(self.ip, self.port)
         else:
@@ -133,7 +142,7 @@ class ConnectionServer:
                     if ip.endswith(".onion") and self.tor_manager.start_onions and ip.replace(".onion", "") != connection.target_onion:
                         # For different site
                         continue
-                    elif ip.endswith(".i2p") and self.i2p_manager.start_onions and ip.replace(".i2p", "") != connection.target_i2p:
+                    if ip.endswith(".i2p") and self.i2p_manager.start_onions and ip.replace(".i2p", "") != connection.target_i2p:
                         # For different site
                         continue
 
