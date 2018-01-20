@@ -1,0 +1,1 @@
+{"cookiefile_path": "/myservices/tor/control_auth_cookie", "server_host": "", "server_port": 1234, "i2p_host": "127.0.0.1", "i2p_port": 2827, "port_range_faktor": 10, "i2p_http_proxy_host": "127.0.0.1","i2p_http_proxy_port": 4444, "i2p_http_proxy_nonce": "2179419977732039702","debug": true}

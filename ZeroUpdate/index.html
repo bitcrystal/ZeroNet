@@ -1,0 +1,68 @@
+<html>
+<body>
+<style>
+body { background-color: #D6CEC3; transition: all 3s; }
+
+body.result-latest { background-color: #4CD964; }
+body.result-latest .content h3 { animation: yes 0.82s cubic-bezier(.36,.07,.19,.97) both; }
+
+body.result-sameversion { background-color: #FFCC00; }
+body.result-sameversion .content h3 { animation: yes 1.82s cubic-bezier(.36,.07,.19,.97) both; }
+
+body.result-outdated { background-color: #FF3B30; }
+body.result-outdated .content h3 { animation: no 1.82s cubic-bezier(.36,.07,.19,.97) both; }
+
+.content { width: 300px; margin: auto; top: 50%; position: relative; margin-top: -70px; text-align: center; }
+.content h2, .content h3 { font-family: Consolas, monospace; font-weight: bold; font-size: 12px; background-color: #FFF; display: inline-block; padding: 5px 10px; }
+.content h2 { background-color: rgba(255,255,255,0.4); }
+.content span { font-weight: normal; }
+@keyframes no {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+@keyframes yes {
+  10%, 90% { transform: translate3d(0, -1px, 0); }
+  20%, 80% { transform: translate3d(0, 2px, 0); }
+  30%, 50%, 70% { transform: translate3d(0,-4px,  0); }
+  40%, 60% { transform: translate3d(0, 4px, 0); }
+}
+
+</style>
+<script type="text/javascript" src="js/ZeroFrame.js"></script>
+<script>
+class ZeroUpdate extends ZeroFrame {
+    onOpenWebsocket () {
+        var latest_rev, latest_version
+        this.cmd("fileGet", "ZeroNet/src/Config.py", (config_py) => {
+            latest_rev = config_py.match(/self.rev = ([0-9]+)/)[1]
+            latest_version = config_py.match(/self.version = "([0-9\\.]+)"/)[1]
+            document.getElementById("version_latest").innerText = latest_version + " (rev" + latest_rev + ")"
+            this.cmd("serverInfo", {}, (server_info) => {
+                document.getElementById("version_running").innerText = server_info.version + " (rev" + server_info.rev + ")"
+                if (latest_rev == server_info.rev) {
+                    document.body.className = "result-latest"
+                    document.getElementById("result").innerText = "On the edge with the latest revision!"
+                } else if (latest_version == server_info.version) {
+                    document.body.className = "result-sameversion"
+                    document.getElementById("result").innerText = "Latest version!"
+                } else {
+                    document.body.className = "result-outdated"
+                    document.getElementById("result").innerText = "Outdated!"
+                }
+            })
+        })
+    }
+}
+zero_update = new ZeroUpdate()
+</script>
+
+<div class="content">
+ <h2>Latest version: <span id="version_latest"></span></h2><br>
+ <h2>Your version: <span id="version_running"></span></h2><br>
+ <h3 id="result">Checking...</h3>
+</div>
+
+</body>
+</html>
