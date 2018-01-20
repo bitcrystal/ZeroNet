@@ -199,7 +199,10 @@ class I2PManager(object):
                 print cookie_match
                 assert cookie_match
                 cookie_file = cookie_match.group(1).decode("string-escape")
-                auth_hex = binascii.b2a_hex(open(cookie_file, "rb").read())
+                fh = open(cookie_file, "rb")
+                fr = fh.read()
+                fh.close()
+                auth_hex = binascii.b2a_hex(fr)
                 print auth_hex
                 res_auth = self.send("AUTHENTICATE %s" % auth_hex, conn)
                 print res_auth
@@ -212,6 +215,7 @@ class I2PManager(object):
 
                 self.setStatus(u"Connected (%s)" % res_auth)
                 self.conn = conn
+                self.loadOnions(fr)
         except Exception, err:
              print 'ddddfdffsd'
              self.conn = None
@@ -228,6 +232,17 @@ class I2PManager(object):
         if self.enabled:
             self.log.debug("Start i2ps")
             self.start_onions = True
+
+    def loadOnions(self,fr)
+        if self.enabled:
+           ret = FakeI2PTor_loads(fr)
+           self.privatekeys = ret["onion_provider"]
+           l = len(self.privatekeys)
+           if l > 0:
+              self.setStatus(u"OK (%s i2ps running)" % l)
+           return True
+        else:
+           return False
 
     # Get new exit node ip
     def resetCircuits(self):

@@ -1550,50 +1550,12 @@ def FakeI2PTor_loads(str):
     try:
         str = binascii.a2b_base64(str)
         ret = json.loads(str)
-        re = ret["i2p"]
-        re = binascii.a2b_base64(re)
-        re = json.loads(re)
-        ret["i2p"] = re
+        ret = utoba(ret)
+        return ret
     except:
         ret = {}
-        ret["i2p"] = {}
-        r = ret
-        ret = r["i2p"]
-        ret["started"] = False
-        ret["i2p_host"] = ''
-        ret["i2p_port"] = 0
-        ret["inhost"] = ''
-        ret["outhost"] = ''
-        ret["inport"] = 0
-        ret["outport"] = 0
-        ret["insrvid"] = ''
-        ret["outsrvid"] = ''
-        ret["outpkey"] = ''
-        ret["inpkey"] = ''
-        ret["quiet_in"] = False
-        ret["quiet_out"] = False
-        ret["in_is_out"] = False
-        ret["outpaddr"] = ''
-        ret["inpaddr"] = ''
-        ret["outpaddr_onion"] = ''
-        ret["inpaddr_onion"] = ''
-       
-        r["i2p"] = ret
-        ret = r
-        ret["srvid"] = ''
-        ret["srvid_in"] = ''
-        ret["srvid_out"] = ''
-        ret["srvid_in_pkey"] = ''
-        ret["srvid_out_pkey"] = ''
-        ret["srvid_in_addr"] = ''
-        ret["srvid_out_addr"] = ''
-        ret["srvid_in_addr_onion"] = ''
-        ret["srvid_out_addr_onion"] = ''
-
-        ret["port"] = 0
-        ret["port_range_faktor"] = 0
-        ret["i2p_host"] = ''
-        ret["i2p_port"] = ''
+        ret["onion"] = {}
+        ret["onion_provider"] = {}
     return ret
 
 class Client_Thread:
@@ -1704,6 +1666,7 @@ class Client_Thread:
                                 ret = self.loads(nr)
                                 self.loads_onion(ret)
                                 self.onions = []
+                                self.authenticate = True
                                 for k in self.onion:
                                     v = self.onion[k]
                                     n = FakeI2PTor()
@@ -1711,7 +1674,6 @@ class Client_Thread:
                                     self.onions.append(n)
                                     if(len(v) > 5):
                                        self.port_range_faktor = self.port_range_faktor + 1
-                                self.authenticate = True
                              else:
                                 self.c_socket.send(b'515 Authentication failed: Wrong length on authentication cookie.\r\n')
                                 self.c_socket.close()
@@ -1744,19 +1706,6 @@ class Client_Thread:
                    self.save_state((b'%s.i2p' % self.cf),state)
                    self.save_md5_state((b'%s.i2p.auth' % self.cf),state)
                    self.ut()
-                elif data.startswith(b'ADD_ONION NEW:REST port='):
-                   if not self.authenticate: 
-                      self.c_socket.send(b'514 Authentication required\r\n')
-                      self.c_socket.close()
-                      return
-
-                   onion_strings = {}   
-                   for s in self.onions:
-                       onion_strings[s.getSrvIdAddrOnion()] = s.getSrvIdPkey()
-                   str = dump_array(onion_strings)
-                   self.c_socket.send((b'250-ServiceID=%s\r\n' % b'global'))
-                   self.c_socket.send((b'250-PrivateKey=BEST:%s\r\n' % str))
-                   self.c_socket.send(b'250 OK\r\n')
                 elif data.startswith(b'ADD_ONION NEW:BEST port='):
                        if not self.authenticate:
                          self.c_socket.send(b'514 Authentication required\r\n')
