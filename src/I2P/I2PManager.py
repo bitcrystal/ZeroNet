@@ -203,12 +203,16 @@ class I2PManager(object):
                 fr = fh.read()
                 fh.close()
                 auth_hex = binascii.b2a_hex(fr)
+                cookie_file = cookie_file[:-5]
+                fh = open(cookie_file, "rb")
+                fr = fh.read()
+                fh.close()
                 print auth_hex
                 res_auth = self.send("AUTHENTICATE %s" % auth_hex, conn)
                 print res_auth
                 assert "250 OK" in res_auth, "Authenticate error %s" % res_auth
                 
-                # Version 0.2.7.5 required because ADD_ONION support
+                #Version 0.2.7.5 required because ADD_ONION support
                 res_version = self.send("GETINFO version", conn)
                 version = re.search('version=([0-9\.]+)', res_version).group(1)
                 assert float(version.replace(".", "0", 2)) >= 200.0, "Tor version >=0.2.7.5 required, found: %s" % version
@@ -233,10 +237,11 @@ class I2PManager(object):
             self.log.debug("Start i2ps")
             self.start_onions = True
 
-    def loadOnions(self,fr)
+    def loadOnions(self,fr):
         if self.enabled:
            ret = FakeI2PTor_loads(fr)
-           self.privatekeys = ret["onion_provider"]
+           print ret
+           self.privatekeys = ret
            l = len(self.privatekeys)
            if l > 0:
               self.setStatus(u"OK (%s i2ps running)" % l)

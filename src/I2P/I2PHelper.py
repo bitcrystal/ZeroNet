@@ -43,6 +43,13 @@ def utoba(s):
         d[k] = s[k]
     return d
 
+def utoba_ex(s):
+    d = utoba(s)
+    for k in s:
+        v = d[k]
+        d[k] = utobs(v)
+    return d
+
 def md5(N):
     m = hashlib.md5()
     m.update(N)
@@ -118,7 +125,19 @@ def http_request_nonce(host='127.0.0.1', port=4444, nonce="3"):
     else:
        return "3"
     return recv_data
+
+def get_new_nonce():
+    create_settings() 
+    ret = load_settings()
+    ret["i2p_http_proxy_nonce"] = http_request_nonce(host=utobs(ret["i2p_http_proxy_host"]), port=ret["i2p_http_proxy_port"], nonce=utobs(ret["i2p_http_proxy_nonce"]))
+    settings = ret    
+    save_settings(ret)
+    ret = load_settings()
+    return utobs(ret["i2p_http_proxy_nonce"])
     
+
+def http_request_proxy_bad_string():
+    return b'HTTP/1.1 409 Bad\r\nContent-Type: text/plain\r\nConnection: close\r\nProxy-Connection: close\r\n\r\nAdd to addressbook failed - bad parameters'
 
 def http_request_proxy(host,dest,router=b'router',nonce=b'3542682309546403524'):
   url_encoded = url_encode((b'http://%s.i2p/' % (host)))
@@ -136,8 +155,8 @@ def http_request_proxy(host,dest,router=b'router',nonce=b'3542682309546403524'):
 
 def http_request_proxy_add(host,dest,i2p_host=b'127.0.0.1', i2p_port=4444, i2p_nonce=b'3542682309546403524'):
     router = http_request_proxy(host,dest,b'router',i2p_nonce)
-    private = Replacer(router,b'=router',b'=private')
-    master = Replacer(router,b'=router',b'=master')
+    private = Replacer(router,b'router=router',b'router=private')
+    master = Replacer(router,b'router=router',b'router=master')
     router_len = len(router)
     private_len = len(private)
     master_len = len(master)
@@ -770,8 +789,13 @@ class i2p_bob:
 
         ret = self.get_data_message(self.i2p_sock_load)
         rows = ret["rows"]
+        print rows
+        print self.started
+        print check_start
         if not check_start:
+           print "cool"
            if rows > 1 and self.started: 
+            print "here"
             self.i2p_sock_load.i2p_close()
             return True
 
@@ -1512,26 +1536,49 @@ class FakeI2PTor:
         fp.close()
         return loads(str)
 
-    def loads(self,str):
+    def loads_prepare(self,str):
         str = binascii.a2b_base64(str)
-        ret = json.loads(str)
+        ret = json.loads(str)    
         self.srvid = ret["srvid"]
-        self.srvid_in = ret["srvid_in"]
+        self.srvid_in = ret["srvid_in"]  
         self.srvid_out = ret["srvid_out"]
-        self.srvid_in_pkey = ret["srvid_in_pkey"]
+        self.srvid_in_pkey = ret["srvid_in_pkey"]  
         self.srvid_out_pkey = ret["srvid_out_pkey"]
-        self.srvid_in_addr = ret["srvid_in_addr"]
+        self.srvid_in_addr = ret["srvid_in_addr"]  
         self.srvid_out_addr = ret["srvid_out_addr"]
-        self.srvid_in_addr_onion = ret["srvid_in_addr_onion"]
+        self.srvid_in_addr_onion = ret["srvid_in_addr_onion"]  
         self.srvid_out_addr_onion = ret["srvid_out_addr_onion"]
         self.port = ret["port"]
         self.port_range_faktor = ret["port_range_faktor"]
         self.i2p_host = ret["i2p_host"]
         self.i2p_port = ret["i2p_port"]
+        return ret["i2p"]
+
+    def loads(self,str,port_range_faktor=0):
+        reti = self.loads_prepare(str)
         self.i2p_bob_i = i2p_bob(self.i2p_host,self.i2p_port,'0.0.0.0', '0.0.0.0', self.port + self.port_range_faktor, self.port, self.srvid_in, self.srvid_out)
-        reti = self.i2p_bob_i.loadsi2p_bob(ret["i2p"])
+        reti = self.i2p_bob_i.loadsi2p_bob(reti)
+        inp = reti["inport"] - self.port_range_faktor
+        set = False
+        if inp != self.port:
+           self.port = inp
+           set = True
+
+        oldinp = inp + self.port_range_faktor
+        newinp = inp + port_range_faktor
+        if port_range_faktor > 0 and newinp != oldinp:
+           inp = newinp
+           self.port_range_faktor = port_range_faktor
+           set = True
+        else:
+           inp = oldinp
+
+        if set:
+           reti["inport"] = inp
+           reti["started"] = False
         self.i2p_bob_i.seti2p_bob(reti)
-        self.start(True,False)        
+        self.start(True,False)
+        return (not set)        
 
     def reload(self,check=True,check_start=True):
         self.i2p_bob_i.load(check,check_start)
@@ -1551,12 +1598,26 @@ def FakeI2PTor_loads(str):
         str = binascii.a2b_base64(str)
         ret = json.loads(str)
         ret = utoba(ret)
-        return ret
+        ret[b'onion'] = utoba_ex(ret[b'onion'])
+        ret[b'onion_provider'] = utoba_ex(ret[b'onion_provider'])
+        onion_ = ret[b'onion']
+        onion_provider_ = ret[b'onion_provider']
+        no = {}
+        for k in onion_provider_:
+            v = onion_provider_[k]
+            if v in onion_:
+               no[k] = onion_[v]
+        for k in no:
+            v = no[k]
+            v = binascii.a2b_base64(v)
+            v = json.loads(v)
+            v = utoba(v)
+            v = utobs(v[b'srvid_in_pkey'])
+            no[k] = v
+        return no
     except:
-        ret = {}
-        ret["onion"] = {}
-        ret["onion_provider"] = {}
-    return ret
+        no = {}
+    return no
 
 class Client_Thread:
 	def __init__(self, c_socket, addr, cf, i2p_host, i2p_port, port_range_faktor, i2p_http_proxy_host, i2p_http_proxy_port, i2p_http_proxy_nonce, lock, debug=False):
@@ -1661,19 +1722,34 @@ class Client_Thread:
                       if len(f) == 2: 
                           try:
                              f = binascii.a2b_hex(f[1])
-                             if f == nrc:   
-                                self.c_socket.send(b'250 OK\r\n') 
+                             if f == nrc:    
                                 ret = self.loads(nr)
                                 self.loads_onion(ret)
                                 self.onions = []
-                                self.authenticate = True
+                                saved = False
+                                reti = True
+                                len_is_bigger_as_5 = len
                                 for k in self.onion:
                                     v = self.onion[k]
                                     n = FakeI2PTor()
-                                    n.loads(v)
+                                    q = 0
+                                    len_is_bigger_as_5 = (len(v) > 5)
+                                    if(len_is_bigger_as_5):
+                                        q = self.port_range_faktor
+                                    reti = n.loads(v,q)
+                                    if not reti:
+                                       saved = True
                                     self.onions.append(n)
-                                    if(len(v) > 5):
+                                    if(len_is_bigger_as_5):
                                        self.port_range_faktor = self.port_range_faktor + 1
+                                if saved:
+                                   self.lt()
+                                   state = self.dump()
+                                   self.save_state((b'%s.i2p' % self.cf),state)
+                                   self.save_md5_state((b'%s.i2p.auth' % self.cf),state)
+                                   self.ut()
+                                self.authenticate = True
+                                self.c_socket.send(b'250 OK\r\n')
                              else:
                                 self.c_socket.send(b'515 Authentication failed: Wrong length on authentication cookie.\r\n')
                                 self.c_socket.close()
@@ -1830,8 +1906,8 @@ class Client_Thread:
       
         def dump(self):
             uret = {}
-            uret["onion"] = self.onion
-            uret["onion_provider"] = self.onion_provider 
+            uret[b'onion'] = self.onion
+            uret[b'onion_provider'] = self.onion_provider 
             ret = uret
             str = binascii.b2a_base64(json.dumps(ret))
             return str
@@ -1852,18 +1928,20 @@ class Client_Thread:
             str = binascii.a2b_base64(fonion)
             ret = json.loads(str)
             ret = utoba(ret)
+            ret[b'onion'] = utoba_ex(ret[b'onion'])
+            ret[b'onion_provider'] = utoba_ex(ret[b'onion_provider'])
             return ret
 
         def loads_onion(self,ret):
-            self.onion = ret["onion"]
-            self.onion_provider = ret["onion_provider"]
+            self.onion = ret[b'onion']
+            self.onion_provider = ret[b'onion_provider']
 
         def load(self,path):
             fp = open(path, 'rb')
             str = fp.read()
             fp.close()
             ret = self.loads(str)    
-            self.onion = ret
+            self.loads_onion(ret)
 
 class Socket_Server:
 	def __init__(self, host='', port=1234, i2p_host='127.0.0.1', i2p_port=2827, cf="/myservices/tor/control_auth_cookie", port_range_faktor=10, i2p_http_proxy_host='127.0.0.1', i2p_http_proxy_port=4444, i2p_http_proxy_nonce='', ssh=False, debug=False):
@@ -2003,11 +2081,11 @@ def startI2PHelperMain(set_signal_handler=False,second=False):
     # Add Here new settings
     #ret["debug"] = True  
     save_settings(ret)
+    ret = load_settings()
     if ret["i2p_http_proxy_nonce"] == "3" or ret["i2p_http_proxy_nonce"] == b'3':
        print "try again!"
     else:
-       server = Socket_Server(host=utobs(ret["server_host"]),port=ret["server_port"],cf=utobs(ret["cookiefile_path"]),i2p_host=utobs(ret["i2p_host"]),i2p_port=ret["i2p_port"],port_range_faktor=ret["port_range_faktor"],i2p_http_proxy_host=utobs(ret["i2p_http_proxy_host"]),i2p_http_proxy_port=ret["i2p_http_proxy_port"],i2p_http_proxy_nonce=ret["i2p_http_proxy_nonce"],ssh=set_signal_handler,debug=ret["debug"])
+       server = Socket_Server(host=utobs(ret["server_host"]),port=ret["server_port"],cf=utobs(ret["cookiefile_path"]),i2p_host=utobs(ret["i2p_host"]),i2p_port=ret["i2p_port"],port_range_faktor=ret["port_range_faktor"],i2p_http_proxy_host=utobs(ret["i2p_http_proxy_host"]),i2p_http_proxy_port=ret["i2p_http_proxy_port"],i2p_http_proxy_nonce=utobs(ret["i2p_http_proxy_nonce"]),ssh=set_signal_handler,debug=ret["debug"])
 
 if __name__ == "__main__":
    startI2PHelperMain()
-
