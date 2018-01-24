@@ -1,0 +1,48 @@
+{
+ "address": "17ziJ8EcCdHMvAu811HMzBQ1KtVXF2xX8t",
+ "address_index": 91513057,
+ "background-color": "#FFF",
+ "clone_root": "template-new",
+ "cloned_from": "1Jwmx33xCtuRe2UReHHxkritZ1nfuyXrrc",
+ "description": "ZeroChat",
+ "files": {
+  "dbschema.json": {
+   "sha512": "2f6616af1fa1fc90929dbd37a2cf49d71475678408a7608d805df408c61ebd0a",
+   "size": 1041
+  },
+  "index.html": {
+   "sha512": "d40b1ba1af33c50272de6fa6fcda468ba0ca8e2ae10ada4c9c6a4017e529f855",
+   "size": 21844
+  },
+  "js/ZeroFrame.js": {
+   "sha512": "42125c7aa72496455e044e3fd940e0f05db86824c781381edb7a70f71a5f0882",
+   "size": 3370
+  },
+  "sss": {
+   "sha512": "45843648ecf9da8e513286f136e3f271e7d6dee4d29b947a50dde8c61f3e1976",
+   "size": 2
+  },
+  "trackers2.json": {
+   "sha512": "34244759274569252661456f3b1ab0678b77ec42851686ad647a16939255a7e4",
+   "size": 34
+  }
+ },
+ "ignore": "(trackers.json|data/.*)",
+ "includes": {
+  "data/users/content.json": {
+   "signers": [],
+   "signers_required": 1
+  }
+ },
+ "inner_path": "content.json",
+ "modified": 1516748219,
+ "postmessage_nonce_security": true,
+ "signers_sign": "G5qF+2ONc6nfWIg8zOXU60vqbs3ZRCOGao/SD0dbeCvLIYGzjkRRjLl3+OTX078RPIB3WS545XXw42kMO3058+E=",
+ "signs": {
+  "17ziJ8EcCdHMvAu811HMzBQ1KtVXF2xX8t": "HKpojUreMuYyCab0N4QGEGruLkus1lxmDR/60NpBIrd5Ob857knmTdG0lURE4l2IKrDnKVVmmesjRbxsJYR2OPc="
+ },
+ "signs_required": 1,
+ "title": "ZeroChat",
+ "translate": ["js/all.js"],
+ "zeronet_version": "0.6.0"
+}

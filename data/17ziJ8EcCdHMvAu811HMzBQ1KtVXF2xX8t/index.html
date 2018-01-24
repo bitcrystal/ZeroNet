@@ -1,0 +1,609 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+ <title>New ZeroNet site!</title>
+ <meta charset="utf-8">
+ <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+ <base href="" target="_top" id="base">
+ <script>base.href = document.location.href.replace("/media", "").replace("index.html", "").replace(/[&?]wrapper=False/, "").replace(/[&?]wrapper_nonce=[A-Za-z0-9]+/, "")</script>
+</head>
+<body>
+
+<style>
+* { font-family: monospace; line-height: 1.5em; font-size: 13px; vertical-align: middle; }
+body { background-color: white; }
+input#message { padding: 5px; width: 50%;  }
+input#send { height: 34px; margin-left: -2px; }
+ul { padding: 0px; }
+li { list-style-type: none; border-top: 1px solid #eee; padding: 5px 0px; }
+li:nth-child(odd) { background-color: #F9FAFD; }
+li b { color: #3F51B5; }
+</style>
+
+
+<a href="#Select+user" id="select_user" onclick='return page.selectUser()'>Select user</a>:
+<input type="text" id="message" onkeypress="if (event.keyCode == 13) page.sendMessage()">
+<input type="button" id="send" value="Send!" onclick="return page.sendMessage()"/>
+<ul id="messages">
+ <li>Welcome to ZeroChat!</li>
+</ul>
+<script type="text/javascript" src="js/ZeroFrame.js"></script>
+
+<script>
+
+class ZeroChat extends ZeroFrame {
+    onRequest (cmd, message) {
+        if (cmd == "setSiteInfo") {
+            if (message.params.cert_user_id)
+                document.getElementById("select_user").innerHTML = message.params.cert_user_id
+            else
+                document.getElementById("select_user").innerHTML = "Select user"
+            this.site_info = message.params  // Save site info data to allow access it later
+
+            // Reload messages if new file arrives
+            if (message.params.event[0] == "file_done")
+                this.loadMessages()
+        }
+    }
+
+    selectUser () {
+        this.cmd("certSelect", {accepted_domains: ["zeroid.bit"]})
+        return false
+    }
+
+    addMessage (username, message) {
+        var message_escaped = message.replace(/</g, "&lt;").replace(/>/g, "&gt;")
+        this.messages.innerHTML += "<li><b>" + username + "</b>: " + message_escaped + "</li>"
+    }
+
+    sendMessage () {
+        if (!this.site_info.cert_user_id) {  // No account selected, display error
+            this.cmd("wrapperNotification", ["info", "Please, select your account."])
+            return false
+        }
+        
+        var lm = this.getMessages()
+        var am = lm[0];
+        var am_length = am.length;
+        var nm = lm[1];
+        var nm_length = nm.length;
+         for(var i = 0; i < am_length; i++)
+                  {
+                     console.log(am[i]);
+                  }
+
+
+        var msg_ = document.getElementById("message").value; 
+        var oloader = "";
+        var loader = "";
+        var have_oloader = false;
+        var nf = "";
+        var have_nf = false;
+
+        if(msg_ != "" && msg_.endsWith(".json") && msg_ != "trackers.json") {
+           loader = msg_;
+           this.cmd("fileGet", {"inner_path": loader, "required": false}, (track_) => {
+            have_oloader = true;
+            this.cmd("wrapperNotification", ["info", "Found " + msg_ + " file!"]);
+            if (track_) { // Parse current data file
+               track_ = JSON.parse(track_)
+               oloader = track_;
+            } else {    
+               track_ = { "trackers": [] }
+               track_.trackers.push("test2.i2p")
+               oloader = track_;
+            }
+           })
+        }
+
+        if(msg_ != "" && !msg_.endsWith(".json") && msg_.startsWith("/")) {
+          this.cmd("wrapperNotification", ["info", "Execute " + msg_ + " command!"]);
+          if (msg_.startsWith("/writetrackerstojson ")) {
+             this.cmd("wrapperNotification", ["info", "Execute " + msg_ + " command!"]);
+             var path = msg_.split("/writetrackerstojson ").join("");
+             if(path.endsWith(".json") && path != "trackers.json") {
+                 var newtrackers = { "trackers": [] }
+                 newtrackers.trackers = am; 
+                 var json_raw_newtrackers = unescape(encodeURIComponent(JSON.stringify(newtrackers, undefined, '\t')))
+                 // Write file to disk
+                 this.cmd("fileWrite", [path, btoa(json_raw_newtrackers)], (res) => {
+                    if (res == "ok") {
+                    } 
+                 })   
+             } else {
+                 this.cmd("wrapperNotification", ["info", "Usage: /writetrackerstojson /path/to/file.json"]);
+             }
+          } else if (msg_.startsWith("/writetrackerstotrackersjson")) {
+             this.cmd("wrapperNotification", ["info", "Execute " + msg_ + " command!"]);
+             var newtrackers = { "trackers": [] } 
+             newtrackers.trackers = am; 
+             var json_raw_newtrackers = unescape(encodeURIComponent(JSON.stringify(newtrackers, undefined, '\t')))
+             // Write file to disk
+             this.cmd("fileWrite", ["trackers.json", btoa(json_raw_newtrackers)], (res) => {
+                if (res == "ok") {
+                }
+             })   
+             nf = newtrackers;
+             have_nf = true;
+          } else if (msg_.startsWith("/addtrackertotrackersjson ")) {
+            this.cmd("wrapperNotification", ["info", "Execute " + msg_ + " command!"]);
+            var newtracker = msg_.split("/addtrackertotrackersjson ").join("");
+            if (newtracker == "") {
+               this.cmd("wrapperNotification", ["info", "Usage: /addtrackertotrackersjson tracker.i2p"]);
+            } else {
+               this.cmd("fileGet", {"inner_path": "trackers.json", "required": false}, (track_) => {
+                  if (track_) { // Parse current data file
+                     track_ = JSON.parse(track_)
+                  } else {
+                     track_ = { "trackers": [] }
+                  }
+
+                  var t = track_.trackers;
+                  var track_len = t.length;
+                  var can_add_track_ = true;
+                  var nt = [];
+                  for(var i = 0; i < track_len; i++)
+                  {
+                     if(t[i] == newtracker) {
+                          can_add_track_ = false;
+                          i = track_len_;
+                     }
+                  }
+
+                  if(can_add_track_)
+                  {
+                    t.push(newtracker);
+                  } else {
+                    can_add_track_ = true;
+                  }
+
+                  track_len = t.length;
+                  for(var i = 0; i < track_len; i++)
+                  {
+                     for(var j = 0; j < am_length; j++) {
+                        if(t[i] == am[j]) {
+                          can_add_track_ = false;
+                          j = am_length; 
+                        }
+                     } 
+                     if(can_add_track_) {
+                       nt.push(t[i]);
+                     } else {
+                       can_add_track_ = true;
+                     }
+                  }
+                  track_.trackers = nt;
+                  t = track_.trackers;
+                       
+                  // Encode data array to utf8 json text
+                  var json_raw_track_ = unescape(encodeURIComponent(JSON.stringify(track_, undefined, '\t')))
+
+                  // Write file to disk
+                  this.cmd("fileWrite", ["trackers.json", btoa(json_raw_track_)], (res) => {
+                       if (res == "ok") {
+                       }
+                  })
+                  nf = track_;
+                  have_nf = true;
+               })
+            }
+          } else if(msg_.startsWith("/addtrackertojson ")) {
+            this.cmd("wrapperNotification", ["info", "Execute " + msg_ + " command!"]);
+            var hc = msg_.split("/addtrackertojson ").join("");
+            var pm = hc.split(' ');
+            if(pm.length == 2 && pm[0] != "trackers.json") {
+               var path = pm[0];
+               var newtracker = pm[1];
+               this.cmd("fileGet", {"inner_path": path, "required": false}, (track_) => {
+                  if (track_) { // Parse current data file
+                     track_ = JSON.parse(track_)
+                  } else {
+                     track_ = { "trackers": [] }
+                  }
+
+                  var t = track_.trackers; 
+                  var track_len = t.length; 
+                  var can_add_track_ = true;
+                  var nt = [];
+                  for(var i = 0; i < track_len; i++)
+                  {
+                     if(t[i] == newtracker) {    
+                          can_add_track_ = false;
+                          i = track_len_;
+                     }
+                  }
+
+                  if(can_add_track_)
+                  {
+                    t.push(newtracker);
+                  } else {
+                    can_add_track_ = true;
+                  }
+
+                  track_len = t.length;
+                  for(var i = 0; i < track_len; i++)
+                  {
+                     for(var j = 0; j < am_length; j++) {
+                        if(t[i] == am[j]) {
+                          can_add_track_ = false;
+                          j = am_length; 
+                        }
+                     } 
+                     if(can_add_track_) {
+                       nt.push(t[i]);
+                     } else {
+                       can_add_track_ = true;
+                     }
+                  }
+                  t = nt;
+                  track_.trackers = t;
+
+                  // Encode data array to utf8 json text
+                  var json_raw_track_ = unescape(encodeURIComponent(JSON.stringify(track_, undefined, '\t')))
+                  // Write file to disk
+                  this.cmd("fileWrite", [path, btoa(json_raw_track_)], (res) => {
+                       if (res == "ok") {
+                       }
+                  })
+               })
+            } else {
+              this.cmd("wrapperNotification", ["info", "Ussage: /addtrackertojson /path/to/file.json tracker.i2p"]);
+            }
+          } else {
+             this.cmd("wrapperNotification", ["info", "Command " + msg_ + " not existed!"]);
+          }
+        }
+
+        if (have_oloader) {
+           var lt = oloader.trackers;
+           var nlt = [];
+           var lt_length = lt.length;
+           var can_add_lt = true;
+           for(var i = 0; i < lt_length; i++)
+           {
+               for(var j = 0; j < am_length; j++)
+               {
+                   if(lt[i] == am[j]) {
+                      can_add_lt = false;
+                      j = am_length;
+                   }
+               }
+               if(can_add_lt)
+               {
+                 nlt.push(lt[i]);
+               } else {
+                  can_add_lt = true;
+               }
+           }           
+           oloader.trackers = nlt;
+           lt = undefined;
+           nlt = undefined;
+           lt_length = undefined;
+           can_add_lt = undefined;
+        }
+
+        // This is our data file path
+        var data_inner_path = "data/users/" + this.site_info.auth_address + "/data.json"
+        var content_inner_path = "data/users/" + this.site_info.auth_address + "/content.json"
+        var trackers = "trackers.json"
+        var trackme = "";
+        if (have_nf) {
+          trackme = nf;
+        } else {
+          // Load our current trackers
+          this.cmd("fileGet", {"inner_path": trackers, "required": false}, (track_) => {
+            if (track_) { // Parse current data file
+               track_ = JSON.parse(track_)
+               trackme = track_;
+            } else {
+               track_ = { "trackers": [] }
+               track_.trackers.push("test.i2p")
+               trackme = track_;
+               // Encode data array to utf8 json text
+               var json_raw_track_ = unescape(encodeURIComponent(JSON.stringify(track_, undefined, '\t')))
+               // Write file to disk
+               this.cmd("fileWrite", [trackers, btoa(json_raw_track_)], (res) => {
+                   if (res == "ok") {
+                   }
+               })
+            }
+          })
+        }
+
+        // Load our current messages
+        this.cmd("fileGet", {"inner_path": data_inner_path, "required": false}, (data) => {
+            if (data)  // Parse current data file
+                data = JSON.parse(data)
+            else  // Not exists yet, use default data
+                data = { "message": [] }
+
+            var message = data.message;
+            var length = message.length;
+            var can_add = true;
+            var track_ = trackme;
+            var lt = track_.trackers;
+            var nlt = [];
+            var lt_length = lt.length;
+            var can_add_lt = true;
+            for(var i = 0; i < am_length; i++)
+            {
+              console.log(am[i]);
+            } 
+
+ 
+            for(var i = 0; i < lt_length; i++)
+            {
+                for(var j = 0; j < am_length; j++)
+                {    
+                    if(lt[i] == am[j]) {
+                       can_add_lt = false;
+                       j = am_length;
+                    }
+                }
+                if(can_add_lt)
+                { 
+                  nlt.push(lt[i]);
+                } else {
+                  can_add_lt = true;
+                }
+            }           
+            track_.trackers = nlt;
+            trackme = track_;
+            lt = undefined;
+            nlt = undefined;
+            lt_length = undefined;
+            can_add_lt = undefined;
+
+            if (msg_ != "" && !msg_.startsWith("/") && !msg_.endsWith(".json")) {
+               for(var i = 0; i < length; i++)
+               {
+                  if(message[i].body == msg_)
+                  {
+                   can_add = false;
+                   i = length;
+                   continue;  
+                  }
+               }
+               if(can_add)
+               {
+                   for(var i = 0; i < am_length; i++)
+                   {
+                      if(am[i] == msg_)
+                      {
+                         can_add = false;
+                         i = length;
+                         continue;  
+                      }
+                   }
+                   if(can_add) {
+                     var length_track = track_.trackers.length;
+                     var cur = "";
+                     for(var i = 0; i < length_track; i++)
+                     {
+                        cur = track_.trackers[i];
+                        if (cur == msg_) {
+                           can_add = false;
+                           i = length_track;
+                        }
+                     }
+                     if(can_add) {
+                       data.message.push({
+                            "body": msg_,
+                            "date_added": Date.now()
+                       })
+                       message = data.message;
+                       length = message.length;
+                     } else {
+                       can_add = false;
+                     }
+                     length_track = undefined;
+                     cur = undefined;
+                   } else {
+                      can_add = true;
+                   }
+               } else {
+                  can_add = true;
+               }
+            }
+
+            for(var i = 0; i < am_length; i++)
+            {
+              console.log(am[i]);
+            }
+
+            var length_track = track_.trackers.length;
+            var cur = "";
+            can_add = true;
+            for(var i = 0; i < length_track; i++)
+            {
+		cur = track_.trackers[i];
+                for(var j = 0; j < length; j++)
+                {
+                   if (message[j].body == cur) {
+                      can_add = false;
+                      j = length;
+                   } 
+                }
+                if (can_add) {
+                   data.message.push({
+                      "body": cur,
+                      "date_added": Date.now()
+                   })
+                } else {
+                   can_add = true;
+                }
+            }
+            message = data.message;
+            length = message.length;            
+
+            if(have_oloader) {
+              var track_ = oloader;
+              var length_track = track_.trackers.length;
+              var cur = "";
+              can_add = true;
+              for(var i = 0; i < length_track; i++)
+              {
+                  cur = track_.trackers[i];
+                  for(var j = 0; j < length; j++)
+                  {
+                     if (message[j].body == cur) {
+                        can_add = false;
+                        j = length;
+                     } 
+                  }
+                  if (can_add) {
+                     data.message.push({
+                        "body": cur,
+                        "date_added": Date.now()
+                     })
+                  } else {
+                     can_add = true;
+                  }
+              }
+            }
+            message = data.message;
+            length = message.length;            
+
+            track_ = trackme;
+            var message_ = message;
+            var lt = message_;
+            var nlt = [];
+            var lt_length = lt.length;
+            var can_add_lt = true;
+            for(var i = 0; i < lt_length; i++)
+            {
+                for(var j = 0; j < am_length; j++)
+                {    
+                    if(lt[i].body == am[j]) {
+                       can_add_lt = false;
+                       j = am_length;
+                    }
+                }
+                if(can_add_lt)
+                { 
+                  nlt.push(lt[i]);
+                } else {
+                  can_add_lt = true;
+                }
+            }           
+            data.message = nlt;
+            lt = undefined; 
+            nlt = undefined;
+            lt_length = undefined; 
+            can_add_lt = undefined;
+
+            // Encode data array to utf8 json text
+            var json_raw = unescape(encodeURIComponent(JSON.stringify(data, undefined, '\t')))
+
+            // Write file to disk
+            this.cmd("fileWrite", [data_inner_path, btoa(json_raw)], (res) => {
+                if (res == "ok") {
+                    // Reset the message input
+                    document.getElementById("message").value = ""
+                    // Sign the changed file in our user's directory
+                    this.cmd("siteSign", {"inner_path": content_inner_path}, (res) => {
+                        // Publish to other users
+                        this.cmd("sitePublish", {"inner_path": content_inner_path, "sign": false})
+                        this.loadMessages() // Reload messages
+                    })
+                } else {
+                    this.cmd("wrapperNotification", ["error", "File write error: #{res}"])
+                }
+            })
+
+            // Encode data array to utf8 json text
+            var json_raw_trackme = unescape(encodeURIComponent(JSON.stringify(trackme, undefined, '\t')))
+
+            // Write file to disk
+            this.cmd("fileWrite", [trackers, btoa(json_raw_trackme)], (res) => {
+                if (res == "ok") {  
+                }
+            })
+
+            if(have_oloader) {
+               // Encode data array to utf8 json text
+               var json_raw_oloader = unescape(encodeURIComponent(JSON.stringify(oloader, undefined, '\t')))
+             
+               // Write file to disk
+               this.cmd("fileWrite", [loader, btoa(json_raw_oloader)], (res) => {
+                  if (res == "ok") {
+                  }   
+               })
+            }
+        })
+
+        return false
+    }
+
+    loadMessages () {
+        this.cmd("dbQuery", ["SELECT * FROM message LEFT JOIN json USING (json_id) ORDER BY date_added DESC"], (messages) => {
+            document.getElementById("messages").innerHTML = ""  // Always start with empty messages
+            for (var i=0; i < messages.length; i++) {
+                this.addMessage(messages[i].cert_user_id, messages[i].body)
+            }
+        })
+    }
+
+    
+    getMessages () {
+        var all_messages = [];
+        var all_messages_length = 0;
+        var new_messages = [];
+        var can_add = true;
+        var nmessages = [];
+        var nmessages_length = 1;
+        this.cmd("dbQuery", ["SELECT * FROM message LEFT JOIN json USING (json_id) ORDER BY date_added DESC"], (messages) => {
+            var m = messages;
+            var ml = messages.length;
+            for(var i = 0; i < ml; i++)
+            {
+               nmessages.push({
+                   "cert_user_id": m[i].cert_user_id,
+                   "body": m[i].body
+               });
+            }
+        })
+        
+        nmessages_length = nmessages.length;
+        console.log(nmessages_length);
+        for(var i = 0; i < nmessages_length; i++)
+        {
+          console.log("ok:" + nmessages[i].body);
+          for (var j = 0; j < all_messages_length; j++)
+          {
+              if(all_messages[j] == nmessages[i].body) {
+                can_add = false;
+                j = all_messages_length;
+              }
+          }
+          if(can_add) {
+            all_messages.push(nmessages[i].body);
+            new_messages.push(nmessages[i]);
+            all_messages_length = all_messages.length;
+          } else {
+            can_add = true;
+          }
+        }
+        return [all_messages, new_messages];
+    }
+
+
+    onOpenWebsocket () {
+        this.messages = document.getElementById("messages")
+        this.addMessage("System", "Ready to call ZeroFrame API!")
+        this.cmd("siteInfo", {}, (site_info) => {
+            if (site_info.cert_user_id)
+                document.getElementById("select_user").innerText = site_info.cert_user_id
+            this.site_info = site_info
+        })
+    }
+}
+
+page = new ZeroChat()
+
+</script>
+
+</body>
+</html>
