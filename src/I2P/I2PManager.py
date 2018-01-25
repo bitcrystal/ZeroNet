@@ -36,6 +36,8 @@ class I2PManager(object):
         self.privatekeys_ret = {}
         self.site_onions = {}  # Site address: I2P
         self.log = logging.getLogger("I2PManager")
+        self.trackers = []
+        self.trackers_key = {}
         self.start_onions = None
         self.conn = None
         self.lock = RLock()
@@ -244,6 +246,11 @@ class I2PManager(object):
            self.privatekeys = ret
            l = len(self.privatekeys)
            if l > 0:
+              for k in self.privatekeys:
+                 v = self.privatekeys[k]
+                 self.trackers.append(to_trackers(k,v,15441))
+                 self.trackers_key[k] = len(self.trackers) - 1
+              trackers_json_write(self.trackers)
               self.setStatus(u"OK (%s i2ps running)" % l)
            return True
         else:
@@ -265,6 +272,8 @@ class I2PManager(object):
         if result:
             onion_address, onion_privatekey = result
             self.privatekeys[onion_address] = onion_privatekey
+            self.trackers.append(to_trackers(onion_address,onion_privatekey,self.fileserver_port))
+            self.trackers_key[onion_address] = len(self.trackers) Ã- 1
             self.setStatus(u"OK (%s i2ps running)" % len(self.privatekeys))
             SiteManager.peer_blacklist.append((onion_address + ".i2p", self.fileserver_port))
             return onion_address
@@ -287,6 +296,9 @@ class I2PManager(object):
         res = self.request("DEL_ONION %s" % address)
         if "250 OK" in res:
             del self.privatekeys[address]
+            del self.trackers[self.trackers_key[address]]
+            del self.trackers_key[address]
+            trackers_json_write(self.trackers)
             self.setStatus(u"OK (%s i2ps running)" % len(self.privatekeys))
             return True
         else:

@@ -2042,8 +2042,89 @@ def save_settings(ret):
     fp.close()
 
 def current_dir():
-    dir_path = os.path.dirname(os.path.realpath(__file__))
+    dir_path = os.path.dirname(os.path.realpath(__file__)).encode()
     return dir_path
+
+def os_sep():
+    return os.sep.encode()
+
+
+def data_dir():
+    dir_path = current_dir()
+    sep = os_sep()
+    dir_path = Replacer(dir_path,(b'%ssrc%sI2P%s' % (sep,sep,sep)),(b'%sdata' % (sep)))
+    dir_path = Replacer(dir_path,(b'%ssrc%sI2P' % (sep,sep)),(b'%sdata' % (sep)))
+    return dir_path
+
+def trackers_dir():
+    sep = os_sep()
+    data_di = data_dir()
+    trackers_di = (b'%s%s%s' % (data_di,sep,b'17ziJ8EcCdHMvAu811HMzBQ1KtVXF2xX8t'))
+    return trackers_di
+
+def trackers_json():
+    sep = os_sep()
+    trackers_di = trackers_dir()
+    trackers_jso = (b'%s%s%s' % (trackers_di,sep,b'trackers.json'))
+    return trackers_jso
+
+def trackers_json_exists():
+    return os.path.isfile(trackers_json())
+
+def trackers_json_read():
+    e = {};
+    if(trackers_json_exists()):
+      fp = open(trackers_json(),b'rb')
+      e = fp.read()
+      fp.close()
+      e = json.loads(e)
+      e = utoba(e)
+      f = e[b'trackers']
+      n = []
+      fl = len(f)
+      i = 0
+      while (i<fl):
+          f[i] = f[i].encode()
+          f[i] = from_trackers(f[i])
+          n.append(f[i])
+          i = i + 1
+      e = n
+    return e
+
+def to_trackers(key,value,port):
+    ne = {}
+    ne[b'onion'] = key
+    ne[b'privatekey'] = value
+    ne[b'port'] = port
+    str = json.dumps(ne)
+    str = Replacer(binascii.b2a_base64(str).encode(),b'\n',b'')
+    str = (b'base64:%s' % (str))
+    return str
+
+def from_trackers(ne):
+    str = Replacer(ne,b'base64:',b'')
+    str = binascii.a2b_base64(str).encode()
+    ne = json.loads(str)
+    ne = utoba(ne)
+    ne[b'onion'] = ne[b'onion'].encode()
+    ne[b'privatekey'] = ne[b'privatekey'].encode()
+    ne[b'port'] = int(ne[b'port'])
+    return ne
+
+def trackers_add(trackers,key,value,port):
+    trackers.append(to_trackers(key,value,port))
+    return trackers
+
+def trackers_json_write(trackers):
+    if(trackers_json_exists()):
+      e = {};
+      e[b'trackers'] = trackers
+      js = json.dumps(e)
+      fp = open(trackers_json(),b'wb')
+      fp.write(js)
+      fp.close()
+      return True
+    return False
 
 def create_settings():
     if os.path.isfile('settings.json'):
