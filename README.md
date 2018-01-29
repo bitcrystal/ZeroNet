@@ -93,7 +93,7 @@ It downloads the latest version of ZeroNet then starts it automatically.
 ### [Arch Linux](https://www.archlinux.org)
 
 * `git clone https://aur.archlinux.org/zeronet.git`
-* `cd zeronet-git`
+* `cd zeronet`
 * `makepkg -srci`
 * `systemctl start zeronet`
 * Open http://127.0.0.1:43110/ in your browser
@@ -202,7 +202,6 @@ Site:13DNDk..bhC2 Successfuly published to 3 peers
 
 - Bitcoin: 1QDhxQ6PraUZa21ET5fYUCPgdrwBomnFgX
 - Paypal: https://zeronet.readthedocs.org/en/latest/help_zeronet/donate/
-- Gratipay: https://gratipay.com/zeronet/
 
 ### Sponsors
 
@@ -213,4 +212,3 @@ Site:13DNDk..bhC2 Successfuly published to 3 peers
 * More info, help, changelog, zeronet sites: https://www.reddit.com/r/zeronet/
 * Come, chat with us: [#zeronet @ FreeNode](https://kiwiirc.com/client/irc.freenode.net/zeronet) or on [gitter](https://gitter.im/HelloZeroNet/ZeroNet)
 * Email: hello@zeronet.io (PGP: CB9613AE)
-# ZeroNet
