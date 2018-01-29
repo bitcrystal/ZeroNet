@@ -1,9 +1,7 @@
 {
 	"Congratulation, your port <b>{0}</b> is opened.<br>You are full member of ZeroNet network!": "Tillykke, din port (<b>{0}</b>) er åben.<br>Du er nu fuld klient på ZeroNet!",
 	"Tor mode active, every connection using Onion route.": "TOR er aktiv, alle forbindelser anvender Onions.",
-        "I2P mode active, every connection using I2P route.": "I2P er aktiv, alle forbindelser anvender I2Ps.",
 	"Successfully started Tor onion hidden services.": "OK. Startede TOR skjult onion service.",
-        "Successfully started I2P hidden services.": "OK. Startede I2P skjult I2P service.",
 	"Unable to start hidden services, please check your config.": "Fejl. Kunne ikke starte TOR skjult onion service. Tjek din opsætning!",
 	"For faster connections open <b>{0}</b> port on your router.": "Åben port <b>{0}</b> på din router for hurtigere forbindelse.",
 	"Your connection is restricted. Please, open <b>{0}</b> port on your router": "Begrænset forbindelse. Åben venligst port <b>{0}</b> på din router",

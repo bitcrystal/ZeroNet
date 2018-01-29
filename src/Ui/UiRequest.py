@@ -638,10 +638,12 @@ class UiRequest(object):
         sites = self.server.sites
         main = sys.modules["main"]
 
-        def bench(code, times=100):
+        def bench(code, times=100, init=None):
             sites = self.server.sites
             main = sys.modules["main"]
             s = time.time()
+            if init:
+                eval(compile(init, '<string>', 'exec'), globals(), locals())
             for _ in range(times):
                 back = eval(code, globals(), locals())
             return ["%s run: %.3fs" % (times, time.time() - s), back]
@@ -709,4 +711,4 @@ class UiRequest(object):
                 <h1>%s</h1>
                 <h2>%s</h3>
             """ % (title, cgi.escape(message))
-
+        

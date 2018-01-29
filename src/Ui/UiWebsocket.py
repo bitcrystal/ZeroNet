@@ -194,7 +194,7 @@ class UiWebsocket(object):
             return True
 
     # Has permission to access a site
-    def hasSitePermission(self, address):
+    def hasSitePermission(self, address, cmd=None):
         if address != self.site.address and "ADMIN" not in self.site.settings["permissions"]:
             return False
         else:
@@ -360,7 +360,7 @@ class UiWebsocket(object):
     # - Actions -
 
     def actionAs(self, to, address, cmd, params=[]):
-        if not self.hasSitePermission(address):
+        if not self.hasSitePermission(address, cmd=cmd):
             return self.response(to, "No permission for site %s" % address)
         req_self = copy.copy(self)
         req_self.site = self.server.sites.get(address)

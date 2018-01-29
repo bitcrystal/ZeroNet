@@ -94,7 +94,7 @@ class FileServer(ConnectionServer):
         if not port:
             port = self.port
         back = self.testOpenportPortchecker(port)
-        if back["result"] is not True and use_alternative:  # If no success try alternative checker
+        if (back["result"] is not True and use_alternative) or back["result"] is None:  # If no success try alternative checker
             back = self.testOpenportCanyouseeme(port)
 
         if self.ui_server:
@@ -104,6 +104,20 @@ class FileServer(ConnectionServer):
 
     def testOpenportP2P(self, port=None):
         self.log.info("Checking port %s using P2P..." % port)
+        
+        if port == self.port:
+           is_my_port = True
+        else:
+           is_my_port = False
+        
+        if config.i2p == "enable" and config.tor == "enable":
+           please_not_test = True
+        else:
+           please_not_test = False
+        
+        if config.i2p == "always" or config.tor == "always":
+           please_not_test = True
+        
         site = SiteManager.site_manager.get(config.homepage)
         peers = []
         res = None
@@ -125,17 +139,17 @@ class FileServer(ConnectionServer):
         if res is None:  # Nobody answered
             return self.testOpenportPortchecker(port)  # Fallback to centralized service
         if res["status"] == "closed":
-            if ((config.tor != "always" and config.i2p != "always") or (config.tor != "enable" or config.i2p != "enable")):
+            if (not please_not_test):
                 self.log.info("[BAD :(] %s says that your port %s is closed" % (random_peer.ip, port))
 
-            if port == self.port:
+            if is_my_port:
                 self.port_opened = False  # Self port, update port_opened status
                 config.ip_external = res["ip_external"]
                 SiteManager.peer_blacklist.append((config.ip_external, self.port))  # Add myself to peer blacklist
             return {"result": False}
         else:
             self.log.info("[OK :)] %s says that your port %s is open" % (random_peer.ip, port))
-            if port == self.port:  # Self port, update port_opened status
+            if is_my_port:  # Self port, update port_opened status
                 self.port_opened = True
                 config.ip_external = res["ip_external"]
                 SiteManager.peer_blacklist.append((config.ip_external, self.port))  # Add myself to peer blacklist
@@ -143,23 +157,34 @@ class FileServer(ConnectionServer):
 
     def testOpenportPortchecker(self, port=None):
         self.log.info("Checking port %s using portchecker.co..." % port)
+        if port == self.port:
+           is_my_port = True
+        else:
+           is_my_port = False
+        
         if config.i2p == "enable" and config.tor == "enable":
            please_not_test = True
         else:
            please_not_test = False
+        
+        if config.i2p == "always" or config.tor == "always":
+           please_not_test = True
         
         try:
             data = urllib2.urlopen("https://portchecker.co/check", "port=%s" % port, timeout=20.0).read()
             message = re.match('.*<div id="results-wrapper">(.*?)</div>', data, re.DOTALL).group(1)
             message = re.sub("<.*?>", "", message.replace("<br>", " ").replace("&nbsp;", " ").strip())  # Strip http tags
         except Exception, err:
-            message = "Error: %s" % Debug.formatException(err)
-            data = ""
+            debug_message = Debug.formatException(err)
+            if please_not_test and is_my_port:
+               self.port_opened = False
+               return {"result": None, "message": debug_message}
+            return {"result": None, "message": debug_message}
 
         if "open" not in message:
-            if ((config.tor != "always" and config.i2p != "always") or not please_not_test):
+            if (not please_not_test):
                 self.log.info("[BAD :(] Port closed: %s" % message)
-            if port == self.port:
+            if is_my_port:
                 self.port_opened = False  # Self port, update port_opened status
                 match = re.match(".*targetIP.*?value=\"(.*?)\"", data, re.DOTALL)  # Try find my external ip in message
                 if match:  # Found my ip in message
@@ -171,7 +196,7 @@ class FileServer(ConnectionServer):
         else:
             if not please_not_test:
                self.log.info("[OK :)] Port open: %s" % message)
-            if port == self.port:  # Self port, update port_opened status
+            if is_my_port:  # Self port, update port_opened status
                 if not please_not_test:
                    self.port_opened = True
                 else:
@@ -189,6 +214,11 @@ class FileServer(ConnectionServer):
 
     def testOpenportCanyouseeme(self, port=None):
         self.log.info("Checking port %s using canyouseeme.org..." % port)
+        if port == self.port:
+           is_my_port = True
+        else:
+           is_my_port = False
+        
         if config.i2p == "enable" and config.tor == "enable":
            please_not_test = True
         else:
@@ -199,12 +229,16 @@ class FileServer(ConnectionServer):
             message = re.match('.*<p style="padding-left:15px">(.*?)</p>', data, re.DOTALL).group(1)
             message = re.sub("<.*?>", "", message.replace("<br>", " ").replace("&nbsp;", " "))  # Strip http tags
         except Exception, err:
-            message = "Error: %s" % Debug.formatException(err)
+            debug_message = Debug.formatException(err)
+            if please_not_test and is_my_port:
+               self.port_opened = False
+               return {"result": None, "message": debug_message}
+            return {"result": None, "message": debug_message}
 
         if "Success" not in message:
             if (config.tor != "always" and config.i2p != "always") or not please_not_test:
                 self.log.info("[BAD :(] Port closed: %s" % message)
-            if port == self.port:
+            if is_my_port:
                 self.port_opened = False  # Self port, update port_opened status
                 match = re.match(".*?([0-9]+\.[0-9]+\.[0-9]+\.[0-9]+)", message)  # Try find my external ip in message
                 if match:  # Found my ip in message
@@ -216,7 +250,7 @@ class FileServer(ConnectionServer):
         else:
             if not please_not_test:
                self.log.info("[OK :)] Port open: %s" % message)
-            if port == self.port:  # Self port, update port_opened status
+            if is_my_port:  # Self port, update port_opened status
                 if not please_not_test:
                    self.port_opened = True
                 else:
@@ -311,8 +345,12 @@ class FileServer(ConnectionServer):
 
                 if not startup:  # Don't do it at start up because checkSite already has needConnections at start up.
                     connected_num = site.needConnections(check_site_on_reconnect=True)  # Keep active peer connection to get the updates
-                    if connected_num < config.connected_limit:  # This site has small amount of peers, protect them from closing
-                        peers_protected.update([peer.key for peer in site.getConnectedPeers()])
+                    if time.time() - site.settings.get("modified") < 60 * 60 * 24 * 7:
+                        # Keep active connections if site has been modified witin 7 days
+                        connected_num = site.needConnections(check_site_on_reconnect=True)
+
+                        if connected_num < config.connected_limit:  # This site has small amount of peers, protect them from closing
+                            peers_protected.update([peer.key for peer in site.getConnectedPeers()])
 
                 time.sleep(1)  # Prevent too quick request
 

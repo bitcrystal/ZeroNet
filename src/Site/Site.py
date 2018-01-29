@@ -451,7 +451,9 @@ class Site(object):
             # Failed to query modifications
             self.content_updated = False
             self.bad_files["content.json"] = 1
-
+        else:
+            self.content_updated = time.time()
+ 
         self.updateWebsocket(updated=True)
 
     # Update site by redownload all content.json
@@ -963,9 +965,13 @@ class Site(object):
         self.settings["peers"] = len(self.peers)
 
         if len(errors) < len(threads):  # Less errors than total tracker nums
+            if announced == 1:
+                announced_to = trackers[0]
+            else:
+                announced_to = "%s trackers" % announced
             self.log.debug(
-                "Announced types %s in mode %s to %s trackers in %.3fs, errors: %s, slow: %s" %
-                (add_types, mode, announced, time.time() - s, errors, slow)
+                "Announced types %s in mode %s to %s in %.3fs, errors: %s, slow: %s" %
+                (add_types, mode, announced_to, time.time() - s, errors, slow)
             )
         else:
             if mode != "update":
@@ -1044,6 +1050,9 @@ class Site(object):
 
     def getConnectedPeers(self):
         back = []
+        if not self.connection_server:
+            return []
+
         tor_manager = self.connection_server.tor_manager
         i2p_manager = self.connection_server.i2p_manager
         for connection in self.connection_server.connections:
@@ -1123,7 +1132,8 @@ class Site(object):
                 if sent >= limit:
                     break
         if sent:
-            self.log.debug("Sent my hashfield to %s peers" % sent)
+            my_hashfield_changed = self.content_manager.hashfield.time_changed
+            self.log.debug("Sent my hashfield (chaged %.3fs ago) to %s peers" % (time.time() - my_hashfield_changed, sent))
         return sent
 
     # Update hashfield

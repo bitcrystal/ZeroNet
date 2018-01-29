@@ -69,7 +69,6 @@ class UiWebsocketPlugin(object):
         connected = len([peer for peer in site.peers.values() if peer.connection and peer.connection.connected])
         connectable = len([peer_id for peer_id in site.peers.keys() if not peer_id.endswith(":0")])
         onion = len([peer_id for peer_id in site.peers.keys() if ".onion" in peer_id])
-        i2p = len([peer_id for peer_id in site.peers.keys() if ".i2p" in peer_id])
         peers_total = len(site.peers)
 
         # Add myself
@@ -79,16 +78,11 @@ class UiWebsocketPlugin(object):
                 connectable += 1
             if site.connection_server.tor_manager.start_onions:
                 onion += 1
-            if site.connection_server.i2p_manager.start_onions:
-                i2p += 1
-
-
 
         if peers_total:
             percent_connected = float(connected) / peers_total
             percent_connectable = float(connectable) / peers_total
             percent_onion = float(onion) / peers_total
-            percent_i2p = float(i2p) / peers_total
         else:
             percent_connectable = percent_connected = percent_onion = 0
 
@@ -99,14 +93,12 @@ class UiWebsocketPlugin(object):
               <li style='width: 100%' class='total back-black' title="{_[Total peers]}"></li>
               <li style='width: {percent_connectable:.0%}' class='connectable back-blue' title='{_[Connectable peers]}'></li>
               <li style='width: {percent_onion:.0%}' class='connected back-purple' title='{_[Onion]}'></li>
-              <li style='width: {percent_onion:.0%}' class='connected back-purple' title='{_[I2P]}'></li>
               <li style='width: {percent_connected:.0%}' class='connected back-green' title='{_[Connected peers]}'></li>
              </ul>
              <ul class='graph-legend'>
               <li class='color-green'><span>{_[Connected]}:</span><b>{connected}</b></li>
               <li class='color-blue'><span>{_[Connectable]}:</span><b>{connectable}</b></li>
               <li class='color-purple'><span>{_[Onion]}:</span><b>{onion}</b></li>
-              <li class='color-purple'><span>{_[I2P]}:</span><b>{i2p}</b></li>
               <li class='color-black'><span>{_[Total]}:</span><b>{peers_total}</b></li>
              </ul>
             </li>
@@ -425,6 +417,14 @@ class UiWebsocketPlugin(object):
         """))
 
         # Choose content you want to sign
+        body.append(_(u"""
+             <div class='flex'>
+              <input type='text' class='text' value="content.json" id='input-contents'/>
+              <a href='#Sign-and-Publish' id='button-sign-publish' class='button'>{_[Sign and publish]}</a>
+              <a href='#Sign-or-Publish' id='menu-sign-publish'>\u22EE</a>
+             </div>
+        """))
+
         contents = ["content.json"]
         contents += site.content_manager.contents.get("content.json", {}).get("includes", {}).keys()
         body.append(_(u"<div class='contents'>{_[Choose]}: "))
@@ -432,15 +432,7 @@ class UiWebsocketPlugin(object):
             content = cgi.escape(content, True)
             body.append(_("<a href='#{content}' onclick='$(\"#input-contents\").val(\"{content}\"); return false'>{content}</a> "))
         body.append("</div>")
-
-        body.append(_(u"""
-             <div class='flex'>
-              <input type='text' class='text' value="content.json" id='input-contents'/>
-              <a href='#Sign' class='button' id='button-sign'>{_[Sign]}</a>
-              <a href='#Publish' class='button' id='button-publish'>{_[Publish]}</a>
-             </div>
-            </li>
-        """))
+        body.append("</li>")
 
     def actionSidebarGetHtmlTag(self, to):
         site = self.site
@@ -474,6 +466,10 @@ class UiWebsocketPlugin(object):
         self.sidebarRenderContents(body, site)
         body.append("</div>")
         body.append("</ul>")
+        body.append("</div>")
+
+        body.append("<div class='menu template'>")
+        body.append("<a href='#'' class='menu-item template'>Template</a>")
         body.append("</div>")
 
         self.response(to, "".join(body))
@@ -525,66 +521,107 @@ class UiWebsocketPlugin(object):
             -100
         ])
 
+    def getLoc(self, geodb, ip):
+        global loc_cache
+
+        if ip in loc_cache:
+            return loc_cache[ip]
+        else:
+            try:
+                loc_data = geodb.get(ip)
+            except:
+                loc_data = None
+
+            if not loc_data or "location" not in loc_data:
+                loc_cache[ip] = None
+                return None
+
+            loc = {
+                "lat": loc_data["location"]["latitude"],
+                "lon": loc_data["location"]["longitude"],
+            }
+            if "city" in loc_data:
+                loc["city"] = loc_data["city"]["names"]["en"]
+
+            if "country" in loc_data:
+                loc["country"] = loc_data["country"]["names"]["en"]
+
+            loc_cache[ip] = loc
+            return loc
+
+    def getPeerLocations(self, peers):
+        import maxminddb
+        db_path = config.data_dir + '/GeoLite2-City.mmdb'
+        if not os.path.isfile(db_path) or os.path.getsize(db_path) == 0:
+            if not self.downloadGeoLiteDb(db_path):
+                return False
+        geodb = maxminddb.open_database(db_path)
+
+        peers = peers.values()
+        # Place bars
+        peer_locations = []
+        placed = {}  # Already placed bars here
+        for peer in peers:
+            # Height of bar
+            if peer.connection and peer.connection.last_ping_delay:
+                ping = round(peer.connection.last_ping_delay * 1000)
+            else:
+                ping = None
+            loc = self.getLoc(geodb, peer.ip)
+
+            if not loc:
+                continue
+            # Create position array
+            lat, lon = loc["lat"], loc["lon"]
+            latlon = "%s,%s" % (lat, lon)
+            if latlon in placed:  # Dont place more than 1 bar to same place, fake repos using ip address last two part
+                lat += float(128 - int(peer.ip.split(".")[-2])) / 50
+                lon += float(128 - int(peer.ip.split(".")[-1])) / 50
+                latlon = "%s,%s" % (lat, lon)
+            placed[latlon] = True
+            peer_location = {}
+            peer_location.update(loc)
+            peer_location["lat"] = lat
+            peer_location["lon"] = lon
+            peer_location["ping"] = ping
+
+            peer_locations.append(peer_location)
+
+        # Append myself
+        my_loc = self.getLoc(geodb, config.ip_external)
+        if my_loc:
+            my_loc["ping"] = 0
+            peer_locations.append(my_loc)
+
+        return peer_locations
+
+
     def actionSidebarGetPeers(self, to):
         permissions = self.getPermissions(to)
         if "ADMIN" not in permissions:
             return self.response(to, "You don't have permission to run this command")
         try:
-            import maxminddb
-            db_path = config.data_dir + '/GeoLite2-City.mmdb'
-            if not os.path.isfile(db_path) or os.path.getsize(db_path) == 0:
-                if not self.downloadGeoLiteDb(db_path):
-                    return False
-            geodb = maxminddb.open_database(db_path)
-
-            peers = self.site.peers.values()
-            # Find avg ping
+            peer_locations = self.getPeerLocations(self.site.peers)
+            globe_data = []
             ping_times = [
-                peer.connection.last_ping_delay
-                for peer in peers
-                if peer.connection and peer.connection.last_ping_delay and peer.connection.last_ping_delay
+                peer_location["ping"]
+                for peer_location in peer_locations
+                if peer_location["ping"]
             ]
             if ping_times:
                 ping_avg = sum(ping_times) / float(len(ping_times))
             else:
                 ping_avg = 0
-            # Place bars
-            globe_data = []
-            placed = {}  # Already placed bars here
-            for peer in peers:
-                # Height of bar
-                if peer.connection and peer.connection.last_ping_delay:
-                    ping = min(0.20, math.log(1 + peer.connection.last_ping_delay / ping_avg, 300))
+
+            for peer_location in peer_locations:
+                if peer_location["ping"] == 0:  # Me
+                    height = -0.135
+                elif peer_location["ping"]:
+                    height = min(0.20, math.log(1 + peer_location["ping"] / ping_avg, 300))
                 else:
-                    ping = -0.03
+                    height = -0.03
 
-                # Query and cache location
-                if peer.ip in loc_cache:
-                    loc = loc_cache[peer.ip]
-                else:
-                    try:
-                        loc = geodb.get(peer.ip)
-                    except:
-                        loc = None
-                    loc_cache[peer.ip] = loc
-                if not loc or "location" not in loc:
-                    continue
-
-                # Create position array
-                lat, lon = (loc["location"]["latitude"], loc["location"]["longitude"])
-                latlon = "%s,%s" % (lat, lon)
-                if latlon in placed:  # Dont place more than 1 bar to same place, fake repos using ip address last two part
-                    lat += float(128 - int(peer.ip.split(".")[-2])) / 50
-                    lon += float(128 - int(peer.ip.split(".")[-1])) / 50
-                    latlon = "%s,%s" % (lat, lon)
-                placed[latlon] = True
-
-                globe_data += (lat, lon, ping)
-            # Append myself
-            loc = geodb.get(config.ip_external)
-            if loc and loc.get("location"):
-                lat, lon = (loc["location"]["latitude"], loc["location"]["longitude"])
-                globe_data += (lat, lon, -0.135)
+                globe_data += [peer_location["lat"], peer_location["lon"], height]
 
             self.response(to, globe_data)
         except Exception, err:

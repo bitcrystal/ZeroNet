@@ -127,11 +127,6 @@ class UiRequestPlugin(object):
         for site_address, onion in main.file_server.tor_manager.site_onions.items():
             yield "- %-34s: %s<br>" % (site_address, onion)
 
-        # I2P hidden services
-        yield "<br><br><b>I2P hidden services (status: %s):</b><br>" % main.file_server.i2p_manager.status
-        for site_address, onion in main.file_server.i2p_manager.site_onions.items():
-            yield "- %-34s: %s<br>" % (site_address, onion)
-
         # Db
         yield "<br><br><b>Db</b>:<br>"
         for db in sys.modules["Db.Db"].opened_dbs:

@@ -1,0 +1,884 @@
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 518, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 17, in <module>
+    from I2P import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/__init__.py", line 1, in <module>
+    from I2PManager import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PManager.py", line 236
+    def loadOnions(self,fr)
+                          ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 518, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 17, in <module>
+    from I2P import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/__init__.py", line 1, in <module>
+    from I2PManager import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PManager.py", line 236
+    def loadOnions(self,fr)
+                          ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 518, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 17, in <module>
+    from I2P import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/__init__.py", line 1, in <module>
+    from I2PManager import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PManager.py", line 236
+    def loadOnions(self,fr)
+                          ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 518, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 17, in <module>
+    from I2P import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/__init__.py", line 1, in <module>
+    from I2PManager import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PManager.py", line 236
+    def loadOnions(self,fr)
+                          ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 518, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 17, in <module>
+    from I2P import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/__init__.py", line 1, in <module>
+    from I2PManager import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PManager.py", line 236
+    def loadOnions(self,fr)
+                          ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 518, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 17, in <module>
+    from I2P import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/__init__.py", line 1, in <module>
+    from I2PManager import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PManager.py", line 236
+    def loadOnions(self,fr)
+                          ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 518, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 17, in <module>
+    from I2P import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/__init__.py", line 1, in <module>
+    from I2PManager import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PManager.py", line 215
+    Version 0.2.7.5 required because ADD_ONION support
+   ^
+IndentationError: unexpected indent
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 518, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 17, in <module>
+    from I2P import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/__init__.py", line 1, in <module>
+    from I2PManager import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PManager.py", line 215
+    Version 0.2.7.5 required because ADD_ONION support
+   ^
+IndentationError: unexpected indent
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 518, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 17, in <module>
+    from I2P import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/__init__.py", line 1, in <module>
+    from I2PManager import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PManager.py", line 215
+    Version 0.2.7.5 required because ADD_ONION support
+   ^
+IndentationError: unexpected indent
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 518, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 17, in <module>
+    from I2P import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/__init__.py", line 1, in <module>
+    from I2PManager import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PManager.py", line 215
+    Version 0.2.7.5 required because ADD_ONION support
+   ^
+IndentationError: unexpected indent
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 518, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 17, in <module>
+    from I2P import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/__init__.py", line 1, in <module>
+    from I2PManager import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PManager.py", line 14, in <module>
+    from I2P import I2PHelper
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PHelper.py", line 139
+    def http_request_proxy_bad_string()
+                                      ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 518, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 17, in <module>
+    from I2P import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/__init__.py", line 1, in <module>
+    from I2PManager import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PManager.py", line 14, in <module>
+    from I2P import I2PHelper
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PHelper.py", line 139
+    def http_request_proxy_bad_string()
+                                      ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 518, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 17, in <module>
+    from I2P import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/__init__.py", line 1, in <module>
+    from I2PManager import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PManager.py", line 14, in <module>
+    from I2P import I2PHelper
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PHelper.py", line 139
+    def http_request_proxy_bad_string()
+                                      ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 518, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 17, in <module>
+    from I2P import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/__init__.py", line 1, in <module>
+    from I2PManager import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PManager.py", line 14, in <module>
+    from I2P import I2PHelper
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PHelper.py", line 139
+    def http_request_proxy_bad_string()
+                                      ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 518, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 17, in <module>
+    from I2P import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/__init__.py", line 1, in <module>
+    from I2PManager import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PManager.py", line 276
+SyntaxError: Non-ASCII character '\xc3' in file /myservices/ZeroNet/src/I2P/I2PManager.py on line 276, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 518, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 17, in <module>
+    from I2P import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/__init__.py", line 1, in <module>
+    from I2PManager import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PManager.py", line 276
+SyntaxError: Non-ASCII character '\xc3' in file /myservices/ZeroNet/src/I2P/I2PManager.py on line 276, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 518, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 17, in <module>
+    from I2P import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/__init__.py", line 1, in <module>
+    from I2PManager import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PManager.py", line 276
+SyntaxError: Non-ASCII character '\xc3' in file /myservices/ZeroNet/src/I2P/I2PManager.py on line 276, but no encoding declared; see http://www.python.org/peps/pep-0263.html for details
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 518, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 17, in <module>
+    from I2P import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/__init__.py", line 1, in <module>
+    from I2PManager import I2PManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PManager.py", line 14, in <module>
+    from I2P import I2PHelper
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/I2P/I2PHelper.py", line 2248
+    else
+        ^
+SyntaxError: invalid syntax
+Traceback (most recent call last):
+  File "zeronet.py", line 18, in main
+    import main
+  File "/myservices/ZeroNet/src/main.py", line 26, in <module>
+    config.parse(silent=True)  # Plugins need to access the configuration
+  File "/myservices/ZeroNet/src/Config.py", line 331, in parse
+    argv = self.parseConfig(argv)  # Add arguments from config file
+  File "/myservices/ZeroNet/src/Config.py", line 372, in parseConfig
+    config.read(self.config_file)
+  File "/usr/lib/python2.7/ConfigParser.py", line 305, in read
+    self._read(fp, filename)
+  File "/usr/lib/python2.7/ConfigParser.py", line 512, in _read
+    raise MissingSectionHeaderError(fpname, lineno, line)
+MissingSectionHeaderError: File contains no section headers.
+file: zeronet.conf, line: 1
+'tor = always\n'
+Traceback (most recent call last):
+  File "zeronet.py", line 18, in main
+    import main
+  File "/myservices/ZeroNet/src/main.py", line 26, in <module>
+    config.parse(silent=True)  # Plugins need to access the configuration
+  File "/myservices/ZeroNet/src/Config.py", line 331, in parse
+    argv = self.parseConfig(argv)  # Add arguments from config file
+  File "/myservices/ZeroNet/src/Config.py", line 372, in parseConfig
+    config.read(self.config_file)
+  File "/usr/lib/python2.7/ConfigParser.py", line 305, in read
+    self._read(fp, filename)
+  File "/usr/lib/python2.7/ConfigParser.py", line 512, in _read
+    raise MissingSectionHeaderError(fpname, lineno, line)
+MissingSectionHeaderError: File contains no section headers.
+file: zeronet.conf, line: 1
+'tor = always\n'
+Traceback (most recent call last):
+  File "zeronet.py", line 18, in main
+    import main
+  File "/myservices/ZeroNet/src/main.py", line 26, in <module>
+    config.parse(silent=True)  # Plugins need to access the configuration
+  File "/myservices/ZeroNet/src/Config.py", line 331, in parse
+    argv = self.parseConfig(argv)  # Add arguments from config file
+  File "/myservices/ZeroNet/src/Config.py", line 372, in parseConfig
+    config.read(self.config_file)
+  File "/usr/lib/python2.7/ConfigParser.py", line 305, in read
+    self._read(fp, filename)
+  File "/usr/lib/python2.7/ConfigParser.py", line 512, in _read
+    raise MissingSectionHeaderError(fpname, lineno, line)
+MissingSectionHeaderError: File contains no section headers.
+file: zeronet.conf, line: 1
+'trackers = zero://boot3rdez4rzn36x.onion:15441\n'
+Traceback (most recent call last):
+  File "zeronet.py", line 18, in main
+    import main
+  File "/myservices/ZeroNet/src/main.py", line 26, in <module>
+    config.parse(silent=True)  # Plugins need to access the configuration
+  File "/myservices/ZeroNet/src/Config.py", line 331, in parse
+    argv = self.parseConfig(argv)  # Add arguments from config file
+  File "/myservices/ZeroNet/src/Config.py", line 372, in parseConfig
+    config.read(self.config_file)
+  File "/usr/lib/python2.7/ConfigParser.py", line 305, in read
+    self._read(fp, filename)
+  File "/usr/lib/python2.7/ConfigParser.py", line 512, in _read
+    raise MissingSectionHeaderError(fpname, lineno, line)
+MissingSectionHeaderError: File contains no section headers.
+file: zeronet.conf, line: 1
+'trackers = zero://boot3rdez4rzn36x.onion:15441\n'
+Traceback (most recent call last):
+  File "zeronet.py", line 18, in main
+    import main
+  File "/myservices/ZeroNet/src/main.py", line 26, in <module>
+    config.parse(silent=True)  # Plugins need to access the configuration
+  File "/myservices/ZeroNet/src/Config.py", line 331, in parse
+    argv = self.parseConfig(argv)  # Add arguments from config file
+  File "/myservices/ZeroNet/src/Config.py", line 372, in parseConfig
+    config.read(self.config_file)
+  File "/usr/lib/python2.7/ConfigParser.py", line 305, in read
+    self._read(fp, filename)
+  File "/usr/lib/python2.7/ConfigParser.py", line 512, in _read
+    raise MissingSectionHeaderError(fpname, lineno, line)
+MissingSectionHeaderError: File contains no section headers.
+file: zeronet.conf, line: 1
+'trackers = zero://boot3rdez4rzn36x.onion:15441\n'
+Traceback (most recent call last):
+  File "zeronet.py", line 18, in main
+    import main
+  File "/myservices/ZeroNet/src/main.py", line 26, in <module>
+    config.parse(silent=True)  # Plugins need to access the configuration
+  File "/myservices/ZeroNet/src/Config.py", line 331, in parse
+    argv = self.parseConfig(argv)  # Add arguments from config file
+  File "/myservices/ZeroNet/src/Config.py", line 372, in parseConfig
+    config.read(self.config_file)
+  File "/usr/lib/python2.7/ConfigParser.py", line 305, in read
+    self._read(fp, filename)
+  File "/usr/lib/python2.7/ConfigParser.py", line 512, in _read
+    raise MissingSectionHeaderError(fpname, lineno, line)
+MissingSectionHeaderError: File contains no section headers.
+file: zeronet.conf, line: 1
+'tor = always\n'
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 522, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 16, in <module>
+    from Tor import TorManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Tor/__init__.py", line 1, in <module>
+    from TorManager import TorManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Tor/TorManager.py", line 26, in <module>
+    from I2PHelper import trackers_json_write_onion
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+ImportError: No module named I2PHelper
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 522, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 16, in <module>
+    from Tor import TorManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Tor/__init__.py", line 1, in <module>
+    from TorManager import TorManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Tor/TorManager.py", line 26, in <module>
+    from I2PHelper import trackers_json_write_onion
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+ImportError: No module named I2PHelper
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 522, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 16, in <module>
+    from Tor import TorManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Tor/__init__.py", line 1, in <module>
+    from TorManager import TorManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Tor/TorManager.py", line 26, in <module>
+    from I2PHelper import *
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+ImportError: No module named I2PHelper
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 522, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 16, in <module>
+    from Tor import TorManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Tor/__init__.py", line 1, in <module>
+    from TorManager import TorManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Tor/TorManager.py", line 15, in <module>
+    from I2PHelper import *
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+ImportError: No module named I2PHelper

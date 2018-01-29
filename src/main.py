@@ -502,7 +502,7 @@ class Actions(object):
             print json.dumps(res, indent=2, ensure_ascii=False)
         except Exception, err:
             print "Unknown response (%s): %s" % (err, res)
-
+     
     def getConfig(self):
         import json
         print json.dumps(config.getServerInfo(), indent=2, ensure_ascii=False)

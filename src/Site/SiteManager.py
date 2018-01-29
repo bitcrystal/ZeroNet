@@ -171,5 +171,8 @@ class SiteManager(object):
 
 
 site_manager = SiteManager()  # Singletone
+if config.action == "main":  # Don't connect / add myself to peerlist
+    peer_blacklist = [("127.0.0.1", config.fileserver_port)]
+else:
+    peer_blacklist = []
 
-peer_blacklist = [("127.0.0.1", config.fileserver_port)]  # Dont add this peers

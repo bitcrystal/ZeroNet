@@ -248,9 +248,11 @@ class I2PManager(object):
            if l > 0:
               for k in self.privatekeys:
                  v = self.privatekeys[k]
-                 self.trackers.append(to_trackers(k,v,15441))
+                 self.trackers.append(to_trackers_i2p(k,v,self.fileserver_port))
                  self.trackers_key[k] = len(self.trackers) - 1
-              trackers_json_write(self.trackers)
+              with self.lock:
+                   trackers_json_write_i2p(self.trackers)
+                   zeronet_config_merge_write_ex_i2p()
               self.setStatus(u"OK (%s i2ps running)" % l)
            return True
         else:
@@ -272,8 +274,10 @@ class I2PManager(object):
         if result:
             onion_address, onion_privatekey = result
             self.privatekeys[onion_address] = onion_privatekey
-            self.trackers.append(to_trackers(onion_address,onion_privatekey,self.fileserver_port))
-            self.trackers_key[onion_address] = len(self.trackers) Ã- 1
+            self.trackers.append(to_trackers_i2p(onion_address,onion_privatekey,self.fileserver_port))
+            self.trackers_key[onion_address] = len(self.trackers) - 1
+            with self.lock:
+                trackers_merge_json_write_i2p(self.trackers)
             self.setStatus(u"OK (%s i2ps running)" % len(self.privatekeys))
             SiteManager.peer_blacklist.append((onion_address + ".i2p", self.fileserver_port))
             return onion_address
@@ -298,7 +302,8 @@ class I2PManager(object):
             del self.privatekeys[address]
             del self.trackers[self.trackers_key[address]]
             del self.trackers_key[address]
-            trackers_json_write(self.trackers)
+            with self.lock:
+                trackers_merge_json_write_i2p(self.trackers)
             self.setStatus(u"OK (%s i2ps running)" % len(self.privatekeys))
             return True
         else:

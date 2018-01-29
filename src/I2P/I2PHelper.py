@@ -2048,83 +2048,546 @@ def current_dir():
 def os_sep():
     return os.sep.encode()
 
-
-def data_dir():
+def main_dir():
     dir_path = current_dir()
     sep = os_sep()
-    dir_path = Replacer(dir_path,(b'%ssrc%sI2P%s' % (sep,sep,sep)),(b'%sdata' % (sep)))
-    dir_path = Replacer(dir_path,(b'%ssrc%sI2P' % (sep,sep)),(b'%sdata' % (sep)))
+    dir_path = Replacer(dir_path,(b'%ssrc%sI2P%s' % (sep,sep,sep)),b'')
+    dir_path = Replacer(dir_path,(b'%ssrc%sI2P' % (sep,sep)),b'')
     return dir_path
 
-def trackers_dir():
+def data_dir():
+    dir_path = main_dir()
+    sep = os_sep()
+    dir_path = (b'%s%sdata' % (dir_path,sep))
+    return dir_path
+
+def trackers_dir(folder):
     sep = os_sep()
     data_di = data_dir()
-    trackers_di = (b'%s%s%s' % (data_di,sep,b'17ziJ8EcCdHMvAu811HMzBQ1KtVXF2xX8t'))
+    trackers_di = (b'%s%s%s' % (data_di,sep,folder))
     return trackers_di
 
-def trackers_json():
+def trackers_i2p_dir():
+    trackers_di = trackers_dir(b'17ziJ8EcCdHMvAu811HMzBQ1KtVXF2xX8t')
+    return trackers_di
+
+def trackers_onion_dir():
+    trackers_di = trackers_dir(b'1JheKmpBkc2Zab39UZXyK5m8ahAfe1HQqx')
+    return trackers_di
+
+def trackers_json(dir):
     sep = os_sep()
-    trackers_di = trackers_dir()
+    trackers_di = dir
     trackers_jso = (b'%s%s%s' % (trackers_di,sep,b'trackers.json'))
     return trackers_jso
 
-def trackers_json_exists():
-    return os.path.isfile(trackers_json())
+def trackers2_json(dir):
+    sep = os_sep()  
+    trackers_di = dir
+    trackers_jso = (b'%s%s%s' % (trackers_di,sep,b'trackers2.json'))
+    return trackers_jso
 
-def trackers_json_read():
-    e = {};
-    if(trackers_json_exists()):
-      fp = open(trackers_json(),b'rb')
-      e = fp.read()
-      fp.close()
-      e = json.loads(e)
-      e = utoba(e)
-      f = e[b'trackers']
-      n = []
-      fl = len(f)
-      i = 0
-      while (i<fl):
-          f[i] = f[i].encode()
-          f[i] = from_trackers(f[i])
-          n.append(f[i])
-          i = i + 1
-      e = n
+def zeronet_config():
+    sep = os_sep()
+    main_di = main_dir()
+    zeronet_conf = (b'%s%s%s' % (main_di,sep,b'zeronet.conf'))
+    return zeronet_conf
+
+def trackers_json_exists(dir):
+    return os.path.isfile(trackers_json(dir))
+
+def trackers2_json_exists(dir):
+    return os.path.isfile(trackers2_json(dir))
+
+def zeronet_config_exists():
+    return os.path.isfile(zeronet_config())
+
+
+def zeronet_config_read():
+    try:
+        e = {}
+        e[b'trackers'] = []
+        if(zeronet_config_exists()):
+          fp = open(zeronet_config(),b'rb')
+          e = fp.read()
+          fp.close()
+          e = e.encode()
+          e = Replacer(e,b'\r',b'')
+          f = e.split(b'\n')
+          nt = f
+          n = {}
+          g = b''
+          g_len = 0
+          last_g = b''
+          last_g_len = 0
+          lnt = len(nt)
+          i = 0
+          while(i<lnt):
+            if(nt[i] == b''):
+              i = i + 1
+              continue
+            nt[i] = Replacer(nt[i],b' = ',b'=')
+            g = nt[i].split(b'=')
+            g_len = len(g)
+            if g_len == 2:
+               n[g[0]] = []
+               n[g[0]].append(Replacer(Replacer(g[1],b' ',b''),b'\t',b''))
+               last_g = g
+               last_g_len = g_len
+            else:
+               if last_g_len > 0:
+                  n[last_g[0]].append(Replacer(Replacer(nt[i],b' ',b''),b'\t',b''))
+            i = i + 1
+          e = n
+          if not (b'trackers' in e):
+             e[b'trackers'] = []
+    except:
+        e = {}
+        e[b'trackers'] = []
     return e
 
-def to_trackers(key,value,port):
+def zeronet_config_write(zc):
+    nc = b''
+    nrt = []
+    for k in zc:
+        v = zc[k]
+        vl = len(v)
+        if(vl>0):
+          rtk = (b'%s = ' % (k))
+          rtv = (b'%s%s' % (rtk,v[0]))
+          rtp = b''
+          rtp_len = len(rtk)
+          i = 0
+          while(i<rtp_len):
+             rtp = (b'%s%s' % (rtp,b' '))
+             i = i + 1
+          nrt.append(rtv)
+          i = 1
+          while(i<vl):
+             nrt.append((b'%s%s' % (rtp,v[i])))
+             i = i + 1
+    i = 0
+    rlen = len(nrt)
+    while(i<rlen):
+       nc = (b'%s%s\n' % (nc,nrt[i]))
+       i = i + 1
+    fp=open(zeronet_config(),b'wb')
+    fp.write(nc)
+    fp.close()
+
+def zeronet_old_trackers():
+    nt = []
+    nt.append(b'zero://boot3rdez4rzn36x.onion:15441')
+    nt.append(b'zero://zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441')
+    nt.append(b'udp://tracker.coppersurfer.tk:6969')
+    nt.append(b'udp://tracker.leechers-paradise.org:6969')
+    nt.append(b'udp://9.rarbg.com:2710')
+    nt.append(b'http://tracker.opentrackr.org:1337/announce')
+    nt.append(b'http://explodie.org:6969/announce')
+    nt.append(b'http://retracker.spark-rostov.ru:80/announce')
+    return nt
+
+def zeronet_trackers_format(trackers,old_trackers_append=False):
+    lt = len(trackers)
+    i = 0
+    if(old_trackers_append):
+      nt = zeronet_old_trackers()
+    else:
+      nt = []
+    s = b''
+    n = b''
+    naddr = b''
+    nport = b''
+    while(i<lt):
+      t = from_trackers(trackers[i])
+      if(t[b'port'] > 0):
+         if(t[b'is_onion']):
+           n = b'onion'
+         else:
+           n = b'i2p'
+         naddr = (b'%s' % (t[b'onion']))
+         nport = (b'%s' % (t[b'port']))
+         s = ('zero://%s.%s:%s' % (naddr,n,nport))
+         nt.append(s)
+      i = i + 1
+    return nt
+           
+def zeronet_config_merge_write(trackers):
+    oldt = zeronet_config_read()
+    old_trackers = oldt[b'trackers']
+    otl = len(old_trackers)
+    tl = len(trackers)
+    if(otl==0 or tl==0):
+         oldt[b'trackers'] = zeronet_trackers_format(trackers,True)
+         return zeronet_config_write(oldt)
+    trackers = zeronet_trackers_format(trackers,False)
+    tl = len(trackers)
+    i = 0
+    j = 0
+    nt = []
+    can_add = True
+    while(i < tl):
+        j = 0
+        while(j < otl):
+          if (trackers[i] == old_trackers[j]):
+             can_add = False
+             j = otl
+          j = j + 1
+
+        if(can_add):
+          nt.append(trackers[i])
+        else:
+          can_add = True
+        i = i + 1
+    trackers = nt
+    i = 0
+    while(i < otl):
+        trackers.append(old_trackers[i])
+        i = i + 1
+    oldt[b'trackers'] = trackers
+    return zeronet_config_write(oldt)
+
+def trackers_json_read(dir):
+    try:
+        e = {};
+        e[b'trackers'] = []
+        if(trackers_json_exists(dir)):
+           fp = open(trackers_json(dir),b'rb')
+           e = fp.read()
+           fp.close()
+           e = json.loads(e)
+           e = utoba(e)
+           f = e[b'trackers']
+           n = []
+           fl = len(f)
+           i = 0
+           while (i<fl):
+              f[i] = f[i].encode()
+              f[i] = from_trackers(f[i])
+              n.append(f[i])
+              i = i + 1
+           e[b'trackers'] = n
+    except:
+       e = {}
+       e[b'trackers'] = []
+    return e
+
+def trackers_json_read_ex(dir):
+    e = trackers_json_read(dir)
+    n = e[b'trackers']
+    n_len = len(n)
+    i = 0
+    g = []
+    while(i<n_len):
+       if(n[i][b'port'] > 0):
+         g.append(n[i])
+       i = i + 1
+    e[b'trackers'] = g
+    return e
+
+def trackers2_json_read(dir):
+    try:
+        e = {};
+        e[b'trackers'] = []
+        if(trackers2_json_exists(dir)):
+           fp = open(trackers2_json(dir),b'rb')
+           e = fp.read()
+           fp.close()
+           e = json.loads(e)
+           e = utoba(e)
+           f = e[b'trackers']
+           n = []
+           fl = len(f)
+           i = 0
+           while (i<fl):
+              f[i] = f[i].encode()
+              f[i] = from_trackers(f[i])
+              n.append(f[i])
+              i = i + 1
+           e[b'trackers'] = n
+    except:
+       e = {}
+       e[b'trackers'] = []
+    return e
+
+def trackers2_json_read_ex(dir):
+    e = trackers2_json_read(dir)
+    n = e[b'trackers']
+    n_len = len(n)
+    i = 0
+    g = []
+    while(i<n_len):
+       if(n[i][b'port'] > 0):
+         g.append(n[i])
+       i = i + 1
+    e[b'trackers'] = g
+    return e
+
+def zeronet_config_merge_write_ex(dir):
+    e = trackers2_json_read_ex(dir)
+    return zeronet_config_merge_write(e[b'trackers'])
+
+def trackers_json_read_raw(dir):
+    try:
+        e = {};
+        e[b'trackers'] = []
+        if(trackers_json_exists(dir)):
+          fp = open(trackers_json(dir),b'rb')
+          e = fp.read()
+          fp.close()
+          e = json.loads(e)
+          e = utoba(e)
+          nt = e[b'trackers']
+          lnt = len(nt)
+          i = 0
+          while(i<lnt):
+            nt[i] = nt[i].encode()
+            i = i + 1
+          e[b'trackers'] = nt
+    except:
+        e = {}
+        e[b'trackers'] = []
+    return e
+
+def trackers2_json_read_raw(dir):
+    try:
+        e = {};
+        e[b'trackers'] = []
+        if(trackers2_json_exists(dir)):
+          fp = open(trackers2_json(dir),b'rb')
+          e = fp.read()
+          fp.close()
+          e = json.loads(e)
+          e = utoba(e)
+          nt = e[b'trackers']
+          lnt = len(nt)
+          i = 0
+          while(i<lnt):
+            nt[i] = nt[i].encode()
+            i = i + 1
+          e[b'trackers'] = nt
+    except: 
+        e = {}
+        e[b'trackers'] = []
+    return e
+
+
+def to_trackers_onion(key,value,port):
     ne = {}
     ne[b'onion'] = key
     ne[b'privatekey'] = value
     ne[b'port'] = port
+    ne[b'is_i2p'] = False
+    ne[b'is_onion'] = True
     str = json.dumps(ne)
     str = Replacer(binascii.b2a_base64(str).encode(),b'\n',b'')
     str = (b'base64:%s' % (str))
     return str
 
+def to_trackers_i2p(key,value,port):
+    ne = {}
+    ne[b'onion'] = key
+    ne[b'privatekey'] = value
+    ne[b'port'] = port
+    ne[b'is_i2p'] = True
+    ne[b'is_onion'] = False
+    str = json.dumps(ne)
+    str = Replacer(binascii.b2a_base64(str).encode(),b'\n',b'')
+    str = (b'base64:%s' % (str))
+    return str 
+
 def from_trackers(ne):
-    str = Replacer(ne,b'base64:',b'')
-    str = binascii.a2b_base64(str).encode()
-    ne = json.loads(str)
-    ne = utoba(ne)
-    ne[b'onion'] = ne[b'onion'].encode()
-    ne[b'privatekey'] = ne[b'privatekey'].encode()
-    ne[b'port'] = int(ne[b'port'])
+    try:
+        str = Replacer(ne,b'base64:',b'')
+        str = binascii.a2b_base64(str).encode()
+        ne = json.loads(str)
+        ne = utoba(ne)
+        ne[b'onion'] = ne[b'onion'].encode()
+        ne[b'privatekey'] = ne[b'privatekey'].encode()
+        ne[b'port'] = int(ne[b'port'])
+        ne[b'is_i2p'] = bool(ne[b'is_i2p'])
+        ne[b'is_onion'] = bool(ne[b'is_onion'])
+    except:
+        ne = {}
+        ne[b'onion'] = b''
+        ne[b'privatekey'] = b''
+        ne[b'port'] = 0
+        ne[b'is_i2p'] = False
+        ne[b'is_onion'] = False
     return ne
 
-def trackers_add(trackers,key,value,port):
-    trackers.append(to_trackers(key,value,port))
+def trackers_add_i2p(trackers,key,value,port):
+    trackers.append(to_trackers_i2p(key,value,port))
     return trackers
 
-def trackers_json_write(trackers):
-    if(trackers_json_exists()):
+def trackers_add_onion(trackers,key,value,port):
+    trackers.append(to_trackers_onion(key,value,port))
+    return trackers 
+
+def trackers_json_write(dir,trackers):
+    if(trackers_json_exists(dir)):
       e = {};
       e[b'trackers'] = trackers
       js = json.dumps(e)
-      fp = open(trackers_json(),b'wb')
+      fp = open(trackers_json(dir),b'wb')
       fp.write(js)
       fp.close()
       return True
     return False
+
+def trackers2_json_write(dir,trackers):
+    if(trackers2_json_exists(dir)):
+      e = {};
+      e[b'trackers'] = trackers
+      js = json.dumps(e)
+      fp = open(trackers2_json(dir),b'wb')
+      fp.write(js)
+      fp.close()
+      return True
+    return False
+
+def trackers_merge_json_write(dir,trackers):
+    old_trackers = trackers_json_read_raw(dir)
+    old_trackers = old_trackers[b'trackers']
+    otl = len(old_trackers)
+    tl = len(trackers)
+    if(otl==0 or tl==0):
+      return False
+    i = 0
+    j = 0  
+    nt = []
+    can_add = True
+    while(i < tl):    
+        j = 0
+        while(j < otl):  
+          if (trackers[i] == old_trackers[j]):
+             can_add = False
+             j = otl
+          j = j + 1
+
+        if(can_add):
+          nt.append(trackers[i])
+        else: 
+          can_add = True 
+        i = i + 1
+
+    trackers = nt
+    i = 0
+    while(i < otl):
+        trackers.append(old_trackers[i])
+        i = i + 1
+    return trackers_json_write(dir,trackers)
+
+
+def trackers2_merge_json_write(dir,trackers):
+    old_trackers = trackers2_json_read_raw(dir)
+    old_trackers = old_trackers[b'trackers']
+    otl = len(old_trackers)
+    tl = len(trackers)
+    if(otl==0 or tl==0):
+      return False
+    i = 0  
+    j = 0    
+    nt = []  
+    can_add = True
+    while(i < tl):
+        j = 0
+        while(j < otl):
+          if (trackers[i] == old_trackers[j]):
+             can_add = False
+             j = otl
+          j = j + 1
+
+        if(can_add):
+          nt.append(trackers[i])
+        else:
+          can_add = True
+        i = i + 1
+
+    trackers = nt
+    i = 0
+    while(i < otl):
+        trackers.append(old_trackers[i])
+        i = i + 1
+    return trackers2_json_write(dir,trackers)
+
+def trackers_json_exists_i2p():
+    return trackers_json_exists(trackers_i2p_dir())
+
+def trackers2_json_exists_i2p():
+    return trackers2_json_exists(trackers_i2p_dir())
+
+def trackers_json_read_i2p():
+    return trackers_json_read(trackers_i2p_dir())
+    
+def trackers2_json_read_i2p():
+    return trackers2_json_read(trackers_i2p_dir())
+
+def trackers_json_read_ex_i2p():
+    return trackers_json_read_ex(trackers_i2p_dir())
+
+def trackers2_json_read_ex_i2p():
+    return trackers2_json_read_ex(trackers_i2p_dir())
+
+def trackers_json_read_raw_i2p():
+    return trackers_json_read_raw(trackers_i2p_dir())
+
+def trackers2_json_read_raw_i2p():
+    return trackers2_json_read_raw(trackers_i2p_dir())
+
+def trackers_merge_json_write_i2p(trackers):
+    return trackers_merge_json_write(trackers_i2p_dir(),trackers)
+
+def trackers2_merge_json_write_i2p(trackers):
+    return trackers2_merge_json_write(trackers_i2p_dir(),trackers)
+
+def trackers_json_write_i2p(trackers):
+    return trackers_json_write(trackers_i2p_dir(),trackers)
+
+def trackers2_json_write_i2p(trackers):
+    return trackers2_json_write(trackers_i2p_dir(),trackers)
+
+def zeronet_config_merge_write_ex_i2p():
+    return zeronet_config_merge_write_ex(trackers_i2p_dir())
+
+def trackers_json_exists_onion():
+    return trackers_json_exists(trackers_onion_dir())
+
+def trackers2_json_exists_onion():
+    return trackers2_json_exists(trackers_onion_dir())
+
+def trackers_json_read_onion():
+    return trackers_json_read(trackers_onion_dir())
+
+def trackers2_json_read_onion():
+    return trackers2_json_read(trackers_onion_dir())
+
+def trackers_json_read_ex_onion():
+    return trackers_json_read_ex(trackers_onion_dir())
+
+def trackers2_json_read_ex_onion():
+    return trackers2_json_read_ex(trackers_onion_dir())
+
+def trackers_json_read_raw_onion():
+    return trackers_json_read_raw(trackers_onion_dir())
+
+def trackers2_json_read_raw_onion():
+    return trackers2_json_read_raw(trackers_onion_dir())
+
+def trackers_merge_json_write_onion(trackers):
+    return trackers_merge_json_write(trackers_onion_dir(),trackers)
+
+def trackers2_merge_json_write_onion(trackers):
+    return trackers2_merge_json_write(trackers_onion_dir(),trackers)
+
+def trackers_json_write_onion(trackers):
+    return trackers_json_write(trackers_onion_dir(),trackers)
+
+def trackers2_json_write_onion(trackers):
+    return trackers2_json_write(trackers_onion_dir(),trackers)
+
+def zeronet_config_merge_write_ex_onion():
+    return zeronet_config_merge_write_ex(trackers_onion_dir())
 
 def create_settings():
     if os.path.isfile('settings.json'):

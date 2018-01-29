@@ -1,0 +1,120 @@
+[2018-01-28 23:49:15,244] DEBUG    PluginManager Loading plugin: AnnounceZero
+[2018-01-28 23:49:15,254] DEBUG    PluginManager New plugin registered to: Site
+[2018-01-28 23:49:15,255] DEBUG    PluginManager Loading plugin: Bigfile
+[2018-01-28 23:49:15,290] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-01-28 23:49:15,290] DEBUG    PluginManager New plugin registered to: UiWebsocket
+[2018-01-28 23:49:15,290] DEBUG    PluginManager New plugin registered to: ContentManager
+[2018-01-28 23:49:15,290] DEBUG    PluginManager New plugin registered to: SiteStorage
+[2018-01-28 23:49:15,291] DEBUG    PluginManager New plugin registered to: WorkerManager
+[2018-01-28 23:49:15,291] DEBUG    PluginManager New plugin registered to: FileRequest
+[2018-01-28 23:49:15,291] DEBUG    PluginManager New plugin registered to: Peer
+[2018-01-28 23:49:15,291] DEBUG    PluginManager New plugin registered to: Site
+[2018-01-28 23:49:15,291] DEBUG    PluginManager New plugin registered to: ConfigPlugin
+[2018-01-28 23:49:15,291] DEBUG    PluginManager Loading plugin: Cors
+[2018-01-28 23:49:15,306] DEBUG    - Translate file not exists: src/Translate/languages/en.json
+[2018-01-28 23:49:15,306] DEBUG    - Translate file not exists: plugins/Cors/languages/en.json
+[2018-01-28 23:49:15,306] DEBUG    PluginManager New plugin registered to: UiWebsocket
+[2018-01-28 23:49:15,306] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-01-28 23:49:15,307] DEBUG    PluginManager Loading plugin: CryptMessage
+[2018-01-28 23:49:15,331] DEBUG    - Opening libssl.so.1.0.0...
+[2018-01-28 23:49:15,331] DEBUG    - Disabled SSL compression on <CDLL 'libssl.so.1.0.0', handle 2b5e490 at 2f26510>
+[2018-01-28 23:49:15,332] DEBUG    - Python SSL version: OpenSSL 1.0.1t  3 May 2016
+[2018-01-28 23:49:15,338] DEBUG    - opensslVerify loaded: <CDLL 'libssl.so.1.0.0', handle 2b5e490 at 2ed6c50>
+[2018-01-28 23:49:15,340] INFO     - OpenSSL loaded, version: 01000114F
+[2018-01-28 23:49:15,341] DEBUG    PluginManager New plugin registered to: UiWebsocket
+[2018-01-28 23:49:15,341] DEBUG    PluginManager New plugin registered to: User
+[2018-01-28 23:49:15,341] DEBUG    PluginManager Loading plugin: FilePack
+[2018-01-28 23:49:15,343] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-01-28 23:49:15,343] DEBUG    PluginManager New plugin registered to: SiteStorage
+[2018-01-28 23:49:15,344] DEBUG    PluginManager Loading plugin: MergerSite
+[2018-01-28 23:49:15,348] DEBUG    PluginManager New plugin registered to: ContentDb
+[2018-01-28 23:49:15,348] DEBUG    PluginManager New plugin registered to: WorkerManager
+[2018-01-28 23:49:15,349] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-01-28 23:49:15,349] DEBUG    PluginManager New plugin registered to: FileRequest
+[2018-01-28 23:49:15,349] DEBUG    PluginManager New plugin registered to: Site
+[2018-01-28 23:49:15,349] DEBUG    PluginManager New plugin registered to: ConfigPlugin
+[2018-01-28 23:49:15,358] DEBUG    - Translate file not exists: plugins/OptionalManager/languages/en.json
+[2018-01-28 23:49:15,358] DEBUG    PluginManager New plugin registered to: UiWebsocket
+[2018-01-28 23:49:15,358] DEBUG    - Translate file not exists: plugins/MergerSite/languages/en.json
+[2018-01-28 23:49:15,358] DEBUG    PluginManager New plugin registered to: UiWebsocket
+[2018-01-28 23:49:15,359] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-01-28 23:49:15,359] DEBUG    PluginManager New plugin registered to: SiteStorage
+[2018-01-28 23:49:15,359] DEBUG    PluginManager New plugin registered to: Site
+[2018-01-28 23:49:15,359] DEBUG    PluginManager New plugin registered to: SiteManager
+[2018-01-28 23:49:15,372] DEBUG    PluginManager Loading plugin: Mute
+[2018-01-28 23:49:15,373] DEBUG    - Translate file not exists: plugins/Mute/languages/en.json
+[2018-01-28 23:49:15,373] DEBUG    PluginManager New plugin registered to: UiWebsocket
+[2018-01-28 23:49:15,374] DEBUG    PluginManager New plugin registered to: SiteStorage
+[2018-01-28 23:49:15,374] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-01-28 23:49:15,374] DEBUG    PluginManager Loading plugin: Newsfeed
+[2018-01-28 23:49:15,381] DEBUG    PluginManager New plugin registered to: UiWebsocket
+[2018-01-28 23:49:15,382] DEBUG    PluginManager New plugin registered to: User
+[2018-01-28 23:49:15,382] DEBUG    PluginManager Loading plugin: OptionalManager
+[2018-01-28 23:49:15,382] DEBUG    PluginManager Loading plugin: PeerDb
+[2018-01-28 23:49:15,383] DEBUG    PluginManager New plugin registered to: ContentDb
+[2018-01-28 23:49:15,383] DEBUG    PluginManager Loading plugin: Sidebar
+[2018-01-28 23:49:15,386] DEBUG    - Translate file not exists: plugins/Sidebar/languages/en.json
+[2018-01-28 23:49:15,386] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-01-28 23:49:15,386] DEBUG    PluginManager New plugin registered to: UiWebsocket
+[2018-01-28 23:49:15,386] DEBUG    PluginManager Loading plugin: Stats
+[2018-01-28 23:49:15,388] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-01-28 23:49:15,388] DEBUG    PluginManager Loading plugin: TranslateSite
+[2018-01-28 23:49:15,389] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-01-28 23:49:15,389] DEBUG    PluginManager Loading plugin: Trayicon
+[2018-01-28 23:49:15,390] DEBUG    PluginManager Loading plugin: Zeroname
+[2018-01-28 23:49:15,391] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-01-28 23:49:15,392] DEBUG    PluginManager New plugin registered to: ConfigPlugin
+[2018-01-28 23:49:15,392] DEBUG    PluginManager New plugin registered to: SiteManager
+[2018-01-28 23:49:15,393] DEBUG    PluginManager New class accepts plugins: Peer (Loaded plugins: [<class 'Bigfile.BigfilePlugin.PeerPlugin'>, <class 'Peer.Peer.Peer'>])
+[2018-01-28 23:49:15,397] DEBUG    PluginManager New class accepts plugins: ContentDb (Loaded plugins: [<class 'PeerDb.PeerDbPlugin.ContentDbPlugin'>, <class 'OptionalManager.ContentDbPlugin.ContentDbPlugin'>, <class 'Content.ContentDb.ContentDb'>])
+[2018-01-28 23:49:15,399] DEBUG    Db:ContentDb Connected to data/content.db in 0.002s (opened: 1, sqlite version: 2.6.0)...
+[2018-01-28 23:49:15,399] DEBUG    Db:ContentDb Db check done in 0.000s, changed tables: []
+[2018-01-28 23:49:15,400] DEBUG    PluginManager New class accepts plugins: ContentManager (Loaded plugins: [<class 'Bigfile.BigfilePlugin.ContentManagerPlugin'>, <class 'Content.ContentManager.ContentManager'>])
+[2018-01-28 23:49:15,400] DEBUG    PluginManager New class accepts plugins: ConfigPlugin (Loaded plugins: [<class 'Zeroname.UiRequestPlugin.ConfigPlugin'>, <class 'OptionalManager.OptionalManagerPlugin.ConfigPlugin'>, <class 'Bigfile.BigfilePlugin.ConfigPlugin'>, <class 'Config.ConfigPlugin'>])
+[2018-01-28 23:49:15,405] DEBUG    - Config: Config(action='main', autodownload_bigfile_size_limit=1, batch=False, bind=None, bit_resolver='1Name2NXVi1RDPDgf5617UoW7xA6YrhM9F', coffeescript_compiler=None, config_file='zeronet.conf', connected_limit=8, data_dir='data', db_mode='speed', debug=False, debug_gevent=False, debug_socket=False, disable_db=False, disable_encryption=False, disable_sslcompression=True, disable_udp=False, download_optional='manual', end=True, file_size_limit=10, fileserver_ip='*', fileserver_port=15441, fix_float_decimals=False, homepage='1Jwmx33xCtuRe2UReHHxkritZ1nfuyXrrc', i2p='enable', i2p_bob_server='127.0.0.1:2827', i2p_controller='127.0.0.1:1234', i2p_cookiefile_path='/myservices/tor/control_auth_cookie', i2p_debug=False, i2p_hs_limit=10, i2p_http_proxy='127.0.0.1:4444', i2p_port_range_faktor=10, i2p_socks_proxy='127.0.0.1:1080', i2p_start=False, ip_external=None, ip_local=['127.0.0.1'], keep_ssl_cert=False, language='en', log_dir='log', max_files_opened=2048, msgpack_purepython=False, open_browser=None, optional_limit='10%', pin_bigfile=20, proxy=None, silent=False, size_limit=10, stack_size=None, stream_downloads=False, tor='always', tor_controller='127.0.0.1:9051', tor_hs_limit=10, tor_password=None, tor_proxy='127.0.0.1:9050', trackers=['http://retracker.spark-rostov.ru:80/announce', 'http://explodie.org:6969/announce', 'http://tracker.opentrackr.org:1337/announce', 'udp://9.rarbg.com:2710', 'udp://tracker.leechers-paradise.org:6969', 'udp://tracker.coppersurfer.tk:6969', 'zero://zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441', 'zero://boot3rdez4rzn36x.onion:15441'], trackers_file=False, ui_host=None, ui_ip='127.0.0.1', ui_port=43110, ui_restrict=False, updatesite='1KVLauCV3Ag9ZPry9cr1WvKQcyaev8gG2m', use_openssl=True, use_tempfiles=False, verbose=False, workers=5)
+[2018-01-28 23:49:15,406] INFO     - Version: 0.6.0 r3179, Python 2.7.3 (default, Jun 21 2016, 18:38:19) 
+[GCC 4.7.2], Gevent: 1.2.2
+[2018-01-28 23:49:15,408] DEBUG    PluginManager New class accepts plugins: FileRequest (Loaded plugins: [<class 'OptionalManager.OptionalManagerPlugin.FileRequestPlugin'>, <class 'Bigfile.BigfilePlugin.FileRequestPlugin'>, <class 'File.FileRequest.FileRequest'>])
+[2018-01-28 23:49:15,412] DEBUG    PluginManager New class accepts plugins: WorkerManager (Loaded plugins: [<class 'OptionalManager.OptionalManagerPlugin.WorkerManagerPlugin'>, <class 'Bigfile.BigfilePlugin.WorkerManagerPlugin'>, <class 'Worker.WorkerManager.WorkerManager'>])
+[2018-01-28 23:49:15,413] DEBUG    PluginManager New class accepts plugins: SiteStorage (Loaded plugins: [<class 'Mute.MutePlugin.SiteStoragePlugin'>, <class 'MergerSite.MergerSitePlugin.SiteStoragePlugin'>, <class 'FilePack.FilePackPlugin.SiteStoragePlugin'>, <class 'Bigfile.BigfilePlugin.SiteStoragePlugin'>, <class 'Site.SiteStorage.SiteStorage'>])
+[2018-01-28 23:49:15,413] DEBUG    PluginManager New class accepts plugins: SiteManager (Loaded plugins: [<class 'Zeroname.SiteManagerPlugin.SiteManagerPlugin'>, <class 'MergerSite.MergerSitePlugin.SiteManagerPlugin'>, <class 'Site.SiteManager.SiteManager'>])
+[2018-01-28 23:49:15,414] DEBUG    SiteManager SiteManager created.
+[2018-01-28 23:49:15,414] DEBUG    PluginManager New class accepts plugins: Site (Loaded plugins: [<class 'MergerSite.MergerSitePlugin.SitePlugin'>, <class 'OptionalManager.OptionalManagerPlugin.SitePlugin'>, <class 'Bigfile.BigfilePlugin.SitePlugin'>, <class 'AnnounceZero.AnnounceZeroPlugin.SitePlugin'>, <class 'Site.Site.Site'>])
+[2018-01-28 23:49:15,456] ERROR    - Unhandled exception: No module named I2PHelper
+Traceback (most recent call last):
+  File "zeronet.py", line 19, in main
+    main.start()
+  File "/myservices/ZeroNet/src/main.py", line 522, in start
+    actions.call(config.action, action_kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 171, in call
+    func(**kwargs)
+  File "/myservices/ZeroNet/src/main.py", line 176, in main
+    from File import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
+    from FileServer import FileServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
+    from Connection import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
+    from ConnectionServer import ConnectionServer
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 16, in <module>
+    from Tor import TorManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Tor/__init__.py", line 1, in <module>
+    from TorManager import TorManager
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+  File "/myservices/ZeroNet/src/Tor/TorManager.py", line 15, in <module>
+    from I2PHelper import *
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
+    result = _import(*args, **kwargs)
+ImportError: No module named I2PHelper
+[2018-01-28 23:49:15,461] DEBUG    SiteManager Save skipped: No sites found

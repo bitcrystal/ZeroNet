@@ -11,6 +11,8 @@ import atexit
 
 import gevent
 
+#from I2P import I2PHelper
+#from I2PHelper import *
 from Config import config
 from Crypt import CryptRsa
 from Site import SiteManager
@@ -23,7 +25,6 @@ from util import helper
 from Debug import Debug
 from Plugin import PluginManager
 
-
 @PluginManager.acceptPlugins
 class TorManager(object):
     def __init__(self, fileserver_ip=None, fileserver_port=None):
@@ -34,6 +35,9 @@ class TorManager(object):
         self.log = logging.getLogger("TorManager")
         self.start_onions = None
         self.conn = None
+        #self.trackers = []
+        #self.trackers_key = {}
+        
         self.lock = RLock()
 
         if config.tor == "disable":
@@ -190,6 +194,7 @@ class TorManager(object):
 
                 self.setStatus(u"Connected (%s)" % res_auth)
                 self.conn = conn
+                #self.loadOnions()
         except Exception, err:
             self.conn = None
             self.setStatus(u"Error (%s)" % err)
@@ -205,6 +210,22 @@ class TorManager(object):
         if self.enabled:
             self.log.debug("Start onions")
             self.start_onions = True
+
+    #def loadOnions(self):
+     #   if self.enabled:
+      #     l = len(self.privatekeys)
+       #    if l > 0:
+        #      for k in self.privatekeys:
+         #        v = self.privatekeys[k]
+          #       self.trackers.append(to_trackers_onion(k,v,self.fileserver_port))
+           #      self.trackers_key[k] = len(self.trackers) - 1
+            #  with self.lock:
+             #      trackers_json_write_onion(self.trackers)
+              #     zeronet_config_merge_write_ex_onion()
+              #self.setStatus(u"OK (%s onions running)" % l)
+           #return True
+        #else:
+         #  return False
 
     # Get new exit node ip
     def resetCircuits(self):
@@ -222,6 +243,10 @@ class TorManager(object):
         if result:
             onion_address, onion_privatekey = result
             self.privatekeys[onion_address] = onion_privatekey
+            #self.trackers.append(to_trackers_onion(k,v,self.fileserver_port))
+            #self.trackers_key[k] = len(self.trackers) - 1
+            #with self.lock: 
+            #     trackers_json_write_onion(self.trackers)
             self.setStatus(u"OK (%s onions running)" % len(self.privatekeys))
             SiteManager.peer_blacklist.append((onion_address + ".onion", self.fileserver_port))
             return onion_address
@@ -244,7 +269,11 @@ class TorManager(object):
         res = self.request("DEL_ONION %s" % address)
         if "250 OK" in res:
             del self.privatekeys[address]
-            self.setStatus("OK (%s onion running)" % len(self.privatekeys))
+           # del self.trackers[self.trackers_key[address]]
+           # del self.trackers_key[address]
+           # with self.lock:
+           #      trackers_json_write_onion(self.trackers)
+            self.setStatus("OK (%s onions running)" % len(self.privatekeys))
             return True
         else:
             self.setStatus(u"DelOnion error (%s)" % res)
