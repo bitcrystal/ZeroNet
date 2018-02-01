@@ -1,120 +1,1320 @@
-[2018-01-28 23:49:15,244] DEBUG    PluginManager Loading plugin: AnnounceZero
-[2018-01-28 23:49:15,254] DEBUG    PluginManager New plugin registered to: Site
-[2018-01-28 23:49:15,255] DEBUG    PluginManager Loading plugin: Bigfile
-[2018-01-28 23:49:15,290] DEBUG    PluginManager New plugin registered to: UiRequest
-[2018-01-28 23:49:15,290] DEBUG    PluginManager New plugin registered to: UiWebsocket
-[2018-01-28 23:49:15,290] DEBUG    PluginManager New plugin registered to: ContentManager
-[2018-01-28 23:49:15,290] DEBUG    PluginManager New plugin registered to: SiteStorage
-[2018-01-28 23:49:15,291] DEBUG    PluginManager New plugin registered to: WorkerManager
-[2018-01-28 23:49:15,291] DEBUG    PluginManager New plugin registered to: FileRequest
-[2018-01-28 23:49:15,291] DEBUG    PluginManager New plugin registered to: Peer
-[2018-01-28 23:49:15,291] DEBUG    PluginManager New plugin registered to: Site
-[2018-01-28 23:49:15,291] DEBUG    PluginManager New plugin registered to: ConfigPlugin
-[2018-01-28 23:49:15,291] DEBUG    PluginManager Loading plugin: Cors
-[2018-01-28 23:49:15,306] DEBUG    - Translate file not exists: src/Translate/languages/en.json
-[2018-01-28 23:49:15,306] DEBUG    - Translate file not exists: plugins/Cors/languages/en.json
-[2018-01-28 23:49:15,306] DEBUG    PluginManager New plugin registered to: UiWebsocket
-[2018-01-28 23:49:15,306] DEBUG    PluginManager New plugin registered to: UiRequest
-[2018-01-28 23:49:15,307] DEBUG    PluginManager Loading plugin: CryptMessage
-[2018-01-28 23:49:15,331] DEBUG    - Opening libssl.so.1.0.0...
-[2018-01-28 23:49:15,331] DEBUG    - Disabled SSL compression on <CDLL 'libssl.so.1.0.0', handle 2b5e490 at 2f26510>
-[2018-01-28 23:49:15,332] DEBUG    - Python SSL version: OpenSSL 1.0.1t  3 May 2016
-[2018-01-28 23:49:15,338] DEBUG    - opensslVerify loaded: <CDLL 'libssl.so.1.0.0', handle 2b5e490 at 2ed6c50>
-[2018-01-28 23:49:15,340] INFO     - OpenSSL loaded, version: 01000114F
-[2018-01-28 23:49:15,341] DEBUG    PluginManager New plugin registered to: UiWebsocket
-[2018-01-28 23:49:15,341] DEBUG    PluginManager New plugin registered to: User
-[2018-01-28 23:49:15,341] DEBUG    PluginManager Loading plugin: FilePack
-[2018-01-28 23:49:15,343] DEBUG    PluginManager New plugin registered to: UiRequest
-[2018-01-28 23:49:15,343] DEBUG    PluginManager New plugin registered to: SiteStorage
-[2018-01-28 23:49:15,344] DEBUG    PluginManager Loading plugin: MergerSite
-[2018-01-28 23:49:15,348] DEBUG    PluginManager New plugin registered to: ContentDb
-[2018-01-28 23:49:15,348] DEBUG    PluginManager New plugin registered to: WorkerManager
-[2018-01-28 23:49:15,349] DEBUG    PluginManager New plugin registered to: UiRequest
-[2018-01-28 23:49:15,349] DEBUG    PluginManager New plugin registered to: FileRequest
-[2018-01-28 23:49:15,349] DEBUG    PluginManager New plugin registered to: Site
-[2018-01-28 23:49:15,349] DEBUG    PluginManager New plugin registered to: ConfigPlugin
-[2018-01-28 23:49:15,358] DEBUG    - Translate file not exists: plugins/OptionalManager/languages/en.json
-[2018-01-28 23:49:15,358] DEBUG    PluginManager New plugin registered to: UiWebsocket
-[2018-01-28 23:49:15,358] DEBUG    - Translate file not exists: plugins/MergerSite/languages/en.json
-[2018-01-28 23:49:15,358] DEBUG    PluginManager New plugin registered to: UiWebsocket
-[2018-01-28 23:49:15,359] DEBUG    PluginManager New plugin registered to: UiRequest
-[2018-01-28 23:49:15,359] DEBUG    PluginManager New plugin registered to: SiteStorage
-[2018-01-28 23:49:15,359] DEBUG    PluginManager New plugin registered to: Site
-[2018-01-28 23:49:15,359] DEBUG    PluginManager New plugin registered to: SiteManager
-[2018-01-28 23:49:15,372] DEBUG    PluginManager Loading plugin: Mute
-[2018-01-28 23:49:15,373] DEBUG    - Translate file not exists: plugins/Mute/languages/en.json
-[2018-01-28 23:49:15,373] DEBUG    PluginManager New plugin registered to: UiWebsocket
-[2018-01-28 23:49:15,374] DEBUG    PluginManager New plugin registered to: SiteStorage
-[2018-01-28 23:49:15,374] DEBUG    PluginManager New plugin registered to: UiRequest
-[2018-01-28 23:49:15,374] DEBUG    PluginManager Loading plugin: Newsfeed
-[2018-01-28 23:49:15,381] DEBUG    PluginManager New plugin registered to: UiWebsocket
-[2018-01-28 23:49:15,382] DEBUG    PluginManager New plugin registered to: User
-[2018-01-28 23:49:15,382] DEBUG    PluginManager Loading plugin: OptionalManager
-[2018-01-28 23:49:15,382] DEBUG    PluginManager Loading plugin: PeerDb
-[2018-01-28 23:49:15,383] DEBUG    PluginManager New plugin registered to: ContentDb
-[2018-01-28 23:49:15,383] DEBUG    PluginManager Loading plugin: Sidebar
-[2018-01-28 23:49:15,386] DEBUG    - Translate file not exists: plugins/Sidebar/languages/en.json
-[2018-01-28 23:49:15,386] DEBUG    PluginManager New plugin registered to: UiRequest
-[2018-01-28 23:49:15,386] DEBUG    PluginManager New plugin registered to: UiWebsocket
-[2018-01-28 23:49:15,386] DEBUG    PluginManager Loading plugin: Stats
-[2018-01-28 23:49:15,388] DEBUG    PluginManager New plugin registered to: UiRequest
-[2018-01-28 23:49:15,388] DEBUG    PluginManager Loading plugin: TranslateSite
-[2018-01-28 23:49:15,389] DEBUG    PluginManager New plugin registered to: UiRequest
-[2018-01-28 23:49:15,389] DEBUG    PluginManager Loading plugin: Trayicon
-[2018-01-28 23:49:15,390] DEBUG    PluginManager Loading plugin: Zeroname
-[2018-01-28 23:49:15,391] DEBUG    PluginManager New plugin registered to: UiRequest
-[2018-01-28 23:49:15,392] DEBUG    PluginManager New plugin registered to: ConfigPlugin
-[2018-01-28 23:49:15,392] DEBUG    PluginManager New plugin registered to: SiteManager
-[2018-01-28 23:49:15,393] DEBUG    PluginManager New class accepts plugins: Peer (Loaded plugins: [<class 'Bigfile.BigfilePlugin.PeerPlugin'>, <class 'Peer.Peer.Peer'>])
-[2018-01-28 23:49:15,397] DEBUG    PluginManager New class accepts plugins: ContentDb (Loaded plugins: [<class 'PeerDb.PeerDbPlugin.ContentDbPlugin'>, <class 'OptionalManager.ContentDbPlugin.ContentDbPlugin'>, <class 'Content.ContentDb.ContentDb'>])
-[2018-01-28 23:49:15,399] DEBUG    Db:ContentDb Connected to data/content.db in 0.002s (opened: 1, sqlite version: 2.6.0)...
-[2018-01-28 23:49:15,399] DEBUG    Db:ContentDb Db check done in 0.000s, changed tables: []
-[2018-01-28 23:49:15,400] DEBUG    PluginManager New class accepts plugins: ContentManager (Loaded plugins: [<class 'Bigfile.BigfilePlugin.ContentManagerPlugin'>, <class 'Content.ContentManager.ContentManager'>])
-[2018-01-28 23:49:15,400] DEBUG    PluginManager New class accepts plugins: ConfigPlugin (Loaded plugins: [<class 'Zeroname.UiRequestPlugin.ConfigPlugin'>, <class 'OptionalManager.OptionalManagerPlugin.ConfigPlugin'>, <class 'Bigfile.BigfilePlugin.ConfigPlugin'>, <class 'Config.ConfigPlugin'>])
-[2018-01-28 23:49:15,405] DEBUG    - Config: Config(action='main', autodownload_bigfile_size_limit=1, batch=False, bind=None, bit_resolver='1Name2NXVi1RDPDgf5617UoW7xA6YrhM9F', coffeescript_compiler=None, config_file='zeronet.conf', connected_limit=8, data_dir='data', db_mode='speed', debug=False, debug_gevent=False, debug_socket=False, disable_db=False, disable_encryption=False, disable_sslcompression=True, disable_udp=False, download_optional='manual', end=True, file_size_limit=10, fileserver_ip='*', fileserver_port=15441, fix_float_decimals=False, homepage='1Jwmx33xCtuRe2UReHHxkritZ1nfuyXrrc', i2p='enable', i2p_bob_server='127.0.0.1:2827', i2p_controller='127.0.0.1:1234', i2p_cookiefile_path='/myservices/tor/control_auth_cookie', i2p_debug=False, i2p_hs_limit=10, i2p_http_proxy='127.0.0.1:4444', i2p_port_range_faktor=10, i2p_socks_proxy='127.0.0.1:1080', i2p_start=False, ip_external=None, ip_local=['127.0.0.1'], keep_ssl_cert=False, language='en', log_dir='log', max_files_opened=2048, msgpack_purepython=False, open_browser=None, optional_limit='10%', pin_bigfile=20, proxy=None, silent=False, size_limit=10, stack_size=None, stream_downloads=False, tor='always', tor_controller='127.0.0.1:9051', tor_hs_limit=10, tor_password=None, tor_proxy='127.0.0.1:9050', trackers=['http://retracker.spark-rostov.ru:80/announce', 'http://explodie.org:6969/announce', 'http://tracker.opentrackr.org:1337/announce', 'udp://9.rarbg.com:2710', 'udp://tracker.leechers-paradise.org:6969', 'udp://tracker.coppersurfer.tk:6969', 'zero://zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441', 'zero://boot3rdez4rzn36x.onion:15441'], trackers_file=False, ui_host=None, ui_ip='127.0.0.1', ui_port=43110, ui_restrict=False, updatesite='1KVLauCV3Ag9ZPry9cr1WvKQcyaev8gG2m', use_openssl=True, use_tempfiles=False, verbose=False, workers=5)
-[2018-01-28 23:49:15,406] INFO     - Version: 0.6.0 r3179, Python 2.7.3 (default, Jun 21 2016, 18:38:19) 
+[2018-02-01 23:08:33,282] DEBUG    PluginManager Loading plugin: AnnounceZero
+[2018-02-01 23:08:33,286] DEBUG    PluginManager New plugin registered to: Site
+[2018-02-01 23:08:33,286] DEBUG    PluginManager Loading plugin: Bigfile
+[2018-02-01 23:08:33,316] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-02-01 23:08:33,320] DEBUG    PluginManager New plugin registered to: UiWebsocket
+[2018-02-01 23:08:33,320] DEBUG    PluginManager New plugin registered to: ContentManager
+[2018-02-01 23:08:33,320] DEBUG    PluginManager New plugin registered to: SiteStorage
+[2018-02-01 23:08:33,320] DEBUG    PluginManager New plugin registered to: WorkerManager
+[2018-02-01 23:08:33,320] DEBUG    PluginManager New plugin registered to: FileRequest
+[2018-02-01 23:08:33,320] DEBUG    PluginManager New plugin registered to: Peer
+[2018-02-01 23:08:33,321] DEBUG    PluginManager New plugin registered to: Site
+[2018-02-01 23:08:33,325] DEBUG    PluginManager New plugin registered to: ConfigPlugin
+[2018-02-01 23:08:33,325] DEBUG    PluginManager Loading plugin: Chart
+[2018-02-01 23:08:33,355] DEBUG    Db:Chart Connected to data/chart.db in 0.007s (opened: 1, sqlite version: 2.6.0)...
+[2018-02-01 23:08:33,356] DEBUG    Db:Chart Db check done in 0.007s, changed tables: []
+[2018-02-01 23:08:33,356] DEBUG    PluginManager New plugin registered to: SiteManager
+[2018-02-01 23:08:33,356] DEBUG    PluginManager New plugin registered to: UiWebsocket
+[2018-02-01 23:08:33,357] DEBUG    PluginManager Loading plugin: Cors
+[2018-02-01 23:08:33,382] DEBUG    - Loaded translate file: src/Translate/languages/de.json (44 entries)
+[2018-02-01 23:08:33,382] DEBUG    - Translate file not exists: plugins/Cors/languages/de.json
+[2018-02-01 23:08:33,382] DEBUG    PluginManager New plugin registered to: UiWebsocket
+[2018-02-01 23:08:33,382] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-02-01 23:08:33,383] DEBUG    PluginManager Loading plugin: CryptMessage
+[2018-02-01 23:08:33,487] DEBUG    - Opening libssl.so.1.0.0...
+[2018-02-01 23:08:33,487] DEBUG    - Disabled SSL compression on <CDLL 'libssl.so.1.0.0', handle 17fbd50 at 1c3d190>
+[2018-02-01 23:08:33,488] DEBUG    - Python SSL version: OpenSSL 1.0.1t  3 May 2016
+[2018-02-01 23:08:33,502] DEBUG    - opensslVerify loaded: <CDLL 'libssl.so.1.0.0', handle 17fbd50 at 1bea8d0>
+[2018-02-01 23:08:33,509] INFO     - OpenSSL loaded, version: 01000114F
+[2018-02-01 23:08:33,511] DEBUG    PluginManager New plugin registered to: UiWebsocket
+[2018-02-01 23:08:33,511] DEBUG    PluginManager New plugin registered to: User
+[2018-02-01 23:08:33,511] DEBUG    PluginManager Loading plugin: FilePack
+[2018-02-01 23:08:33,518] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-02-01 23:08:33,522] DEBUG    PluginManager New plugin registered to: SiteStorage
+[2018-02-01 23:08:33,522] DEBUG    PluginManager Loading plugin: MergerSite
+[2018-02-01 23:08:33,541] DEBUG    PluginManager New plugin registered to: ContentDb
+[2018-02-01 23:08:33,545] DEBUG    PluginManager New plugin registered to: WorkerManager
+[2018-02-01 23:08:33,545] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-02-01 23:08:33,545] DEBUG    PluginManager New plugin registered to: FileRequest
+[2018-02-01 23:08:33,545] DEBUG    PluginManager New plugin registered to: Site
+[2018-02-01 23:08:33,546] DEBUG    PluginManager New plugin registered to: ConfigPlugin
+[2018-02-01 23:08:33,546] DEBUG    - Translate file not exists: plugins/OptionalManager/languages/de.json
+[2018-02-01 23:08:33,546] DEBUG    PluginManager New plugin registered to: UiWebsocket
+[2018-02-01 23:08:33,546] DEBUG    - Translate file not exists: plugins/MergerSite/languages/de.json
+[2018-02-01 23:08:33,547] DEBUG    PluginManager New plugin registered to: UiWebsocket
+[2018-02-01 23:08:33,547] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-02-01 23:08:33,547] DEBUG    PluginManager New plugin registered to: SiteStorage
+[2018-02-01 23:08:33,547] DEBUG    PluginManager New plugin registered to: Site
+[2018-02-01 23:08:33,547] DEBUG    PluginManager New plugin registered to: SiteManager
+[2018-02-01 23:08:33,547] DEBUG    PluginManager Loading plugin: Mute
+[2018-02-01 23:08:33,549] DEBUG    - Translate file not exists: plugins/Mute/languages/de.json
+[2018-02-01 23:08:33,553] DEBUG    PluginManager New plugin registered to: UiWebsocket
+[2018-02-01 23:08:33,555] DEBUG    PluginManager New plugin registered to: SiteStorage
+[2018-02-01 23:08:33,555] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-02-01 23:08:33,555] DEBUG    PluginManager Loading plugin: Newsfeed
+[2018-02-01 23:08:33,556] DEBUG    PluginManager New plugin registered to: UiWebsocket
+[2018-02-01 23:08:33,556] DEBUG    PluginManager New plugin registered to: User
+[2018-02-01 23:08:33,557] DEBUG    PluginManager Loading plugin: OptionalManager
+[2018-02-01 23:08:33,566] DEBUG    PluginManager Loading plugin: PeerDb
+[2018-02-01 23:08:33,569] DEBUG    PluginManager New plugin registered to: ContentDb
+[2018-02-01 23:08:33,570] DEBUG    PluginManager Loading plugin: Sidebar
+[2018-02-01 23:08:33,572] DEBUG    - Loaded translate file: plugins/Sidebar/languages/de.json (65 entries)
+[2018-02-01 23:08:33,572] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-02-01 23:08:33,572] DEBUG    PluginManager New plugin registered to: UiWebsocket
+[2018-02-01 23:08:33,572] DEBUG    PluginManager Loading plugin: Stats
+[2018-02-01 23:08:33,585] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-02-01 23:08:33,585] DEBUG    PluginManager Loading plugin: TranslateSite
+[2018-02-01 23:08:33,586] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-02-01 23:08:33,586] DEBUG    PluginManager Loading plugin: Trayicon
+[2018-02-01 23:08:33,587] DEBUG    PluginManager Loading plugin: Zeroname
+[2018-02-01 23:08:33,588] DEBUG    PluginManager New plugin registered to: UiRequest
+[2018-02-01 23:08:33,588] DEBUG    PluginManager New plugin registered to: ConfigPlugin
+[2018-02-01 23:08:33,593] DEBUG    PluginManager New plugin registered to: SiteManager
+[2018-02-01 23:08:33,595] DEBUG    PluginManager New class accepts plugins: Peer (Loaded plugins: [<class 'Bigfile.BigfilePlugin.PeerPlugin'>, <class 'Peer.Peer.Peer'>])
+[2018-02-01 23:08:33,607] DEBUG    PluginManager New class accepts plugins: ContentDb (Loaded plugins: [<class 'PeerDb.PeerDbPlugin.ContentDbPlugin'>, <class 'OptionalManager.ContentDbPlugin.ContentDbPlugin'>, <class 'Content.ContentDb.ContentDb'>])
+[2018-02-01 23:08:33,608] DEBUG    Db:ContentDb Connected to data/content.db in 0.001s (opened: 2, sqlite version: 2.6.0)...
+[2018-02-01 23:08:33,608] DEBUG    Db:ContentDb Db check done in 0.000s, changed tables: []
+[2018-02-01 23:08:33,611] DEBUG    PluginManager New class accepts plugins: ContentManager (Loaded plugins: [<class 'Bigfile.BigfilePlugin.ContentManagerPlugin'>, <class 'Content.ContentManager.ContentManager'>])
+[2018-02-01 23:08:33,611] DEBUG    PluginManager New class accepts plugins: ConfigPlugin (Loaded plugins: [<class 'Zeroname.UiRequestPlugin.ConfigPlugin'>, <class 'OptionalManager.OptionalManagerPlugin.ConfigPlugin'>, <class 'Bigfile.BigfilePlugin.ConfigPlugin'>, <class 'Config.ConfigPlugin'>])
+[2018-02-01 23:08:33,624] DEBUG    - Config: Config(action='main', autodownload_bigfile_size_limit=1, batch=False, bind=None, bit_resolver='1Name2NXVi1RDPDgf5617UoW7xA6YrhM9F', coffeescript_compiler=None, config_file='zeronet.conf', connected_limit=8, data_dir='data', db_mode='speed', debug=False, debug_socket=False, disable_db=False, disable_encryption=False, disable_sslcompression=True, disable_udp=False, download_optional='manual', end=True, file_size_limit=10, fileserver_ip='*', fileserver_port=15441, fix_float_decimals=False, global_connected_limit=512, homepage='1Jwmx33xCtuRe2UReHHxkritZ1nfuyXrrc', i2p='enable', i2p_bob_server='127.0.0.1:2827', i2p_controller='127.0.0.1:1234', i2p_cookiefile_path='/myservices/tor/control_auth_cookie', i2p_debug=False, i2p_hs_limit=10, i2p_http_proxy='127.0.0.1:4444', i2p_port_range_faktor=10, i2p_socks_proxy='127.0.0.1:1080', i2p_start=False, ip_external=None, ip_local=['127.0.0.1'], keep_ssl_cert=False, language='de', log_dir='log', max_files_opened=2048, msgpack_purepython=False, open_browser=None, optional_limit='10%', pin_bigfile=20, proxy=None, silent=False, size_limit=10, stack_size=None, stream_downloads=False, tor='enable', tor_controller='127.0.0.1:9051', tor_hs_limit=10, tor_password=None, tor_proxy='127.0.0.1:9050', trackers=['http://retracker.spark-rostov.ru:80/announce', 'http://explodie.org:6969/announce', 'http://tracker.opentrackr.org:1337/announce', 'udp://9.rarbg.com:2710', 'udp://tracker.leechers-paradise.org:6969', 'udp://tracker.coppersurfer.tk:6969', 'zero://zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441', 'zero://boot3rdez4rzn36x.onion:15441'], trackers_file=False, ui_host=None, ui_ip='127.0.0.1', ui_port=43110, ui_restrict=False, updatesite='1KVLauCV3Ag9ZPry9cr1WvKQcyaev8gG2m', use_openssl=True, use_tempfiles=False, verbose=False, workers=5)
+[2018-02-01 23:08:33,625] INFO     - Version: 0.6.1 r3230, Python 2.7.3 (default, Jun 21 2016, 18:38:19) 
 [GCC 4.7.2], Gevent: 1.2.2
-[2018-01-28 23:49:15,408] DEBUG    PluginManager New class accepts plugins: FileRequest (Loaded plugins: [<class 'OptionalManager.OptionalManagerPlugin.FileRequestPlugin'>, <class 'Bigfile.BigfilePlugin.FileRequestPlugin'>, <class 'File.FileRequest.FileRequest'>])
-[2018-01-28 23:49:15,412] DEBUG    PluginManager New class accepts plugins: WorkerManager (Loaded plugins: [<class 'OptionalManager.OptionalManagerPlugin.WorkerManagerPlugin'>, <class 'Bigfile.BigfilePlugin.WorkerManagerPlugin'>, <class 'Worker.WorkerManager.WorkerManager'>])
-[2018-01-28 23:49:15,413] DEBUG    PluginManager New class accepts plugins: SiteStorage (Loaded plugins: [<class 'Mute.MutePlugin.SiteStoragePlugin'>, <class 'MergerSite.MergerSitePlugin.SiteStoragePlugin'>, <class 'FilePack.FilePackPlugin.SiteStoragePlugin'>, <class 'Bigfile.BigfilePlugin.SiteStoragePlugin'>, <class 'Site.SiteStorage.SiteStorage'>])
-[2018-01-28 23:49:15,413] DEBUG    PluginManager New class accepts plugins: SiteManager (Loaded plugins: [<class 'Zeroname.SiteManagerPlugin.SiteManagerPlugin'>, <class 'MergerSite.MergerSitePlugin.SiteManagerPlugin'>, <class 'Site.SiteManager.SiteManager'>])
-[2018-01-28 23:49:15,414] DEBUG    SiteManager SiteManager created.
-[2018-01-28 23:49:15,414] DEBUG    PluginManager New class accepts plugins: Site (Loaded plugins: [<class 'MergerSite.MergerSitePlugin.SitePlugin'>, <class 'OptionalManager.OptionalManagerPlugin.SitePlugin'>, <class 'Bigfile.BigfilePlugin.SitePlugin'>, <class 'AnnounceZero.AnnounceZeroPlugin.SitePlugin'>, <class 'Site.Site.Site'>])
-[2018-01-28 23:49:15,456] ERROR    - Unhandled exception: No module named I2PHelper
+[2018-02-01 23:08:33,627] DEBUG    PluginManager New class accepts plugins: FileRequest (Loaded plugins: [<class 'OptionalManager.OptionalManagerPlugin.FileRequestPlugin'>, <class 'Bigfile.BigfilePlugin.FileRequestPlugin'>, <class 'File.FileRequest.FileRequest'>])
+[2018-02-01 23:08:33,639] DEBUG    PluginManager New class accepts plugins: WorkerManager (Loaded plugins: [<class 'OptionalManager.OptionalManagerPlugin.WorkerManagerPlugin'>, <class 'Bigfile.BigfilePlugin.WorkerManagerPlugin'>, <class 'Worker.WorkerManager.WorkerManager'>])
+[2018-02-01 23:08:33,640] DEBUG    PluginManager New class accepts plugins: SiteStorage (Loaded plugins: [<class 'Mute.MutePlugin.SiteStoragePlugin'>, <class 'MergerSite.MergerSitePlugin.SiteStoragePlugin'>, <class 'FilePack.FilePackPlugin.SiteStoragePlugin'>, <class 'Bigfile.BigfilePlugin.SiteStoragePlugin'>, <class 'Site.SiteStorage.SiteStorage'>])
+[2018-02-01 23:08:33,640] DEBUG    PluginManager New class accepts plugins: SiteManager (Loaded plugins: [<class 'Zeroname.SiteManagerPlugin.SiteManagerPlugin'>, <class 'MergerSite.MergerSitePlugin.SiteManagerPlugin'>, <class 'Chart.ChartPlugin.SiteManagerPlugin'>, <class 'Site.SiteManager.SiteManager'>])
+[2018-02-01 23:08:33,641] DEBUG    SiteManager SiteManager created.
+[2018-02-01 23:08:33,654] DEBUG    PluginManager New class accepts plugins: Site (Loaded plugins: [<class 'MergerSite.MergerSitePlugin.SitePlugin'>, <class 'OptionalManager.OptionalManagerPlugin.SitePlugin'>, <class 'Bigfile.BigfilePlugin.SitePlugin'>, <class 'AnnounceZero.AnnounceZeroPlugin.SitePlugin'>, <class 'Site.Site.Site'>])
+[2018-02-01 23:08:33,756] DEBUG    PluginManager New class accepts plugins: User (Loaded plugins: [<class 'Newsfeed.NewsfeedPlugin.UserPlugin'>, <class 'CryptMessage.CryptMessagePlugin.UserPlugin'>, <class 'User.User.User'>])
+[2018-02-01 23:08:33,759] DEBUG    PluginManager New class accepts plugins: UiWebsocket (Loaded plugins: [<class 'Sidebar.SidebarPlugin.UiWebsocketPlugin'>, <class 'Newsfeed.NewsfeedPlugin.UiWebsocketPlugin'>, <class 'Mute.MutePlugin.UiWebsocketPlugin'>, <class 'MergerSite.MergerSitePlugin.UiWebsocketPlugin'>, <class 'OptionalManager.UiWebsocketPlugin.UiWebsocketPlugin'>, <class 'CryptMessage.CryptMessagePlugin.UiWebsocketPlugin'>, <class 'Cors.CorsPlugin.UiWebsocketPlugin'>, <class 'Chart.ChartPlugin.UiWebsocketPlugin'>, <class 'Bigfile.BigfilePlugin.UiWebsocketPlugin'>, <class 'Ui.UiWebsocket.UiWebsocket'>])
+[2018-02-01 23:08:33,760] DEBUG    PluginManager New class accepts plugins: UiRequest (Loaded plugins: [<class 'Zeroname.UiRequestPlugin.UiRequestPlugin'>, <class 'TranslateSite.TranslateSitePlugin.UiRequestPlugin'>, <class 'Stats.StatsPlugin.UiRequestPlugin'>, <class 'Sidebar.SidebarPlugin.UiRequestPlugin'>, <class 'Mute.MutePlugin.UiRequestPlugin'>, <class 'MergerSite.MergerSitePlugin.UiRequestPlugin'>, <class 'OptionalManager.OptionalManagerPlugin.UiRequestPlugin'>, <class 'FilePack.FilePackPlugin.UiRequestPlugin'>, <class 'Cors.CorsPlugin.UiRequestPlugin'>, <class 'Bigfile.BigfilePlugin.UiRequestPlugin'>, <class 'Ui.UiRequest.UiRequest'>])
+[2018-02-01 23:08:33,761] INFO     - Creating FileServer....
+[2018-02-01 23:08:33,766] INFO     TorManager Connecting to Tor Controller 127.0.0.1:9051
+[2018-02-01 23:08:33,808] DEBUG    - Gevent block checker started
+[2018-02-01 23:08:33,817] DEBUG    TorManager > PROTOCOLINFO
+[2018-02-01 23:08:33,821] DEBUG    TorManager < 250-PROTOCOLINFO 1
+250-AUTH METHODS=COOKIE,SAFECOOKIE COOKIEFILE="/myservices/tor/control_auth_cookie"
+250-VERSION Tor="0.2.7.5"
+250 OK
+[2018-02-01 23:08:33,822] DEBUG    TorManager > AUTHENTICATE d55adafbd8bf2ba8d7f86d1ecc528e670690e36a58c9a12b0ce43ca9994d8d3e
+[2018-02-01 23:08:33,837] DEBUG    TorManager < 250 OK
+[2018-02-01 23:08:33,837] DEBUG    TorManager > GETINFO version
+[2018-02-01 23:08:33,837] DEBUG    TorManager < 250-version=0.2.7.5
+250 OK
+[2018-02-01 23:08:33,838] DEBUG    TorManager Tor proxy port 127.0.0.1:9050 check ok
+[2018-02-01 23:08:33,838] INFO     I2PManager Connecting to I2P Controller 127.0.0.1:1234
+[2018-02-01 23:08:33,840] DEBUG    I2PManager > PROTOCOLINFO
+[2018-02-01 23:08:33,877] DEBUG    I2PManager < Welcome to the server.
+250-PROTOCOLINFO 1
+250-AUTH METHODS=COOKIE,SAFECOOKIE COOKIEFILE="/myservices/tor/control_auth_cookie.i2p.auth"
+250-VERSION Tor="0.2.7.5"
+250 OK
+[2018-02-01 23:08:33,877] DEBUG    I2PManager > AUTHENTICATE 6562383434323435663463356231643663353261386532393866346434373466
+[2018-02-01 23:12:24,286] DEBUG    I2PManager < 250 OK
+[2018-02-01 23:12:24,286] DEBUG    I2PManager > GETINFO version
+[2018-02-01 23:12:24,325] DEBUG    I2PManager < 250-version=0.2.7.5
+250 OK
+[2018-02-01 23:12:24,339] DEBUG    I2PManager I2P proxy port 127.0.0.1:1234 check ok
+[2018-02-01 23:12:24,340] INFO     - Creating UiServer....
+[2018-02-01 23:12:24,345] DEBUG    SiteManager Sites not loaded yet...
+[2018-02-01 23:12:24,345] DEBUG    SiteManager Loading sites...
+[2018-02-01 23:12:24,384] DEBUG    Site:149EPB..zaCN ContentDb init: 0.013s, found files: 97, sites: 51
+[2018-02-01 23:12:24,394] DEBUG    SiteManager Loaded site 149EPBN4hQRpwj5TcoPETepnoXHCUXzaCN in 0.028s
+[2018-02-01 23:12:24,394] DEBUG    Site:1Br4MT..CFxh ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:24,409] DEBUG    SiteManager Loaded site 1Br4MT7PgsRET2APJkbhqqoxwL1CqcCFxh in 0.015s
+[2018-02-01 23:12:24,410] DEBUG    Site:1Gfey7..fcdp ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:24,411] DEBUG    SiteManager Loaded site 1Gfey7wVXXg1rxk751TBTxLJwhddDNfcdp in 0.001s
+[2018-02-01 23:12:24,411] DEBUG    Site:1GitLi..MQ4t ContentDb init: 0.000s, found files: 103, sites: 51
+[2018-02-01 23:12:24,425] DEBUG    SiteManager Loaded site 1GitLiXB6t5r8vuU2zC6a8GYj9ME6HMQ4t in 0.014s
+[2018-02-01 23:12:24,426] DEBUG    Site:1H3MA7..Zssb ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:24,426] DEBUG    SiteManager Loaded site 1H3MA7Dzu5jXAB4DURujKhxBeBXUDNZssb in 0.001s
+[2018-02-01 23:12:24,426] DEBUG    SiteManager Found new site in sites.json: 1BhArUMBcwMTtDBzcLyA3oaPUPZSdWt3wQ
+[2018-02-01 23:12:24,427] DEBUG    Site:1RepoX..HCc6 ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:24,427] DEBUG    SiteManager Loaded site 1RepoXU8bQE9m7ssNwL4nnxBnZVejHCc6 in 0.001s
+[2018-02-01 23:12:24,470] DEBUG    Site:1Gif7P..Xc7h ContentDb init: 0.042s, found files: 2640, sites: 51
+[2018-02-01 23:12:24,635] DEBUG    SiteManager Loaded site 1Gif7PqWTzVWDQ42Mo7np3zXmGAo3DXc7h in 0.207s
+[2018-02-01 23:12:24,637] DEBUG    Site:1A3o3D..8H87 ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:24,638] DEBUG    SiteManager Loaded site 1A3o3DnncsAGJoSQfpErDyX39Gz5TS8H87 in 0.001s
+[2018-02-01 23:12:24,666] DEBUG    Site:1SiTEs..tdwB ContentDb init: 0.028s, found files: 1443, sites: 51
+[2018-02-01 23:12:24,683] DEBUG    SiteManager Loaded site 1SiTEs2D3rCBxeMoLHXei2UYqFcxctdwB in 0.045s
+[2018-02-01 23:12:24,685] DEBUG    Site:1KVLau..gG2m ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:24,711] DEBUG    SiteManager Loaded site 1KVLauCV3Ag9ZPry9cr1WvKQcyaev8gG2m in 0.028s
+[2018-02-01 23:12:24,712] DEBUG    Site:1UPDat..fxsp ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:24,727] DEBUG    SiteManager Loaded site 1UPDatEDxnvHDo7TXvq6AEBARfNkyfxsp in 0.016s
+[2018-02-01 23:12:24,728] DEBUG    Site:1KjcBw..pTMC ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:24,729] DEBUG    SiteManager Loaded site 1KjcBwjHx388e4jGXmEKYvGuyrk2CMpTMC in 0.001s
+[2018-02-01 23:12:24,748] DEBUG    Site:1UDbAD..MkoV ContentDb init: 0.002s, found files: 688, sites: 51
+[2018-02-01 23:12:24,759] DEBUG    SiteManager Loaded site 1UDbADib99KE9d3qZ87NqJF2QLTHmMkoV in 0.030s
+[2018-02-01 23:12:24,760] DEBUG    Site:1Cn8tC..Hwys ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:24,760] DEBUG    SiteManager Loaded site 1Cn8tCr3i97AZTgXo6xyPMS2ciZvMCHwys in 0.001s
+[2018-02-01 23:12:24,777] DEBUG    Site:17ziJ8..xX8t ContentDb init: 0.016s, found files: 4, sites: 51
+[2018-02-01 23:12:24,778] DEBUG    SiteManager Loaded site 17ziJ8EcCdHMvAu811HMzBQ1KtVXF2xX8t in 0.017s
+[2018-02-01 23:12:24,778] DEBUG    Site:1Sickf..FFEs ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:24,779] DEBUG    SiteManager Loaded site 1SickfhMUKQURcdN9YHZeendi6jWJFFEs in 0.001s
+[2018-02-01 23:12:24,780] DEBUG    SiteManager Found new site in sites.json: 1FFuXJM1HUHBBxyRmCsVcaAerS6LLMRdkp
+[2018-02-01 23:12:24,780] DEBUG    Site:1MVADe..JfMK ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:24,789] DEBUG    SiteManager Loaded site 1MVADeKMmDnzv8UWBz6vpDwJZ5o3RRJfMK in 0.009s
+[2018-02-01 23:12:24,790] DEBUG    Site:1BLogC..AGg8 ContentDb init: 0.000s, found files: 70, sites: 51
+[2018-02-01 23:12:24,791] DEBUG    SiteManager Loaded site 1BLogC9LN4oPDcruNz3qo1ysa133E9AGg8 in 0.002s
+[2018-02-01 23:12:24,792] DEBUG    Site:1rNL2h..PAvz ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:24,792] DEBUG    SiteManager Loaded site 1rNL2hcK2hhJZWxM3wDTS5LANSnguPAvz in 0.001s
+[2018-02-01 23:12:24,805] DEBUG    Site:1DaXkb..jwcv ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:24,821] DEBUG    SiteManager Loaded site 1DaXkbpBN7d9h78T5mjB2gTV9Ui46Bjwcv in 0.029s
+[2018-02-01 23:12:24,822] DEBUG    Site:1BsRBz..YYau ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:24,835] DEBUG    SiteManager Loaded site 1BsRBzGdcYMbv72bwRy6pMxPLNL9obYYau in 0.013s
+[2018-02-01 23:12:24,835] DEBUG    SiteManager Found new site in sites.json: 1Mr2r33XUTykaCR9yXLhqdkx2DaNa9EALD
+[2018-02-01 23:12:24,836] DEBUG    Site:1BXLnS..6rts ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:24,837] DEBUG    SiteManager Loaded site 1BXLnSBQrCamckJfJoTfyyvpYXTvWy6rts in 0.001s
+[2018-02-01 23:12:24,842] DEBUG    Site:13EYKq..eLkc ContentDb init: 0.000s, found files: 2, sites: 51
+[2018-02-01 23:12:24,842] DEBUG    SiteManager Loaded site 13EYKqmPpwzBU4iaQq9Y4vfVMgj8dHeLkc in 0.001s
+[2018-02-01 23:12:24,849] DEBUG    Site:1HNYEH..nVA2 ContentDb init: 0.006s, found files: 6, sites: 51
+[2018-02-01 23:12:24,854] DEBUG    SiteManager Loaded site 1HNYEHtg6BPAW1jmWfBGPrRMxsPjd6nVA2 in 0.011s
+[2018-02-01 23:12:24,915] DEBUG    Site:1MaiL5..Ju27 ContentDb init: 0.060s, found files: 4186, sites: 51
+[2018-02-01 23:12:24,950] DEBUG    SiteManager Loaded site 1MaiL5gfBM1cyb4a8e3iiL8L5gXmoAJu27 in 0.096s
+[2018-02-01 23:12:24,951] DEBUG    Site:1Jz14w..jAkN ContentDb init: 0.000s, found files: 3, sites: 51
+[2018-02-01 23:12:24,973] DEBUG    SiteManager Loaded site 1Jz14wHx3i62BuBFDkwHMrd24xvYPgjAkN in 0.023s
+[2018-02-01 23:12:24,974] DEBUG    Site:1uPLoa..dmQc ContentDb init: 0.000s, found files: 32, sites: 51
+[2018-02-01 23:12:24,974] DEBUG    SiteManager Loaded site 1uPLoaDwKzP6MCGoVzw48r4pxawRBdmQc in 0.001s
+[2018-02-01 23:12:24,975] DEBUG    Site:1D1VGa..o3Ed ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:24,976] DEBUG    SiteManager Loaded site 1D1VGav5Wd1URqmQoRYCXFgXZMPRNbo3Ed in 0.001s
+[2018-02-01 23:12:24,976] DEBUG    Site:1JheKm..HQqx ContentDb init: 0.000s, found files: 2, sites: 51
+[2018-02-01 23:12:24,993] DEBUG    SiteManager Loaded site 1JheKmpBkc2Zab39UZXyK5m8ahAfe1HQqx in 0.017s
+[2018-02-01 23:12:24,994] DEBUG    Site:1AHweG..5Gkq ContentDb init: 0.000s, found files: 3, sites: 51
+[2018-02-01 23:12:24,995] DEBUG    SiteManager Loaded site 1AHweG1UEdH6gZ5cWr7o6J5y5yeVNU5Gkq in 0.002s
+[2018-02-01 23:12:24,996] DEBUG    Site:171amn..hRWj ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:24,997] DEBUG    SiteManager Loaded site 171amnchKeBrXnDVooTMKhHH9npTu1hRWj in 0.002s
+[2018-02-01 23:12:25,039] DEBUG    Site:1TaLkF..jipT ContentDb init: 0.022s, found files: 1878, sites: 51
+[2018-02-01 23:12:25,055] DEBUG    SiteManager Loaded site 1TaLkFrMwvbNsooF4ioKAY9EuxTBTjipT in 0.039s
+[2018-02-01 23:12:25,055] DEBUG    Site:14vBXT..RZTM ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:25,065] DEBUG    SiteManager Loaded site 14vBXTtk6Jk8Poa2HPDLZ9VgEwT2hSRZTM in 0.010s
+[2018-02-01 23:12:25,069] DEBUG    Site:19X5gH..Hjgc ContentDb init: 0.003s, found files: 1, sites: 51
+[2018-02-01 23:12:25,075] DEBUG    SiteManager Loaded site 19X5gH4DnWFGhjYCxHzun9BYmCJvBsHjgc in 0.010s
+[2018-02-01 23:12:25,076] DEBUG    Site:1FTZ3b..P6tq ContentDb init: 0.000s, found files: 3, sites: 51
+[2018-02-01 23:12:25,076] DEBUG    SiteManager Loaded site 1FTZ3bxSAGLrJWZNm8psJ1qZcqUA9KP6tq in 0.001s
+[2018-02-01 23:12:25,082] DEBUG    Site:1FZAVa..TN6H ContentDb init: 0.000s, found files: 2, sites: 51
+[2018-02-01 23:12:25,084] DEBUG    SiteManager Loaded site 1FZAVa7hak8pcVCvVSPz59z3f14CwSTN6H in 0.008s
+[2018-02-01 23:12:25,092] DEBUG    Site:1DuceV..UrtN ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:25,092] DEBUG    SiteManager Loaded site 1DuceV3ASWocATztxPXPCE6ooZNRzdUrtN in 0.008s
+[2018-02-01 23:12:25,096] DEBUG    Site:1GNTAK..ZYTL ContentDb init: 0.003s, found files: 68, sites: 51
+[2018-02-01 23:12:25,107] DEBUG    SiteManager Loaded site 1GNTAKCimBv5xEnt7QvkDn8sTkEPj7ZYTL in 0.015s
+[2018-02-01 23:12:25,108] DEBUG    Site:1DTpF9..3VK1 ContentDb init: 0.000s, found files: 3, sites: 51
+[2018-02-01 23:12:25,110] DEBUG    SiteManager Loaded site 1DTpF9Hv2yxPSxPDZSW5z98vd9PSx93VK1 in 0.002s
+[2018-02-01 23:12:25,113] DEBUG    Site:1LyXfj..QXGR ContentDb init: 0.000s, found files: 3, sites: 51
+[2018-02-01 23:12:25,115] DEBUG    SiteManager Loaded site 1LyXfjKcy5hW587iD7T6eTSQfqU7CCQXGR in 0.005s
+[2018-02-01 23:12:25,115] DEBUG    Site:1Jwmx3..Xrrc ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:25,116] DEBUG    SiteManager Loaded site 1Jwmx33xCtuRe2UReHHxkritZ1nfuyXrrc in 0.001s
+[2018-02-01 23:12:25,131] DEBUG    Site:14y3Se..bWeH ContentDb init: 0.015s, found files: 2, sites: 51
+[2018-02-01 23:12:25,132] DEBUG    SiteManager Loaded site 14y3SeSH7wvr3KqLiYQhbQRc9TCAPCbWeH in 0.016s
+[2018-02-01 23:12:25,134] DEBUG    Site:1MeFqF..q7nH ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:25,135] DEBUG    SiteManager Loaded site 1MeFqFfFFGQfa1J3gJyYYUvb5Lksczq7nH in 0.003s
+[2018-02-01 23:12:25,135] DEBUG    Site:1Name2..hM9F ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:25,145] DEBUG    SiteManager Loaded site 1Name2NXVi1RDPDgf5617UoW7xA6YrhM9F in 0.011s
+[2018-02-01 23:12:25,146] DEBUG    Site:1HeLLo..Tf3D ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:25,147] DEBUG    SiteManager Loaded site 1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D in 0.001s
+[2018-02-01 23:12:25,147] DEBUG    Site:1MRMXT..18wS ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:25,148] DEBUG    SiteManager Loaded site 1MRMXTpAK3q1BzF94GrgguRMewng2B18wS in 0.001s
+[2018-02-01 23:12:25,162] DEBUG    Site:1iD5ZQ..duGz ContentDb init: 0.000s, found files: 1, sites: 51
+[2018-02-01 23:12:25,163] DEBUG    SiteManager Loaded site 1iD5ZQJMNXu43w1qLB8sfdHVKppVMduGz in 0.002s
+[2018-02-01 23:12:25,163] DEBUG    Site:1iNDEx..RPcL ContentDb init: 0.000s, found files: 87, sites: 51
+[2018-02-01 23:12:25,164] DEBUG    SiteManager Loaded site 1iNDExENNBsfHc6SKmy1HaeasHhm3RPcL in 0.001s
+[2018-02-01 23:12:25,165] INFO     SiteManager Deleting orphan site from content.db: 1BhArUMBcwMTtDBzcLyA3oaPUPZSdWt3wQ
+[2018-02-01 23:12:25,171] INFO     SiteManager Deleting orphan site from content.db: 1FFuXJM1HUHBBxyRmCsVcaAerS6LLMRdkp
+[2018-02-01 23:12:25,177] INFO     SiteManager Deleting orphan site from content.db: 1Mr2r33XUTykaCR9yXLhqdkx2DaNa9EALD
+[2018-02-01 23:12:25,178] DEBUG    SiteManager SiteManager added 51 sites
+[2018-02-01 23:12:25,179] DEBUG    SiteManager Updated merger sites in 0.001s
+[2018-02-01 23:12:25,180] INFO     - Removing old SSL certs...
+[2018-02-01 23:12:25,183] INFO     - Starting servers....
+[2018-02-01 23:12:25,184] DEBUG    SiteManager Added new site: 1BhArUMBcwMTtDBzcLyA3oaPUPZSdWt3wQ
+[2018-02-01 23:12:25,190] DEBUG    Site:1BhArU..t3wQ ContentDb init: 0.001s, found files: 0, sites: 49
+[2018-02-01 23:12:25,196] DEBUG    Site:1BhArU..t3wQ ContentDb not initialized, load files from filesystem
+[2018-02-01 23:12:25,196] WARNING  Site:1BhArU..t3wQ Content.json not exist: data/1BhArUMBcwMTtDBzcLyA3oaPUPZSdWt3wQ/content.json
+[2018-02-01 23:12:25,439] DEBUG    SiteManager Saved sites in 0.24s (generate: 0.00s, write: 0.24s)
+[2018-02-01 23:12:25,440] DEBUG    SiteManager Updated merger sites in 0.001s
+[2018-02-01 23:12:25,441] DEBUG    SiteManager Added new site: 1FFuXJM1HUHBBxyRmCsVcaAerS6LLMRdkp
+[2018-02-01 23:12:25,442] DEBUG    Site:1FFuXJ..Rdkp ContentDb init: 0.001s, found files: 0, sites: 50
+[2018-02-01 23:12:25,442] DEBUG    Site:1FFuXJ..Rdkp ContentDb not initialized, load files from filesystem
+[2018-02-01 23:12:25,442] WARNING  Site:1FFuXJ..Rdkp Content.json not exist: data/1FFuXJM1HUHBBxyRmCsVcaAerS6LLMRdkp/content.json
+[2018-02-01 23:12:25,573] DEBUG    SiteManager Saved sites in 0.13s (generate: 0.00s, write: 0.13s)
+[2018-02-01 23:12:25,574] DEBUG    SiteManager Updated merger sites in 0.001s
+[2018-02-01 23:12:25,575] DEBUG    SiteManager Added new site: 1Mr2r33XUTykaCR9yXLhqdkx2DaNa9EALD
+[2018-02-01 23:12:25,576] DEBUG    Site:1Mr2r3..EALD ContentDb init: 0.001s, found files: 0, sites: 51
+[2018-02-01 23:12:25,576] DEBUG    Site:1Mr2r3..EALD ContentDb not initialized, load files from filesystem
+[2018-02-01 23:12:25,576] WARNING  Site:1Mr2r3..EALD Content.json not exist: data/1Mr2r33XUTykaCR9yXLhqdkx2DaNa9EALD/content.json
+[2018-02-01 23:12:25,707] DEBUG    SiteManager Saved sites in 0.13s (generate: 0.00s, write: 0.13s)
+[2018-02-01 23:12:25,708] DEBUG    SiteManager Updated merger sites in 0.001s
+[2018-02-01 23:12:25,709] INFO     Ui.UiServer --------------------------------------
+[2018-02-01 23:12:25,710] INFO     Ui.UiServer Web interface: http://127.0.0.1:43110/
+[2018-02-01 23:12:25,710] INFO     Ui.UiServer --------------------------------------
+[2018-02-01 23:12:25,712] DEBUG    - Current RLIMIT_NOFILE: 1024 (max: 4096), changing to 2048...
+[2018-02-01 23:12:27,182] DEBUG    Site:1BhArU..t3wQ Start downloading, bad_files: {u'content.json': 4}, check_size: True, blind_includes: True
+[2018-02-01 23:12:27,184] DEBUG    Site:1BhArU..t3wQ Need content.json first
+[2018-02-01 23:12:27,184] DEBUG    WorkerManager:1BhArU..t3wQ New task: content.json, peer lock: None, priority: 10000, optional_hash_id: None, tasks started: 1
+[2018-02-01 23:12:27,184] DEBUG    WorkerManager:1BhArU..t3wQ Starting workers, tasks: 1, peers: 0, workers: 0
+[2018-02-01 23:12:27,186] DEBUG    Site:1FFuXJ..Rdkp Start downloading, bad_files: {u'content.json': 5}, check_size: True, blind_includes: True
+[2018-02-01 23:12:27,186] DEBUG    Site:1FFuXJ..Rdkp Need content.json first
+[2018-02-01 23:12:27,187] DEBUG    WorkerManager:1FFuXJ..Rdkp New task: content.json, peer lock: None, priority: 10000, optional_hash_id: None, tasks started: 1
+[2018-02-01 23:12:27,187] DEBUG    WorkerManager:1FFuXJ..Rdkp Starting workers, tasks: 1, peers: 0, workers: 0
+[2018-02-01 23:12:27,187] DEBUG    Site:1Mr2r3..EALD Start downloading, bad_files: {u'content.json': 6}, check_size: True, blind_includes: True
+[2018-02-01 23:12:27,187] DEBUG    Site:1Mr2r3..EALD Need content.json first
+[2018-02-01 23:12:27,187] DEBUG    WorkerManager:1Mr2r3..EALD New task: content.json, peer lock: None, priority: 10000, optional_hash_id: None, tasks started: 1
+[2018-02-01 23:12:27,187] DEBUG    WorkerManager:1Mr2r3..EALD Starting workers, tasks: 1, peers: 0, workers: 0
+[2018-02-01 23:12:27,205] DEBUG    FileServer Checking sites...
+[2018-02-01 23:12:27,220] DEBUG    FileServer Conn# 1 zero.booth.moe [?] > Connecting...
+[2018-02-01 23:12:27,221] DEBUG    FileServer Conn# 2 boot3rdez4rzn36x.onion [?] > Connecting...
+[2018-02-01 23:12:27,231] DEBUG    TorManager Creating new Tor socket to boot3rdez4rzn36x.onion:15441
+[2018-02-01 23:12:27,245] DEBUG    - Generating RSA cert and key PEM files...Generating a 2048 bit RSA private key
+.....................................................................................................................+++
+................................+++
+unable to write 'random state'
+writing new private key to 'data/key-rsa.pem'
+-----
+[2018-02-01 23:12:27,246] DEBUG    FileServer Binding to: *:15441, (msgpack: 0.4.8), supported crypt: ['tls-rsa']
+[2018-02-01 23:12:27,258] DEBUG    Site:149EPB..zaCN 121 peers (12 with hashfield) loaded in 0.010s
+[2018-02-01 23:12:27,259] DEBUG    - Gevent block detected: 2.36455106735
+[2018-02-01 23:12:27,259] DEBUG    Site:1Br4MT..CFxh 1 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:27,274] DEBUG    Site:1Gfey7..fcdp 403 peers (0 with hashfield) loaded in 0.015s
+[2018-02-01 23:12:27,283] DEBUG    Site:1GitLi..MQ4t 98 peers (0 with hashfield) loaded in 0.008s
+[2018-02-01 23:12:27,285] DEBUG    Site:1H3MA7..Zssb 7 peers (0 with hashfield) loaded in 0.003s
+[2018-02-01 23:12:27,291] DEBUG    Site:1RepoX..HCc6 90 peers (0 with hashfield) loaded in 0.002s
+[2018-02-01 23:12:27,313] DEBUG    Site:1Gif7P..Xc7h 298 peers (15 with hashfield) loaded in 0.022s
+[2018-02-01 23:12:27,314] DEBUG    Site:1A3o3D..8H87 14 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:27,398] DEBUG    Site:1SiTEs..tdwB 1218 peers (0 with hashfield) loaded in 0.084s
+[2018-02-01 23:12:27,402] DEBUG    Site:1KVLau..gG2m 2 peers (0 with hashfield) loaded in 0.004s
+[2018-02-01 23:12:27,411] DEBUG    Site:1UPDat..fxsp 134 peers (0 with hashfield) loaded in 0.008s
+[2018-02-01 23:12:27,411] DEBUG    Site:1KjcBw..pTMC 7 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:27,434] DEBUG    Site:1UDbAD..MkoV 387 peers (0 with hashfield) loaded in 0.022s
+[2018-02-01 23:12:27,435] DEBUG    Site:1Cn8tC..Hwys 27 peers (0 with hashfield) loaded in 0.001s
+[2018-02-01 23:12:27,436] DEBUG    Site:17ziJ8..xX8t 13 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:27,436] DEBUG    Site:1Sickf..FFEs 17 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:27,437] DEBUG    Site:1MVADe..JfMK 12 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:27,472] DEBUG    Site:1BLogC..AGg8 675 peers (0 with hashfield) loaded in 0.035s
+[2018-02-01 23:12:27,473] DEBUG    Site:1rNL2h..PAvz 2 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:27,474] DEBUG    Site:1DaXkb..jwcv 63 peers (0 with hashfield) loaded in 0.001s
+[2018-02-01 23:12:27,475] DEBUG    Site:1BsRBz..YYau 23 peers (0 with hashfield) loaded in 0.001s
+[2018-02-01 23:12:27,475] DEBUG    Site:1BXLnS..6rts 8 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:27,476] DEBUG    Site:13EYKq..eLkc 59 peers (0 with hashfield) loaded in 0.001s
+[2018-02-01 23:12:27,497] DEBUG    Site:1HNYEH..nVA2 12 peers (0 with hashfield) loaded in 0.021s
+[2018-02-01 23:12:27,681] DEBUG    Db:ContentDb Loaded 14743 optional files: 58244.03MB, downloaded: 18.26MB in 0.183s
+[2018-02-01 23:12:27,717] DEBUG    Site:1MaiL5..Ju27 674 peers (0 with hashfield) loaded in 0.034s
+[2018-02-01 23:12:27,718] DEBUG    Site:1Jz14w..jAkN 6 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:27,819] DEBUG    Site:1uPLoa..dmQc 1142 peers (69 with hashfield) loaded in 0.101s
+[2018-02-01 23:12:27,821] DEBUG    Site:1D1VGa..o3Ed 1 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:27,822] DEBUG    Site:1JheKm..HQqx 2 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:27,822] DEBUG    Site:1AHweG..5Gkq 1 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:27,823] DEBUG    Site:171amn..hRWj 26 peers (0 with hashfield) loaded in 0.001s
+[2018-02-01 23:12:27,878] DEBUG    Site:1TaLkF..jipT 1138 peers (5 with hashfield) loaded in 0.055s
+[2018-02-01 23:12:27,880] DEBUG    Site:14vBXT..RZTM 1 peers (0 with hashfield) loaded in 0.002s
+[2018-02-01 23:12:27,882] DEBUG    Site:19X5gH..Hjgc 55 peers (1 with hashfield) loaded in 0.001s
+[2018-02-01 23:12:27,882] DEBUG    Site:1FTZ3b..P6tq 1 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:27,882] DEBUG    Site:1FZAVa..TN6H 4 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:27,882] DEBUG    Site:1DuceV..UrtN 1 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:27,889] DEBUG    Site:1GNTAK..ZYTL 49 peers (0 with hashfield) loaded in 0.006s
+[2018-02-01 23:12:27,890] DEBUG    Site:1DTpF9..3VK1 10 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:27,890] DEBUG    Site:1LyXfj..QXGR 9 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:27,891] DEBUG    Site:1Jwmx3..Xrrc 13 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:27,892] DEBUG    Site:14y3Se..bWeH 28 peers (0 with hashfield) loaded in 0.001s
+[2018-02-01 23:12:27,934] DEBUG    Site:1MeFqF..q7nH 698 peers (0 with hashfield) loaded in 0.043s
+[2018-02-01 23:12:28,024] DEBUG    Site:1Name2..hM9F 1660 peers (0 with hashfield) loaded in 0.089s
+[2018-02-01 23:12:28,123] DEBUG    Site:1HeLLo..Tf3D 1617 peers (0 with hashfield) loaded in 0.099s
+[2018-02-01 23:12:28,123] DEBUG    Site:1MRMXT..18wS 1 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:28,157] DEBUG    Site:1iD5ZQ..duGz 773 peers (14 with hashfield) loaded in 0.034s
+[2018-02-01 23:12:28,159] DEBUG    Site:1iNDEx..RPcL 83 peers (0 with hashfield) loaded in 0.002s
+[2018-02-01 23:12:28,159] DEBUG    Site:1BhArU..t3wQ 0 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:28,160] DEBUG    Site:1FFuXJ..Rdkp 0 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:28,160] DEBUG    Site:1Mr2r3..EALD 0 peers (0 with hashfield) loaded in 0.000s
+[2018-02-01 23:12:28,206] INFO     FileServer Checking port 15441 using portchecker.co...
+[2018-02-01 23:12:28,244] DEBUG    WorkerManager:1FFuXJ..Rdkp Starting workers, tasks: 1, peers: 0, workers: 0
+[2018-02-01 23:12:28,245] DEBUG    WorkerManager:1FFuXJ..Rdkp Added worker: 118.211.9.159:15441, workers: 1/5
+[2018-02-01 23:12:28,245] DEBUG    Site:1FFuXJ..Rdkp tracker.coppersurfer.tk:6969: Found 3 peers, new: 1, total: 1
+[2018-02-01 23:12:28,248] DEBUG    FileServer Conn# 3 118.211.9.159 [?] > Connecting...
+[2018-02-01 23:12:28,262] DEBUG    WorkerManager:1Mr2r3..EALD Starting workers, tasks: 1, peers: 0, workers: 0
+[2018-02-01 23:12:28,262] DEBUG    WorkerManager:1Mr2r3..EALD Added worker: 159.226.95.66:15441, workers: 1/5
+[2018-02-01 23:12:28,262] DEBUG    Site:1Mr2r3..EALD tracker.coppersurfer.tk:6969: Found 2 peers, new: 1, total: 1
+[2018-02-01 23:12:28,262] DEBUG    FileServer Conn# 4 159.226.95.66 [?] > Connecting...
+[2018-02-01 23:12:28,547] DEBUG    Site:1BhArU..t3wQ Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:12:28,549] DEBUG    Site:1Mr2r3..EALD Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:12:28,550] DEBUG    Site:1FFuXJ..Rdkp Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:12:28,631] DEBUG    FileServer Conn# 3 118.211.9.159 [?] > Closing connection: 118.211.9.159 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:28,632] DEBUG    WorkerManager:1FFuXJ..Rdkp 118.211.9.159:15441: Verify failed: content.json, error: Download failed, failed peers: 0, workers: 0
+[2018-02-01 23:12:28,644] DEBUG    FileServer Conn# 1 zero.booth.moe [?] > Closing connection: zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:28,645] DEBUG    Site:1BhArU..t3wQ Announce to zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441 failed: None
+[2018-02-01 23:12:28,645] DEBUG    Site:1Mr2r3..EALD Announce to zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441 failed: None
+[2018-02-01 23:12:28,645] DEBUG    Site:1FFuXJ..Rdkp Announce to zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441 failed: None
+[2018-02-01 23:12:29,252] DEBUG    FileServer Conn# 5 45.33.50.110 [?] > Incoming connection...
+[2018-02-01 23:12:29,252] DEBUG    FileServer Conn# 5 45.33.50.110 [v2] > Closing connection: MessageLoop ended, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:29,259] DEBUG    TorManager Start onions
+[2018-02-01 23:12:29,259] DEBUG    I2PManager Start i2ps
+[2018-02-01 23:12:29,279] DEBUG    TorManager > ADD_ONION NEW:RSA1024 port=15441
+[2018-02-01 23:12:29,301] DEBUG    TorManager < 250-ServiceID=hfckokgsms7ivcj3
+250-PrivateKey=RSA1024:MIICXQIBAAKBgQDEAZ+JgOSbbH0CPAnC3T1dq6gfLj9A2SCfDJwm5cYYCbCAhHuuqZ21/aJ8fWjJX0mHdZBw1QTOXERHGGQ0TnQLo/U+lPkO+/CpN3/tfZMFIfXB9rV8gzhv8GsGHb1o1ZNPo8hwqAVsliQbww9CWxcxDFbS6P96yji+m68SsuSkpwIDAQABAoGASqifnx2UdkstlqNNyIbC8CIJaM8R0t6hmVORSxOsj81pCJruDYqYAxE4Shjux/1eoZU7Tm8lZIEqlLYKvQ3BD17K3O/oaPcQpege+0Lt+jfYgyN3/R/7W8Xe7B2wUAtyUaFmrFnkNvTBm+G6U1eHgrjBJctMNUk0NsEgSLbCMJkCQQDzQnprgeR6Cu1EFo2AJ4MvABCSG36+hgqJuQrkgbfQiCQRJEAKEQQwjKFESvqJAPMBIfUL6zjd5K5yOhe4AmPrAkEAzkWXqCeGkDJ0FbyiAN+dfwxYxzbJb7zuQQ/WPLSNLinFV4HEDMbQmZmlY55/8D+2M3L8pSMZ3Lmhfq1VkEWfNQJBAMx3vkqLHa5vbMtkYX+stplU5pjIv5oJNOZaQQuc9RI0vIwj+if78ZeVPSAYHcn2oEr9bemcx2nLg83DgphKeg0CQE0jz4SOS4+PnsQmSDulZOQHfQf7YDfOYxen0YngR9AUxP1lxSi2DXrz79siglwZp4z0GrGzP8/BCDk0n4QV1WUCQQCRNTjZv58+4AdwaXiR12rLzJbaksevrBMSYeQ4EXgOCuoqH5N80DBI0VqtsIn7q3xmUWCNKtaZQi5RJIyr/wjH
+250 OK
+[2018-02-01 23:12:29,302] DEBUG    TorManager Created new hidden service for 149EPBN4hQRpwj5TcoPETepnoXHCUXzaCN: hfckokgsms7ivcj3
+[2018-02-01 23:12:29,303] DEBUG    I2PManager Created new I2P hidden service for 149EPBN4hQRpwj5TcoPETepnoXHCUXzaCN: 7vuygw7naqvovsic
+[2018-02-01 23:12:29,303] DEBUG    TorManager > ADD_ONION NEW:RSA1024 port=15441
+[2018-02-01 23:12:29,612] DEBUG    TorManager < 250-ServiceID=2gpqpom5f3cr3cqt
+250-PrivateKey=RSA1024:MIICXQIBAAKBgQDcngQ2D0mhY3NY3548QMSS/tczPD/qK+vyICRaEObFOg9nwguwapCjR7ApSNYZ23l5eHnoiVADaGAFDqx5D3+dbts6Mto4TLh6kB80eMQQS0Kb7nz+I1OcDIMRsn5V+jCHeTu+PMCEQI7Tb7sZMSmEyp8d4P2WuQgkmsX+bbI8jQIDAQABAoGBAIjiRmygaagIQ651+QEbkpw+IJo6nNGX9OqjRMrZR8ZBswNG4+fPBvU4arYC6kza33Ed7k34vLuQjFs28o6erieCHZx3ZhUU7w+8hVPQO5s6EWzeV/emMQwm9SObFj0lursQK/R2B2g/DFU/5e+Aq+FoXnH3dISJ68c2iuofiV2FAkEA+0cd54jtcbsFmQAin7Dir6jxwwi7cs81jRlgVlb4z4Dr0iI7BcmFFtIqcvx5wLXgL7rxITNaAR+Dr1AAfvYJswJBAODDZLtdM2Q1imX5igwZOBX4knFhhlKbXWASP72v28KGdGTH+tt6LwngmANECAmkMDDMRj9Htz9zuU0BQPjbAL8CQHR4NUNBs5V4s5KEfof4bEoxi8X0ATapFtBNB9tdOryrrCLdXPBExRyb07MylZiedMiK5QOXkstceSREd8ZhcoMCQDZ5pRR0RlxnTZ/hlz/PbPSGRpgMVw32ce8y/RfwY4cGJ3e1sGs5deUi9jT0bC5KCRQKrovvyc4rMiIjx6eJDOkCQQD4Pv+U7NXf00bRR3HRe04P29GcaMv1K7fGSTVJG+Y87FR0mNh0Sc8hxYMR791RUVeH65aX7oXUd3t4Xxail1v4
+250 OK
+[2018-02-01 23:12:29,612] DEBUG    TorManager Created new hidden service for 1Br4MT7PgsRET2APJkbhqqoxwL1CqcCFxh: 2gpqpom5f3cr3cqt
+[2018-02-01 23:12:29,612] DEBUG    I2PManager Created new I2P hidden service for 1Br4MT7PgsRET2APJkbhqqoxwL1CqcCFxh: zjcas7oultzjsdfv
+[2018-02-01 23:12:29,612] DEBUG    TorManager > ADD_ONION NEW:RSA1024 port=15441
+[2018-02-01 23:12:29,650] DEBUG    Site:17ziJ8..xX8t Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:12:29,697] DEBUG    TorManager < 250-ServiceID=upuaxfqgarpoqspp
+250-PrivateKey=RSA1024:MIICXAIBAAKBgQC965mEOeaQf1D04wTgDuEfqfXYEQy+OyVjAgWf+FG3uDtEDl3+SuULEJDp9jDsdVzFU4Ha3FaTdusRPXo2kws4s5NVwwRbCuqaU9EPYtU9r7r0APzHMs4n95nvh+lKqrl5jhLUb0CHRdkozl2eJFAVgu81dEyw52/qs5RqGEVbQQIDAQABAoGAKfJ+jsjnFuU38U6vBfnjWUYFybpCUUXpBQwuR93l1qk3VdnCgubx3dbD2xkIR0HIwsCl/rwJ1zo9wyoL8z/ZC0Rw6ldBKp0dIA+U9J9AwOcEGgvRr8BMRk3mgsBwyI3gyu5xkeSjLtbV7t+Fz+ADlbNsijd5PXqgatNDVLZ3SZ0CQQDqWKnDxl7wrO3GAm2/kPg2NUwa2Vz2QdTaReRIHOQdZsi+MsjK17oj9TmOyn6AX7yd27gtRKcrBOgPgAcxLsI7AkEAz3gQCrYOGf94cIBwgNf/Ozcl6SZOK22PA0fUTPuD6o5CZW8ZT0BmGGo1k3+uFXR7XTFibi3r65ruM7PAllXkswJAYHI1DBmsISlKgl+lg13KiaTNuY8Tr1XQoDR7iyI4z9DpdT25XaIDPaFDGv1Dqtm76svutNK4agAO8bIjQ56W2QJATltaM7FuwgLqyhK4avEpRIQfnV8KRvyp9uM6G5kiyYPRL942AOihprb2ZS7j4NaNgTUVp+dQIzvwmzZYlm76YQJBANVKUXljCDCxF4PI4N3oauxdD9lg9zkx4uQWvlXFlqEUHhCVdx4BX34E0SwFI4x3f1UDRl+LCCw94Ul1zoyIrgQ=
+250 OK
+[2018-02-01 23:12:29,697] DEBUG    TorManager Created new hidden service for 1Gfey7wVXXg1rxk751TBTxLJwhddDNfcdp: upuaxfqgarpoqspp
+[2018-02-01 23:12:29,697] DEBUG    I2PManager Created new I2P hidden service for 1Gfey7wVXXg1rxk751TBTxLJwhddDNfcdp: 7omyqivqwudhu63x
+[2018-02-01 23:12:29,697] DEBUG    TorManager > ADD_ONION NEW:RSA1024 port=15441
+[2018-02-01 23:12:29,734] DEBUG    WorkerManager:1FFuXJ..Rdkp 118.211.9.159:15441: No task found, stopping
+[2018-02-01 23:12:29,734] DEBUG    WorkerManager:1FFuXJ..Rdkp Removed worker, workers: 0/5
+[2018-02-01 23:12:29,734] DEBUG    WorkerManager:1FFuXJ..Rdkp Starting new workers... (tasks: 1)
+[2018-02-01 23:12:29,734] DEBUG    WorkerManager:1FFuXJ..Rdkp Starting workers, tasks: 1, peers: 0, workers: 0
+[2018-02-01 23:12:29,734] DEBUG    WorkerManager:1FFuXJ..Rdkp Added worker: 118.211.9.159:15441, workers: 1/5
+[2018-02-01 23:12:29,835] DEBUG    WorkerManager:1FFuXJ..Rdkp 118.211.9.159:15441: No task found, stopping
+[2018-02-01 23:12:29,835] DEBUG    WorkerManager:1FFuXJ..Rdkp Removed worker, workers: 0/5
+[2018-02-01 23:12:30,102] DEBUG    TorManager < 250-ServiceID=llfwwmslfjgvhmvv
+250-PrivateKey=RSA1024:MIICXAIBAAKBgQCrqlbI8PrnlOpfp7fG/7CoSzme+54o6NlkonG/CatQp/dq46P7TkcdyQGtuDE2UViUagnFzac74J0ZXfj/lZtxb0g9hTRcg4B8AbKFjTRI553gCmakivGXIMNK0wiGy6wm1asdhnPdx8ybRsnHUiSgmXC8D9KlyrmQbFJfiasYZQIDAQABAoGATOg+gz27Gt9TdVFde1D4Ix24jepqfCd9paFFVnINh1AI/6FGyQLTx5tTHjIEEjK1faBYCn9NKf1CRKgeMtsizR5X78vFASWTDS4ggO2IYJorJdnGVynhY3jaBZNtcg/B4anItZLofiYvdXZ1qyMwmm1vv3JuGTFAKsXSEx3fts0CQQDSvCpjO1TGP3bwPcRP5Ce1r04m0YdDBtDH/D+JHafiXLOoepeiqwpJ+E3VW+w87lPrFp0wmk5P6bRJAGCjeD+vAkEA0InS8hSt10ChLCgUPF5iVsodiLGFhiGkBI5Qcb7y2Z3W1pI+NIE+A9O66VUUa6nq3tQTL9ci5pxzwyjDjJF6KwJAc3JQCmLTk3PrNbuw00+bjYYHW27IGikesaB4MibD9VdxuOfIMH5hOZrFERC1v7+Uy6Js5NZz9oWClceWKZfT0wJAb2hyLaomhUydzj1LMkUqPDuWM6TDNLlcKqLtDxd4HhJY6CEQ4nP5cYn33Rf65NnOBGVAKtrAZntGzQhGEB7YKQJBALehpZ3swtjwqY2x8zm2IdTuAPRoVputs7d0aM9NgosVsxpvF1vUqkIgkSs3miz3SBrsBe5ruvN05wLDW49HZ64=
+250 OK
+[2018-02-01 23:12:30,102] DEBUG    TorManager Created new hidden service for 1GitLiXB6t5r8vuU2zC6a8GYj9ME6HMQ4t: llfwwmslfjgvhmvv
+[2018-02-01 23:12:30,102] DEBUG    I2PManager Created new I2P hidden service for 1GitLiXB6t5r8vuU2zC6a8GYj9ME6HMQ4t: qep4ott7vblxo5f3
+[2018-02-01 23:12:30,102] DEBUG    TorManager > ADD_ONION NEW:RSA1024 port=15441
+[2018-02-01 23:12:30,131] DEBUG    TorManager < 250-ServiceID=fzk4k2lhd73bfthg
+250-PrivateKey=RSA1024:MIICXQIBAAKBgQCvgeTD5qhs906VOSbRA3ZHz3BlehcattUjvcOcDqzVhn4TkssAxB8xUe4rJ15RtZEtp95Ek/gujKrO8k4SkZf15Cz/ssQ3U4mmghoCkPlnGUkXP60WX6b6qGp4Ui2J3lf8nRqM0uywnuG2u4DHrKTR5SlWoJzMItzwJ6mH1OU9JQIDAQABAoGBAKmgZGcGjrBKUdQd2atXqkD7d8lMN/pkzRlvNhilglwZUc8/KB8EbpVvdz6UHS/hyYAT59nmHY93+zpqrBR8TR4KHK3ahAPlif0IL43LJpbpcBlAJqcssdZ71YXbzxXvhLNNT7bTrvlY1G918UO/Ahz5bzED/WJ4zq8dxX+T8zm9AkEA6U2Duqe8LPMmXAFNSqojVYalLEQAt844BY3T+96SPnTs+jqAAvu6RZ7b8XqWDnM80TsO9MQT0hBMqLfwYv4oUwJBAMCU9w9SogyOakApnkmBR4oZB8jLaF++hoOxYsGsmbYMcaQuOfnI8CQ8bFrBbU62Om4mrtUx2Q5UkANxCuNJdacCQBaAfHEXVoX7WbrMAVlvOYM5Plsbn/oacLrQaB7F49MUUfr8g3ZGMzwdy1bqHOj94mLH0HR5KPQ80DgBrbTOkLMCQDC3voRG0C3C/Uf7/0nzBWj/CgQWyPGnnhnEjwoVotD19u2ksA/rcCyKiJKw6fkGimOBL6tJL/K7G69zMmDrHXMCQQCwqpEJK6kpWaKDiwoc0JG7j79LzlQPO+Y8eqKVCWDSk8/lvpJJdcETLJ2ynw3q2X6Dl/OCJbP8Ihig4GdM0/5s
+250 OK
+[2018-02-01 23:12:30,132] DEBUG    TorManager Created new hidden service for 1H3MA7Dzu5jXAB4DURujKhxBeBXUDNZssb: fzk4k2lhd73bfthg
+[2018-02-01 23:12:30,132] DEBUG    I2PManager Created new I2P hidden service for 1H3MA7Dzu5jXAB4DURujKhxBeBXUDNZssb: zjcas7oultzjsdfv
+[2018-02-01 23:12:30,132] DEBUG    TorManager > ADD_ONION NEW:RSA1024 port=15441
+[2018-02-01 23:12:31,360] DEBUG    Site:1MaiL5..Ju27 tracker.opentrackr.org:1337/announce: Found 30 peers, new: 2, total: 676
+[2018-02-01 23:12:31,363] DEBUG    Site:1MaiL5..Ju27 tracker.leechers-paradise.org:6969: Found 50 peers, new: 1, total: 677
+[2018-02-01 23:12:31,442] DEBUG    Site:1MaiL5..Ju27 retracker.spark-rostov.ru:80/announce: Found 50 peers, new: 1, total: 678
+[2018-02-01 23:12:31,622] DEBUG    Site:1MaiL5..Ju27 Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:12:31,622] DEBUG    Site:1MaiL5..Ju27 Announced types ['onion', 'i2p'] in mode startup to 7 trackers in 0.362s, errors: ['http://explodie.org:6969/announce'], slow: []
+[2018-02-01 23:12:31,623] DEBUG    Site:1MaiL5..Ju27 content.json loadContent same json file, skipping
+[2018-02-01 23:12:31,787] DEBUG    FileServer Conn# 6 178.87.251.82 [?] > Connecting...
+[2018-02-01 23:12:31,802] DEBUG    FileServer Conn# 7 111.199.77.55 [?] > Connecting...
+[2018-02-01 23:12:32,434] DEBUG    Ui.UiServer 127.0.0.1 - - [2018-02-01 23:12:32] "GET /1Jwmx33xCtuRe2UReHHxkritZ1nfuyXrrc/ HTTP/1.1" 200 3103 0.001992
+[2018-02-01 23:12:33,329] DEBUG    Site:1UDbAD..MkoV tracker.coppersurfer.tk:6969: Found 50 peers, new: 2, total: 389
+[2018-02-01 23:12:33,347] DEBUG    Site:1UDbAD..MkoV tracker.leechers-paradise.org:6969: Found 50 peers, new: 2, total: 391
+[2018-02-01 23:12:33,358] DEBUG    Site:1UDbAD..MkoV tracker.opentrackr.org:1337/announce: Found 30 peers, new: 1, total: 392
+[2018-02-01 23:12:33,384] ERROR    - Unhandled exception
 Traceback (most recent call last):
-  File "zeronet.py", line 19, in main
-    main.start()
-  File "/myservices/ZeroNet/src/main.py", line 522, in start
-    actions.call(config.action, action_kwargs)
-  File "/myservices/ZeroNet/src/main.py", line 171, in call
-    func(**kwargs)
-  File "/myservices/ZeroNet/src/main.py", line 176, in main
-    from File import FileServer
-  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
-    result = _import(*args, **kwargs)
-  File "/myservices/ZeroNet/src/File/__init__.py", line 1, in <module>
-    from FileServer import FileServer
-  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
-    result = _import(*args, **kwargs)
-  File "/myservices/ZeroNet/src/File/FileServer.py", line 15, in <module>
-    from Connection import ConnectionServer
-  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
-    result = _import(*args, **kwargs)
-  File "/myservices/ZeroNet/src/Connection/__init__.py", line 1, in <module>
-    from ConnectionServer import ConnectionServer
-  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
-    result = _import(*args, **kwargs)
-  File "/myservices/ZeroNet/src/Connection/ConnectionServer.py", line 16, in <module>
-    from Tor import TorManager
-  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
-    result = _import(*args, **kwargs)
-  File "/myservices/ZeroNet/src/Tor/__init__.py", line 1, in <module>
-    from TorManager import TorManager
-  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
-    result = _import(*args, **kwargs)
-  File "/myservices/ZeroNet/src/Tor/TorManager.py", line 15, in <module>
-    from I2PHelper import *
-  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/builtins.py", line 93, in __import__
-    result = _import(*args, **kwargs)
-ImportError: No module named I2PHelper
-[2018-01-28 23:49:15,461] DEBUG    SiteManager Save skipped: No sites found
+  File "/usr/local/lib/python2.7/dist-packages/gevent-1.2.2-py2.7-linux-x86_64.egg/gevent/greenlet.py", line 536, in run
+    result = self._run(*self.args, **self.kwargs)
+  File "plugins/Chart/ChartCollector.py", line 181, in collectortest
+    if(not has_attr(file_server,"ui_server")):
+NameError: global name 'has_attr' is not defined
+[2018-02-01 23:12:33,445] DEBUG    Site:1UDbAD..MkoV retracker.spark-rostov.ru:80/announce: Found 50 peers, new: 2, total: 394
+[2018-02-01 23:12:33,623] DEBUG    Site:1UDbAD..MkoV Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:12:33,623] DEBUG    Site:1UDbAD..MkoV Announced types ['onion', 'i2p'] in mode startup to 7 trackers in 0.362s, errors: ['http://explodie.org:6969/announce'], slow: []
+[2018-02-01 23:12:33,624] DEBUG    Site:1UDbAD..MkoV content.json loadContent same json file, skipping
+[2018-02-01 23:12:33,626] DEBUG    FileServer Conn# 8 5.12.172.138 [?] > Connecting...
+[2018-02-01 23:12:33,685] DEBUG    FileServer Conn# 8 5.12.172.138 [?] > Closing connection: 5.12.172.138 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:33,686] DEBUG    FileServer Conn# 9 94.130.135.180 [?] > Connecting...
+[2018-02-01 23:12:33,719] DEBUG    FileServer Conn# 9 94.130.135.180 [?] > Closing connection: 94.130.135.180 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:34,354] DEBUG    Ui.UiServer 127.0.0.1 - - [2018-02-01 23:12:34] "GET /uimedia/all.css?rev=3230 HTTP/1.1" 200 37185 0.012623
+[2018-02-01 23:12:34,471] DEBUG    Ui.UiServer Patched /uimedia/all.js (182295 bytes) in 0.116s
+[2018-02-01 23:12:34,471] DEBUG    Ui.UiServer 127.0.0.1 - - [2018-02-01 23:12:34] "GET /uimedia/all.js?rev=3230&lang=de HTTP/1.1" 200 182593 0.116369
+[2018-02-01 23:12:34,623] DEBUG    Site:1MaiL5..Ju27 Small number of peers detected...query all of peers using pex
+[2018-02-01 23:12:34,918] DEBUG    TorManager < 250-ServiceID=ff3xd7efe5yghyca
+250-PrivateKey=RSA1024:MIICWwIBAAKBgQC1i3OKhz/xOakzXu9doWbaJqAJRiivSDtwjf3ptMCRbpjoidL9EqehJaA3p4J5C8jYICiDqVQaM+sijhAKBfSgWkA4igHSyfkp+jHZ8/7qs+fAJXN7tvC3jJ4c2rtKcDCi4Lp8aoob8U342KbtJVgOCifKRpdsdcSs+Km0FNF3NQIDAQABAoGAdPtVCnC4fUJAiz+jUlwMoIm/GfrBgKE03ARDF3NHmu7/TOhysmxw4+AQ64vfAQzc8JdYQ+66qN/Hpk6Qe0T3Kb7RhoF1Emm0lvDsA6qTsGdlfG1i73svOCVyAf74UG7GhhbizFgh3H+U+CypfU+RYwLUTolAK/L52UpJPGQSGAECQQDdMa5Y9cl8EDs/GRO40wWSF2N2eCNPMOANyJOhtfMfoM55vvVS/Bg9NrNg3zCUvPhqnNH4KRiMmfKRotGPFTY1AkEA0hyVZoExMBc35xPAXAgZS6FrLbsYNSCJD4vWTT3wnfr9PWEh1pGDtoG/HG1jWXYUCJ1BxNSZaUVseutY0j9dAQJAfGgA40/6LqkCaY61JPKq42v8KRmQ4m1e1uHFBuLLBzLublMUr8PR7jvhz844CK/wGCZzgdu7TvkXEQo+SvdnMQJAWh4SYjW1MCg1PPI2xgJfPxYLz0B44IiE4NscXmLbqha1uTbI+avN72B05K9yNjOz4gH47IA3EHTLU2lP3lV5AQJANzzjJrZHHyKgcjGX6gL0oFY7z4mdS61tMDXh3cdVt8/stIX0TZOuFQZvZsKRAQmsT3C10jOnL/thl9D39f9rww==
+250 OK
+[2018-02-01 23:12:34,918] DEBUG    TorManager Created new hidden service for 1LyXfjKcy5hW587iD7T6eTSQfqU7CCQXGR: ff3xd7efe5yghyca
+[2018-02-01 23:12:34,918] DEBUG    I2PManager Created new I2P hidden service for 1LyXfjKcy5hW587iD7T6eTSQfqU7CCQXGR: zen7da77ng4r4gzp
+[2018-02-01 23:12:34,918] DEBUG    TorManager > ADD_ONION NEW:RSA1024 port=15441
+[2018-02-01 23:12:35,107] DEBUG    TorManager < 250-ServiceID=x4ojj2a3bz6id7xe
+250-PrivateKey=RSA1024:MIICXAIBAAKBgQC/l6GGsASOwmVo3rSLN7sNaFjn3Hcu89TlsHOu9ZUsgAgn3T3yfNDLD/Si98gHU2zUUehA64S48eVccEUntaMWJqgeslGhoGyS0udqeoHQhAxJHm/G5Fbqvz2Sc5/nmQ7p8Pa0Q3uA75oDDQlUkFa5wtu6/gNS6l3U0SNiimEkkwIDAQABAoGAOeL9aa1a4ys26pWHJR0EhguF+R/yXpxLMc67VRxcIuLYE/tTkSVHDGNYvbhxlk0Nb6UDsEG4iwyDCQfezR2jFTNVhJnvjlTov1fA9VTCp58F7MuilZQeHJpAZqrsVKobZkg21KwJdc/fsHJpv7Aa+FgxFwdvW3kptLPa1NGCE3ECQQDlbkxVBONbIqXBe4r7XrMSILU8KMce1CzRS1SfjywokkDOuTM5f6YMS8ru3dkHksHdrr64Jj0rZJwVUFbY8IWLAkEA1ceSemm9HS7gRnAWMDveUZDSKrYrcsV7sPzYE2cdH18w94+0sMzjIc8dFS6SOdPgr6vgj17w/v5rsO58BpOOGQJAdK14MlCPEzz2kQQ0NQv/A3wQzyxpv1rmA/ZMbezQ5z0hqj/zNg2ds2kkJgA6rChNYWDJ6zq/Jv8+hXRbBm6jawJBAJECwiqFJUHxdTJyf6qSQbjkWpucXJaKvN+Oc2ed71RDduzGrxOqt3tMiXa/03KkdWnUVgwKo8DkhdpLuxee6akCQAkAq7bXMvZiEc6HYRKnNIxIi4jqhga8FVgRc15YzkaZBkHRI/+dnhu+6CI8T8WyvxxciZcfzxjbKeYIZ+Aogug=
+250 OK
+[2018-02-01 23:12:35,107] DEBUG    TorManager Created new hidden service for 1RepoXU8bQE9m7ssNwL4nnxBnZVejHCc6: x4ojj2a3bz6id7xe
+[2018-02-01 23:12:35,108] DEBUG    I2PManager Created new I2P hidden service for 1RepoXU8bQE9m7ssNwL4nnxBnZVejHCc6: kowrsnhnw6ayxlfr
+[2018-02-01 23:12:35,108] DEBUG    TorManager > ADD_ONION NEW:RSA1024 port=15441
+[2018-02-01 23:12:35,340] DEBUG    TorManager < 250-ServiceID=6dhtuiz62li3qxps
+250-PrivateKey=RSA1024:MIICXgIBAAKBgQC5Wm/u4Cq7P16clMdlxWbpnu7WYAjVfiJPE0qzqTRkKVGeVSGSY+6VA/WVmV74Un3+nNGZ4J6aPGtvu3bP6o5lbdpTqswUckhvwND96RIFS2Mi+R8L7WAuu1lvxnHGJQDBW7A9qUzZlNV0ysh4E+shjtYAUGBfO3M1ryfjfU66CwIDAQABAoGBAJzrFpY6C5Moq/WN812SiHTCS9sLxI7R0UP2xihh2GvvmxybX+eqWKKpjnEPPhqm4+n5Y22Nf1h+TEp0f7q4DcIXg0iqDRWhGQhzixFEctLspLnkA9cdAQ19UGOPzBqOTgkAOT28femFBMFmduFWnwnoDqoYTkrOEzW73OoEYg8BAkEA9bFZVcbMrFQqSiiXsWSuW5wRj4P/6Sd3G/YghoIwWUadC3fji9e2/HJ3UJJDtpdgJ2Or9pmiuCHuFvGup8iMgQJBAMEhEGGI91Tcga7gmCl0zV4G2Y+ZSdTQ9/fW4K2p3/NXJYHXxXrl14Z/MGt6VOCV0j/cOH72rPPorQwlN9TycIsCQQC+6eFeKs0t93SpDWPaPz7RBrQKjeqUVMtUGevqOU2ygZFUsQNKzgNtpNCb9hvRzUy1LtkYFQgBBrSIdaJe1BKBAkBfgVNReGMfMyBqc6Srs5gvbGHAUoShWmmVxUw8dSpLcwgYSrTczrajS1iNfeRlX5GmhOfnWWM0Bxc0T19pzi57AkEAqsxAxu5fiGY1GjgCPTA7b94MbKt0UWWc7mA2F9NeAL6bh870D2zsAiRXFrFDRr7oPZIUWT5oYy3vdi8jw1nGnw==
+250 OK
+[2018-02-01 23:12:35,341] DEBUG    TorManager Created new hidden service for 1Gif7PqWTzVWDQ42Mo7np3zXmGAo3DXc7h: 6dhtuiz62li3qxps
+[2018-02-01 23:12:35,341] DEBUG    I2PManager Created new I2P hidden service for 1Gif7PqWTzVWDQ42Mo7np3zXmGAo3DXc7h: zen7da77ng4r4gzp
+[2018-02-01 23:12:35,341] DEBUG    TorManager > ADD_ONION NEW:RSA1024 port=15441
+[2018-02-01 23:12:35,355] DEBUG    Site:1Name2..hM9F tracker.leechers-paradise.org:6969: Found 50 peers, new: 4, total: 1664
+[2018-02-01 23:12:35,358] DEBUG    Site:1Name2..hM9F tracker.coppersurfer.tk:6969: Found 50 peers, new: 3, total: 1667
+[2018-02-01 23:12:35,371] DEBUG    Site:1Name2..hM9F tracker.opentrackr.org:1337/announce: Found 30 peers, new: 5, total: 1672
+[2018-02-01 23:12:35,449] DEBUG    Site:1Name2..hM9F retracker.spark-rostov.ru:80/announce: Found 50 peers, new: 6, total: 1678
+[2018-02-01 23:12:35,494] DEBUG    TorManager < 250-ServiceID=2ckl7o37tn5m5sc6
+250-PrivateKey=RSA1024:MIICXgIBAAKBgQDdb9jw+K8WCBNhAbk67xONDZ+HFSg2dZSxk8kpkP8Bw0wtEwprEJFgxOlN1Vkt56D4tmArJpsHTMu521/LWCk046w6EDRjeZc8S9N0SUP4BH224pOrzKpmeyEoyDZRGkUv4eyEfaWAaUq3X8cacpjTCIo+ffuWLl3jWfZ+JcbVVwIDAQABAoGBAIxWuXgnM9fTsGx3iixWnt5zdtpGx2CUbnOIxSIJ2gQFAT9D5QNr0acxxObmQwm71iIqe5J9eh1LR4Z4CSM3sYy8Nc1GReZ9K22AO0mu+LUmkA3ypdn2Q/Pp5IIBgajt6aGCM7zzTgnr3VdxK+kIU4zNS/9XIcKdSAdRDBq6Zh8hAkEA/Ll0/nQq7oSRQDa8z+vqlcHdw66es53maRniRnFFJdvhKQr2D73N5XiWBeEUex39crVQZD/LDcJxs6gfD4CopwJBAOBOk/VS5pfeao2G+PQDYlB1IBBq/4zACPsN9qJjjmnb7ul3W9VEQk82xACM9CJi6CtKiA0RJywnUgMVFVNZU9ECQG1dsISBLycDFXyNc44jEOR3/gk1oxYlydVHz0UetYbZrYm+ZZeQUu7wDTREIEHbS5f9YOnRNYUh1WSi57YkvlcCQQDMPKAaG07db2ZD0Wby//XP3qXAbTyc0uoadh9gwxeUKe7C46xZZpqd9/bFrZJJkRdm+6kfhMPPP0o8hkDxsH9RAkEA9HnBIU3oEG+e0N0jk9QGT2iWIio6/myY2Ga6Lqm1VCTJ8vSC09LZVd47JxgTuLmwyVs945h6cszVVs9vq0G8zQ==
+250 OK
+[2018-02-01 23:12:35,494] DEBUG    TorManager Created new hidden service for 1A3o3DnncsAGJoSQfpErDyX39Gz5TS8H87: 2ckl7o37tn5m5sc6
+[2018-02-01 23:12:35,494] DEBUG    I2PManager Created new I2P hidden service for 1A3o3DnncsAGJoSQfpErDyX39Gz5TS8H87: zen7da77ng4r4gzp
+[2018-02-01 23:12:35,495] DEBUG    TorManager > ADD_ONION NEW:RSA1024 port=15441
+[2018-02-01 23:12:35,631] DEBUG    Site:1Name2..hM9F Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:12:35,692] DEBUG    TorManager < 250-ServiceID=tn4nxzvyn7wwfaz2
+250-PrivateKey=RSA1024:MIICWwIBAAKBgQDi/GxpAtAcqmIxgFn9vqr/ae4dCIjP5jPlM7cvZii/hQflaW2L1M7tRyL89UtYeUhOLw7qF/KTHmVlDvxCD9nlcCbGNi9q0VSM72AG5YVBr3yaAehM1WfFZYyZv2BqZOFlFrP094gmaa5c5FY/oezhRVgFNpnxkF+WmBNB6BFuEQIDAQABAoGALce/jcZ1dvKeb2F1xQnJr04MKmroPRYu7VFq5vJx0X7hQtHquEMpoQ2x7tcCZUvA25P+LBS8ZhPBW4qUMjbEOXMPs1wh/tWRjwYfPI5pMGnoXRdB2l4twWYW8Wzp4H9foG3TAjUJrGbYvJCTgCH4ohNvm+19GH95pf0s58cRwskCQQD0mntiqdQ4AScHZplu+12CQK3lOGpzqyDU44BHvmq8XdrZ3ZS2W/glClifwnxcKBwz7QeLLdsfUXk18PxvuuCvAkEA7Y/PHBXHuTJ2OERd5fv9I7qa+C4q+H3ItThGDdxiQOUn+jlX7PcCI4n1mcEbmUQ+90ciclh87GxoAoS3qVjNPwJAMII2eAGgIZ8w40nYoebdy4gSNIQ0sE2+zBl2BkRgHI0sasqDxIqGsqnTm5NRYGFf/nhCZ7qnWxWoSSdKmMnh5wJAX/mildkiyGpfopnUSa8FdSLVqwCT8bJ3nOcwPjdUJp2uCgSSxjSA07TP2Z9PtBsDSUme3A1t4uJlHudZf/xVZwJACczHrH5Y0x0L9lKyWPlwDwxDfZtXebXpzQwn8UoKoEs0yG0GcyJ67f79y6zpXOcEVaqDbJAczS2qwvJ83v8M2w==
+250 OK
+[2018-02-01 23:12:35,692] DEBUG    TorManager Created new hidden service for 1SiTEs2D3rCBxeMoLHXei2UYqFcxctdwB: tn4nxzvyn7wwfaz2
+[2018-02-01 23:12:35,692] DEBUG    I2PManager Created new I2P hidden service for 1SiTEs2D3rCBxeMoLHXei2UYqFcxctdwB: zen7da77ng4r4gzp
+[2018-02-01 23:12:35,693] DEBUG    TorManager Created new hidden service for 1KVLauCV3Ag9ZPry9cr1WvKQcyaev8gG2m: 2ckl7o37tn5m5sc6
+[2018-02-01 23:12:35,693] DEBUG    I2PManager Created new I2P hidden service for 1KVLauCV3Ag9ZPry9cr1WvKQcyaev8gG2m: 7malzqkvmkhjlkpw
+[2018-02-01 23:12:35,693] DEBUG    TorManager Created new hidden service for 1UPDatEDxnvHDo7TXvq6AEBARfNkyfxsp: 6dhtuiz62li3qxps
+[2018-02-01 23:12:35,693] DEBUG    I2PManager Created new I2P hidden service for 1UPDatEDxnvHDo7TXvq6AEBARfNkyfxsp: 7malzqkvmkhjlkpw
+[2018-02-01 23:12:35,693] DEBUG    TorManager Created new hidden service for 1KjcBwjHx388e4jGXmEKYvGuyrk2CMpTMC: x4ojj2a3bz6id7xe
+[2018-02-01 23:12:35,693] DEBUG    I2PManager Created new I2P hidden service for 1KjcBwjHx388e4jGXmEKYvGuyrk2CMpTMC: 6qpgla7pwvuihaim
+[2018-02-01 23:12:35,693] DEBUG    TorManager Created new hidden service for 1UDbADib99KE9d3qZ87NqJF2QLTHmMkoV: 2ckl7o37tn5m5sc6
+[2018-02-01 23:12:35,693] DEBUG    I2PManager Created new I2P hidden service for 1UDbADib99KE9d3qZ87NqJF2QLTHmMkoV: zen7da77ng4r4gzp
+[2018-02-01 23:12:35,693] DEBUG    TorManager Created new hidden service for 1Cn8tCr3i97AZTgXo6xyPMS2ciZvMCHwys: llfwwmslfjgvhmvv
+[2018-02-01 23:12:35,694] DEBUG    I2PManager Created new I2P hidden service for 1Cn8tCr3i97AZTgXo6xyPMS2ciZvMCHwys: 7omyqivqwudhu63x
+[2018-02-01 23:12:35,694] DEBUG    TorManager Created new hidden service for 17ziJ8EcCdHMvAu811HMzBQ1KtVXF2xX8t: 2gpqpom5f3cr3cqt
+[2018-02-01 23:12:35,694] DEBUG    I2PManager Created new I2P hidden service for 17ziJ8EcCdHMvAu811HMzBQ1KtVXF2xX8t: 7vuygw7naqvovsic
+[2018-02-01 23:12:35,694] DEBUG    TorManager Created new hidden service for 1SickfhMUKQURcdN9YHZeendi6jWJFFEs: fzk4k2lhd73bfthg
+[2018-02-01 23:12:35,694] DEBUG    I2PManager Created new I2P hidden service for 1SickfhMUKQURcdN9YHZeendi6jWJFFEs: qep4ott7vblxo5f3
+[2018-02-01 23:12:35,694] DEBUG    TorManager Created new hidden service for 1FFuXJM1HUHBBxyRmCsVcaAerS6LLMRdkp: ff3xd7efe5yghyca
+[2018-02-01 23:12:35,694] DEBUG    I2PManager Created new I2P hidden service for 1FFuXJM1HUHBBxyRmCsVcaAerS6LLMRdkp: uvnfhjqauri46y2v
+[2018-02-01 23:12:35,694] DEBUG    TorManager Created new hidden service for 1MVADeKMmDnzv8UWBz6vpDwJZ5o3RRJfMK: hfckokgsms7ivcj3
+[2018-02-01 23:12:35,695] DEBUG    I2PManager Created new I2P hidden service for 1MVADeKMmDnzv8UWBz6vpDwJZ5o3RRJfMK: 6qpgla7pwvuihaim
+[2018-02-01 23:12:35,695] DEBUG    TorManager Created new hidden service for 1BLogC9LN4oPDcruNz3qo1ysa133E9AGg8: 2gpqpom5f3cr3cqt
+[2018-02-01 23:12:35,695] DEBUG    I2PManager Created new I2P hidden service for 1BLogC9LN4oPDcruNz3qo1ysa133E9AGg8: kowrsnhnw6ayxlfr
+[2018-02-01 23:12:35,695] DEBUG    TorManager Created new hidden service for 1rNL2hcK2hhJZWxM3wDTS5LANSnguPAvz: fzk4k2lhd73bfthg
+[2018-02-01 23:12:35,697] DEBUG    I2PManager Created new I2P hidden service for 1rNL2hcK2hhJZWxM3wDTS5LANSnguPAvz: uvnfhjqauri46y2v
+[2018-02-01 23:12:35,698] DEBUG    TorManager Created new hidden service for 1DaXkbpBN7d9h78T5mjB2gTV9Ui46Bjwcv: tn4nxzvyn7wwfaz2
+[2018-02-01 23:12:35,699] DEBUG    I2PManager Created new I2P hidden service for 1DaXkbpBN7d9h78T5mjB2gTV9Ui46Bjwcv: 7vuygw7naqvovsic
+[2018-02-01 23:12:35,700] DEBUG    TorManager Created new hidden service for 1BsRBzGdcYMbv72bwRy6pMxPLNL9obYYau: tn4nxzvyn7wwfaz2
+[2018-02-01 23:12:35,709] DEBUG    I2PManager Created new I2P hidden service for 1BsRBzGdcYMbv72bwRy6pMxPLNL9obYYau: 6qpgla7pwvuihaim
+[2018-02-01 23:12:35,713] DEBUG    TorManager Created new hidden service for 1Mr2r33XUTykaCR9yXLhqdkx2DaNa9EALD: tn4nxzvyn7wwfaz2
+[2018-02-01 23:12:35,713] DEBUG    I2PManager Created new I2P hidden service for 1Mr2r33XUTykaCR9yXLhqdkx2DaNa9EALD: 7vuygw7naqvovsic
+[2018-02-01 23:12:35,717] DEBUG    TorManager Created new hidden service for 1BXLnSBQrCamckJfJoTfyyvpYXTvWy6rts: fzk4k2lhd73bfthg
+[2018-02-01 23:12:35,717] DEBUG    I2PManager Created new I2P hidden service for 1BXLnSBQrCamckJfJoTfyyvpYXTvWy6rts: 7vuygw7naqvovsic
+[2018-02-01 23:12:35,717] DEBUG    TorManager Created new hidden service for 13EYKqmPpwzBU4iaQq9Y4vfVMgj8dHeLkc: hfckokgsms7ivcj3
+[2018-02-01 23:12:35,718] DEBUG    I2PManager Created new I2P hidden service for 13EYKqmPpwzBU4iaQq9Y4vfVMgj8dHeLkc: 7malzqkvmkhjlkpw
+[2018-02-01 23:12:35,718] DEBUG    TorManager Created new hidden service for 1HNYEHtg6BPAW1jmWfBGPrRMxsPjd6nVA2: upuaxfqgarpoqspp
+[2018-02-01 23:12:35,719] DEBUG    I2PManager Created new I2P hidden service for 1HNYEHtg6BPAW1jmWfBGPrRMxsPjd6nVA2: 7malzqkvmkhjlkpw
+[2018-02-01 23:12:35,719] DEBUG    TorManager Created new hidden service for 1DuceV3ASWocATztxPXPCE6ooZNRzdUrtN: llfwwmslfjgvhmvv
+[2018-02-01 23:12:35,719] DEBUG    I2PManager Created new I2P hidden service for 1DuceV3ASWocATztxPXPCE6ooZNRzdUrtN: qep4ott7vblxo5f3
+[2018-02-01 23:12:35,722] DEBUG    TorManager Created new hidden service for 1Jz14wHx3i62BuBFDkwHMrd24xvYPgjAkN: ff3xd7efe5yghyca
+[2018-02-01 23:12:35,724] DEBUG    I2PManager Created new I2P hidden service for 1Jz14wHx3i62BuBFDkwHMrd24xvYPgjAkN: r5nalgvqwt46tqc6
+[2018-02-01 23:12:35,724] DEBUG    TorManager Created new hidden service for 1GNTAKCimBv5xEnt7QvkDn8sTkEPj7ZYTL: fzk4k2lhd73bfthg
+[2018-02-01 23:12:35,725] DEBUG    I2PManager Created new I2P hidden service for 1GNTAKCimBv5xEnt7QvkDn8sTkEPj7ZYTL: zjcas7oultzjsdfv
+[2018-02-01 23:12:35,728] DEBUG    TorManager Created new hidden service for 1D1VGav5Wd1URqmQoRYCXFgXZMPRNbo3Ed: ff3xd7efe5yghyca
+[2018-02-01 23:12:35,733] DEBUG    I2PManager Created new I2P hidden service for 1D1VGav5Wd1URqmQoRYCXFgXZMPRNbo3Ed: zjcas7oultzjsdfv
+[2018-02-01 23:12:35,736] DEBUG    TorManager Created new hidden service for 1JheKmpBkc2Zab39UZXyK5m8ahAfe1HQqx: 2ckl7o37tn5m5sc6
+[2018-02-01 23:12:35,742] DEBUG    I2PManager Created new I2P hidden service for 1JheKmpBkc2Zab39UZXyK5m8ahAfe1HQqx: 6qpgla7pwvuihaim
+[2018-02-01 23:12:35,743] DEBUG    TorManager Created new hidden service for 1AHweG1UEdH6gZ5cWr7o6J5y5yeVNU5Gkq: hfckokgsms7ivcj3
+[2018-02-01 23:12:35,743] DEBUG    I2PManager Created new I2P hidden service for 1AHweG1UEdH6gZ5cWr7o6J5y5yeVNU5Gkq: zjcas7oultzjsdfv
+[2018-02-01 23:12:35,743] DEBUG    TorManager Created new hidden service for 171amnchKeBrXnDVooTMKhHH9npTu1hRWj: 6dhtuiz62li3qxps
+[2018-02-01 23:12:35,743] DEBUG    I2PManager Created new I2P hidden service for 171amnchKeBrXnDVooTMKhHH9npTu1hRWj: qep4ott7vblxo5f3
+[2018-02-01 23:12:35,744] DEBUG    TorManager Created new hidden service for 1TaLkFrMwvbNsooF4ioKAY9EuxTBTjipT: 6dhtuiz62li3qxps
+[2018-02-01 23:12:35,744] DEBUG    I2PManager Created new I2P hidden service for 1TaLkFrMwvbNsooF4ioKAY9EuxTBTjipT: 6qpgla7pwvuihaim
+[2018-02-01 23:12:35,747] DEBUG    TorManager Created new hidden service for 14vBXTtk6Jk8Poa2HPDLZ9VgEwT2hSRZTM: tn4nxzvyn7wwfaz2
+[2018-02-01 23:12:35,747] DEBUG    I2PManager Created new I2P hidden service for 14vBXTtk6Jk8Poa2HPDLZ9VgEwT2hSRZTM: 7vuygw7naqvovsic
+[2018-02-01 23:12:35,747] DEBUG    TorManager Created new hidden service for 19X5gH4DnWFGhjYCxHzun9BYmCJvBsHjgc: x4ojj2a3bz6id7xe
+[2018-02-01 23:12:35,748] DEBUG    I2PManager Created new I2P hidden service for 19X5gH4DnWFGhjYCxHzun9BYmCJvBsHjgc: zjcas7oultzjsdfv
+[2018-02-01 23:12:35,748] DEBUG    TorManager Created new hidden service for 1FTZ3bxSAGLrJWZNm8psJ1qZcqUA9KP6tq: hfckokgsms7ivcj3
+[2018-02-01 23:12:35,748] DEBUG    I2PManager Created new I2P hidden service for 1FTZ3bxSAGLrJWZNm8psJ1qZcqUA9KP6tq: qep4ott7vblxo5f3
+[2018-02-01 23:12:35,748] DEBUG    TorManager Created new hidden service for 1FZAVa7hak8pcVCvVSPz59z3f14CwSTN6H: 2gpqpom5f3cr3cqt
+[2018-02-01 23:12:35,749] DEBUG    I2PManager Created new I2P hidden service for 1FZAVa7hak8pcVCvVSPz59z3f14CwSTN6H: 6qpgla7pwvuihaim
+[2018-02-01 23:12:35,753] DEBUG    TorManager Created new hidden service for 1MaiL5gfBM1cyb4a8e3iiL8L5gXmoAJu27: 2ckl7o37tn5m5sc6
+[2018-02-01 23:12:35,753] DEBUG    I2PManager Created new I2P hidden service for 1MaiL5gfBM1cyb4a8e3iiL8L5gXmoAJu27: zjcas7oultzjsdfv
+[2018-02-01 23:12:35,753] DEBUG    TorManager Created new hidden service for 1uPLoaDwKzP6MCGoVzw48r4pxawRBdmQc: llfwwmslfjgvhmvv
+[2018-02-01 23:12:35,754] DEBUG    I2PManager Created new I2P hidden service for 1uPLoaDwKzP6MCGoVzw48r4pxawRBdmQc: uvnfhjqauri46y2v
+[2018-02-01 23:12:35,755] DEBUG    TorManager Created new hidden service for 1DTpF9Hv2yxPSxPDZSW5z98vd9PSx93VK1: tn4nxzvyn7wwfaz2
+[2018-02-01 23:12:35,755] DEBUG    I2PManager Created new I2P hidden service for 1DTpF9Hv2yxPSxPDZSW5z98vd9PSx93VK1: 7vuygw7naqvovsic
+[2018-02-01 23:12:35,759] DEBUG    TorManager Created new hidden service for 1BhArUMBcwMTtDBzcLyA3oaPUPZSdWt3wQ: 6dhtuiz62li3qxps
+[2018-02-01 23:12:35,760] DEBUG    I2PManager Created new I2P hidden service for 1BhArUMBcwMTtDBzcLyA3oaPUPZSdWt3wQ: 7omyqivqwudhu63x
+[2018-02-01 23:12:35,760] DEBUG    TorManager Created new hidden service for 1Jwmx33xCtuRe2UReHHxkritZ1nfuyXrrc: llfwwmslfjgvhmvv
+[2018-02-01 23:12:35,760] DEBUG    I2PManager Created new I2P hidden service for 1Jwmx33xCtuRe2UReHHxkritZ1nfuyXrrc: qep4ott7vblxo5f3
+[2018-02-01 23:12:35,760] DEBUG    TorManager Created new hidden service for 14y3SeSH7wvr3KqLiYQhbQRc9TCAPCbWeH: 2gpqpom5f3cr3cqt
+[2018-02-01 23:12:35,761] DEBUG    I2PManager Created new I2P hidden service for 14y3SeSH7wvr3KqLiYQhbQRc9TCAPCbWeH: 6qpgla7pwvuihaim
+[2018-02-01 23:12:35,761] DEBUG    TorManager Created new hidden service for 1MeFqFfFFGQfa1J3gJyYYUvb5Lksczq7nH: 6dhtuiz62li3qxps
+[2018-02-01 23:12:35,761] DEBUG    I2PManager Created new I2P hidden service for 1MeFqFfFFGQfa1J3gJyYYUvb5Lksczq7nH: zen7da77ng4r4gzp
+[2018-02-01 23:12:35,761] DEBUG    TorManager Created new hidden service for 1Name2NXVi1RDPDgf5617UoW7xA6YrhM9F: upuaxfqgarpoqspp
+[2018-02-01 23:12:35,762] DEBUG    I2PManager Created new I2P hidden service for 1Name2NXVi1RDPDgf5617UoW7xA6YrhM9F: 7malzqkvmkhjlkpw
+[2018-02-01 23:12:35,765] DEBUG    TorManager Created new hidden service for 1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D: upuaxfqgarpoqspp
+[2018-02-01 23:12:35,765] DEBUG    I2PManager Created new I2P hidden service for 1HeLLo4uzjaLetFx6NH3PMwFP3qbRbTf3D: qep4ott7vblxo5f3
+[2018-02-01 23:12:35,766] DEBUG    TorManager Created new hidden service for 1MRMXTpAK3q1BzF94GrgguRMewng2B18wS: llfwwmslfjgvhmvv
+[2018-02-01 23:12:35,766] DEBUG    I2PManager Created new I2P hidden service for 1MRMXTpAK3q1BzF94GrgguRMewng2B18wS: 7malzqkvmkhjlkpw
+[2018-02-01 23:12:35,766] DEBUG    TorManager Created new hidden service for 1iD5ZQJMNXu43w1qLB8sfdHVKppVMduGz: hfckokgsms7ivcj3
+[2018-02-01 23:12:35,766] DEBUG    I2PManager Created new I2P hidden service for 1iD5ZQJMNXu43w1qLB8sfdHVKppVMduGz: r5nalgvqwt46tqc6
+[2018-02-01 23:12:35,767] DEBUG    TorManager Created new hidden service for 1iNDExENNBsfHc6SKmy1HaeasHhm3RPcL: hfckokgsms7ivcj3
+[2018-02-01 23:12:35,767] DEBUG    I2PManager Created new I2P hidden service for 1iNDExENNBsfHc6SKmy1HaeasHhm3RPcL: 7vuygw7naqvovsic
+[2018-02-01 23:12:35,767] DEBUG    FileServer Conn#10 zero.booth.moe [?] > Connecting...
+[2018-02-01 23:12:35,772] DEBUG    FileServer Conn#11 uuux2gnf2pktjvlj.onion [?] > Connecting...
+[2018-02-01 23:12:35,775] DEBUG    TorManager Creating new Tor socket to uuux2gnf2pktjvlj.onion:15441
+[2018-02-01 23:12:35,775] DEBUG    FileServer Conn#12 kxinrewdnojeidqr.onion [?] > Connecting...
+[2018-02-01 23:12:35,775] DEBUG    TorManager Creating new Tor socket to kxinrewdnojeidqr.onion:15441
+[2018-02-01 23:12:35,786] DEBUG    FileServer Conn#13 hm7x6vrtihhvxx5r.onion [?] > Connecting...
+[2018-02-01 23:12:35,786] DEBUG    TorManager Creating new Tor socket to hm7x6vrtihhvxx5r.onion:15441
+[2018-02-01 23:12:35,787] DEBUG    FileServer Conn#14 jm3ot3lvb46u7byp.onion [?] > Connecting...
+[2018-02-01 23:12:35,793] DEBUG    TorManager Creating new Tor socket to jm3ot3lvb46u7byp.onion:15441
+[2018-02-01 23:12:35,794] DEBUG    FileServer Conn#15 p7oib7omhl3vwqar.onion [?] > Connecting...
+[2018-02-01 23:12:35,794] DEBUG    TorManager Creating new Tor socket to p7oib7omhl3vwqar.onion:15441
+[2018-02-01 23:12:35,794] DEBUG    TorManager Created new hidden service for global: fzk4k2lhd73bfthg
+[2018-02-01 23:12:36,173] DEBUG    Ui.UiServer 127.0.0.1 - - [2018-02-01 23:12:36] "GET /1Jwmx33xCtuRe2UReHHxkritZ1nfuyXrrc/?wrapper_nonce=8dbd1471afabb3c49850637e6eeac0f72b1ce4fce71f4f91c34e7f1a595934ac HTTP/1.1" 200 1546 0.002227
+[2018-02-01 23:12:36,282] DEBUG    FileServer Conn#10 zero.booth.moe [?] > Closing connection: zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:36,282] DEBUG    Site:17ziJ8..xX8t Announce to zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441 failed: None
+[2018-02-01 23:12:36,625] DEBUG    - UserManager added 1 users
+[2018-02-01 23:12:36,633] DEBUG    Site:1UDbAD..MkoV Small number of peers detected...query all of peers using pex
+[2018-02-01 23:12:36,637] DEBUG    FileServer Conn#16 77.247.181.162 [?] > Connecting...
+[2018-02-01 23:12:36,677] DEBUG    FileServer Conn#16 77.247.181.162 [?] > Closing connection: 77.247.181.162 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:36,678] DEBUG    FileServer Conn#17 120.4.246.72 [?] > Connecting...
+[2018-02-01 23:12:37,189] DEBUG    Site:1BhArU..t3wQ Announced types [] in mode start to 5 trackers in 10.001s, errors: ['http://explodie.org:6969/announce', 'zero://zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441'], slow: ['1.17s http://retracker.spark-rostov.ru:80/announce', '1.08s http://tracker.opentrackr.org:1337/announce', '1.05s udp://9.rarbg.com:2710', '1.07s udp://tracker.leechers-paradise.org:6969', '1.03s udp://tracker.coppersurfer.tk:6969', '10s+ zero://boot3rdez4rzn36x.onion:15441']
+[2018-02-01 23:12:37,190] DEBUG    Site:1FFuXJ..Rdkp Announced types [] in mode start to 5 trackers in 10.001s, errors: ['http://explodie.org:6969/announce', 'zero://zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441'], slow: ['1.13s http://retracker.spark-rostov.ru:80/announce', '1.03s http://tracker.opentrackr.org:1337/announce', '1.04s udp://9.rarbg.com:2710', '1.04s udp://tracker.leechers-paradise.org:6969', '1.00s udp://tracker.coppersurfer.tk:6969', '10s+ zero://boot3rdez4rzn36x.onion:15441']
+[2018-02-01 23:12:37,190] DEBUG    Site:1Mr2r3..EALD Announced types [] in mode start to 5 trackers in 10.002s, errors: ['http://explodie.org:6969/announce', 'zero://zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441'], slow: ['1.13s http://retracker.spark-rostov.ru:80/announce', '1.05s http://tracker.opentrackr.org:1337/announce', '1.04s udp://9.rarbg.com:2710', '1.03s udp://tracker.leechers-paradise.org:6969', '1.02s udp://tracker.coppersurfer.tk:6969', '10s+ zero://boot3rdez4rzn36x.onion:15441']
+[2018-02-01 23:12:37,279] DEBUG    FileServer Conn#18 zero.booth.moe [?] > Connecting...
+[2018-02-01 23:12:37,348] DEBUG    Site:1Gfey7..fcdp tracker.coppersurfer.tk:6969: Found 50 peers, new: 4, total: 407
+[2018-02-01 23:12:37,358] DEBUG    Site:1Gfey7..fcdp tracker.leechers-paradise.org:6969: Found 50 peers, new: 2, total: 409
+[2018-02-01 23:12:37,382] DEBUG    Site:1Gfey7..fcdp tracker.opentrackr.org:1337/announce: Found 30 peers, new: 1, total: 410
+[2018-02-01 23:12:37,465] DEBUG    Site:1Gfey7..fcdp retracker.spark-rostov.ru:80/announce: Found 50 peers, new: 1, total: 411
+[2018-02-01 23:12:37,531] DEBUG    Ui.UiServer 127.0.0.1 - - [2018-02-01 23:12:37] "GET /1Jwmx33xCtuRe2UReHHxkritZ1nfuyXrrc/css/all.css HTTP/1.1" 200 226283 0.001042
+[2018-02-01 23:12:37,536] DEBUG    Ui.UiServer 127.0.0.1 - - [2018-02-01 23:12:37] "GET /1Jwmx33xCtuRe2UReHHxkritZ1nfuyXrrc/js/all.js?lang=de HTTP/1.1" 200 300936 0.002367
+[2018-02-01 23:12:37,667] DEBUG    Site:1Gfey7..fcdp Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:12:37,796] DEBUG    FileServer Conn#18 zero.booth.moe [?] > Closing connection: zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:37,797] DEBUG    Site:1Gfey7..fcdp Announce to zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441 failed: None
+[2018-02-01 23:12:39,260] DEBUG    Site:17ziJ8..xX8t Announced types ['onion', 'i2p'] in mode startup to 5 trackers in 10.001s, errors: ['http://explodie.org:6969/announce', 'zero://zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441'], slow: ['10s+ zero://boot3rdez4rzn36x.onion:15441']
+[2018-02-01 23:12:39,262] DEBUG    FileServer Conn#19 tw7jtxtnbzv4pvjr.onion [?] > Connecting...
+[2018-02-01 23:12:39,262] DEBUG    TorManager Creating new Tor socket to tw7jtxtnbzv4pvjr.onion:15441
+[2018-02-01 23:12:39,263] DEBUG    FileServer Conn#20 x3mnjev65c7bvmjm.onion [?] > Connecting...
+[2018-02-01 23:12:39,263] DEBUG    TorManager Creating new Tor socket to x3mnjev65c7bvmjm.onion:15441
+[2018-02-01 23:12:39,264] DEBUG    FileServer Conn#21 193.183.98.77 [?] > Connecting...
+[2018-02-01 23:12:39,291] DEBUG    FileServer Conn#22 zero.booth.moe [?] > Connecting...
+[2018-02-01 23:12:39,309] DEBUG    FileServer Conn#21 193.183.98.77 [?] > Closing connection: 193.183.98.77 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:39,317] DEBUG    FileServer Conn#23 ckjprc3nmagjqava.onion [?] > Connecting...
+[2018-02-01 23:12:39,317] DEBUG    TorManager Creating new Tor socket to ckjprc3nmagjqava.onion:15441
+[2018-02-01 23:12:39,388] DEBUG    Site:1SiTEs..tdwB tracker.leechers-paradise.org:6969: Found 50 peers, new: 7, total: 1225
+[2018-02-01 23:12:39,388] DEBUG    Site:1SiTEs..tdwB tracker.coppersurfer.tk:6969: Found 50 peers, new: 2, total: 1227
+[2018-02-01 23:12:39,409] DEBUG    Site:1SiTEs..tdwB tracker.opentrackr.org:1337/announce: Found 30 peers, new: 1, total: 1228
+[2018-02-01 23:12:39,752] DEBUG    Site:1SiTEs..tdwB Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:12:39,779] DEBUG    FileServer Conn#22 zero.booth.moe [?] > Closing connection: zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:39,779] DEBUG    Site:1SiTEs..tdwB Announce to zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441 failed: None
+[2018-02-01 23:12:40,159] DEBUG    Site:149EPB..zaCN Found 0 ip4, 20 onion peers, 0 i2p peers, new: 5
+[2018-02-01 23:12:40,159] DEBUG    Site:1Br4MT..CFxh Found 0 ip4, 4 onion peers, 0 i2p peers, new: 4
+[2018-02-01 23:12:40,160] DEBUG    Site:1Gfey7..fcdp Found 0 ip4, 20 onion peers, 0 i2p peers, new: 8
+[2018-02-01 23:12:40,160] DEBUG    Site:1GitLi..MQ4t Found 0 ip4, 20 onion peers, 0 i2p peers, new: 4
+[2018-02-01 23:12:40,160] DEBUG    Site:1H3MA7..Zssb Found 0 ip4, 5 onion peers, 0 i2p peers, new: 3
+[2018-02-01 23:12:40,160] DEBUG    Site:1LyXfj..QXGR Found 0 ip4, 3 onion peers, 0 i2p peers, new: 1
+[2018-02-01 23:12:40,161] DEBUG    Site:1RepoX..HCc6 Found 0 ip4, 20 onion peers, 0 i2p peers, new: 2
+[2018-02-01 23:12:40,161] DEBUG    Site:1Gif7P..Xc7h Found 0 ip4, 20 onion peers, 0 i2p peers, new: 5
+[2018-02-01 23:12:40,161] DEBUG    Site:1A3o3D..8H87 Found 0 ip4, 2 onion peers, 0 i2p peers, new: 2
+[2018-02-01 23:12:40,175] DEBUG    Site:1SiTEs..tdwB Found 0 ip4, 20 onion peers, 0 i2p peers, new: 7
+[2018-02-01 23:12:40,175] DEBUG    Site:1KVLau..gG2m Found 0 ip4, 4 onion peers, 0 i2p peers, new: 3
+[2018-02-01 23:12:40,176] DEBUG    Site:1UPDat..fxsp Found 0 ip4, 20 onion peers, 0 i2p peers, new: 1
+[2018-02-01 23:12:40,176] DEBUG    Site:1KjcBw..pTMC Found 0 ip4, 5 onion peers, 0 i2p peers, new: 2
+[2018-02-01 23:12:40,176] DEBUG    Site:1UDbAD..MkoV Found 0 ip4, 20 onion peers, 0 i2p peers, new: 5
+[2018-02-01 23:12:40,177] DEBUG    Site:1Cn8tC..Hwys Found 0 ip4, 11 onion peers, 0 i2p peers, new: 4
+[2018-02-01 23:12:40,183] DEBUG    Site:1Sickf..FFEs Found 0 ip4, 8 onion peers, 0 i2p peers, new: 4
+[2018-02-01 23:12:40,184] DEBUG    WorkerManager:1FFuXJ..Rdkp Starting workers, tasks: 1, peers: 0, workers: 0
+[2018-02-01 23:12:40,184] DEBUG    WorkerManager:1FFuXJ..Rdkp Added worker: 118.211.9.159:15441, workers: 1/5
+[2018-02-01 23:12:40,184] DEBUG    WorkerManager:1FFuXJ..Rdkp Added worker: 5yvlmykx53bm7no5.onion:15441, workers: 2/5
+[2018-02-01 23:12:40,184] DEBUG    WorkerManager:1FFuXJ..Rdkp Added worker: 5bja2jilgounfjcs.onion:15441, workers: 3/5
+[2018-02-01 23:12:40,184] DEBUG    Site:1FFuXJ..Rdkp Found 0 ip4, 2 onion peers, 0 i2p peers, new: 2
+[2018-02-01 23:12:40,184] DEBUG    Site:1MVADe..JfMK Found 0 ip4, 5 onion peers, 0 i2p peers, new: 2
+[2018-02-01 23:12:40,185] DEBUG    Site:1BLogC..AGg8 Found 0 ip4, 20 onion peers, 0 i2p peers, new: 6
+[2018-02-01 23:12:40,187] DEBUG    Site:1rNL2h..PAvz Found 0 ip4, 2 onion peers, 0 i2p peers, new: 2
+[2018-02-01 23:12:40,187] DEBUG    Site:1DaXkb..jwcv Found 0 ip4, 20 onion peers, 0 i2p peers, new: 5
+[2018-02-01 23:12:40,188] DEBUG    Site:1BsRBz..YYau Found 0 ip4, 8 onion peers, 0 i2p peers, new: 2
+[2018-02-01 23:12:40,188] DEBUG    WorkerManager:1Mr2r3..EALD Starting workers, tasks: 1, peers: 0, workers: 1
+[2018-02-01 23:12:40,188] DEBUG    WorkerManager:1Mr2r3..EALD Added worker: jnx62t5yqbh5kbv4.onion:15441, workers: 2/5
+[2018-02-01 23:12:40,188] DEBUG    WorkerManager:1Mr2r3..EALD Added worker: gsoyk2ykwlizeze3.onion:15441, workers: 3/5
+[2018-02-01 23:12:40,188] DEBUG    Site:1Mr2r3..EALD Found 0 ip4, 2 onion peers, 0 i2p peers, new: 2
+[2018-02-01 23:12:40,188] DEBUG    Site:1BXLnS..6rts Found 0 ip4, 5 onion peers, 0 i2p peers, new: 2
+[2018-02-01 23:12:40,189] DEBUG    Site:13EYKq..eLkc Found 0 ip4, 18 onion peers, 0 i2p peers, new: 4
+[2018-02-01 23:12:40,197] DEBUG    Site:1HNYEH..nVA2 Found 0 ip4, 9 onion peers, 0 i2p peers, new: 7
+[2018-02-01 23:12:40,197] DEBUG    Site:1DuceV..UrtN Found 0 ip4, 2 onion peers, 0 i2p peers, new: 2
+[2018-02-01 23:12:40,197] DEBUG    Site:1Jz14w..jAkN Found 0 ip4, 3 onion peers, 0 i2p peers, new: 2
+[2018-02-01 23:12:40,198] DEBUG    Site:1GNTAK..ZYTL Found 0 ip4, 14 onion peers, 0 i2p peers, new: 4
+[2018-02-01 23:12:40,198] DEBUG    Site:1D1VGa..o3Ed Found 0 ip4, 2 onion peers, 0 i2p peers, new: 2
+[2018-02-01 23:12:40,198] DEBUG    Site:1JheKm..HQqx Found 0 ip4, 2 onion peers, 0 i2p peers, new: 2
+[2018-02-01 23:12:40,198] DEBUG    Site:1AHweG..5Gkq Found 0 ip4, 3 onion peers, 0 i2p peers, new: 3
+[2018-02-01 23:12:40,198] DEBUG    Site:171amn..hRWj Found 0 ip4, 7 onion peers, 0 i2p peers, new: 2
+[2018-02-01 23:12:40,205] DEBUG    Site:1TaLkF..jipT Found 0 ip4, 20 onion peers, 0 i2p peers, new: 7
+[2018-02-01 23:12:40,205] DEBUG    Site:14vBXT..RZTM Found 0 ip4, 2 onion peers, 0 i2p peers, new: 2
+[2018-02-01 23:12:40,206] DEBUG    Site:19X5gH..Hjgc Found 0 ip4, 20 onion peers, 0 i2p peers, new: 3
+[2018-02-01 23:12:40,206] DEBUG    Site:1FTZ3b..P6tq Found 0 ip4, 3 onion peers, 0 i2p peers, new: 2
+[2018-02-01 23:12:40,206] DEBUG    Site:1FZAVa..TN6H Found 0 ip4, 4 onion peers, 0 i2p peers, new: 4
+[2018-02-01 23:12:40,206] DEBUG    Site:1MaiL5..Ju27 Found 0 ip4, 20 onion peers, 0 i2p peers, new: 3
+[2018-02-01 23:12:40,207] DEBUG    Site:1uPLoa..dmQc Found 0 ip4, 20 onion peers, 0 i2p peers, new: 5
+[2018-02-01 23:12:40,207] DEBUG    Site:1DTpF9..3VK1 Found 0 ip4, 3 onion peers, 0 i2p peers, new: 2
+[2018-02-01 23:12:40,207] DEBUG    WorkerManager:1BhArU..t3wQ Starting workers, tasks: 1, peers: 0, workers: 0
+[2018-02-01 23:12:40,207] DEBUG    WorkerManager:1BhArU..t3wQ Added worker: 2tzdgaeo7vkufmvc.onion:15441, workers: 1/5
+[2018-02-01 23:12:40,207] DEBUG    WorkerManager:1BhArU..t3wQ Added worker: 5ewrk5twciv765fu.onion:15441, workers: 2/5
+[2018-02-01 23:12:40,207] DEBUG    Site:1BhArU..t3wQ Found 0 ip4, 2 onion peers, 0 i2p peers, new: 2
+[2018-02-01 23:12:40,219] DEBUG    Site:1Jwmx3..Xrrc Found 0 ip4, 4 onion peers, 0 i2p peers, new: 1
+[2018-02-01 23:12:40,220] DEBUG    Site:14y3Se..bWeH Found 0 ip4, 13 onion peers, 0 i2p peers, new: 6
+[2018-02-01 23:12:40,220] DEBUG    Site:1MeFqF..q7nH Found 0 ip4, 20 onion peers, 0 i2p peers, new: 4
+[2018-02-01 23:12:40,220] DEBUG    Site:1Name2..hM9F Found 0 ip4, 20 onion peers, 0 i2p peers, new: 8
+[2018-02-01 23:12:40,221] DEBUG    Site:1HeLLo..Tf3D Found 0 ip4, 20 onion peers, 0 i2p peers, new: 8
+[2018-02-01 23:12:40,221] DEBUG    Site:1MRMXT..18wS Found 0 ip4, 7 onion peers, 0 i2p peers, new: 6
+[2018-02-01 23:12:40,221] DEBUG    Site:1iD5ZQ..duGz Found 0 ip4, 20 onion peers, 0 i2p peers, new: 6
+[2018-02-01 23:12:40,222] DEBUG    Site:1iNDEx..RPcL Found 0 ip4, 20 onion peers, 0 i2p peers, new: 4
+[2018-02-01 23:12:40,222] DEBUG    Site:17ziJ8..xX8t Signing 1517526757 for boot3rdez4rzn36x.onion:15441 to add 51 onions
+[2018-02-01 23:12:40,890] DEBUG    FileServer Conn#24 5yvlmykx53bm7no5.onion [?] > Connecting...
+[2018-02-01 23:12:40,890] DEBUG    TorManager Creating new Tor socket to 5yvlmykx53bm7no5.onion:15441
+[2018-02-01 23:12:40,891] DEBUG    FileServer Conn#25 2tzdgaeo7vkufmvc.onion [?] > Connecting...
+[2018-02-01 23:12:40,891] DEBUG    TorManager Creating new Tor socket to 2tzdgaeo7vkufmvc.onion:15441
+[2018-02-01 23:12:40,899] DEBUG    FileServer Conn# 4 159.226.95.66 [?] > Closing connection: [Cleanup] Connect timeout: 12.637s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:12:40,900] DEBUG    - Gevent block detected: 0.590945959091
+[2018-02-01 23:12:40,912] DEBUG    WorkerManager:1Mr2r3..EALD 159.226.95.66:15441: Verify failed: content.json, error: Download failed, failed peers: 0, workers: 0
+[2018-02-01 23:12:40,912] DEBUG    Site:1BhArU..t3wQ Small number of peers detected...query all of peers using pex
+[2018-02-01 23:12:40,912] DEBUG    Site:1FFuXJ..Rdkp Small number of peers detected...query all of peers using pex
+[2018-02-01 23:12:40,912] DEBUG    FileServer Conn#26 118.211.9.159 [?] > Connecting...
+[2018-02-01 23:12:40,924] DEBUG    Site:1Mr2r3..EALD Small number of peers detected...query all of peers using pex
+[2018-02-01 23:12:40,924] DEBUG    FileServer Conn#27 jnx62t5yqbh5kbv4.onion [?] > Connecting...
+[2018-02-01 23:12:40,924] DEBUG    TorManager Creating new Tor socket to jnx62t5yqbh5kbv4.onion:15441
+[2018-02-01 23:12:40,938] DEBUG    Ui.UiServer 127.0.0.1 - - [2018-02-01 23:12:40] "GET /1Jwmx33xCtuRe2UReHHxkritZ1nfuyXrrc/img/logo.svg HTTP/1.1" 200 1336 0.000690
+[2018-02-01 23:12:40,991] DEBUG    WorkerManager:1FFuXJ..Rdkp 118.211.9.159:15441: No task found, stopping
+[2018-02-01 23:12:40,991] DEBUG    WorkerManager:1FFuXJ..Rdkp Removed worker, workers: 2/5
+[2018-02-01 23:12:41,133] DEBUG    SiteManager Loading sites...
+[2018-02-01 23:12:41,146] DEBUG    SiteManager Updated merger sites in 0.001s
+[2018-02-01 23:12:41,321] DEBUG    FileServer Conn#26 118.211.9.159 [?] > Closing connection: 118.211.9.159 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:41,586] DEBUG    FileServer Conn# 2 boot3rdez4rzn36x.onion [v2] > Closing connection: Removing, waiting_requests: 0, sites: 4, buff: 0...
+[2018-02-01 23:12:41,799] DEBUG    FileServer Conn#28 5bja2jilgounfjcs.onion [?] > Connecting...
+[2018-02-01 23:12:41,799] DEBUG    TorManager Creating new Tor socket to 5bja2jilgounfjcs.onion:15441
+[2018-02-01 23:12:41,799] DEBUG    FileServer Conn#29 gsoyk2ykwlizeze3.onion [?] > Connecting...
+[2018-02-01 23:12:41,800] DEBUG    TorManager Creating new Tor socket to gsoyk2ykwlizeze3.onion:15441
+[2018-02-01 23:12:41,808] DEBUG    FileServer Conn#30 5ewrk5twciv765fu.onion [?] > Connecting...
+[2018-02-01 23:12:41,808] DEBUG    TorManager Creating new Tor socket to 5ewrk5twciv765fu.onion:15441
+[2018-02-01 23:12:42,013] DEBUG    WorkerManager:1Mr2r3..EALD 159.226.95.66:15441: No task found, stopping
+[2018-02-01 23:12:42,013] DEBUG    WorkerManager:1Mr2r3..EALD Removed worker, workers: 2/5
+[2018-02-01 23:12:42,261] DEBUG    Site:17ziJ8..xX8t Small number of peers detected...query all of peers using pex
+[2018-02-01 23:12:42,320] DEBUG    Site:1BLogC..AGg8 No database, waiting for dbschema.json...
+[2018-02-01 23:12:42,323] DEBUG    Db:ZeroBlog Connected to data/1BLogC9LN4oPDcruNz3qo1ysa133E9AGg8/data/zeroblog.db in 0.001s (opened: 3, sqlite version: 2.6.0)...
+[2018-02-01 23:12:42,329] DEBUG    Db:ZeroBlog Db check done in 0.006s, changed tables: []
+[2018-02-01 23:12:42,339] DEBUG    Site:1TaLkF..jipT No database, waiting for dbschema.json...
+[2018-02-01 23:12:42,346] DEBUG    Db:ZeroTalk Connected to data/1TaLkFrMwvbNsooF4ioKAY9EuxTBTjipT/data/users/zerotalk.db in 0.005s (opened: 4, sqlite version: 2.6.0)...
+[2018-02-01 23:12:42,346] DEBUG    Db:ZeroTalk Db check done in 0.006s, changed tables: []
+[2018-02-01 23:12:44,732] DEBUG    Site:1Name2..hM9F Announced types ['onion', 'i2p'] in mode startup to 7 trackers in 9.470s, errors: ['http://explodie.org:6969/announce'], slow: ['9.46s udp://9.rarbg.com:2710']
+[2018-02-01 23:12:44,733] DEBUG    Site:1Name2..hM9F content.json loadContent same json file, skipping
+[2018-02-01 23:12:44,736] DEBUG    FileServer Conn# 6 178.87.251.82 [?] > Closing connection: Send error: This socket is already used by another greenlet: <bound method Waiter.switch of <gevent.hub.Waiter object at 0x3b7a2d0>>, waiting_requests: 1, sites: 2, buff: 0...
+[2018-02-01 23:12:44,736] DEBUG    FileServer Conn#31 62.57.10.86  [?] > Connecting...
+[2018-02-01 23:12:44,749] DEBUG    FileServer Conn#32 188.178.147.161 [?] > Connecting...
+[2018-02-01 23:12:44,757] DEBUG    FileServer Conn#33 173.239.228.70 [?] > Connecting...
+[2018-02-01 23:12:44,924] DEBUG    FileServer Conn#31 62.57.10.86  [?] > Closing connection: 62.57.10.86 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:44,925] DEBUG    FileServer Conn#34 72.186.52.31 [?] > Connecting...
+[2018-02-01 23:12:44,951] DEBUG    FileServer Conn#33 173.239.228.70 [?] > Closing connection: 173.239.228.70 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:44,952] DEBUG    FileServer Conn#35 174.77.58.216 [?] > Connecting...
+[2018-02-01 23:12:45,094] DEBUG    FileServer Conn#34 72.186.52.31 [?] > Closing connection: 72.186.52.31 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:45,095] DEBUG    FileServer Conn#36 192.241.219.63 [?] > Connecting...
+[2018-02-01 23:12:45,137] DEBUG    FileServer Conn#35 174.77.58.216 [?] > Closing connection: 174.77.58.216 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:45,138] DEBUG    FileServer Conn#37 178.17.174.198 [?] > Connecting...
+[2018-02-01 23:12:45,285] DEBUG    FileServer Conn#36 192.241.219.63 [?] > Closing connection: 192.241.219.63 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:45,285] DEBUG    FileServer Conn#38 110.185.145.113 [?] > Connecting...
+[2018-02-01 23:12:45,737] DEBUG    FileServer Conn#39 178.87.251.82 [?] > Connecting...
+[2018-02-01 23:12:46,274] DEBUG    FileServer Conn#40 zero.booth.moe [?] > Connecting...
+[2018-02-01 23:12:46,381] DEBUG    Site:1Gif7P..Xc7h tracker.coppersurfer.tk:6969: Found 50 peers, new: 3, total: 306
+[2018-02-01 23:12:46,382] DEBUG    Site:1Gif7P..Xc7h tracker.leechers-paradise.org:6969: Found 50 peers, new: 2, total: 308
+[2018-02-01 23:12:46,662] DEBUG    Site:1Gif7P..Xc7h Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:12:46,762] DEBUG    FileServer Conn#40 zero.booth.moe [?] > Closing connection: zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:46,763] DEBUG    Site:1Gif7P..Xc7h Announce to zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441 failed: None
+[2018-02-01 23:12:46,774] DEBUG    Site:1Gif7P..Xc7h Announced types ['onion', 'i2p'] in mode startup to 6 trackers in 0.509s, errors: ['http://explodie.org:6969/announce', 'zero://zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441'], slow: []
+[2018-02-01 23:12:46,780] DEBUG    Site:1Gif7P..Xc7h content.json loadContent same json file, skipping
+[2018-02-01 23:12:46,784] DEBUG    FileServer Conn#41 177.192.172.28 [?] > Connecting...
+[2018-02-01 23:12:46,789] DEBUG    FileServer Conn#42 88.75.234.247 [?] > Connecting...
+[2018-02-01 23:12:46,790] DEBUG    FileServer Conn#43 186.93.37.246 [?] > Connecting...
+[2018-02-01 23:12:46,802] DEBUG    Ui.UiServer 127.0.0.1 - - [2018-02-01 23:12:46] "GET /1Jwmx33xCtuRe2UReHHxkritZ1nfuyXrrc/img/loading-circle.gif HTTP/1.1" 200 2643 0.001082
+[2018-02-01 23:12:47,263] DEBUG    Site:1Gfey7..fcdp Announced types ['onion', 'i2p'] in mode startup to 5 trackers in 10.000s, errors: ['http://explodie.org:6969/announce', 'zero://zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441'], slow: ['10s+ udp://9.rarbg.com:2710']
+[2018-02-01 23:12:47,263] DEBUG    Site:1Gfey7..fcdp content.json loadContent same json file, skipping
+[2018-02-01 23:12:47,265] DEBUG    FileServer Conn#44 217.23.1.184 [?] > Connecting...
+[2018-02-01 23:12:47,266] DEBUG    FileServer Conn#45 63wkf4ocfqbk4cov.onion [?] > Connecting...
+[2018-02-01 23:12:47,266] DEBUG    TorManager Creating new Tor socket to 63wkf4ocfqbk4cov.onion:15441
+[2018-02-01 23:12:47,266] DEBUG    FileServer Conn#46 xfjetuncicvho4fy.onion [?] > Connecting...
+[2018-02-01 23:12:47,266] DEBUG    TorManager Creating new Tor socket to xfjetuncicvho4fy.onion:15441
+[2018-02-01 23:12:47,734] DEBUG    Site:1Name2..hM9F Small number of peers detected...query all of peers using pex
+[2018-02-01 23:12:47,752] DEBUG    FileServer Conn#47 181.221.179.244 [?] > Connecting...
+[2018-02-01 23:12:47,818] DEBUG    FileServer Conn#32 188.178.147.161 [?] > Closing connection: 188.178.147.161 Connect error: error: [Errno 113] No route to host in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:47,818] DEBUG    FileServer Conn#48 47.88.222.113 [?] > Connecting...
+[2018-02-01 23:12:48,013] DEBUG    FileServer Conn#48 47.88.222.113 [?] > Closing connection: 47.88.222.113 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:48,013] DEBUG    FileServer Conn#49 60.227.198.66 [?] > Connecting...
+[2018-02-01 23:12:48,706] DEBUG    FileServer Conn#20 x3mnjev65c7bvmjm.onion [?] > Closing connection: x3mnjev65c7bvmjm.onion Connect error: SOCKS5Error: 0x04: Host unreachable in ConnectionServer.py line 178 > Connection.py line 121 > socks.py line 681 > socks.py line 383 > socks.py line 458, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:48,707] DEBUG    FileServer Conn#50 ir6rtox3g7jkpbel.onion [?] > Connecting...
+[2018-02-01 23:12:48,707] DEBUG    TorManager Creating new Tor socket to ir6rtox3g7jkpbel.onion:15441
+[2018-02-01 23:12:49,269] DEBUG    Site:1SiTEs..tdwB Announced types ['onion', 'i2p'] in mode startup to 5 trackers in 10.000s, errors: ['http://explodie.org:6969/announce', 'zero://zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441'], slow: ['10s+ udp://9.rarbg.com:2710']
+[2018-02-01 23:12:49,270] DEBUG    Site:1SiTEs..tdwB content.json loadContent same json file, skipping
+[2018-02-01 23:12:49,274] DEBUG    FileServer Conn#42 88.75.234.247 [?] > Closing connection: Send error: This socket is already used by another greenlet: <bound method Waiter.switch of <gevent.hub.Waiter object at 0x3c185a0>>, waiting_requests: 1, sites: 1, buff: 0...
+[2018-02-01 23:12:49,275] DEBUG    FileServer Conn#51 152.250.9.224 [?] > Connecting...
+[2018-02-01 23:12:49,284] DEBUG    FileServer Conn#52 36.22.228.103 [?] > Connecting...
+[2018-02-01 23:12:49,285] DEBUG    FileServer Conn#53 218.4.191.250 [?] > Connecting...
+[2018-02-01 23:12:49,644] DEBUG    FileServer Conn#52 36.22.228.103 [?] > Closing connection: 36.22.228.103 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:49,644] DEBUG    FileServer Conn#54 187.214.179.226 [?] > Connecting...
+[2018-02-01 23:12:49,776] DEBUG    Site:1Gif7P..Xc7h Small number of peers detected...query all of peers using pex
+[2018-02-01 23:12:49,777] DEBUG    FileServer Conn#55 mptzlvj7d3y366y2.onion [?] > Connecting...
+[2018-02-01 23:12:49,777] DEBUG    TorManager Creating new Tor socket to mptzlvj7d3y366y2.onion:15441
+[2018-02-01 23:12:50,264] DEBUG    Site:1Gfey7..fcdp Small number of peers detected...query all of peers using pex
+[2018-02-01 23:12:50,265] DEBUG    FileServer Conn#56 th5ozbbs2nt2rh3a.onion [?] > Connecting...
+[2018-02-01 23:12:50,265] DEBUG    TorManager Creating new Tor socket to th5ozbbs2nt2rh3a.onion:15441
+[2018-02-01 23:12:50,275] DEBUG    FileServer Conn#57 88.75.234.247 [?] > Connecting...
+[2018-02-01 23:12:51,381] DEBUG    FileServer Conn#12 kxinrewdnojeidqr.onion [?] > Closing connection: kxinrewdnojeidqr.onion Connect error: SOCKS5Error: 0x04: Host unreachable in ConnectionServer.py line 178 > Connection.py line 121 > socks.py line 681 > socks.py line 383 > socks.py line 458, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:12:51,382] DEBUG    FileServer Conn#58 45.55.204.78 [?] > Connecting...
+[2018-02-01 23:12:51,517] DEBUG    FileServer Conn#58 45.55.204.78 [?] > Closing connection: 45.55.204.78 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:51,517] DEBUG    FileServer Conn#59 75.87.161.130 [?] > Connecting...
+[2018-02-01 23:12:51,705] DEBUG    FileServer Conn#59 75.87.161.130 [?] > Closing connection: 75.87.161.130 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:51,706] DEBUG    FileServer Conn#60 148.0.215.149 [?] > Connecting...
+[2018-02-01 23:12:51,788] DEBUG    FileServer Conn#61 119.96.207.161 [?] > Connecting...
+[2018-02-01 23:12:51,801] DEBUG    FileServer Conn#62 105.98.72.67 [?] > Connecting...
+[2018-02-01 23:12:51,884] DEBUG    FileServer Conn#60 148.0.215.149 [?] > Closing connection: 148.0.215.149 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:51,884] DEBUG    FileServer Conn#63 z7qo5fweef5i7xlx.onion [?] > Connecting...
+[2018-02-01 23:12:51,885] DEBUG    TorManager Creating new Tor socket to z7qo5fweef5i7xlx.onion:15441
+[2018-02-01 23:12:52,052] DEBUG    FileServer Conn#61 119.96.207.161 [?] > Closing connection: 119.96.207.161 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:52,052] DEBUG    FileServer Conn#64 qd5cvtavfnosbivs.onion [?] > Connecting...
+[2018-02-01 23:12:52,052] DEBUG    TorManager Creating new Tor socket to qd5cvtavfnosbivs.onion:15441
+[2018-02-01 23:12:52,233] DEBUG    FileServer Conn#30 5ewrk5twciv765fu.onion [?] > Closing connection: 5ewrk5twciv765fu.onion Connect error: SOCKS5Error: 0x04: Host unreachable in ConnectionServer.py line 178 > Connection.py line 121 > socks.py line 681 > socks.py line 383 > socks.py line 458, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:52,234] DEBUG    WorkerManager:1BhArU..t3wQ 5ewrk5twciv765fu.onion:15441: Verify failed: content.json, error: Download failed, failed peers: 0, workers: 1
+[2018-02-01 23:12:52,271] DEBUG    Site:1SiTEs..tdwB Small number of peers detected...query all of peers using pex
+[2018-02-01 23:12:52,286] DEBUG    FileServer Conn#65 3mpiv2q5jtl6pukh.onion [?] > Connecting...
+[2018-02-01 23:12:52,286] DEBUG    TorManager Creating new Tor socket to 3mpiv2q5jtl6pukh.onion:15441
+[2018-02-01 23:12:53,281] DEBUG    FileServer Conn#66 zero.booth.moe [?] > Connecting...
+[2018-02-01 23:12:53,335] DEBUG    WorkerManager:1BhArU..t3wQ 5ewrk5twciv765fu.onion:15441: No task found, stopping
+[2018-02-01 23:12:53,336] DEBUG    WorkerManager:1BhArU..t3wQ Removed worker, workers: 1/5
+[2018-02-01 23:12:53,339] DEBUG    FileServer Conn#57 88.75.234.247 [?] > Closing connection: 88.75.234.247 Connect error: error: [Errno 113] No route to host in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:53,371] DEBUG    Site:1iD5ZQ..duGz tracker.coppersurfer.tk:6969: Found 50 peers, new: 1, total: 780
+[2018-02-01 23:12:53,371] DEBUG    Site:1iD5ZQ..duGz tracker.leechers-paradise.org:6969: Found 50 peers, new: 5, total: 785
+[2018-02-01 23:12:53,390] DEBUG    Site:1iD5ZQ..duGz tracker.opentrackr.org:1337/announce: Found 30 peers, new: 1, total: 786
+[2018-02-01 23:12:53,654] DEBUG    Site:1iD5ZQ..duGz Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:12:53,655] DEBUG    FileServer Conn#67 191.13.66.29 [?] > Connecting...
+[2018-02-01 23:12:53,720] DEBUG    FileServer Conn#68 175.13.196.164 [?] > Connecting...
+[2018-02-01 23:12:53,781] DEBUG    FileServer Conn#66 zero.booth.moe [?] > Closing connection: zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:53,782] DEBUG    Site:1iD5ZQ..duGz Announce to zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441 failed: None
+[2018-02-01 23:12:53,782] DEBUG    Site:1iD5ZQ..duGz Announced types ['onion', 'i2p'] in mode startup to 6 trackers in 0.515s, errors: ['http://explodie.org:6969/announce', 'zero://zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441'], slow: []
+[2018-02-01 23:12:53,783] DEBUG    Site:1iD5ZQ..duGz content.json loadContent same json file, skipping
+[2018-02-01 23:12:53,785] DEBUG    FileServer Conn#51 152.250.9.224 [?] > Closing connection: Send error: This socket is already used by another greenlet: <bound method Waiter.switch of <gevent.hub.Waiter object at 0x41f70a0>>, waiting_requests: 1, sites: 1, buff: 0...
+[2018-02-01 23:12:53,790] DEBUG    FileServer Conn#53 218.4.191.250 [?] > Closing connection: Send error: This socket is already used by another greenlet: <bound method Waiter.switch of <gevent.hub.Waiter object at 0x41f7140>>, waiting_requests: 1, sites: 1, buff: 0...
+[2018-02-01 23:12:53,790] DEBUG    FileServer Conn#62 105.98.72.67 [?] > Closing connection: Send error: This socket is already used by another greenlet: <bound method Waiter.switch of <gevent.hub.Waiter object at 0x41f71e0>>, waiting_requests: 1, sites: 1, buff: 0...
+[2018-02-01 23:12:53,791] DEBUG    FileServer Conn#69 180.127.142.167 [?] > Connecting...
+[2018-02-01 23:12:53,802] DEBUG    FileServer Conn#70 213.239.217.18 [?] > Connecting...
+[2018-02-01 23:12:53,809] DEBUG    FileServer Conn#71 173.244.36.51 [?] > Connecting...
+[2018-02-01 23:12:53,841] DEBUG    FileServer Conn#70 213.239.217.18 [?] > Closing connection: 213.239.217.18 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:53,842] DEBUG    FileServer Conn#72 174.63.22.148 [?] > Connecting...
+[2018-02-01 23:12:53,976] DEBUG    FileServer Conn#72 174.63.22.148 [?] > Closing connection: 174.63.22.148 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:53,977] DEBUG    FileServer Conn#73 128.82.241.186 [?] > Connecting...
+[2018-02-01 23:12:53,986] DEBUG    FileServer Conn#71 173.244.36.51 [?] > Closing connection: 173.244.36.51 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:53,987] DEBUG    FileServer Conn#74 223.80.231.32 [?] > Connecting...
+[2018-02-01 23:12:54,098] DEBUG    FileServer Conn#73 128.82.241.186 [?] > Closing connection: 128.82.241.186 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:54,099] DEBUG    FileServer Conn#75 120.194.56.140 [?] > Connecting...
+[2018-02-01 23:12:54,208] DEBUG    FileServer Conn#69 180.127.142.167 [?] > Closing connection: 180.127.142.167 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:54,208] DEBUG    FileServer Conn#76 94.1.167.173 [?] > Connecting...
+[2018-02-01 23:12:54,263] DEBUG    FileServer Conn#76 94.1.167.173 [?] > Closing connection: 94.1.167.173 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:54,264] DEBUG    FileServer Conn#77 111.193.229.113 [?] > Connecting...
+[2018-02-01 23:12:54,792] DEBUG    FileServer Conn#78 152.250.9.224 [?] > Connecting...
+[2018-02-01 23:12:54,793] DEBUG    FileServer Conn#79 218.4.191.250 [?] > Connecting...
+[2018-02-01 23:12:54,793] DEBUG    FileServer Conn#80 105.98.72.67 [?] > Connecting...
+[2018-02-01 23:12:54,951] DEBUG    FileServer Conn#25 2tzdgaeo7vkufmvc.onion [?] > Closing connection: 2tzdgaeo7vkufmvc.onion Connect error: SOCKS5Error: 0x04: Host unreachable in ConnectionServer.py line 178 > Connection.py line 121 > socks.py line 681 > socks.py line 383 > socks.py line 458, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:54,951] DEBUG    WorkerManager:1BhArU..t3wQ 2tzdgaeo7vkufmvc.onion:15441: Verify failed: content.json, error: Download failed, failed peers: 1, workers: 0
+[2018-02-01 23:12:54,952] DEBUG    FileServer Conn#81 5ewrk5twciv765fu.onion [?] > Connecting...
+[2018-02-01 23:12:54,952] DEBUG    TorManager Creating new Tor socket to 5ewrk5twciv765fu.onion:15441
+[2018-02-01 23:12:54,956] DEBUG    FileServer Conn#19 tw7jtxtnbzv4pvjr.onion [?] > Closing connection: tw7jtxtnbzv4pvjr.onion Connect error: SOCKS5Error: 0x04: Host unreachable in ConnectionServer.py line 178 > Connection.py line 121 > socks.py line 681 > socks.py line 383 > socks.py line 458, waiting_requests: 1, sites: 1, buff: 0...
+[2018-02-01 23:12:54,965] DEBUG    FileServer Conn#82 155.94.67.3  [?] > Connecting...
+[2018-02-01 23:12:55,099] DEBUG    FileServer Conn#82 155.94.67.3  [?] > Closing connection: 155.94.67.3 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:55,099] DEBUG    FileServer Conn#83 g2hwqgmrb4glt6oy.onion [?] > Connecting...
+[2018-02-01 23:12:55,099] DEBUG    TorManager Creating new Tor socket to g2hwqgmrb4glt6oy.onion:15441
+[2018-02-01 23:12:55,341] DEBUG    FileServer Conn#84 88.75.234.247 [?] > Connecting...
+[2018-02-01 23:12:55,901] DEBUG    FileServer Conn# 7 111.199.77.55 [?] > Closing connection: [Cleanup] Connect timeout: 24.099s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:12:55,901] DEBUG    FileServer Conn#11 uuux2gnf2pktjvlj.onion [?] > Closing connection: [Cleanup] Connect timeout: 20.129s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:12:55,901] DEBUG    FileServer Conn#13 hm7x6vrtihhvxx5r.onion [?] > Closing connection: [Cleanup] Connect timeout: 20.115s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:12:55,901] DEBUG    FileServer Conn#14 jm3ot3lvb46u7byp.onion [?] > Closing connection: [Cleanup] Connect timeout: 20.115s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:12:55,902] DEBUG    FileServer Conn#15 p7oib7omhl3vwqar.onion [?] > Closing connection: [Cleanup] Connect timeout: 20.108s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:12:55,902] DEBUG    FileServer Conn#17 120.4.246.72 [?] > Closing connection: [Cleanup] Connect timeout: 19.224s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:12:55,902] DEBUG    FileServer Conn#37 178.17.174.198 [?] > Closing connection: [Cleanup] Connect timeout: 10.764s, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:55,902] DEBUG    FileServer Conn#38 110.185.145.113 [?] > Closing connection: [Cleanup] Connect timeout: 10.617s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:12:55,902] DEBUG    FileServer Conn#39 178.87.251.82 [?] > Closing connection: [Cleanup] Connect timeout: 10.165s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:12:55,902] INFO     FileServer Internet offline
+[2018-02-01 23:12:55,908] DEBUG    FileServer Conn#85 1.28.205.16  [?] > Connecting...
+[2018-02-01 23:12:55,917] DEBUG    FileServer Conn#86 91.109.182.12 [?] > Connecting...
+[2018-02-01 23:12:55,928] DEBUG    FileServer Conn#87 81.84.151.84 [?] > Connecting...
+[2018-02-01 23:12:55,946] DEBUG    FileServer Conn#88 axtoxu7m3db775uj.onion [?] > Connecting...
+[2018-02-01 23:12:55,946] DEBUG    TorManager Creating new Tor socket to axtoxu7m3db775uj.onion:15441
+[2018-02-01 23:12:55,969] DEBUG    FileServer Conn#89 tw7jtxtnbzv4pvjr.onion [?] > Connecting...
+[2018-02-01 23:12:55,969] DEBUG    TorManager Creating new Tor socket to tw7jtxtnbzv4pvjr.onion:15441
+[2018-02-01 23:12:56,058] DEBUG    WorkerManager:1BhArU..t3wQ 2tzdgaeo7vkufmvc.onion:15441: No task found, stopping
+[2018-02-01 23:12:56,058] DEBUG    WorkerManager:1BhArU..t3wQ Removed worker, workers: 0/5
+[2018-02-01 23:12:56,058] DEBUG    WorkerManager:1BhArU..t3wQ Starting new workers... (tasks: 1)
+[2018-02-01 23:12:56,058] DEBUG    WorkerManager:1BhArU..t3wQ Starting workers, tasks: 1, peers: 0, workers: 0
+[2018-02-01 23:12:56,059] DEBUG    WorkerManager:1BhArU..t3wQ Added worker: 5ewrk5twciv765fu.onion:15441, workers: 1/5
+[2018-02-01 23:12:56,059] DEBUG    WorkerManager:1BhArU..t3wQ Added worker: 2tzdgaeo7vkufmvc.onion:15441, workers: 2/5
+[2018-02-01 23:12:56,159] DEBUG    WorkerManager:1BhArU..t3wQ 5ewrk5twciv765fu.onion:15441: No task found, stopping
+[2018-02-01 23:12:56,160] DEBUG    WorkerManager:1BhArU..t3wQ Removed worker, workers: 1/5
+[2018-02-01 23:12:56,160] DEBUG    WorkerManager:1BhArU..t3wQ 2tzdgaeo7vkufmvc.onion:15441: No task found, stopping
+[2018-02-01 23:12:56,160] DEBUG    WorkerManager:1BhArU..t3wQ Removed worker, workers: 0/5
+[2018-02-01 23:12:56,783] DEBUG    Site:1iD5ZQ..duGz Small number of peers detected...query all of peers using pex
+[2018-02-01 23:12:56,785] DEBUG    FileServer Conn#90 50.110.122.243 [?] > Connecting...
+[2018-02-01 23:12:57,184] DEBUG    WorkerManager:1BhArU..t3wQ Slow task: content.json, (workers: 0, optional_hash_id: None, peers: 0, failed: 2, asked: 0)
+[2018-02-01 23:12:57,184] DEBUG    WorkerManager:1BhArU..t3wQ Starting workers, tasks: 1, peers: 0, workers: 0
+[2018-02-01 23:12:57,184] DEBUG    WorkerManager:1BhArU..t3wQ Added worker: 5ewrk5twciv765fu.onion:15441, workers: 1/5
+[2018-02-01 23:12:57,184] DEBUG    WorkerManager:1BhArU..t3wQ Added worker: 2tzdgaeo7vkufmvc.onion:15441, workers: 2/5
+[2018-02-01 23:12:57,188] DEBUG    WorkerManager:1FFuXJ..Rdkp Slow task: content.json, (workers: 2, optional_hash_id: None, peers: 0, failed: 1, asked: 0)
+[2018-02-01 23:12:57,188] DEBUG    WorkerManager:1FFuXJ..Rdkp Starting workers, tasks: 1, peers: 0, workers: 2
+[2018-02-01 23:12:57,188] DEBUG    WorkerManager:1FFuXJ..Rdkp Added worker: 118.211.9.159:15441, workers: 3/5
+[2018-02-01 23:12:57,190] DEBUG    WorkerManager:1Mr2r3..EALD Slow task: content.json, (workers: 2, optional_hash_id: None, peers: 0, failed: 1, asked: 0)
+[2018-02-01 23:12:57,190] DEBUG    FileServer Conn#91 boot3rdez4rzn36x.onion [?] > Connecting...
+[2018-02-01 23:12:57,190] DEBUG    TorManager Creating new Tor socket to boot3rdez4rzn36x.onion:15441
+[2018-02-01 23:12:57,233] DEBUG    FileServer Conn#29 gsoyk2ykwlizeze3.onion [?] > Closing connection: gsoyk2ykwlizeze3.onion Connect error: SOCKS5Error: 0x04: Host unreachable in ConnectionServer.py line 178 > Connection.py line 121 > socks.py line 681 > socks.py line 383 > socks.py line 458, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:57,233] DEBUG    WorkerManager:1Mr2r3..EALD gsoyk2ykwlizeze3.onion:15441: Verify failed: content.json, error: Download failed, failed peers: 1, workers: 1
+[2018-02-01 23:12:57,285] DEBUG    WorkerManager:1BhArU..t3wQ 5ewrk5twciv765fu.onion:15441: No task found, stopping
+[2018-02-01 23:12:57,286] DEBUG    WorkerManager:1BhArU..t3wQ Removed worker, workers: 1/5
+[2018-02-01 23:12:57,286] DEBUG    WorkerManager:1BhArU..t3wQ 2tzdgaeo7vkufmvc.onion:15441: No task found, stopping
+[2018-02-01 23:12:57,286] DEBUG    WorkerManager:1BhArU..t3wQ Removed worker, workers: 0/5
+[2018-02-01 23:12:57,289] DEBUG    WorkerManager:1FFuXJ..Rdkp 118.211.9.159:15441: No task found, stopping
+[2018-02-01 23:12:57,290] DEBUG    WorkerManager:1FFuXJ..Rdkp Removed worker, workers: 2/5
+[2018-02-01 23:12:57,933] DEBUG    FileServer Conn#92 178.87.251.82 [?] > Connecting...
+[2018-02-01 23:12:58,335] DEBUG    WorkerManager:1Mr2r3..EALD gsoyk2ykwlizeze3.onion:15441: No task found, stopping
+[2018-02-01 23:12:58,335] DEBUG    WorkerManager:1Mr2r3..EALD Removed worker, workers: 1/5
+[2018-02-01 23:12:58,406] DEBUG    FileServer Conn#84 88.75.234.247 [?] > Closing connection: 88.75.234.247 Connect error: error: [Errno 113] No route to host in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:12:58,725] DEBUG    FileServer Conn#81 5ewrk5twciv765fu.onion [?] > Closing connection: 5ewrk5twciv765fu.onion Connect error: SOCKS5Error: 0x04: Host unreachable in ConnectionServer.py line 178 > Connection.py line 121 > socks.py line 681 > socks.py line 383 > socks.py line 458, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:12:58,726] DEBUG    Site:1BhArU..t3wQ Queried pex from 0 peers got 0 new peers.
+[2018-02-01 23:12:59,056] DEBUG    Site:1Mr2r3..EALD Signing 1517526777 for boot3rdez4rzn36x.onion:15441 to add 1 onions
+[2018-02-01 23:12:59,148] DEBUG    FileServer Conn#85 1.28.205.16  [?] > Closing connection: 1.28.205.16 Connect error: error: [Errno 113] No route to host in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:12:59,150] DEBUG    FileServer Conn#93 68.174.5.104 [?] > Connecting...
+[2018-02-01 23:12:59,318] DEBUG    FileServer Conn#94 qwywuy22m6gcelmz.onion [?] > Connecting...
+[2018-02-01 23:12:59,318] DEBUG    TorManager Creating new Tor socket to qwywuy22m6gcelmz.onion:15441
+[2018-02-01 23:12:59,703] DEBUG    Site:1Mr2r3..EALD Announced types ['onion', 'i2p'] in mode more to zero://boot3rdez4rzn36x.onion:15441 in 2.512s, errors: [], slow: ['2.51s zero://boot3rdez4rzn36x.onion:15441']
+[2018-02-01 23:12:59,703] DEBUG    WorkerManager:1Mr2r3..EALD Starting workers, tasks: 1, peers: 0, workers: 1
+[2018-02-01 23:12:59,703] DEBUG    WorkerManager:1Mr2r3..EALD Added worker: 159.226.95.66:15441, workers: 2/5
+[2018-02-01 23:12:59,703] DEBUG    WorkerManager:1Mr2r3..EALD Added worker: gsoyk2ykwlizeze3.onion:15441, workers: 3/5
+[2018-02-01 23:12:59,804] DEBUG    WorkerManager:1Mr2r3..EALD 159.226.95.66:15441: No task found, stopping
+[2018-02-01 23:12:59,804] DEBUG    WorkerManager:1Mr2r3..EALD Removed worker, workers: 2/5
+[2018-02-01 23:12:59,804] DEBUG    WorkerManager:1Mr2r3..EALD gsoyk2ykwlizeze3.onion:15441: No task found, stopping
+[2018-02-01 23:12:59,804] DEBUG    WorkerManager:1Mr2r3..EALD Removed worker, workers: 1/5
+[2018-02-01 23:13:00,281] DEBUG    FileServer Conn#95 zero.booth.moe [?] > Connecting...
+[2018-02-01 23:13:00,349] DEBUG    Site:149EPB..zaCN tracker.coppersurfer.tk:6969: Found 50 peers, new: 1, total: 127
+[2018-02-01 23:13:00,371] DEBUG    Site:149EPB..zaCN tracker.leechers-paradise.org:6969: Found 50 peers, new: 1, total: 128
+[2018-02-01 23:13:00,466] DEBUG    Site:149EPB..zaCN retracker.spark-rostov.ru:80/announce: Found 50 peers, new: 1, total: 129
+[2018-02-01 23:13:00,649] DEBUG    Site:149EPB..zaCN Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:13:01,232] DEBUG    FileServer Conn#89 tw7jtxtnbzv4pvjr.onion [?] > Closing connection: tw7jtxtnbzv4pvjr.onion Connect error: SOCKS5Error: 0x04: Host unreachable in ConnectionServer.py line 178 > Connection.py line 121 > socks.py line 681 > socks.py line 383 > socks.py line 458, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:13:01,408] DEBUG    FileServer Conn#96 88.75.234.247 [?] > Connecting...
+[2018-02-01 23:13:03,233] DEBUG    FileServer Conn#97 tw7jtxtnbzv4pvjr.onion [?] > Connecting...
+[2018-02-01 23:13:03,233] DEBUG    TorManager Creating new Tor socket to tw7jtxtnbzv4pvjr.onion:15441
+[2018-02-01 23:13:04,474] DEBUG    FileServer Conn#96 88.75.234.247 [?] > Closing connection: 88.75.234.247 Connect error: error: [Errno 113] No route to host in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:04,475] DEBUG    FileServer Conn#98 78.173.170.232 [?] > Connecting...
+[2018-02-01 23:13:04,736] DEBUG    FileServer Conn#99 180.154.253.248 [?] > Connecting...
+[2018-02-01 23:13:06,204] DEBUG    FileServer Conn#64 qd5cvtavfnosbivs.onion [?] > Closing connection: qd5cvtavfnosbivs.onion Connect error: SOCKS5Error: 0x04: Host unreachable in ConnectionServer.py line 178 > Connection.py line 121 > socks.py line 681 > socks.py line 383 > socks.py line 458, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:06,204] DEBUG    FileServer Conn#100 t3kdax2wjbxferud.onion [?] > Connecting...
+[2018-02-01 23:13:06,204] DEBUG    TorManager Creating new Tor socket to t3kdax2wjbxferud.onion:15441
+[2018-02-01 23:13:06,784] DEBUG    FileServer Conn#101 60.255.40.175 [?] > Connecting...
+[2018-02-01 23:13:06,791] DEBUG    FileServer Conn#102 91.121.65.226 [?] > Connecting...
+[2018-02-01 23:13:06,826] DEBUG    FileServer Conn#102 91.121.65.226 [?] > Closing connection: 91.121.65.226 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:06,827] DEBUG    FileServer Conn#103 212.24.103.49 [?] > Connecting...
+[2018-02-01 23:13:06,880] DEBUG    FileServer Conn#103 212.24.103.49 [?] > Closing connection: 212.24.103.49 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:06,880] DEBUG    FileServer Conn#104 96.228.18.64 [?] > Connecting...
+[2018-02-01 23:13:07,195] DEBUG    FileServer Conn#104 96.228.18.64 [?] > Closing connection: 96.228.18.64 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:07,196] DEBUG    FileServer Conn#105 72.175.121.87 [?] > Connecting...
+[2018-02-01 23:13:07,266] DEBUG    FileServer Conn#106 6tbnygje5slgwmut.onion [?] > Connecting...
+[2018-02-01 23:13:07,266] DEBUG    TorManager Creating new Tor socket to 6tbnygje5slgwmut.onion:15441
+[2018-02-01 23:13:07,267] DEBUG    FileServer Conn#107 178.216.92.117 [?] > Connecting...
+[2018-02-01 23:13:07,269] DEBUG    FileServer Conn#108 212.24.103.49 [?] > Connecting...
+[2018-02-01 23:13:07,329] DEBUG    FileServer Conn#107 178.216.92.117 [?] > Closing connection: 178.216.92.117 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:07,330] DEBUG    FileServer Conn#109 vttxsxykuo46yvcc.onion [?] > Connecting...
+[2018-02-01 23:13:07,330] DEBUG    TorManager Creating new Tor socket to vttxsxykuo46yvcc.onion:15441
+[2018-02-01 23:13:07,349] DEBUG    FileServer Conn#108 212.24.103.49 [?] > Closing connection: 212.24.103.49 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:07,351] DEBUG    FileServer Conn#110 61.6.232.144 [?] > Connecting...
+[2018-02-01 23:13:07,372] DEBUG    Site:1TaLkF..jipT tracker.leechers-paradise.org:6969: Found 50 peers, new: 3, total: 1148
+[2018-02-01 23:13:07,384] DEBUG    Site:1TaLkF..jipT tracker.coppersurfer.tk:6969: Found 50 peers, new: 1, total: 1149
+[2018-02-01 23:13:07,444] DEBUG    Site:1TaLkF..jipT tracker.opentrackr.org:1337/announce: Found 30 peers, new: 5, total: 1154
+[2018-02-01 23:13:07,464] DEBUG    FileServer Conn#105 72.175.121.87 [?] > Closing connection: 72.175.121.87 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:07,464] DEBUG    FileServer Conn#111 5.95.130.45  [?] > Connecting...
+[2018-02-01 23:13:07,474] DEBUG    Site:1TaLkF..jipT retracker.spark-rostov.ru:80/announce: Found 50 peers, new: 6, total: 1160
+[2018-02-01 23:13:07,650] DEBUG    Site:1TaLkF..jipT Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:13:07,650] DEBUG    Site:1TaLkF..jipT Announced types ['onion', 'i2p'] in mode startup to 7 trackers in 0.380s, errors: ['http://explodie.org:6969/announce'], slow: []
+[2018-02-01 23:13:07,651] DEBUG    Site:1TaLkF..jipT content.json loadContent same json file, skipping
+[2018-02-01 23:13:07,658] DEBUG    FileServer Conn#112 106.167.76.37 [?] > Connecting...
+[2018-02-01 23:13:07,658] DEBUG    FileServer Conn#113 123.194.184.182 [?] > Connecting...
+[2018-02-01 23:13:07,659] DEBUG    FileServer Conn#114 158.222.191.117 [?] > Connecting...
+[2018-02-01 23:13:07,965] DEBUG    FileServer Conn#112 106.167.76.37 [?] > Closing connection: 106.167.76.37 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:07,966] DEBUG    FileServer Conn#115 138.128.203.15 [?] > Connecting...
+[2018-02-01 23:13:08,013] DEBUG    FileServer Conn#113 123.194.184.182 [?] > Closing connection: 123.194.184.182 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:08,014] DEBUG    FileServer Conn#116 104.5.180.170 [?] > Connecting...
+[2018-02-01 23:13:08,015] DEBUG    FileServer Conn#117 188.27.174.53 [?] > Connecting...
+[2018-02-01 23:13:08,081] DEBUG    FileServer Conn#117 188.27.174.53 [?] > Closing connection: 188.27.174.53 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:08,081] DEBUG    FileServer Conn#118 212.24.103.49 [?] > Connecting...
+[2018-02-01 23:13:08,134] DEBUG    FileServer Conn#118 212.24.103.49 [?] > Closing connection: 212.24.103.49 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:08,135] DEBUG    FileServer Conn#119 188.32.149.167 [?] > Connecting...
+[2018-02-01 23:13:08,153] DEBUG    FileServer Conn#115 138.128.203.15 [?] > Closing connection: 138.128.203.15 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:08,154] DEBUG    FileServer Conn#120 50.92.17.234 [?] > Connecting...
+[2018-02-01 23:13:08,167] DEBUG    FileServer Conn#116 104.5.180.170 [?] > Closing connection: 104.5.180.170 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:08,168] DEBUG    FileServer Conn#121 191.85.40.110 [?] > Connecting...
+[2018-02-01 23:13:08,213] DEBUG    FileServer Conn#119 188.32.149.167 [?] > Closing connection: 188.32.149.167 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:08,214] DEBUG    FileServer Conn#122 77.103.13.67 [?] > Connecting...
+[2018-02-01 23:13:08,708] DEBUG    FileServer Conn#123 lx7cudxtxht2ys2h.onion [?] > Connecting...
+[2018-02-01 23:13:08,708] DEBUG    TorManager Creating new Tor socket to lx7cudxtxht2ys2h.onion:15441
+[2018-02-01 23:13:09,644] DEBUG    FileServer Conn#124 81.105.44.36 [?] > Connecting...
+[2018-02-01 23:13:09,705] DEBUG    FileServer Conn#124 81.105.44.36 [?] > Closing connection: 81.105.44.36 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:09,706] DEBUG    FileServer Conn#125 64.253.15.22 [?] > Connecting...
+[2018-02-01 23:13:10,036] DEBUG    FileServer Conn#126 5yvlmykx53bm7no5.onion [?] > Connecting...
+[2018-02-01 23:13:10,036] DEBUG    TorManager Creating new Tor socket to 5yvlmykx53bm7no5.onion:15441
+[2018-02-01 23:13:10,037] DEBUG    FileServer Conn#127 x3mnjev65c7bvmjm.onion [?] > Connecting...
+[2018-02-01 23:13:10,037] DEBUG    TorManager Creating new Tor socket to x3mnjev65c7bvmjm.onion:15441
+[2018-02-01 23:13:10,038] DEBUG    FileServer Conn#128 q5i5ndffiwvhjxun.onion [?] > Connecting...
+[2018-02-01 23:13:10,038] DEBUG    TorManager Creating new Tor socket to q5i5ndffiwvhjxun.onion:15441
+[2018-02-01 23:13:10,041] DEBUG    FileServer Conn#126 5yvlmykx53bm7no5.onion [?] > Closing connection: 5yvlmykx53bm7no5.onion Connect error: SOCKS5Error: 0x04: Host unreachable in ConnectionServer.py line 178 > Connection.py line 121 > socks.py line 681 > socks.py line 383 > socks.py line 458, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:10,042] DEBUG    FileServer Conn#129 155.94.67.3  [?] > Connecting...
+[2018-02-01 23:13:10,055] DEBUG    FileServer Conn#24 5yvlmykx53bm7no5.onion [?] > Closing connection: 5yvlmykx53bm7no5.onion Connect error: SOCKS5Error: 0x04: Host unreachable in ConnectionServer.py line 178 > Connection.py line 121 > socks.py line 681 > socks.py line 383 > socks.py line 458, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:13:10,055] DEBUG    WorkerManager:1FFuXJ..Rdkp 5yvlmykx53bm7no5.onion:15441: Verify failed: content.json, error: Download failed, failed peers: 1, workers: 1
+[2018-02-01 23:13:10,191] DEBUG    FileServer Conn#129 155.94.67.3  [?] > Closing connection: 155.94.67.3 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:10,269] DEBUG    Site:149EPB..zaCN Announced types ['onion', 'i2p'] in mode startup to 6 trackers in 10.001s, errors: ['http://explodie.org:6969/announce'], slow: ['10s+ zero://zero.booth.moe#f36ca555bee6ba216b14d10f38c16f7769ff064e0e37d887603548cc2e64191d:15441']
+[2018-02-01 23:13:10,270] DEBUG    Site:149EPB..zaCN content.json loadContent same json file, skipping
+[2018-02-01 23:13:10,319] DEBUG    FileServer Conn#130 81.105.44.36 [?] > Connecting...
+[2018-02-01 23:13:10,329] DEBUG    FileServer Conn#131 162.247.72.200 [?] > Connecting...
+[2018-02-01 23:13:10,330] DEBUG    FileServer Conn#132 69.246.215.43 [?] > Connecting...
+[2018-02-01 23:13:10,393] DEBUG    FileServer Conn#130 81.105.44.36 [?] > Closing connection: 81.105.44.36 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:10,394] DEBUG    FileServer Conn#133 88.82.199.235 [?] > Connecting...
+[2018-02-01 23:13:10,440] DEBUG    FileServer Conn#131 162.247.72.200 [?] > Closing connection: 162.247.72.200 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:10,441] DEBUG    FileServer Conn#134 173.22.113.219 [?] > Connecting...
+[2018-02-01 23:13:10,493] DEBUG    FileServer Conn#132 69.246.215.43 [?] > Closing connection: 69.246.215.43 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:10,493] DEBUG    FileServer Conn#135 60.176.5.231 [?] > Connecting...
+[2018-02-01 23:13:10,507] DEBUG    FileServer Conn#111 5.95.130.45  [?] > Closing connection: 5.95.130.45 Connect error: error: [Errno 113] No route to host in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:10,507] DEBUG    FileServer Conn#136 73.158.133.150 [?] > Connecting...
+[2018-02-01 23:13:10,611] DEBUG    FileServer Conn#134 173.22.113.219 [?] > Closing connection: 173.22.113.219 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:10,611] DEBUG    FileServer Conn#137 62.251.84.91 [?] > Connecting...
+[2018-02-01 23:13:10,650] DEBUG    FileServer Conn#137 62.251.84.91 [?] > Closing connection: 62.251.84.91 Connect error: error: [Errno 113] No route to host in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:10,650] DEBUG    FileServer Conn#138 122.188.155.26 [?] > Connecting...
+[2018-02-01 23:13:10,651] DEBUG    Site:1TaLkF..jipT Small number of peers detected...query all of peers using pex
+[2018-02-01 23:13:10,655] DEBUG    FileServer Conn#139 4nqn7waa5fdhiel5.onion [?] > Connecting...
+[2018-02-01 23:13:10,655] DEBUG    TorManager Creating new Tor socket to 4nqn7waa5fdhiel5.onion:15441
+[2018-02-01 23:13:10,707] DEBUG    FileServer Conn#136 73.158.133.150 [?] > Closing connection: 73.158.133.150 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:10,708] DEBUG    FileServer Conn#140 jompdu4jqmiqv355.onion [?] > Connecting...
+[2018-02-01 23:13:10,708] DEBUG    TorManager Creating new Tor socket to jompdu4jqmiqv355.onion:15441
+[2018-02-01 23:13:10,821] DEBUG    FileServer Conn#135 60.176.5.231 [?] > Closing connection: 60.176.5.231 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:10,822] DEBUG    FileServer Conn#141 123.122.122.57 [?] > Connecting...
+[2018-02-01 23:13:10,859] DEBUG    FileServer Conn#138 122.188.155.26 [?] > Closing connection: 122.188.155.26 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:10,859] DEBUG    FileServer Conn#142 107.140.80.174 [?] > Connecting...
+[2018-02-01 23:13:10,907] DEBUG    FileServer Conn#23 ckjprc3nmagjqava.onion [?] > Closing connection: [Cleanup] Connect timeout: 31.590s, waiting_requests: 1, sites: 1, buff: 0...
+[2018-02-01 23:13:10,908] DEBUG    FileServer Conn#27 jnx62t5yqbh5kbv4.onion [?] > Closing connection: [Cleanup] Connect timeout: 29.984s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:13:10,908] DEBUG    FileServer Conn#28 5bja2jilgounfjcs.onion [?] > Closing connection: [Cleanup] Connect timeout: 29.109s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:13:10,908] DEBUG    FileServer Conn#41 177.192.172.28 [?] > Closing connection: [Cleanup] Connect timeout: 24.124s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:13:10,908] DEBUG    FileServer Conn#43 186.93.37.246 [?] > Closing connection: [Cleanup] Connect timeout: 24.118s, waiting_requests: 0, sites: 2, buff: 0...
+[2018-02-01 23:13:10,908] DEBUG    FileServer Conn#44 217.23.1.184 [?] > Closing connection: [Cleanup] Connect timeout: 23.644s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:13:10,908] DEBUG    FileServer Conn#45 63wkf4ocfqbk4cov.onion [?] > Closing connection: [Cleanup] Connect timeout: 23.643s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:13:10,909] DEBUG    FileServer Conn#46 xfjetuncicvho4fy.onion [?] > Closing connection: [Cleanup] Connect timeout: 23.642s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:13:10,909] DEBUG    FileServer Conn#47 181.221.179.244 [?] > Closing connection: [Cleanup] Connect timeout: 23.157s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:13:10,909] DEBUG    FileServer Conn#49 60.227.198.66 [?] > Closing connection: [Cleanup] Connect timeout: 22.896s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:13:10,909] DEBUG    FileServer Conn#50 ir6rtox3g7jkpbel.onion [?] > Closing connection: [Cleanup] Connect timeout: 22.202s, waiting_requests: 1, sites: 1, buff: 0...
+[2018-02-01 23:13:10,909] DEBUG    FileServer Conn#54 187.214.179.226 [?] > Closing connection: [Cleanup] Connect timeout: 21.265s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:13:10,909] DEBUG    FileServer Conn#56 th5ozbbs2nt2rh3a.onion [?] > Closing connection: [Cleanup] Connect timeout: 20.644s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:13:10,909] DEBUG    FileServer Conn#67 191.13.66.29 [?] > Closing connection: [Cleanup] Connect timeout: 17.255s, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:10,910] DEBUG    FileServer Conn#68 175.13.196.164 [?] > Closing connection: [Cleanup] Connect timeout: 17.190s, waiting_requests: 0, sites: 2, buff: 0...
+[2018-02-01 23:13:10,910] DEBUG    FileServer Conn#74 223.80.231.32 [?] > Closing connection: [Cleanup] Connect timeout: 16.923s, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:10,911] DEBUG    FileServer Conn#75 120.194.56.140 [?] > Closing connection: [Cleanup] Connect timeout: 16.812s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:13:10,911] DEBUG    FileServer Conn#77 111.193.229.113 [?] > Closing connection: [Cleanup] Connect timeout: 16.647s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:13:10,911] DEBUG    FileServer Conn#78 152.250.9.224 [?] > Closing connection: [Cleanup] Connect timeout: 16.119s, waiting_requests: 0, sites: 2, buff: 0...
+[2018-02-01 23:13:10,911] DEBUG    FileServer Conn#79 218.4.191.250 [?] > Closing connection: [Cleanup] Connect timeout: 16.118s, waiting_requests: 0, sites: 2, buff: 0...
+[2018-02-01 23:13:10,911] DEBUG    FileServer Conn#80 105.98.72.67 [?] > Closing connection: [Cleanup] Connect timeout: 16.118s, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:13:10,911] DEBUG    FileServer Conn#86 91.109.182.12 [?] > Closing connection: [Cleanup] Connect timeout: 14.994s, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:10,911] DEBUG    FileServer Conn#87 81.84.151.84 [?] > Closing connection: [Cleanup] Connect timeout: 14.983s, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:10,911] DEBUG    FileServer Conn#90 50.110.122.243 [?] > Closing connection: [Cleanup] Connect timeout: 14.127s, waiting_requests: 0, sites: 2, buff: 0...
+[2018-02-01 23:13:10,912] DEBUG    FileServer Conn#92 178.87.251.82 [?] > Closing connection: [Cleanup] Connect timeout: 12.979s, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:10,912] DEBUG    FileServer Conn#93 68.174.5.104 [?] > Closing connection: [Cleanup] Connect timeout: 11.762s, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:10,912] DEBUG    FileServer Conn#95 zero.booth.moe [?] > Closing connection: [Cleanup] Connect timeout: 10.631s, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:10,912] INFO     FileServer Internet online
+[2018-02-01 23:13:10,923] DEBUG    FileServer Connection cleanup in 0.016s
+[2018-02-01 23:13:10,936] DEBUG    WorkerManager:1Mr2r3..EALD jnx62t5yqbh5kbv4.onion:15441: Verify failed: content.json, error: Download failed, failed peers: 2, workers: 0
+[2018-02-01 23:13:10,937] DEBUG    Site:1FFuXJ..Rdkp Queried pex from 0 peers got 0 new peers.
+[2018-02-01 23:13:10,948] DEBUG    FileServer Conn#143 xj3hfhspuu7tvq2t.onion [?] > Connecting...
+[2018-02-01 23:13:10,949] DEBUG    TorManager Creating new Tor socket to xj3hfhspuu7tvq2t.onion:15441
+[2018-02-01 23:13:10,960] DEBUG    FileServer Conn#144 mvdj4mbvnahrga6v.onion [?] > Connecting...
+[2018-02-01 23:13:10,963] DEBUG    TorManager Creating new Tor socket to mvdj4mbvnahrga6v.onion:15441
+[2018-02-01 23:13:10,965] DEBUG    FileServer Conn#145 139.226.72.37 [?] > Connecting...
+[2018-02-01 23:13:10,966] DEBUG    FileServer Conn#146 190.15.247.79 [?] > Connecting...
+[2018-02-01 23:13:10,975] DEBUG    FileServer Conn#147 82.130.48.26 [?] > Connecting...
+[2018-02-01 23:13:10,980] DEBUG    FileServer Conn#148 24.247.22.234 [?] > Connecting...
+[2018-02-01 23:13:10,990] DEBUG    FileServer Conn#149 106.14.151.21 [?] > Connecting...
+[2018-02-01 23:13:10,998] DEBUG    FileServer Conn#150 71.179.2.240 [?] > Connecting...
+[2018-02-01 23:13:11,000] DEBUG    FileServer Conn#151 ymnu5yskwdwihhmu.onion [?] > Connecting...
+[2018-02-01 23:13:11,000] DEBUG    TorManager Creating new Tor socket to ymnu5yskwdwihhmu.onion:15441
+[2018-02-01 23:13:11,011] DEBUG    FileServer Conn#152 qk7sjucwkbk44rn6.onion [?] > Connecting...
+[2018-02-01 23:13:11,011] DEBUG    TorManager Creating new Tor socket to qk7sjucwkbk44rn6.onion:15441
+[2018-02-01 23:13:11,021] DEBUG    FileServer Checking sites...
+[2018-02-01 23:13:11,064] DEBUG    FileServer Conn#142 107.140.80.174 [?] > Closing connection: 107.140.80.174 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:11,064] DEBUG    FileServer Conn#153 212.24.103.49 [?] > Connecting...
+[2018-02-01 23:13:11,081] DEBUG    FileServer Conn#147 82.130.48.26 [?] > Closing connection: 82.130.48.26 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:11,082] DEBUG    FileServer Conn#154 ozfozok4nwukpe5n.onion [?] > Connecting...
+[2018-02-01 23:13:11,082] DEBUG    TorManager Creating new Tor socket to ozfozok4nwukpe5n.onion:15441
+[2018-02-01 23:13:11,118] DEBUG    FileServer Conn#153 212.24.103.49 [?] > Closing connection: 212.24.103.49 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:11,118] DEBUG    FileServer Conn#155 82.136.73.63 [?] > Connecting...
+[2018-02-01 23:13:11,157] DEBUG    WorkerManager:1FFuXJ..Rdkp 5yvlmykx53bm7no5.onion:15441: No task found, stopping
+[2018-02-01 23:13:11,158] DEBUG    WorkerManager:1FFuXJ..Rdkp Removed worker, workers: 1/5
+[2018-02-01 23:13:11,160] DEBUG    FileServer Conn#155 82.136.73.63 [?] > Closing connection: 82.136.73.63 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:11,161] DEBUG    FileServer Conn#156 87.117.187.207 [?] > Connecting...
+[2018-02-01 23:13:11,288] DEBUG    FileServer Conn#145 139.226.72.37 [?] > Closing connection: 139.226.72.37 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:11,289] DEBUG    FileServer Conn#157 82.130.48.26 [?] > Connecting...
+[2018-02-01 23:13:11,325] DEBUG    FileServer Conn#146 190.15.247.79 [?] > Closing connection: 190.15.247.79 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:11,326] DEBUG    FileServer Conn#158 vd54q7ywnvw5a4st.onion [?] > Connecting...
+[2018-02-01 23:13:11,326] DEBUG    TorManager Creating new Tor socket to vd54q7ywnvw5a4st.onion:15441
+[2018-02-01 23:13:11,330] DEBUG    FileServer Conn#159 159.226.95.66 [?] > Connecting...
+[2018-02-01 23:13:11,341] DEBUG    FileServer Conn#160 90.88.202.89 [?] > Connecting...
+[2018-02-01 23:13:11,342] DEBUG    WorkerManager:1FFuXJ..Rdkp 5bja2jilgounfjcs.onion:15441: Verify failed: content.json, error: Download failed, failed peers: 2, workers: 0
+[2018-02-01 23:13:11,343] DEBUG    FileServer Conn#149 106.14.151.21 [?] > Closing connection: 106.14.151.21 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:11,343] DEBUG    FileServer Conn#161 81.29.252.37 [?] > Connecting...
+[2018-02-01 23:13:11,351] DEBUG    FileServer Conn#157 82.130.48.26 [?] > Closing connection: 82.130.48.26 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:11,352] DEBUG    FileServer Conn#162 pyhnaysht4fzwowz.onion [?] > Connecting...
+[2018-02-01 23:13:11,352] DEBUG    TorManager Creating new Tor socket to pyhnaysht4fzwowz.onion:15441
+[2018-02-01 23:13:11,400] DEBUG    FileServer Conn#160 90.88.202.89 [?] > Closing connection: 90.88.202.89 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:11,401] DEBUG    FileServer Conn#163 27sqp43igc2h4iuo.onion [?] > Connecting...
+[2018-02-01 23:13:11,401] DEBUG    TorManager Creating new Tor socket to 27sqp43igc2h4iuo.onion:15441
+[2018-02-01 23:13:11,703] DEBUG    FileServer Conn#164 eaeujskfmr7zk4bg.onion [?] > Connecting...
+[2018-02-01 23:13:11,703] DEBUG    TorManager Creating new Tor socket to eaeujskfmr7zk4bg.onion:15441
+[2018-02-01 23:13:11,885] DEBUG    FileServer Conn#165 r67iban2s2ip7tv6.onion [?] > Connecting...
+[2018-02-01 23:13:11,885] DEBUG    TorManager Creating new Tor socket to r67iban2s2ip7tv6.onion:15441
+[2018-02-01 23:13:12,022] INFO     FileServer Checking port 15441 using portchecker.co...
+[2018-02-01 23:13:12,037] DEBUG    WorkerManager:1Mr2r3..EALD jnx62t5yqbh5kbv4.onion:15441: No task found, stopping
+[2018-02-01 23:13:12,038] DEBUG    WorkerManager:1Mr2r3..EALD Removed worker, workers: 0/5
+[2018-02-01 23:13:12,038] DEBUG    WorkerManager:1Mr2r3..EALD Starting new workers... (tasks: 1)
+[2018-02-01 23:13:12,038] DEBUG    WorkerManager:1Mr2r3..EALD Starting workers, tasks: 1, peers: 0, workers: 0
+[2018-02-01 23:13:12,038] DEBUG    WorkerManager:1Mr2r3..EALD Added worker: 159.226.95.66:15441, workers: 1/5
+[2018-02-01 23:13:12,038] DEBUG    WorkerManager:1Mr2r3..EALD Added worker: gsoyk2ykwlizeze3.onion:15441, workers: 2/5
+[2018-02-01 23:13:12,038] DEBUG    WorkerManager:1Mr2r3..EALD Added worker: jnx62t5yqbh5kbv4.onion:15441, workers: 3/5
+[2018-02-01 23:13:12,139] DEBUG    WorkerManager:1Mr2r3..EALD 159.226.95.66:15441: No task found, stopping
+[2018-02-01 23:13:12,139] DEBUG    WorkerManager:1Mr2r3..EALD Removed worker, workers: 2/5
+[2018-02-01 23:13:12,139] DEBUG    WorkerManager:1Mr2r3..EALD gsoyk2ykwlizeze3.onion:15441: No task found, stopping
+[2018-02-01 23:13:12,139] DEBUG    WorkerManager:1Mr2r3..EALD Removed worker, workers: 1/5
+[2018-02-01 23:13:12,139] DEBUG    WorkerManager:1Mr2r3..EALD jnx62t5yqbh5kbv4.onion:15441: No task found, stopping
+[2018-02-01 23:13:12,140] DEBUG    WorkerManager:1Mr2r3..EALD Removed worker, workers: 0/5
+[2018-02-01 23:13:12,186] DEBUG    WorkerManager:1BhArU..t3wQ Slow task: content.json, (workers: 0, optional_hash_id: None, peers: 0, failed: 2, asked: 0)
+[2018-02-01 23:13:12,189] DEBUG    WorkerManager:1FFuXJ..Rdkp Slow task: content.json, (workers: 1, optional_hash_id: None, peers: 0, failed: 3, asked: 0)
+[2018-02-01 23:13:12,367] DEBUG    Site:1BhArU..t3wQ Announced types ['onion', 'i2p'] in mode more to http://retracker.spark-rostov.ru:80/announce in 0.181s, errors: [], slow: []
+[2018-02-01 23:13:12,368] DEBUG    WorkerManager:1BhArU..t3wQ Starting workers, tasks: 1, peers: 0, workers: 0
+[2018-02-01 23:13:12,368] DEBUG    WorkerManager:1BhArU..t3wQ Added worker: 5ewrk5twciv765fu.onion:15441, workers: 1/5
+[2018-02-01 23:13:12,368] DEBUG    WorkerManager:1BhArU..t3wQ Added worker: 2tzdgaeo7vkufmvc.onion:15441, workers: 2/5
+[2018-02-01 23:13:12,444] DEBUG    WorkerManager:1FFuXJ..Rdkp 5bja2jilgounfjcs.onion:15441: No task found, stopping
+[2018-02-01 23:13:12,444] DEBUG    WorkerManager:1FFuXJ..Rdkp Removed worker, workers: 0/5
+[2018-02-01 23:13:12,445] DEBUG    WorkerManager:1FFuXJ..Rdkp Starting new workers... (tasks: 1)
+[2018-02-01 23:13:12,445] DEBUG    WorkerManager:1FFuXJ..Rdkp Starting workers, tasks: 1, peers: 0, workers: 0
+[2018-02-01 23:13:12,445] DEBUG    WorkerManager:1FFuXJ..Rdkp Added worker: 118.211.9.159:15441, workers: 1/5
+[2018-02-01 23:13:12,445] DEBUG    WorkerManager:1FFuXJ..Rdkp Added worker: 5bja2jilgounfjcs.onion:15441, workers: 2/5
+[2018-02-01 23:13:12,445] DEBUG    WorkerManager:1FFuXJ..Rdkp Added worker: 5yvlmykx53bm7no5.onion:15441, workers: 3/5
+[2018-02-01 23:13:12,469] DEBUG    WorkerManager:1BhArU..t3wQ 5ewrk5twciv765fu.onion:15441: No task found, stopping
+[2018-02-01 23:13:12,469] DEBUG    WorkerManager:1BhArU..t3wQ Removed worker, workers: 1/5
+[2018-02-01 23:13:12,469] DEBUG    WorkerManager:1BhArU..t3wQ 2tzdgaeo7vkufmvc.onion:15441: No task found, stopping
+[2018-02-01 23:13:12,469] DEBUG    WorkerManager:1BhArU..t3wQ Removed worker, workers: 0/5
+[2018-02-01 23:13:12,546] DEBUG    WorkerManager:1FFuXJ..Rdkp 118.211.9.159:15441: No task found, stopping
+[2018-02-01 23:13:12,546] DEBUG    WorkerManager:1FFuXJ..Rdkp Removed worker, workers: 2/5
+[2018-02-01 23:13:12,546] DEBUG    WorkerManager:1FFuXJ..Rdkp 5bja2jilgounfjcs.onion:15441: No task found, stopping
+[2018-02-01 23:13:12,546] DEBUG    WorkerManager:1FFuXJ..Rdkp Removed worker, workers: 1/5
+[2018-02-01 23:13:12,547] DEBUG    WorkerManager:1FFuXJ..Rdkp 5yvlmykx53bm7no5.onion:15441: No task found, stopping
+[2018-02-01 23:13:12,547] DEBUG    WorkerManager:1FFuXJ..Rdkp Removed worker, workers: 0/5
+[2018-02-01 23:13:12,576] DEBUG    Site:1FFuXJ..Rdkp Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:13:12,577] ERROR    Site:1FFuXJ..Rdkp Announce to 0 trackers in 0.387s, failed
+[2018-02-01 23:13:12,577] DEBUG    WorkerManager:1FFuXJ..Rdkp Starting workers, tasks: 1, peers: 0, workers: 0
+[2018-02-01 23:13:12,578] DEBUG    WorkerManager:1FFuXJ..Rdkp Added worker: 118.211.9.159:15441, workers: 1/5
+[2018-02-01 23:13:12,578] DEBUG    WorkerManager:1FFuXJ..Rdkp Added worker: 5yvlmykx53bm7no5.onion:15441, workers: 2/5
+[2018-02-01 23:13:12,578] DEBUG    WorkerManager:1FFuXJ..Rdkp Added worker: 5bja2jilgounfjcs.onion:15441, workers: 3/5
+[2018-02-01 23:13:12,678] DEBUG    WorkerManager:1FFuXJ..Rdkp 118.211.9.159:15441: No task found, stopping
+[2018-02-01 23:13:12,678] DEBUG    WorkerManager:1FFuXJ..Rdkp Removed worker, workers: 2/5
+[2018-02-01 23:13:12,679] DEBUG    WorkerManager:1FFuXJ..Rdkp 5yvlmykx53bm7no5.onion:15441: No task found, stopping
+[2018-02-01 23:13:12,679] DEBUG    WorkerManager:1FFuXJ..Rdkp Removed worker, workers: 1/5
+[2018-02-01 23:13:12,679] DEBUG    WorkerManager:1FFuXJ..Rdkp 5bja2jilgounfjcs.onion:15441: No task found, stopping
+[2018-02-01 23:13:12,679] DEBUG    WorkerManager:1FFuXJ..Rdkp Removed worker, workers: 0/5
+[2018-02-01 23:13:12,943] DEBUG    TorManager Start onions
+[2018-02-01 23:13:12,943] DEBUG    I2PManager Start i2ps
+[2018-02-01 23:13:12,961] DEBUG    FileServer Conn#166 45.33.50.110 [?] > Incoming connection...
+[2018-02-01 23:13:12,965] DEBUG    FileServer Conn#166 45.33.50.110 [v2] > Closing connection: MessageLoop ended, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:12,990] DEBUG    FileServer Conn#167 152.250.9.224 [?] > Connecting...
+[2018-02-01 23:13:12,990] DEBUG    FileServer Conn#168 218.4.191.250 [?] > Connecting...
+[2018-02-01 23:13:12,991] DEBUG    FileServer Conn#169 105.98.72.67 [?] > Connecting...
+[2018-02-01 23:13:13,270] DEBUG    Site:149EPB..zaCN Small number of peers detected...query all of peers using pex
+[2018-02-01 23:13:13,271] DEBUG    FileServer Conn#170 ww7c2niypj6fsmne.onion [?] > Connecting...
+[2018-02-01 23:13:13,271] DEBUG    TorManager Creating new Tor socket to ww7c2niypj6fsmne.onion:15441
+[2018-02-01 23:13:13,318] DEBUG    Site:17ziJ8..xX8t Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:13:13,318] DEBUG    Site:17ziJ8..xX8t Announced types ['onion', 'i2p'] in mode startup to 7 trackers in 0.375s, errors: ['http://explodie.org:6969/announce'], slow: []
+[2018-02-01 23:13:13,785] DEBUG    FileServer Conn#171 175.13.196.164 [?] > Connecting...
+[2018-02-01 23:13:13,790] DEBUG    FileServer Conn#172 85.149.71.50 [?] > Connecting...
+[2018-02-01 23:13:13,791] DEBUG    FileServer Conn#173 104.231.58.232 [?] > Connecting...
+[2018-02-01 23:13:13,853] DEBUG    FileServer Conn#172 85.149.71.50 [?] > Closing connection: 85.149.71.50 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:13,854] DEBUG    FileServer Conn#174 222.217.228.30 [?] > Connecting...
+[2018-02-01 23:13:14,356] DEBUG    Site:1BLogC..AGg8 tracker.coppersurfer.tk:6969: Found 50 peers, new: 4, total: 685
+[2018-02-01 23:13:14,380] DEBUG    Site:1BLogC..AGg8 tracker.leechers-paradise.org:6969: Found 50 peers, new: 3, total: 688
+[2018-02-01 23:13:14,386] DEBUG    Site:1BLogC..AGg8 tracker.opentrackr.org:1337/announce: Found 30 peers, new: 1, total: 689
+[2018-02-01 23:13:14,475] DEBUG    Site:1BLogC..AGg8 retracker.spark-rostov.ru:80/announce: Found 50 peers, new: 1, total: 690
+[2018-02-01 23:13:14,585] DEBUG    FileServer Conn#161 81.29.252.37 [?] > Closing connection: 81.29.252.37 Connect error: error: [Errno 113] No route to host in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:14,585] DEBUG    FileServer Conn#175 114.241.82.18 [?] > Connecting...
+[2018-02-01 23:13:14,646] DEBUG    Site:1BLogC..AGg8 Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:13:14,647] DEBUG    Site:1BLogC..AGg8 Announced types ['onion', 'i2p'] in mode startup to 7 trackers in 0.375s, errors: ['http://explodie.org:6969/announce'], slow: []
+[2018-02-01 23:13:14,647] DEBUG    Site:1BLogC..AGg8 content.json loadContent same json file, skipping
+[2018-02-01 23:13:14,661] DEBUG    FileServer Conn#120 50.92.17.234 [?] > Closing connection: Send error: This socket is already used by another greenlet: <bound method Waiter.switch of <gevent.hub.Waiter object at 0x7f0be800daf0>>, waiting_requests: 1, sites: 1, buff: 0...
+[2018-02-01 23:13:14,662] DEBUG    FileServer Conn#176 5.14.52.174  [?] > Connecting...
+[2018-02-01 23:13:14,662] DEBUG    FileServer Conn#177 115.214.184.159 [?] > Connecting...
+[2018-02-01 23:13:14,665] DEBUG    FileServer Conn#178 174.63.22.148 [?] > Connecting...
+[2018-02-01 23:13:14,703] DEBUG    WorkerManager:1Mr2r3..EALD Slow task: content.json, (workers: 0, optional_hash_id: None, peers: 0, failed: 3, asked: 0)
+[2018-02-01 23:13:14,704] DEBUG    WorkerManager:1Mr2r3..EALD Starting workers, tasks: 1, peers: 0, workers: 0
+[2018-02-01 23:13:14,704] DEBUG    WorkerManager:1Mr2r3..EALD Added worker: 159.226.95.66:15441, workers: 1/5
+[2018-02-01 23:13:14,704] DEBUG    WorkerManager:1Mr2r3..EALD Added worker: gsoyk2ykwlizeze3.onion:15441, workers: 2/5
+[2018-02-01 23:13:14,704] DEBUG    WorkerManager:1Mr2r3..EALD Added worker: jnx62t5yqbh5kbv4.onion:15441, workers: 3/5
+[2018-02-01 23:13:14,805] DEBUG    WorkerManager:1Mr2r3..EALD 159.226.95.66:15441: No task found, stopping
+[2018-02-01 23:13:14,805] DEBUG    WorkerManager:1Mr2r3..EALD Removed worker, workers: 2/5
+[2018-02-01 23:13:14,805] DEBUG    WorkerManager:1Mr2r3..EALD gsoyk2ykwlizeze3.onion:15441: No task found, stopping
+[2018-02-01 23:13:14,806] DEBUG    WorkerManager:1Mr2r3..EALD Removed worker, workers: 1/5
+[2018-02-01 23:13:14,806] DEBUG    WorkerManager:1Mr2r3..EALD jnx62t5yqbh5kbv4.onion:15441: No task found, stopping
+[2018-02-01 23:13:14,806] DEBUG    WorkerManager:1Mr2r3..EALD Removed worker, workers: 0/5
+[2018-02-01 23:13:14,813] DEBUG    FileServer Conn#178 174.63.22.148 [?] > Closing connection: 174.63.22.148 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:14,814] DEBUG    FileServer Conn#179 178.165.72.177 [?] > Connecting...
+[2018-02-01 23:13:14,879] DEBUG    FileServer Conn#179 178.165.72.177 [?] > Closing connection: 178.165.72.177 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:14,880] DEBUG    FileServer Conn#180 222.129.109.77 [?] > Connecting...
+[2018-02-01 23:13:15,015] DEBUG    Site:1MaiL5..Ju27 tracker.coppersurfer.tk:6969: Found 50 peers, new: 1, total: 682
+[2018-02-01 23:13:15,030] DEBUG    Site:1MaiL5..Ju27 tracker.leechers-paradise.org:6969: Found 50 peers, new: 2, total: 684
+[2018-02-01 23:13:15,100] DEBUG    FileServer Conn#181 dnxmc37hog7gyhoi.onion [?] > Connecting...
+[2018-02-01 23:13:15,100] DEBUG    TorManager Creating new Tor socket to dnxmc37hog7gyhoi.onion:15441
+[2018-02-01 23:13:15,310] DEBUG    Site:1MaiL5..Ju27 Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:13:15,310] DEBUG    Site:1MaiL5..Ju27 Announced types ['onion', 'i2p'] in mode startup to 7 trackers in 0.365s, errors: ['http://explodie.org:6969/announce'], slow: []
+[2018-02-01 23:13:15,368] DEBUG    Site:1BhArU..t3wQ Small number of peers detected...query all of peers using pex
+[2018-02-01 23:13:15,368] DEBUG    FileServer Conn#182 5ewrk5twciv765fu.onion [?] > Connecting...
+[2018-02-01 23:13:15,369] DEBUG    TorManager Creating new Tor socket to 5ewrk5twciv765fu.onion:15441
+[2018-02-01 23:13:15,578] DEBUG    Site:1FFuXJ..Rdkp Small number of peers detected...query all of peers using pex
+[2018-02-01 23:13:15,579] DEBUG    FileServer Conn#183 118.211.9.159 [?] > Connecting...
+[2018-02-01 23:13:15,663] DEBUG    FileServer Conn#184 50.92.17.234 [?] > Connecting...
+[2018-02-01 23:13:15,961] DEBUG    FileServer Conn#183 118.211.9.159 [?] > Closing connection: 118.211.9.159 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:15,962] DEBUG    FileServer Conn#185 5bja2jilgounfjcs.onion [?] > Connecting...
+[2018-02-01 23:13:15,962] DEBUG    TorManager Creating new Tor socket to 5bja2jilgounfjcs.onion:15441
+[2018-02-01 23:13:17,046] DEBUG    Site:1UDbAD..MkoV tracker.leechers-paradise.org:6969: Found 50 peers, new: 1, total: 400
+[2018-02-01 23:13:17,051] DEBUG    Site:1UDbAD..MkoV tracker.coppersurfer.tk:6969: Found 50 peers, new: 2, total: 402
+[2018-02-01 23:13:17,063] DEBUG    Site:1UDbAD..MkoV tracker.opentrackr.org:1337/announce: Found 30 peers, new: 1, total: 403
+[2018-02-01 23:13:17,325] DEBUG    Site:1UDbAD..MkoV Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:13:17,326] DEBUG    Site:1UDbAD..MkoV Announced types ['onion', 'i2p'] in mode startup to 7 trackers in 0.380s, errors: ['http://explodie.org:6969/announce'], slow: []
+[2018-02-01 23:13:17,648] DEBUG    Site:1BLogC..AGg8 Small number of peers detected...query all of peers using pex
+[2018-02-01 23:13:17,650] DEBUG    FileServer Conn#186 115.217.236.209 [?] > Connecting...
+[2018-02-01 23:13:17,707] DEBUG    FileServer Conn#94 qwywuy22m6gcelmz.onion [?] > Closing connection: qwywuy22m6gcelmz.onion Connect error: SOCKS5Error: 0x04: Host unreachable in ConnectionServer.py line 178 > Connection.py line 121 > socks.py line 681 > socks.py line 383 > socks.py line 458, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:13:17,708] DEBUG    FileServer Conn#187 spm662k6nby7sp2z.onion [?] > Connecting...
+[2018-02-01 23:13:17,708] DEBUG    TorManager Creating new Tor socket to spm662k6nby7sp2z.onion:15441
+[2018-02-01 23:13:18,077] DEBUG    FileServer Conn#186 115.217.236.209 [?] > Closing connection: 115.217.236.209 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:13:18,079] DEBUG    FileServer Conn#188 btb7qujppabf74dm.onion [?] > Connecting...
+[2018-02-01 23:13:18,080] DEBUG    TorManager Creating new Tor socket to btb7qujppabf74dm.onion:15441
+[2018-02-01 23:13:19,024] DEBUG    Site:1Name2..hM9F tracker.coppersurfer.tk:6969: Found 50 peers, new: 4, total: 1689
+[2018-02-01 23:13:19,042] DEBUG    Site:1Name2..hM9F tracker.leechers-paradise.org:6969: Found 50 peers, new: 9, total: 1698
+[2018-02-01 23:13:19,060] DEBUG    Site:1Name2..hM9F tracker.opentrackr.org:1337/announce: Found 30 peers, new: 3, total: 1701
+[2018-02-01 23:13:19,327] DEBUG    Site:1Name2..hM9F Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:13:19,327] DEBUG    Site:1Name2..hM9F Announced types ['onion', 'i2p'] in mode startup to 7 trackers in 0.381s, errors: ['http://explodie.org:6969/announce'], slow: []
+[2018-02-01 23:13:19,828] DEBUG    FileServer Conn#182 5ewrk5twciv765fu.onion [?] > Closing connection: 5ewrk5twciv765fu.onion Connect error: SOCKS5Error: 0x04: Host unreachable in ConnectionServer.py line 178 > Connection.py line 121 > socks.py line 681 > socks.py line 383 > socks.py line 458, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:19,828] DEBUG    FileServer Conn#189 2tzdgaeo7vkufmvc.onion [?] > Connecting...
+[2018-02-01 23:13:19,828] DEBUG    TorManager Creating new Tor socket to 2tzdgaeo7vkufmvc.onion:15441
+[2018-02-01 23:13:21,043] DEBUG    Site:1Gfey7..fcdp tracker.coppersurfer.tk:6969: Found 50 peers, new: 5, total: 424
+[2018-02-01 23:13:21,053] DEBUG    Site:1Gfey7..fcdp tracker.leechers-paradise.org:6969: Found 50 peers, new: 4, total: 428
+[2018-02-01 23:13:21,318] DEBUG    Site:1Gfey7..fcdp Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:13:21,318] DEBUG    Site:1Gfey7..fcdp Announced types ['onion', 'i2p'] in mode startup to 7 trackers in 0.371s, errors: ['http://explodie.org:6969/announce'], slow: []
+[2018-02-01 23:13:21,354] DEBUG    Site:1uPLoa..dmQc tracker.coppersurfer.tk:6969: Found 50 peers, new: 6, total: 1153
+[2018-02-01 23:13:21,373] DEBUG    Site:1uPLoa..dmQc tracker.leechers-paradise.org:6969: Found 50 peers, new: 2, total: 1155
+[2018-02-01 23:13:21,387] DEBUG    Site:1uPLoa..dmQc tracker.opentrackr.org:1337/announce: Found 30 peers, new: 3, total: 1158
+[2018-02-01 23:13:21,472] DEBUG    Site:1uPLoa..dmQc retracker.spark-rostov.ru:80/announce: Found 50 peers, new: 3, total: 1161
+[2018-02-01 23:13:21,655] DEBUG    Site:1uPLoa..dmQc Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:13:21,655] DEBUG    Site:1uPLoa..dmQc Announced types ['onion', 'i2p'] in mode startup to 7 trackers in 0.382s, errors: ['http://explodie.org:6969/announce'], slow: []
+[2018-02-01 23:13:21,656] DEBUG    Site:1uPLoa..dmQc content.json loadContent same json file, skipping
+[2018-02-01 23:13:21,662] DEBUG    FileServer Conn#110 61.6.232.144 [?] > Closing connection: Send error: This socket is already used by another greenlet: <bound method Waiter.switch of <gevent.hub.Waiter object at 0x7f0be800d9b0>>, waiting_requests: 1, sites: 1, buff: 0...
+[2018-02-01 23:13:21,662] DEBUG    FileServer Conn#114 158.222.191.117 [?] > Closing connection: Send error: This socket is already used by another greenlet: <bound method Waiter.switch of <gevent.hub.Waiter object at 0x7f0be800da50>>, waiting_requests: 1, sites: 2, buff: 0...
+[2018-02-01 23:13:21,663] DEBUG    FileServer Conn#156 87.117.187.207 [?] > Closing connection: Send error: This socket is already used by another greenlet: <bound method Waiter.switch of <gevent.hub.Waiter object at 0x7f0be8017d20>>, waiting_requests: 1, sites: 3, buff: 0...
+[2018-02-01 23:13:21,663] DEBUG    FileServer Conn#190 220.245.95.253 [?] > Connecting...
+[2018-02-01 23:13:21,674] DEBUG    FileServer Conn#191 121.8.210.20 [?] > Connecting...
+[2018-02-01 23:13:21,685] DEBUG    FileServer Conn#192 82.64.17.205 [?] > Connecting...
+[2018-02-01 23:13:21,700] DEBUG    FileServer Conn#193 5q6z4z5of4u32dqq.onion [?] > Connecting...
+[2018-02-01 23:13:21,701] DEBUG    TorManager Creating new Tor socket to 5q6z4z5of4u32dqq.onion:15441
+[2018-02-01 23:13:21,735] DEBUG    FileServer Conn#192 82.64.17.205 [?] > Closing connection: 82.64.17.205 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:21,735] DEBUG    FileServer Conn#194 lx3bygoz4s4amdxe.onion [?] > Connecting...
+[2018-02-01 23:13:21,736] DEBUG    TorManager Creating new Tor socket to lx3bygoz4s4amdxe.onion:15441
+[2018-02-01 23:13:22,067] DEBUG    FileServer Conn#190 220.245.95.253 [?] > Closing connection: 220.245.95.253 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:22,067] DEBUG    FileServer Conn#195 hrho4b3deownvb7m.onion [?] > Connecting...
+[2018-02-01 23:13:22,067] DEBUG    TorManager Creating new Tor socket to hrho4b3deownvb7m.onion:15441
+[2018-02-01 23:13:22,658] DEBUG    Site:1MaiL5..Ju27 2 new modified file from Peer:vd54q7ywnvw5a4st.onion
+[2018-02-01 23:13:22,659] DEBUG    FileServer Conn#196 137.74.171.91 [?] > Connecting...
+[2018-02-01 23:13:22,659] DEBUG    Site:1MaiL5..Ju27 New downloadContent pool: len: 2
+[2018-02-01 23:13:22,660] DEBUG    Site:1MaiL5..Ju27 Ended downloadContent pool len: 2
+[2018-02-01 23:13:22,660] DEBUG    WorkerManager:1MaiL5..Ju27 New task: data/users/1L4dZcDF2maSKHDy788yhxpYnBWnXadUtS/content.json, peer lock: None, priority: 2, optional_hash_id: None, tasks started: 1
+[2018-02-01 23:13:22,660] DEBUG    WorkerManager:1MaiL5..Ju27 Starting workers, tasks: 1, peers: 0, workers: 0
+[2018-02-01 23:13:22,660] DEBUG    WorkerManager:1MaiL5..Ju27 Added worker: t3kdax2wjbxferud.onion:15441, workers: 1/5
+[2018-02-01 23:13:22,661] DEBUG    WorkerManager:1MaiL5..Ju27 Added worker: 88.82.199.235:15441, workers: 2/5
+[2018-02-01 23:13:22,661] DEBUG    WorkerManager:1MaiL5..Ju27 Added worker: 123.122.122.57:15441, workers: 3/5
+[2018-02-01 23:13:22,669] DEBUG    WorkerManager:1MaiL5..Ju27 Added worker: 105.98.72.67:15441, workers: 4/5
+[2018-02-01 23:13:22,669] DEBUG    WorkerManager:1MaiL5..Ju27 Added worker: 175.13.196.164:2844, workers: 5/5
+[2018-02-01 23:13:22,669] DEBUG    WorkerManager:1MaiL5..Ju27 Added worker: 114.241.82.18:15441, workers: 6/5
+[2018-02-01 23:13:22,670] DEBUG    WorkerManager:1MaiL5..Ju27 New task: data/users/18VgqLFXtp4qJ32LBszLCRjqHRjr3n4xa/content.json, peer lock: None, priority: 1, optional_hash_id: None, tasks started: 2
+[2018-02-01 23:13:22,670] DEBUG    FileServer Conn#133 88.82.199.235 [?] > Closing connection: Send error: This socket is already used by another greenlet: <bound method Waiter.switch of <gevent.hub.Waiter object at 0x7f0be800de60>>, waiting_requests: 1, sites: 3, buff: 0...
+[2018-02-01 23:13:22,671] DEBUG    FileServer Conn#197 185.147.237.8 [?] > Connecting...
+[2018-02-01 23:13:22,679] DEBUG    FileServer Conn#198 61.6.232.144 [?] > Connecting...
+[2018-02-01 23:13:22,679] DEBUG    FileServer Conn#199 158.222.191.117 [?] > Connecting...
+[2018-02-01 23:13:22,689] DEBUG    FileServer Conn#200 87.117.187.207 [?] > Connecting...
+[2018-02-01 23:13:22,935] DEBUG    Site:1Gif7P..Xc7h 9 new modified file from Peer:ozfozok4nwukpe5n.onion
+[2018-02-01 23:13:22,935] DEBUG    FileServer Conn#201 47.198.155.239 [?] > Connecting...
+[2018-02-01 23:13:22,936] DEBUG    Site:1Gif7P..Xc7h New downloadContent pool: len: 9
+[2018-02-01 23:13:22,936] DEBUG    Site:1Gif7P..Xc7h Ended downloadContent pool len: 9
+[2018-02-01 23:13:22,937] DEBUG    WorkerManager:1Gif7P..Xc7h New task: data/users/1K9LRqGZC7BkgT1SWaQDqmqZqxU1C2eNkR/content.json, peer lock: None, priority: 2, optional_hash_id: None, tasks started: 1
+[2018-02-01 23:13:22,937] DEBUG    WorkerManager:1Gif7P..Xc7h Starting workers, tasks: 1, peers: 0, workers: 0
+[2018-02-01 23:13:22,937] DEBUG    WorkerManager:1Gif7P..Xc7h Added worker: 60.255.40.175:15441, workers: 1/5
+[2018-02-01 23:13:22,937] DEBUG    WorkerManager:1Gif7P..Xc7h Added worker: jompdu4jqmiqv355.onion:15441, workers: 2/5
+[2018-02-01 23:13:22,937] DEBUG    WorkerManager:1Gif7P..Xc7h Added worker: eaeujskfmr7zk4bg.onion:15441, workers: 3/5
+[2018-02-01 23:13:22,938] DEBUG    WorkerManager:1Gif7P..Xc7h Added worker: 218.4.191.250:15441, workers: 4/5
+[2018-02-01 23:13:22,938] DEBUG    WorkerManager:1Gif7P..Xc7h Added worker: 185.147.237.8:15441, workers: 5/5
+[2018-02-01 23:13:22,938] DEBUG    WorkerManager:1Gif7P..Xc7h Added worker: 47.198.155.239:15441, workers: 6/5
+[2018-02-01 23:13:22,938] DEBUG    WorkerManager:1Gif7P..Xc7h New task: data/users/1DmuqxmEjz9fYuHqsS5Jte9GE29J7t2xSN/content.json, peer lock: None, priority: 1, optional_hash_id: None, tasks started: 2
+[2018-02-01 23:13:22,938] DEBUG    WorkerManager:1Gif7P..Xc7h New task: data/users/1GjC43pDn86ppFb1A2LiyBdgh2dXeVdr3a/content.json, peer lock: None, priority: 1, optional_hash_id: None, tasks started: 3
+[2018-02-01 23:13:22,939] DEBUG    WorkerManager:1Gif7P..Xc7h New task: data/users/1Lag7pfbM5eFgLm3g5YhescMXgdm4bLQsh/content.json, peer lock: None, priority: 1, optional_hash_id: None, tasks started: 4
+[2018-02-01 23:13:22,939] DEBUG    WorkerManager:1Gif7P..Xc7h New task: data/users/195YRxVpbqyFj6qumjz7mc4qtxcFn2S7Du/content.json, peer lock: None, priority: 1, optional_hash_id: None, tasks started: 5
+[2018-02-01 23:13:22,940] DEBUG    WorkerManager:1Gif7P..Xc7h New task: data/users/1PQDFXFweLNwEqHJgRDUAMD7wfThMdNam4/content.json, peer lock: None, priority: 1, optional_hash_id: None, tasks started: 6
+[2018-02-01 23:13:22,949] DEBUG    WorkerManager:1Gif7P..Xc7h New task: data/users/1AENc75S4mCHQQZnvCmeg2gidsywPV6HFF/content.json, peer lock: None, priority: 1, optional_hash_id: None, tasks started: 7
+[2018-02-01 23:13:22,954] DEBUG    WorkerManager:1Gif7P..Xc7h New task: data/users/1CekuBn4p4X24d6MUp5DNtSkKGEFEmUQuv/content.json, peer lock: None, priority: 1, optional_hash_id: None, tasks started: 8
+[2018-02-01 23:13:22,955] DEBUG    WorkerManager:1Gif7P..Xc7h New task: data/users/17xWazRpQhzs3GTag1NFA8nzADvmoUjpgG/content.json, peer lock: None, priority: 1, optional_hash_id: None, tasks started: 9
+[2018-02-01 23:13:22,955] DEBUG    FileServer Conn#101 60.255.40.175 [?] > Closing connection: Send error: This socket is already used by another greenlet: <bound method Waiter.switch of <gevent.hub.Waiter object at 0x3b7af00>>, waiting_requests: 1, sites: 1, buff: 0...
+[2018-02-01 23:13:22,956] DEBUG    FileServer Conn#201 47.198.155.239 [?] > Closing connection: Send error: [Errno 32] Broken pipe, waiting_requests: 1, sites: 1, buff: 0...
+[2018-02-01 23:13:22,957] DEBUG    FileServer Conn#202 171.95.91.192 [?] > Connecting...
+[2018-02-01 23:13:22,973] DEBUG    FileServer Conn#197 185.147.237.8 [?] > Closing connection: 185.147.237.8 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 1, sites: 1, buff: 0...
+[2018-02-01 23:13:22,974] DEBUG    FileServer Conn#203 192.241.219.63 [?] > Connecting...
+[2018-02-01 23:13:22,974] DEBUG    FileServer Conn#196 137.74.171.91 [?] > Closing connection: 137.74.171.91 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 1, buff: 0...
+[2018-02-01 23:13:22,975] DEBUG    FileServer Conn#204 120.42.70.13 [?] > Connecting...
+[2018-02-01 23:13:23,066] DEBUG    Site:1SiTEs..tdwB tracker.coppersurfer.tk:6969: Found 50 peers, new: 5, total: 1239
+[2018-02-01 23:13:23,088] DEBUG    Site:1SiTEs..tdwB tracker.leechers-paradise.org:6969: Found 50 peers, new: 1, total: 1240
+[2018-02-01 23:13:23,096] DEBUG    Site:1SiTEs..tdwB tracker.opentrackr.org:1337/announce: Found 30 peers, new: 1, total: 1241
+[2018-02-01 23:13:23,129] DEBUG    FileServer Conn#205 89.115.32.156 [?] > Connecting...
+[2018-02-01 23:13:23,198] DEBUG    FileServer Conn#203 192.241.219.63 [?] > Closing connection: 192.241.219.63 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:23,198] DEBUG    FileServer Conn#206 220.233.12.236 [?] > Connecting...
+[2018-02-01 23:13:23,204] DEBUG    FileServer Conn#205 89.115.32.156 [?] > Closing connection: 89.115.32.156 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:23,205] DEBUG    FileServer Conn#207 188.163.104.185 [?] > Connecting...
+[2018-02-01 23:13:23,358] DEBUG    Site:1SiTEs..tdwB Http tracker explodie.org:6969/announce error: 'peers'
+[2018-02-01 23:13:23,359] DEBUG    Site:1SiTEs..tdwB Announced types ['onion', 'i2p'] in mode startup to 7 trackers in 0.373s, errors: ['http://explodie.org:6969/announce'], slow: []
+[2018-02-01 23:13:23,559] ERROR    - Unhandled exception
+None
+[2018-02-01 23:13:23,559] DEBUG    Ui.UiServer Stopping...
+[2018-02-01 23:13:23,560] DEBUG    Ui.UiServer Socket closed: 1
+[2018-02-01 23:13:23,560] DEBUG    FileServer Stopped.
+[2018-02-01 23:13:23,560] DEBUG    Ui.UiServer 127.0.0.1 - - [2018-02-01 23:13:23] "GET /Websocket?wrapper_key=254a530dbed1bdd5d3115706fb949f1b701a93de328788f3f1d89dbd8de83a60 HTTP/1.1" 101 129 46.937520
+[2018-02-01 23:13:23,600] DEBUG    FileServer Conn#206 220.233.12.236 [?] > Closing connection: 220.233.12.236 Connect error: AttributeError: 'Connection' object has no attribute 'i2p' in ConnectionServer.py line 178 > Connection.py line 131 > Connection.py line 261, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:23,601] DEBUG    FileServer Conn#208 127.0.0.1    [?] > Connecting...
+[2018-02-01 23:13:23,602] DEBUG    FileServer Conn#208 127.0.0.1    [?] > Closing connection: 127.0.0.1 Connect error: error: [Errno 111] Connection refused in ConnectionServer.py line 178 > Connection.py line 121 > _socket2.py line 231, waiting_requests: 0, sites: 0, buff: 0...
+[2018-02-01 23:13:23,602] DEBUG    FileServer Conn#209 97.90.252.2  [?] > Connecting...
+[2018-02-01 23:13:23,660] DEBUG    Ui.UiServer Stopped.
+[2018-02-01 23:13:23,938] DEBUG    SiteManager Saved sites in 0.17s (generate: 0.10s, write: 0.17s)
+[2018-02-01 23:13:23,939] DEBUG    SiteManager Updated merger sites in 0.001s
+[2018-02-01 23:13:23,943] DEBUG    Site:149EPB..zaCN Peers saved in 0.003s
+[2018-02-01 23:13:23,943] DEBUG    Site:1Br4MT..CFxh Peers saved in 0.000s
+[2018-02-01 23:13:23,995] DEBUG    Site:1Gfey7..fcdp Peers saved in 0.052s
+[2018-02-01 23:13:24,028] DEBUG    Site:1GitLi..MQ4t Peers saved in 0.032s
+[2018-02-01 23:13:24,029] DEBUG    Site:1H3MA7..Zssb Peers saved in 0.000s
+[2018-02-01 23:13:24,029] DEBUG    Site:1LyXfj..QXGR Peers saved in 0.000s
+[2018-02-01 23:13:24,031] DEBUG    Site:1RepoX..HCc6 Peers saved in 0.002s
+[2018-02-01 23:13:24,077] DEBUG    Site:1Gif7P..Xc7h Peers saved in 0.045s
+[2018-02-01 23:13:24,078] DEBUG    Site:1A3o3D..8H87 Peers saved in 0.001s
+[2018-02-01 23:13:24,206] DEBUG    Site:1SiTEs..tdwB Peers saved in 0.128s
+[2018-02-01 23:13:24,206] DEBUG    Site:1KVLau..gG2m Peers saved in 0.000s
+[2018-02-01 23:13:24,222] DEBUG    Site:1UPDat..fxsp Peers saved in 0.016s
+[2018-02-01 23:13:24,223] DEBUG    Site:1KjcBw..pTMC Peers saved in 0.000s
+[2018-02-01 23:13:24,262] DEBUG    Site:1UDbAD..MkoV Peers saved in 0.040s
+[2018-02-01 23:13:24,318] DEBUG    Site:1Cn8tC..Hwys Peers saved in 0.055s
+[2018-02-01 23:13:24,318] DEBUG    Site:17ziJ8..xX8t Peers saved in 0.000s
+[2018-02-01 23:13:24,319] DEBUG    Site:1Sickf..FFEs Peers saved in 0.001s
+[2018-02-01 23:13:24,319] DEBUG    Site:1FFuXJ..Rdkp Peers saved in 0.000s
+[2018-02-01 23:13:24,320] DEBUG    Site:1MVADe..JfMK Peers saved in 0.001s
+[2018-02-01 23:13:24,389] DEBUG    Site:1BLogC..AGg8 Peers saved in 0.069s
+[2018-02-01 23:13:24,390] DEBUG    Site:1rNL2h..PAvz Peers saved in 0.000s
+[2018-02-01 23:13:24,391] DEBUG    Site:1DaXkb..jwcv Peers saved in 0.001s
+[2018-02-01 23:13:24,392] DEBUG    Site:1BsRBz..YYau Peers saved in 0.001s
+[2018-02-01 23:13:24,393] DEBUG    Site:1Mr2r3..EALD Peers saved in 0.000s
+[2018-02-01 23:13:24,410] DEBUG    Site:1BXLnS..6rts Peers saved in 0.001s
+[2018-02-01 23:13:24,412] DEBUG    Site:13EYKq..eLkc Peers saved in 0.001s
+[2018-02-01 23:13:24,412] DEBUG    Site:1HNYEH..nVA2 Peers saved in 0.000s
+[2018-02-01 23:13:24,422] DEBUG    Site:1DuceV..UrtN Peers saved in 0.010s
+[2018-02-01 23:13:24,423] DEBUG    Site:1Jz14w..jAkN Peers saved in 0.000s
+[2018-02-01 23:13:24,424] DEBUG    Site:1GNTAK..ZYTL Peers saved in 0.001s
+[2018-02-01 23:13:24,424] DEBUG    Site:1D1VGa..o3Ed Peers saved in 0.000s
+[2018-02-01 23:13:24,434] DEBUG    Site:1JheKm..HQqx Peers saved in 0.010s
+[2018-02-01 23:13:24,435] DEBUG    Site:1AHweG..5Gkq Peers saved in 0.000s
+[2018-02-01 23:13:24,465] DEBUG    Site:171amn..hRWj Peers saved in 0.030s
+[2018-02-01 23:13:24,579] DEBUG    Site:1TaLkF..jipT Peers saved in 0.113s
+[2018-02-01 23:13:24,579] DEBUG    Site:14vBXT..RZTM Peers saved in 0.000s
+[2018-02-01 23:13:24,595] DEBUG    Site:19X5gH..Hjgc Peers saved in 0.015s
+[2018-02-01 23:13:24,595] DEBUG    Site:1FTZ3b..P6tq Peers saved in 0.000s
+[2018-02-01 23:13:24,596] DEBUG    Site:1FZAVa..TN6H Peers saved in 0.000s
+[2018-02-01 23:13:24,670] DEBUG    Site:1MaiL5..Ju27 Peers saved in 0.074s
+[2018-02-01 23:13:24,796] DEBUG    Site:1uPLoa..dmQc Peers saved in 0.126s
+[2018-02-01 23:13:24,809] DEBUG    Site:1DTpF9..3VK1 Peers saved in 0.013s
+[2018-02-01 23:13:24,810] DEBUG    Site:1BhArU..t3wQ Peers saved in 0.000s
+[2018-02-01 23:13:24,811] DEBUG    Site:1Jwmx3..Xrrc Peers saved in 0.001s
+[2018-02-01 23:13:24,812] DEBUG    Site:14y3Se..bWeH Peers saved in 0.001s
+[2018-02-01 23:13:24,885] DEBUG    Site:1MeFqF..q7nH Peers saved in 0.074s
+[2018-02-01 23:13:25,060] DEBUG    Site:1Name2..hM9F Peers saved in 0.174s
+[2018-02-01 23:13:25,232] DEBUG    Site:1HeLLo..Tf3D Peers saved in 0.172s
+[2018-02-01 23:13:25,233] DEBUG    Site:1MRMXT..18wS Peers saved in 0.000s
+[2018-02-01 23:13:25,304] DEBUG    Site:1iD5ZQ..duGz Peers saved in 0.071s
+[2018-02-01 23:13:25,314] DEBUG    Site:1iNDEx..RPcL Peers saved in 0.010s

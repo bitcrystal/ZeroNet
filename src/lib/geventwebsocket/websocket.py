@@ -226,6 +226,9 @@ class WebSocket(object):
                                "text message at payload octet index "
                                "{0:d}".format(self.utf8validate_last[3]))
 
+    def trys(self,ft,f_opcode,opcode):
+        print b'websocket: %s, f_opcode: %s, opcode: %s' % (ft,f_opcode,opcode)
+ 
     def read_message(self):
         """
         Return the next text or binary message from the socket.
@@ -239,8 +242,10 @@ class WebSocket(object):
         while True:
             header, payload = self.read_frame()
             f_opcode = header.opcode
+            self.trys(5,opcode,f_opcode)
 
             if f_opcode in (self.OPCODE_TEXT, self.OPCODE_BINARY):
+                
                 # a new frame
                 if opcode:
                     raise ProtocolError("The opcode in non-fin frame is "

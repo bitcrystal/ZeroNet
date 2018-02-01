@@ -28,7 +28,7 @@ screen_test()
   fi
 }
 
-screen -wipe
+screen -wipe 2> /dev/null 1>/dev/null
 cd src
 cd I2P
 screen_test I2PHelper

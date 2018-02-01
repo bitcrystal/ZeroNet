@@ -2106,7 +2106,8 @@ def zeronet_config_exists():
 def zeronet_config_read():
     try:
         e = {}
-        e[b'trackers'] = []
+        e[b'[global]'] = {}
+        e[b'[global]'][b'trackers'] = []
         if(zeronet_config_exists()):
           fp = open(zeronet_config(),b'rb')
           e = fp.read()
@@ -2122,35 +2123,51 @@ def zeronet_config_read():
           last_g_len = 0
           lnt = len(nt)
           i = 0
+          section = b''
+          have_section = False
           while(i<lnt):
             if(nt[i] == b''):
+              i = i + 1
+              continue
+            if(nt[i].startsWith(b'[')):
+              section = nt[i]
+              have_section = True
+              n[section]={}
+              i = i + 1
+              continue
+            if not have_section:
               i = i + 1
               continue
             nt[i] = Replacer(nt[i],b' = ',b'=')
             g = nt[i].split(b'=')
             g_len = len(g)
             if g_len == 2:
-               n[g[0]] = []
-               n[g[0]].append(Replacer(Replacer(g[1],b' ',b''),b'\t',b''))
+               n[section][g[0]] = []
+               n[section][g[0]].append(Replacer(Replacer(g[1],b' ',b''),b'\t',b''))
+               last_section = section
                last_g = g
                last_g_len = g_len
             else:
                if last_g_len > 0:
-                  n[last_g[0]].append(Replacer(Replacer(nt[i],b' ',b''),b'\t',b''))
+                  n[last_section][last_g[0]].append(Replacer(Replacer(nt[i],b' ',b''),b'\t',b''))
             i = i + 1
           e = n
-          if not (b'trackers' in e):
-             e[b'trackers'] = []
+          for k in e:
+            if not (b'trackers' in e[k]):
+               e[k][b'trackers'] = []
     except:
         e = {}
-        e[b'trackers'] = []
+        e[b'[global]'] = {}
+        e[b'[global]'][b'trackers'] = []
     return e
 
 def zeronet_config_write(zc):
     nc = b''
     nrt = []
-    for k in zc:
-        v = zc[k]
+    for section in zc:
+      for k in zc[section]:
+        nrt.append(section)
+        v = zc[section][k]
         vl = len(v)
         if(vl>0):
           rtk = (b'%s = ' % (k))
@@ -2214,11 +2231,17 @@ def zeronet_trackers_format(trackers,old_trackers_append=False):
            
 def zeronet_config_merge_write(trackers):
     oldt = zeronet_config_read()
-    old_trackers = oldt[b'trackers']
+    section = b''
+    for k in oldt:
+        section = k
+        old_trackers = oldt[section][b'trackers']
+        break
+    if section == b'':
+       return False
     otl = len(old_trackers)
     tl = len(trackers)
     if(otl==0 or tl==0):
-         oldt[b'trackers'] = zeronet_trackers_format(trackers,True)
+         oldt[section][b'trackers'] = zeronet_trackers_format(trackers,True)
          return zeronet_config_write(oldt)
     trackers = zeronet_trackers_format(trackers,False)
     tl = len(trackers)
@@ -2244,7 +2267,7 @@ def zeronet_config_merge_write(trackers):
     while(i < otl):
         trackers.append(old_trackers[i])
         i = i + 1
-    oldt[b'trackers'] = trackers
+    oldt[section][b'trackers'] = trackers
     return zeronet_config_write(oldt)
 
 def trackers_json_read(dir):

@@ -180,7 +180,6 @@ class Actions(object):
         logging.info("Creating UiServer....")
         ui_server = UiServer()
         file_server.ui_server = ui_server
-
         logging.info("Removing old SSL certs...")
         from Crypt import CryptConnection
         CryptConnection.manager.removeCerts()

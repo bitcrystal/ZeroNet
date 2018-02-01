@@ -13,7 +13,7 @@ class ChartCollector(object):
     def __init__(self, db):
         self.db = db
         if config.action == "main":
-            gevent.spawn_later(60 * 3, self.collector)
+            gevent.spawn_later(60 * 3, self.collectortest)
         self.log = logging.getLogger("ChartCollector")
         self.last_values = collections.defaultdict(dict)
 
@@ -166,6 +166,29 @@ class ChartCollector(object):
         cur.execute("END")
         cur.close()
         self.log.debug("Site collectors inserted in %.3fs" % (time.time() - s))
+
+
+    def collectortest_again(self):
+        gevent.spawn_later(10,self.collectortest)  
+        time.sleep(15)
+        return    
+
+    def collectortest(self):
+        if(not hasattr(sys.modules["main"],"file_server")):
+              self.collectortest_again()
+              return
+        file_server = sys.modules["main"].file_server
+        if(not hasattr(file_server,"ui_server")):
+              self.collectortest_again()
+              return
+        from Ui import UiServer
+        if(not isinstance(file_server.ui_server, UiServer)):
+              self.collectortest_again()
+              return
+        if(not hasattr(file_server,"sites")):
+              self.collectortest_again()
+              return
+        self.collector()
 
     def collector(self):
         collectors = self.getCollectors()
