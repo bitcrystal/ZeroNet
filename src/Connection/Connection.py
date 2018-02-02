@@ -82,7 +82,7 @@ class Connection(object):
         return "<%s>" % self.__str__()
 
     def log(self, text):
-        self.server.log.debug("%s > %s" % (self.name, text))
+        self.server.log.debug("%s > %s" % (self.name, text.decode("utf8", "ignore")))
 
     def getValidSites(self):
         return [key for key, val in self.server.tor_manager.site_onions.items() if val == self.target_onion]
@@ -108,6 +108,8 @@ class Connection(object):
             if not self.server.tor_manager or not self.server.tor_manager.enabled:
                 raise Exception("Can't connect to onion addresses, no Tor controller present")
             self.sock = self.server.tor_manager.createSocket(self.ip, self.port)
+        elif (config.tor == "always" or config.i2p == "always") and helper.isPrivateIp(self.ip) and self.ip not in config.ip_local:
+             raise Exception("Can't connect to local IPs in Tor: always mode")
         elif self.ip.endswith(".i2p"):
             if not self.server.i2p_manager or not self.server.i2p_manager.enabled:
                 raise Exception("Can't connect to onion addresses, no I2P controller present")

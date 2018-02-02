@@ -344,7 +344,6 @@ class FileServer(ConnectionServer):
                     site.retryBadFiles()
 
                 if not startup:  # Don't do it at start up because checkSite already has needConnections at start up.
-                    connected_num = site.needConnections(check_site_on_reconnect=True)  # Keep active peer connection to get the updates
                     if time.time() - site.settings.get("modified") < 60 * 60 * 24 * 7:
                         # Keep active connections if site has been modified witin 7 days
                         connected_num = site.needConnections(check_site_on_reconnect=True)
