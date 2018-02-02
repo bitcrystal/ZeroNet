@@ -37,6 +37,9 @@ class ChartCollector(object):
         collectors["connection_onion"] = (
             lambda: len([1 for connection in file_server.connections if connection.ip.endswith(".onion")])
         )
+        collectors["connection_i2p"] = (
+            lambda: len([1 for connection in file_server.connections if connection.ip.endswith(".i2p")])
+        )
         collectors["connection_ping_avg"] = (
             lambda: round(1000 * helper.avg(
                 [connection.last_ping_delay for connection in file_server.connections if connection.last_ping_delay]
@@ -67,6 +70,7 @@ class ChartCollector(object):
         # Peers
         collectors["peer"] = lambda (peers): len(peers)
         collectors["peer_onion"] = lambda (peers): len([True for peer in peers if ".onion" in peer])
+        collectors["peer_i2p"] = lambda (peers): len([True for peer in peers if ".i2p" in peer])
 
         # Size
         collectors["size"] = lambda: sum([site.settings.get("size", 0) for site in sites.values()])
@@ -92,6 +96,9 @@ class ChartCollector(object):
         site_collectors["site_peer"] = lambda(site): len(site.peers)
         site_collectors["site_peer_onion"] = lambda(site): len(
             [True for peer in site.peers.itervalues() if peer.ip.endswith(".onion")]
+        )
+        site_collectors["site_peer_i2p"] = lambda(site): len(
+            [True for peer in site.peers.itervalues() if peer.ip.endswith(".i2p")]
         )
         site_collectors["site_peer_connected"] = lambda(site): len([True for peer in site.peers.itervalues() if peer.connection])
 

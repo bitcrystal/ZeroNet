@@ -49,6 +49,9 @@ class ContentDbPlugin(object):
             peer.reputation = int((time.time() - peer.time_added) / (60 * 60 * 24))  # Boost reputation for older peers
             if row["address"].endswith(".onion"):
                 peer.reputation = peer.reputation / 2  # Onion peers less likely working
+            elif row["address"].endswith(".i2p"):
+                peer.reputation = peer.reputation / 2  # I2P peers less likely working
+
             num += 1
         if num_hashfield:
             site.content_manager.has_optional_files = True
