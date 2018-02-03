@@ -69,21 +69,26 @@ def onion_string_bytes(key):
     key = onion_string(key)
     return utobs(key)
 
+def random_onion_string():
+    k1 = RandomString(1024)
+    k2 = md5(str(time.time()).encode())
+    kx = b'%s:%s' % (k1,k2)
+    kx = onion_string_bytes(kx)
+    return kx
+
 def url_encode(url):
     url = Replacer(url,b':',b'%3A')
     url = Replacer(url,b'/',b'%2F')
     return url
 
 def http_request_nonce(host='127.0.0.1', port=4444, nonce="3"):
-    if nonce != "3":
-       return nonce
+    #if nonce != "3":
+    #   return nonce
     #print host
     #print port
-    mytime = md5(str(time.time()).encode())
+    mytime = random_onion_string()
     re = (b'GET http://%s.i2p/?i2paddresshelper=LPJyAF6f-tMEgon97AufVfU0TL-rKc-tkPpLymnCzFRnsKsrWSfFyAmPU3ps8oJEgri9cxI87M5OA6goZX0TAnr7u7sXiTUPNRs2k2BpQRO2v1e2xD1biqiarcs4AEKPrSH3nZjWoxqbpOpg8vyce4YvEtenKlvB1x40OjjGl2mrNw3ZjcdOQKIune14fxr5vsPmSJB1eSUM8LUygJbZ~zvWBCNnKG0S7igcYPADRQYsMXKTb~N7w2NJVOuYJoUO9-kjKAYD7To5bvLG6zWlPFzQiOcjtGaI5mZ6zEQH44PBcaN2qX5bpJjR~q7ZkrS5rJeU~4flqx4PlPsklFKTV0SqKl0UFwxFaznbrn3~sY~b6vJuqSeOv0GbR8ijG5S0B967Uars4C2Yx8eH~8iXGeUhUcrKOQIJ5qFPFo9u105Pu74cNcJa9TUd6CDbsrcn4vy5w1BNCKc21yRPf4hpPTkzrqDsxvi4-vvseYPndHrAPBohVHztcDb6d3OhlwhgBQAEAAcAAA== HTTP/1.1\r\nHost: %s.i2p\r\nUser-Agent: Mozilla/5.0 (X11 Linux.x86_64; rv:52.0) Gecko/20100101 Firefox/52.0\r\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\r\nAccept-Language: en-US,en;q=0.5\r\nAccept-Encoding: utf-8\r\nDNT: 1\r\nX-Forwarded-For: 43.5.124.236\r\nConnection: keep-alive\r\nUpgrade-Insecure-Requests: 1\r\n\r\n' % (mytime,mytime))
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    print host
-    print port
     sock.connect((host,port))
     sended = 0
     i = 0
@@ -121,9 +126,9 @@ def http_request_nonce(host='127.0.0.1', port=4444, nonce="3"):
        if len(recv_data) > 0:
           recv_data = recv_data[0]
        else:
-          return "3"
+          return b"3"
     else:
-       return "3"
+       return b"3"
     return recv_data
 
 def get_new_nonce():
@@ -172,13 +177,11 @@ def http_request_proxy_add(host,dest,i2p_host=b'127.0.0.1', i2p_port=4444, i2p_n
               i = i + sended
           except:
               break
-
     recv_data = b''
     chunks = []
     chunk = b''
     loop = True
     loop_cancel = False
-
     while loop:
         try:
             chunk = sock.recv(1024)
@@ -198,7 +201,6 @@ def http_request_proxy_add(host,dest,i2p_host=b'127.0.0.1', i2p_port=4444, i2p_n
     loop = True
     data_router = recv_data
     recv_data = b''
-
     sock.close()
     sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
     sock.connect((i2p_host,i2p_port))
@@ -248,6 +250,7 @@ def http_request_proxy_add(host,dest,i2p_host=b'127.0.0.1', i2p_port=4444, i2p_n
     while loop:
         try:
             chunk = sock.recv(1024)
+            #print chunk
             if not chunk:
                if loop_cancel:
                   loop = False
@@ -263,7 +266,6 @@ def http_request_proxy_add(host,dest,i2p_host=b'127.0.0.1', i2p_port=4444, i2p_n
     loop_cancel = False
     loop = True
     data_master = recv_data
-
     sock.close()
 
 def http_request_proxy_add_thread(host,dest,i2p_host=b'127.0.0.1', i2p_port=4444, i2p_nonce=b'3542682309546403524'):
@@ -1620,7 +1622,7 @@ def FakeI2PTor_loads(str):
     return no
 
 class Client_Thread:
-	def __init__(self, c_socket, addr, cf, i2p_host, i2p_port, port_range_faktor, i2p_http_proxy_host, i2p_http_proxy_port, i2p_http_proxy_nonce, lock, debug=False):
+	def __init__(self, c_socket, addr, cf, i2p_host, i2p_port, port_range_faktor, i2p_http_proxy_host, i2p_http_proxy_port, i2p_http_proxy_nonce, thread_proxy_trackers2, lock, debug=False):
 		RECV_BUFSIZE = 1024  # maximum amount of data to be received
 		self.debug = debug
 		self.c_socket = c_socket
@@ -1637,6 +1639,8 @@ class Client_Thread:
                 self.onions = []
                 self.cf=cf
                 self.os=None
+                self.thread_proxy_trackers2 = thread_proxy_trackers2
+                self.tpt2 = False
                 self.port_range_faktor = port_range_faktor
                 self.authenticate = False
                 self.scf=(b'250-AUTH METHODS=COOKIE,SAFECOOKIE COOKIEFILE="%s.i2p.auth"\r\n' % self.cf)
@@ -1668,6 +1672,22 @@ class Client_Thread:
            except:
               return 
           
+        def thread_proxy_trackers2_join(self):
+            if not self.tpt2:
+               try:
+                   self.thread_proxy_trackers2.join()
+                   self.tpt2 = True
+               except:
+                   self.tpt2 = True
+            return
+
+        def http_request_proxy_add_thread_ex(self,addr_onion,pkey_i2p):
+            self.lt()
+            self.thread_proxy_trackers2_join()
+            self.i2p_http_proxy_nonce = http_request_nonce(self.i2p_http_proxy_host, self.i2p_http_proxy_port, self.i2p_http_proxy_nonce)
+            http_request_proxy_add_thread(addr_onion,pkey_i2p,self.i2p_http_proxy_host, self.i2p_http_proxy_port, self.i2p_http_proxy_nonce)
+            self.ut()
+
         def file_string(self):
            fp = open(('%s.i2p' % self.cf), 'rb')
            nr = fp.read()
@@ -1802,7 +1822,7 @@ class Client_Thread:
                        self.c_socket.send(b'250 OK\r\n')
                        self.onion[srvid] = pkey
                        self.onion_provider[addr_onion] = srvid
-                       http_request_proxy_add_thread(addr_onion,pkey_i2p,self.i2p_http_proxy_host, self.i2p_http_proxy_port, self.i2p_http_proxy_nonce)
+                       self.http_request_proxy_add_thread_ex(addr_onion,pkey_i2p)
                        lf = len(srvid)
                        print(lf)
                        self.lt()
@@ -1831,7 +1851,7 @@ class Client_Thread:
                    self.c_socket.send(b'250 OK\r\n')
                    self.onion[srvid] = pkey
                    self.onion_provider[addr_onion] = srvid
-                   http_request_proxy_add_thread(addr_onion,pkey_i2p,self.i2p_http_proxy_host, self.i2p_http_proxy_port, self.i2p_http_proxy_nonce)
+                   self.http_request_proxy_add_thread_ex(addr_onion,pkey_i2p)
                    lf = len(f)
                    self.lt()
                    state = self.dump()
@@ -1944,7 +1964,7 @@ class Client_Thread:
             self.loads_onion(ret)
 
 class Socket_Server:
-	def __init__(self, host='', port=1234, i2p_host='127.0.0.1', i2p_port=2827, cf="/myservices/tor/control_auth_cookie", port_range_faktor=10, i2p_http_proxy_host='127.0.0.1', i2p_http_proxy_port=4444, i2p_http_proxy_nonce='', ssh=False, debug=False):
+	def __init__(self, host='', port=1234, i2p_host='127.0.0.1', i2p_port=2827, cf="/myservices/tor/control_auth_cookie", port_range_faktor=10, i2p_http_proxy_host='127.0.0.1', i2p_http_proxy_port=4444, i2p_http_proxy_nonce='', ssh=False, thread_proxy_trackers2=None, debug=False):
 		self.host = host # '' for all available interfaces
 		self.port = port
 		self.cf = cf
@@ -1955,6 +1975,7 @@ class Socket_Server:
                 self.i2p_http_proxy_nonce = i2p_http_proxy_nonce
                 self.port_range_faktor = port_range_faktor
                 self.ssh = ssh
+                self.thread_proxy_trackers2 = thread_proxy_trackers2
 		self.debug = debug
 		listen_backlog = 10  # must be set; only optional in Python >= v3.5
 
@@ -1988,7 +2009,7 @@ class Socket_Server:
 			except (KeyboardInterrupt, InterruptedError):
 				break
 
-			thread = threading.Thread(target=Client_Thread, args=(c_socket, addr, self.cf, self.i2p_host, self.i2p_port, self.port_range_faktor, self.i2p_http_proxy_host, self.i2p_http_proxy_port, self.i2p_http_proxy_nonce, self.lock, self.debug))
+			thread = threading.Thread(target=Client_Thread, args=(c_socket, addr, self.cf, self.i2p_host, self.i2p_port, self.port_range_faktor, self.i2p_http_proxy_host, self.i2p_http_proxy_port, self.i2p_http_proxy_nonce, self.thread_proxy_trackers2, self.lock, self.debug))
 			thread.setDaemon(True)
 			thread.start()
 
@@ -2425,11 +2446,39 @@ def from_trackers(ne):
         str = binascii.a2b_base64(str).encode()
         ne = json.loads(str)
         ne = utoba(ne)
+        
         ne[b'onion'] = ne[b'onion'].encode()
         ne[b'privatekey'] = ne[b'privatekey'].encode()
         ne[b'port'] = int(ne[b'port'])
-        ne[b'is_i2p'] = bool(ne[b'is_i2p'])
-        ne[b'is_onion'] = bool(ne[b'is_onion'])
+        if hasattr(ne,b'is_i2p'):
+           ne[b'is_i2p'] = bool(ne[b'is_i2p'])
+        else:
+           ne[b'is_i2p'] = False
+        if hasattr(ne,b'is_onion'):
+           ne[b'is_onion'] = bool(ne[b'is_onion'])
+        else:
+           ne[b'is_onion'] = False
+        if (not ne[b'is_i2p']) and (not ne[b'is_onion']):
+           try:
+              address = b64to32_address(ne[b'privatekey'])
+              address = onion_string_bytes(address)
+              ne[b'onion'] = address
+              ne[b'is_i2p'] = True
+           except:
+              address = None
+           if not address:
+              try:
+                 from Crypt import CryptRsa
+                 publickey = CryptRsa.privatekeyToPublickey(ne[b'privatekey']).encode()
+                 if len(publickey) == 140:
+                    address = CryptRsa.publickeyToOnion(publickey).encode()
+                 else:
+                    address = None
+                 if address:
+                    ne[b'onion'] = address
+                    ne[b'is_onion'] = True
+              except:
+                 address = None
     except:
         ne = {}
         ne[b'onion'] = b''
@@ -2637,13 +2686,50 @@ def create_settings():
     fp.write(js)
     fp.close()
 
+def add_proxy_trackers2_i2p(i2p_http_proxy_host,i2p_http_proxy_port,i2p_http_proxy_nonce):
+    ihph=i2p_http_proxy_host
+    ihpp=i2p_http_proxy_port
+    ihpn=i2p_http_proxy_nonce
+    trackers = trackers2_json_read_ex_i2p()
+    trackers = trackers[b'trackers']
+    trackers_ = []
+    lt = len(trackers)
+    i = 0
+    while(i<lt):
+        tracker = trackers[i]
+        if tracker[b'is_i2p']:
+           trackers_.append(tracker)
+        i = i + 1
+    trackers = trackers_
+    trackers_ = []
+    i = 0
+    lt = len(trackers)
+     
+    while(i<lt):
+        tracker = trackers[i]
+        #print b'host: %s' % (tracker[b'onion'])
+        #print b'privatekey: %s' % (tracker[b'privatekey'])
+        http_request_proxy_add(tracker[b'onion'],tracker[b'privatekey'],ihph,ihpp,ihpn)
+        i = i + 1        
+
+def add_proxy_trackers2_i2p_thread(i2p_http_proxy_host,i2p_http_proxy_port,i2p_http_proxy_nonce):
+     try:
+        thread = threading.Thread(target=add_proxy_trackers2_i2p, args=(i2p_http_proxy_host, i2p_http_proxy_port, i2p_http_proxy_nonce))
+        thread.setDaemon(True)
+        thread.start()
+     except:
+        thread = None
+     return thread
+
 def startI2PHelperMain(set_signal_handler=False,second=False):
-    print set_signal_handler
-    http_request_nonce()
+    #print set_signal_handler
     #i2p_test()
     create_settings()
     ret = load_settings()
-    ret["i2p_http_proxy_nonce"] = http_request_nonce(host=utobs(ret["i2p_http_proxy_host"]), port=ret["i2p_http_proxy_port"], nonce=utobs(ret["i2p_http_proxy_nonce"]))
+    i2p_http_proxy_host_ = utobs(ret["i2p_http_proxy_host"])
+    i2p_http_proxy_port_ = ret["i2p_http_proxy_port"]
+    i2p_http_proxy_nonce_ = utobs(ret["i2p_http_proxy_nonce"])
+    ret["i2p_http_proxy_nonce"] = http_request_nonce(host=i2p_http_proxy_host_, port=i2p_http_proxy_port_, nonce=i2p_http_proxy_nonce_)
     settings = ret
     # Add Here new settings
     #ret["debug"] = True  
@@ -2652,7 +2738,11 @@ def startI2PHelperMain(set_signal_handler=False,second=False):
     if ret["i2p_http_proxy_nonce"] == "3" or ret["i2p_http_proxy_nonce"] == b'3':
        print "try again!"
     else:
-       server = Socket_Server(host=utobs(ret["server_host"]),port=ret["server_port"],cf=utobs(ret["cookiefile_path"]),i2p_host=utobs(ret["i2p_host"]),i2p_port=ret["i2p_port"],port_range_faktor=ret["port_range_faktor"],i2p_http_proxy_host=utobs(ret["i2p_http_proxy_host"]),i2p_http_proxy_port=ret["i2p_http_proxy_port"],i2p_http_proxy_nonce=utobs(ret["i2p_http_proxy_nonce"]),ssh=set_signal_handler,debug=ret["debug"])
+       i2p_http_proxy_host_ = utobs(ret["i2p_http_proxy_host"])
+       i2p_http_proxy_port_ = ret["i2p_http_proxy_port"]
+       i2p_http_proxy_nonce_ = utobs(ret["i2p_http_proxy_nonce"])
+       thread = add_proxy_trackers2_i2p_thread(i2p_http_proxy_host_,i2p_http_proxy_port_,i2p_http_proxy_nonce_)
+       server = Socket_Server(host=utobs(ret["server_host"]),port=ret["server_port"],cf=utobs(ret["cookiefile_path"]),i2p_host=utobs(ret["i2p_host"]),i2p_port=ret["i2p_port"],port_range_faktor=ret["port_range_faktor"],i2p_http_proxy_host=i2p_http_proxy_host_,i2p_http_proxy_port=i2p_http_proxy_port_,i2p_http_proxy_nonce=i2p_http_proxy_nonce_,ssh=set_signal_handler,thread_proxy_trackers2=thread,debug=ret["debug"])
 
 if __name__ == "__main__":
    startI2PHelperMain()
