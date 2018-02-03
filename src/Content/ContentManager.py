@@ -749,7 +749,8 @@ class ContentManager(object):
             raise VerifyError("Wrong inner_path: %s" % content["inner_path"])
 
         # Check total site size limit
-        if site_size > site_size_limit:
+        cool = False
+        if cool and site_size > site_size_limit:
             if inner_path == "content.json" and self.site.settings["size"] == 0:
                 # First content.json download, save site size to display warning
                 self.site.settings["size"] = site_size
