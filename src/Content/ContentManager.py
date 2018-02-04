@@ -458,6 +458,7 @@ class ContentManager(object):
         if inner_path not in self.contents:
             return {}
         diffs = {}
+        cool=False
         content_inner_path_dir = helper.getDirname(inner_path)
         for file_relative_path in self.contents[inner_path].get("files", {}):
             file_inner_path = content_inner_path_dir + file_relative_path
@@ -465,7 +466,7 @@ class ContentManager(object):
                 diffs[file_relative_path] = Diff.diff(
                     list(self.site.storage.open(file_inner_path)),
                     list(self.site.storage.open(file_inner_path + "-new")),
-                    limit=limit
+                    limit=cool
                 )
                 if update_files:
                     self.site.storage.delete(file_inner_path)
@@ -474,7 +475,7 @@ class ContentManager(object):
                 diffs[file_relative_path] = Diff.diff(
                     list(self.site.storage.open(file_inner_path + "-old")),
                     list(self.site.storage.open(file_inner_path)),
-                    limit=limit
+                    limit=cool
                 )
                 if update_files:
                     self.site.storage.delete(file_inner_path + "-old")
