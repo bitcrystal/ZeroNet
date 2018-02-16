@@ -76,6 +76,876 @@ def random_onion_string():
     kx = onion_string_bytes(kx)
     return kx
 
+class MyIntNumber():
+    def __init__(self):
+        self.mynumber = []
+        self.mynumber_with_sign_bit = []
+        self.mynumber_length = 0
+        self.mynumber_sign_bit = 0
+        self.mynumber_with_sign_bit_length = 0
+
+    def get(self):
+        return self.mynumber
+
+    def get_string(self,show_minus_sign=True,show_plus_sign=False):
+        i = 0
+        num = self.mynumber
+        ln = self.mynumber_length
+        sign_bit = self.mynumber_sign_bit
+        _str = b''
+        if(sign_bit==-1):
+           if show_minus_sign:
+              _str = b'-'
+        elif(sign_bit==1):
+           if show_plus_sign:
+              _str = b'+'
+
+        while(i<ln):
+           _str = (b'%s%s' % (_str,num[i]))
+           i = i + 1
+        return _str      
+
+    def print_number(self,show_minus_sign=True,show_plus_sign=False):
+        _str = self.get_string(show_minus_sign,show_plus_sign)
+        print _str
+
+    def set(self,number):
+        try:
+           number = number.encode()
+        except:
+           number = b''
+
+        nl = len(number)
+        if nl == 0:
+           self.set_null()
+           return
+
+        i = 0
+        try:
+            self.mynumber = []
+            minus_sign = int(ord(b'-'))
+            plus_sign = int(ord(b'+'))
+            hn = False
+            bn = 0
+            nm = 0
+            for x in number:
+                nx = int(ord(x))
+                if not hn:
+                   if nx == minus_sign:
+                      self.mynumber.append(-1)
+                   elif nx == plus_sign:
+                      self.mynumber.append(1)
+                   else:
+                      self.mynumber.append(1)
+                      if (nx > 47 and nx < 58):
+                         nm = int(nx-48)
+                         self.mynumber.append(nm)
+                      else:
+                         self.set_null()
+                         return
+                   hn = True
+                elif (nx > 47 and nx < 58):
+                   nm = int(nx-48)
+                   self.mynumber.append(nm)
+                else:
+                   self.set_null()
+                   return
+
+            self.setRaw(self.mynumber,True,self.mynumber[0])
+            return
+        except:
+            self.set_null()
+            return
+
+    def setRaw(self,number,check=True,sign_bit=0):
+        self.mynumber_with_sign_bit = []
+        if sign_bit == 2:
+           sign_bit = 0  
+        elif not (sign_bit == 0):
+           self.mynumber_with_sign_bit = number
+           num = [] 
+           ln = len(number)
+           i = 1
+           while(i<ln):
+              num.append(number[i])
+              i = i + 1
+           number = num
+        else:
+           number = []
+           check = False
+
+        if check:
+           ln = len(number)
+           n = []
+           i = 0
+           ns = True
+           self.mynumber_with_sign_bit = [sign_bit]
+           while(i<ln):
+               if(ns and number[i]>0):
+                 ns = False
+               if not ns:
+                 n.append(number[i])
+                 self.mynumber_with_sign_bit.append(number[i])
+               i = i + 1
+           number = n
+        self.mynumber_length = len(number)
+        self.mynumber = number
+        self.mynumber_sign_bit = sign_bit
+        self.mynumber_with_sign_bit_length = len(self.mynumber_with_sign_bit)
+
+    def setRawOld(self,number,number_length=0,sign_bit=0,myn_with_sign_bit=[],myn_with_sign_bit_length=0):
+        self.mynumber_length = number_length
+        self.mynumber = number
+        self.mynumber_sign_bit = sign_bit
+        self.mynumber_with_sign_bit = myn_with_sign_bit
+        self.mynumber_with_sign_bit_length = myn_with_sign_bit_length
+
+    def set_sign_bit(self,sign_bit=1):
+        self.mynumber_sign_bit = sign_bit
+
+    def get_length(self):
+        return self.mynumber_length
+   
+    def get_sign_bit(self):
+        return self.mynumber_sign_bit
+
+    def get_number_with_sign_bit(self):
+        return self.mynumber_with_sign_bit
+
+    def get_number_with_sign_bit_length(self):
+        return self.mynumber_with_sign_bit_length
+    
+    def setRawN(self,number):
+        if(isinstance(number,MyIntNumber())):
+          self.setRawOld(number.get(),number.get_length(),number.get_sign_bit(),number.get_number_with_sign_bit(),number.get_number_with_sign_bit_length())
+
+    def same_length(self,ko):
+        n1 = self.get()
+        n2 = ko.get()
+        n1_len = len(n1)
+        n2_len = len(n2)
+        nx = []
+        ny = []
+        k = 0
+        diff = 0
+        if(n1_len>n2_len):
+           diff=n1_len-n2_len
+           while(k<diff): 
+              ny.append(0)
+              k = k + 1
+           k = 0
+           while(k<n2_len):   
+              ny.append(n2[k])
+              k = k + 1 
+           n2_len=n1_len
+           n2=ny
+        elif(n2_len>n1_len): 
+           diff=n2_len-n1_len
+           while(k<diff): 
+              nx.append(0)
+              k = k + 1
+           k = 0
+           while(k<n1_len):   
+              nx.append(n1[k])
+              k = k + 1 
+           n1_len=n2_len
+           n1=nx
+        else:
+           n1=n1
+           n2=n2
+           n1_len=n1_len
+           n2_len=n2_len
+        
+        nx=[0]
+        ny=[0]
+        i = 0
+        while(i<n1_len):
+             nx.append(n1[i])
+             ny.append(n2[i])
+             i = i + 1        
+
+        n1=nx
+        n2=ny
+        n1_len=n1_len+1
+        n2_len=n1_len
+        return [n1,n2,n1_len,n2_len]
+
+    def calc_op(self,ko,co):
+        ss = self.get_sign_bit()
+        ks = ko.get_sign_bit()
+        s1 = True
+        s2 = True
+        s1r = False
+        s2r = False
+
+        if ss == -1:
+           s1 = False
+        elif ss == 1:
+           s1 = True
+        else:
+           s1r = True
+        
+        if ks == -1:
+           s2 = False
+        elif ks == 1:
+           s2 = True
+        else:
+           s2r = True
+        
+        if s1r or s2r:
+           return []
+        
+        n1 = self
+        n2 = ko
+        ret = []
+
+        
+        if co == 1:
+           if s1 and s2:
+              ret = [n1,n2,1,1]
+           elif not s1 and not s2:
+              ret = [n1,n2,1,-1]
+           elif s1 and not s2:
+              n2.set_sign_bit(1)
+              ret = [n1,n2,-1,0]
+           elif not s1 and s2:
+              n1.set_sign_bit(1)
+              ret = [n2,n1,-1,0]
+        elif co == 2:
+           if s1 and s2:
+              ret = [n1,n2,-1,0]
+           elif not s1 and not s2:
+              n2.set_sign_bit(1)
+              ret = n1.calc_op(n2,1)
+           elif s1 and not s2:
+              n2.set_sign_bit(1)
+              ret = n1.calc_op(n2,1)
+           elif not s1 and s2:
+              n2.set_sign_bit(-1)
+              ret = n1.calc_op(n2,1)
+        else:
+           ret = []
+        
+        return ret
+       
+    def add(self,number,hc=False,am=False):
+        ko = MyIntNumber()
+        if hc or am:
+           ko.setRawOld(number.get(),number.get_length(),number.get_sign_bit(),number.get_number_with_sign_bit(),number.get_number_with_sign_bit_length())
+        else:
+           ko.set(number)
+
+        if not hc:
+           co = self.calc_op(ko,1)
+           if len(co) == 0:
+              nm = self
+              return nm
+
+           if co[2] == 1:
+              rn = co[0].add(co[1], True)
+              if not (co[3] == 0):
+                 rn.set_sign_bit(co[3])
+              return rn
+           elif co[2] == -1:
+              rn = co[0].sub(co[1], True)
+              if not (co[3] == 0):
+                 rn.set_sign_bit(co[3])
+              return rn
+
+        ns = self.same_length(ko)
+        n1 = ns[0]
+        n2 = ns[1]
+        n1_len = ns[2]
+        n2_len = ns[3]
+        n = [] 
+        rev = 0
+        i = n1_len - 1    
+        while(i>=0): 
+            erg1 = n1[i] + n2[i] + rev 
+            erg2 = int(erg1/10)
+            erg3 = int(erg2*10)  
+            erg4 = int(erg1-erg3)
+            n.append(erg4)
+            rev = erg2
+            i = i - 1
+
+        n_length = len(n)
+        i = n_length - 1
+        n__ = [1]
+        while(i>=0):
+            n__.append(n[i])
+            i = i - 1
+        n = n__
+
+        if(n1_len==0):
+          n = [0]
+
+        ret=MyIntNumber()
+        ret.setRaw(n,True,n[0])
+        return ret
+
+    def sub(self,number,hc=False,am=False):
+        ko = MyIntNumber()
+        if hc or am:
+           ko.setRawOld(number.get(),number.get_length(),number.get_sign_bit(),number.get_number_with_sign_bit(),number.get_number_with_sign_bit_length())
+        else:
+           ko.set(number)
+        if not hc:
+           co = self.calc_op(ko,2)
+           if len(co) == 0:  
+              nm = self  
+              return nm
+
+           if co[2] == 1:
+              rn = co[0].add(co[1], True)
+              if not (co[3] == 0):
+                 rn.set_sign_bit(co[3])
+              return rn
+           elif co[2] == -1:  
+              rn = co[0].sub(co[1], True)
+              if not (co[3] == 0):
+                 rn.set_sign_bit(co[3])
+              return rn
+
+        ns = self.same_length(ko)
+        n1 = ns[0]
+        n2 = ns[1]
+        n1_length = ns[2]
+        n2_length = ns[3]
+        i = 1   
+        n1_ = []
+        n2_ = []
+        n1_.append(0)
+        n2_.append(0)
+        while(i<n1_length):  
+             n1_.append(n1[i])
+             n2_.append(n2[i])
+             i = i + 1
+
+        n1 = n1_
+        n2 = n2_
+        n1_length = len(n1)
+        n2_length = n1_length
+
+        i = 0
+        isok = True
+        while(i<n1_length):
+              if((n1[i]==0) and (n2[i]==0)):
+                 i = i + 1
+                 continue
+              break
+        end = i
+        i = n1_length - 1
+        nt = False
+        c1 = 0
+        c2 = 0
+        c = 0
+        n = []
+        while(i>=end):
+              c1 = n1[i]
+              c2 = n2[i]
+              if nt:
+                 nt = False
+                 c2 = c2 + 1
+
+              if(c2>c1):
+                 nt = True
+                 c1 = c1 + 10
+              else:
+                 nt = False
+              n.append(c1 - c2)
+              i = i - 1
+
+        if nt:
+          ret = MyIntNumber()
+          ret.setRaw(n,False,2)
+          n = ret.get()
+          n_length = len(n)
+          i = n_length - 1
+          n_ = []
+          n_.append(-1)
+          while(i>0):
+            n[i] = n[i]+1
+            n[i] = 10-n[i]
+            n_.append(n[i])
+            i = i - 1
+
+
+          if n_length > 0:
+             n[0]=10-n[0]
+             n_.append(n[0])
+          else:
+             n_ = [0]
+          n = n_
+        else:
+          ret = MyIntNumber()
+          ret.setRaw(n,False,2)
+          n = ret.get()
+          n_length = len(n)
+          i = n_length - 1
+          n_ = []
+          n_.append(1)
+          while(i>0):     
+            n_.append(n[i])
+            i = i - 1 
+
+          if n_length > 0:
+             n_.append(n[0])
+          else:
+             n_ = [0]
+          n = n_
+          
+        ret = MyIntNumber()
+        ret.setRaw(n,True,n[0])
+        return ret
+
+
+    def inc_dec_helper(self,inc=True):
+        number = self.get_number_with_sign_bit()
+        number_len = self.get_number_with_sign_bit_length()
+        if inc:
+           inc_dec_0 = [1,1]
+           inc_dec_1 = [0,0]
+           inc_dec_2 = [1,1]
+           inc_dec_3 = -1
+           inc_dec_4 = 1
+        else:
+           inc_dec_0 = [-1,1]
+           inc_dec_1 = [-1,2]
+           inc_dec_2 = [-1,1]
+           inc_dec_3 = 1
+           inc_dec_4 = -1
+
+        if(number_len==0):
+           number = inc_dec_0
+        elif(number_len==1):
+            if(number[0]<0):
+               number = inc_dec_1
+            else:
+               number = inc_dec_2
+        elif(number_len==2):
+            if(number[0]<0):
+               a = inc_dec_3
+            else:
+               a = inc_dec_4
+            number[1] = number[1] + a
+            if number[1] > 9:
+               k = number[1] - 10
+               number = [1, 1, k]
+            elif number[1] < 0:
+               k = number[1] + 10
+               k = 10 - k
+               number = [-1,k]
+            elif number[1] == 0:
+                 k = 0
+                 number[0] = 0
+        else:
+              a = 0
+              if(number[0]<0):
+                a = inc_dec_3
+              else:
+                a = inc_dec_4
+
+              i = number_len - 1
+              k = 0 
+
+              while(i>0):
+                 number[i] = number[i] + a + k
+                 if number[i] > 9 :
+                    k = number[i] - 10
+                    number[i] = k
+                    a = 0
+                    k = 1
+                 elif number[i] < 0:
+                    k = 10 + number[i]
+                    number[i] = k
+                    a = 0 
+                    k = -1
+                 else:
+                    k = number[i]
+                    number[i] = k
+                    k = 2
+                    i = i - 1
+                    break
+                 i = i - 1
+
+              if k == 2:
+                n_ = [number[0]]
+              elif not (k == 0):
+                if k < 0:
+                   k = 10 - (k + 10)
+                   n_ = [-1,k]
+                else:
+                   n_ = [1,k]
+              else:
+                n_ = [number[0]]
+
+              i = 1
+              while(i<number_len):
+                n_.append(number[i])
+                i = i + 1
+ 
+              number = n_
+              number_len = len(number)
+
+        ret = MyIntNumber()
+        ret.setRaw(number,False,number[0])
+        return ret
+
+    def inc(self):
+        return self.inc_dec_helper(True)
+
+    def dec(self):
+        return self.inc_dec_helper(False)
+
+    def set_null(self):
+        self.mynumber = []
+        self.mynumber_length = 0
+        self.mynumber_sign_bit = 0        
+
+    def is_null(self):
+        if ((self.mynumber_length == 0) or (self.mynumber_sign_bit == 0)):
+           return True
+        else:
+           return False
+   
+    def is_lesser_as_null(self):
+        if self.is_null():
+           return False
+        else:
+           if (self.mynumber_sign_bit == -1):
+              return True
+           else:
+              return False
+
+    def is_null_or_less(self):
+        if self.is_null():
+           return True
+        else:
+           if (self.mynumber_sign_bit == -1):
+              return True
+           else:
+              return False
+        
+    def mul(self,number):
+        ko = MyIntNumber()
+        ko.set(number)
+        sign_bit = self.get_sign_bit()
+        ko_sign_bit = ko.get_sign_bit()
+        nms = self
+        kos = ko
+        nms.set_sign_bit(1)
+        kos.set_sign_bit(1)
+        kos = kos.dec()
+        numb = nms
+
+        while(not kos.is_null_or_less()):
+           nms = nms.add(numb,False,True)
+           kos = kos.dec()
+
+        nms.set_sign_bit(sign_bit*ko_sign_bit)
+        return nms
+
+    def div(self,number):
+        ko = MyIntNumber()
+        ko.set(number)
+        sign_bit = self.get_sign_bit()
+        ko_sign_bit = ko.get_sign_bit()
+        nms = self
+        kos = ko
+        if not nms.is_null():
+           nms.set_sign_bit(1)
+
+        if not kos.is_null():
+           kos.set_sign_bit(1)
+
+        numb = nms
+        no = MyIntNumber()
+        nsign_bit = sign_bit*ko_sign_bit
+
+        while(not nms.is_null_or_less()):
+            nms = nms.sub(kos,False,True)
+            no = no.inc()       
+
+        if nms.is_lesser_as_null():
+           nms = nms.add(kos,False,True)
+           no = no.dec()
+           nms.set_sign_bit(nsign_bit)
+  
+        if not no.is_null():
+           no.set_sign_bit(nsign_bit)
+        return [no,nms]
+
+    def left(self,n):
+        nk = MyIntNumber()
+        nk.set(n)
+        nk.set_sign_bit(1)
+        nms = self
+        while(not nk.is_null_or_less()):
+             nms = nms.mul(b'2')
+             nk = nk.dec()
+        return nms
+
+    def right(self,n):
+        nk = MyIntNumber()
+        nk.set(n)
+        nk.set_sign_bit(1)
+        nms = self
+        nms = self
+        nms = [nms,nms]
+        while(not nk.is_null_or_less()):    
+             nms = nms[0].div(b'2')
+             nk = nk.dec()
+        return nms[0]
+
+    def _fmod(self,x,y):
+        return self.___fmod(x,y)
+
+    def ___fmod(self,x,y):
+        from math import math
+        return (x % y)
+
+    def __fmod(self,x,y):
+         import math
+         return (x - (math.floor(x/y)*y))
+
+class Chunker():
+    def __init__(self):
+        self.chunker = []
+        self.binary_array = []
+        self._last_index = 0
+        self._have_last_index = False
+
+    def remove_from_index(self,index):
+        if(self._have_last_index):
+           try:
+               index = int(index)   
+           except:    
+               index = 0
+           if(self._last_index>=index):
+               self.chunker[index] = b''
+               if(index==0):
+                  self._have_last_index = False
+               return True
+           else:
+               return False
+
+    def add_big_int(self,int_):
+        aok = True
+        try:
+           int_ = int(int_)
+        except:    
+           int_ = 0
+           aok = False   
+        if aok:
+           if(int_>255):
+              nint=int_
+              ns=[]
+              while(nint>0):
+                 ns.append(nint & 255)
+                 nint = nint >> 8
+              ns_len=len(ns)
+              i = 0
+              if(ns_len>0):
+                 self._last_index = len(self.chunker)
+                 self._have_last_index = True
+              while(i<ns_len):
+                 try:
+                     str_ = (b'%s' & (chr(ns[i])))
+                 except:
+                     str_ = b''
+                 self.chunker.append(str_)   
+                 i = i + 1
+              i = i - 1
+              self._last_index = self._last_index + i
+              return True
+           else:
+              return False
+        else:
+           return False
+
+
+    def add_int(self,int_):
+        aok = True
+        try:
+           int_ = int(int_)
+           aok = int_ >= 0 and int_ <= 255
+        except:
+           int_ = 0
+           aok = False
+        if aok:
+           try:
+                 str_ = (b'%s' & (chr(int_)))      
+           except:    
+                 str_ = b''
+                 aok = False   
+           if aok:
+              self._last_index = len(self.chunker)
+              self._have_last_index = True
+              self.chunker.append(str_)
+           return aok
+        else:
+           return False
+
+    
+    def add_string(self,str_):
+        try:
+           str_ = str(str_).encode()
+        except:
+           str_ = b''
+        if len(str_) > 0:
+           self._last_index = len(self.chunker)
+           self._have_last_index = True
+           self.chunker.append(str_)
+           return True
+        else:
+           return False
+
+    def have_last_index(self):
+        return self._have_last_index
+
+    def get_last_index():
+        return self._last_index
+
+    def get_string(self):
+        try:
+           return b''.join(self.chunker).encode()
+        except:
+           return b''
+    
+    def compress(self):
+        return self._compress(False)
+
+  
+    
+    def _fmod_ex(self,x,y):
+        from math import math
+        return (x % y)
+
+    def _fmod(self,x,y):
+         import math
+         return (x - (math.floor(x/y)*y)) 
+
+    def _compress(self,ex=True):
+        recv_data = self.get_string()
+        cbs = []
+        if ex:
+           have_cbs = False
+        else:
+           have_cbs = False
+           _have_cbs = False
+
+        for x in recv_data:
+            y = ord(x)
+
+            if ex:
+               if have_cbs:
+                  _have_cbs = True
+               else:
+                  _have_cbs = False
+
+               have_cbs = False
+               ok = []
+            else:
+               ok = cbs
+
+            if y & 1:
+               ok.append(True)
+            else:
+               ok.append(False)
+            if y & 2:
+               ok.append(True) 
+            else:
+               ok.append(False) 
+            if y & 4:
+               ok.append(True)
+            else:  
+               ok.append(False)
+            if y & 8:
+               ok.append(True)
+            else:  
+               ok.append(False)
+            if y & 16:
+               ok.append(True)
+            else:   
+               ok.append(False)
+            if y & 32:
+               ok.append(True)
+            else:   
+               ok.append(False)
+            if y & 64:
+               ok.append(True)
+            else:   
+               ok.append(False)
+            if y & 128:
+               ok.append(True)
+            else:   
+               ok.append(False)
+
+            if(_have_cbs):
+               ok2 = cbs[0]
+               cbs = []
+               i = 0
+               ok2_len = len(ok2)
+               _rev = False
+               _ok = []
+               _drev = False
+               nok = []
+               nok_len = len(ok)
+               while(i<nok_len):
+                    nok.append(ok[i])
+                    i = i + 1
+               while(i<ok2_len):
+                    nok.append(False)
+                    i = i + 1
+               ok = nok
+               i = 0
+               while(i<ok2_len):
+                   if _rev:
+                     if ok[i] and ok2[i]:
+                        _ok.append(True)
+                        _drev = True
+                     elif ok[i]:
+                        ok2[i] = True
+                     elif ok2[i]:
+                        ok[i] = True
+                     else:
+                        ok2[i] = True
+                     _rev = False
+                   _oke = ok2[i] and ok[i]
+                   if _oke:
+                      _oke = False
+                      _rev = True
+                   else:
+                       _oke = ok2[i] or ok[i]
+                   if not _drev:
+                      _ok.append(_oke)
+                   else:
+                      _drev = False
+                   i = i + 1
+               ok = _ok
+            if ex:
+               have_cbs = True
+               cbs.append(ok)
+            else:
+               cbs = ok
+       
+        
+            if (len(cbs)>0):
+               if ex:
+                  ret = cbs[0]
+               else:
+                  ret = cbs
+               have_ret = True
+            else:
+               have_ret = False
+             
+            if have_ret:
+               self.binary_array = ret
+               return True
+            else:
+               return False
+
 def url_encode(url):
     url = Replacer(url,b':',b'%3A')
     url = Replacer(url,b'/',b'%2F')
@@ -2745,4 +3615,11 @@ def startI2PHelperMain(set_signal_handler=False,second=False):
        server = Socket_Server(host=utobs(ret["server_host"]),port=ret["server_port"],cf=utobs(ret["cookiefile_path"]),i2p_host=utobs(ret["i2p_host"]),i2p_port=ret["i2p_port"],port_range_faktor=ret["port_range_faktor"],i2p_http_proxy_host=i2p_http_proxy_host_,i2p_http_proxy_port=i2p_http_proxy_port_,i2p_http_proxy_nonce=i2p_http_proxy_nonce_,ssh=set_signal_handler,thread_proxy_trackers2=thread,debug=ret["debug"])
 
 if __name__ == "__main__":
+   test = MyIntNumber()
+   i = 0
+   test.set(b'1')
+   test = test.left(b'8092')
+   test.print_number()  
    startI2PHelperMain()
+
+
