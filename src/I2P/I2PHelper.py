@@ -80,6 +80,9 @@ class MyIntNumber():
     def __init__(self):
         self.mynumber = []
         self.mynumber_with_sign_bit = []
+        self.my_binary_number = []
+        self.my_binary_number_length = 0
+        self.my_binary_number_update = False
         self.mynumber_length = 0
         self.mynumber_sign_bit = 0
         self.mynumber_with_sign_bit_length = 0
@@ -190,18 +193,33 @@ class MyIntNumber():
            number = n
         self.mynumber_length = len(number)
         self.mynumber = number
+        self.my_binary_number = []
+        self.my_binary_number_update = False
+        self.my_binary_number_length = 0
         self.mynumber_sign_bit = sign_bit
         self.mynumber_with_sign_bit_length = len(self.mynumber_with_sign_bit)
 
-    def setRawOld(self,number,number_length=0,sign_bit=0,myn_with_sign_bit=[],myn_with_sign_bit_length=0):
+    def setRawOld(self,number,number_length=0,sign_bit=0,myn_with_sign_bit=[],myn_with_sign_bit_length=0,myn_binary_number=[],myn_binary_number_length=0,myn_binary_number_update=False):
         self.mynumber_length = number_length
         self.mynumber = number
         self.mynumber_sign_bit = sign_bit
+        self.my_binary_number = myn_binary_number
+        self.my_binary_number_length = myn_binary_number_length
+        self.my_binary_number_update = myn_binary_number_update
         self.mynumber_with_sign_bit = myn_with_sign_bit
         self.mynumber_with_sign_bit_length = myn_with_sign_bit_length
 
     def set_sign_bit(self,sign_bit=1):
         self.mynumber_sign_bit = sign_bit
+
+    def set_my_binary_number(self,my_binary_number):
+        self.my_binary_number = my_binary_number
+
+    def set_my_binary_number_length(self,my_binary_number_length):
+        self.my_binary_number_length = my_binary_number_length
+
+    def set_my_binary_number_update(self,my_binary_number_update):
+        self.my_binary_number_update = my_binary_number_update
 
     def get_length(self):
         return self.mynumber_length
@@ -214,10 +232,16 @@ class MyIntNumber():
 
     def get_number_with_sign_bit_length(self):
         return self.mynumber_with_sign_bit_length
-    
+
+    def get_my_binary_number_length(self):
+        return self.my_binary_number_length
+
+    def get_my_binary_number_update(self):
+        return self.my_binary_number_update
+
     def setRawN(self,number):
         if(isinstance(number,MyIntNumber())):
-          self.setRawOld(number.get(),number.get_length(),number.get_sign_bit(),number.get_number_with_sign_bit(),number.get_number_with_sign_bit_length())
+          self.setRawOld(number.get(),number.get_length(),number.get_sign_bit(),number.get_number_with_sign_bit(),number.get_number_with_sign_bit_length(),number.get_my_binary_number(),number.get_my_binary_number_length(),number.get_my_binary_number_update())
 
     def same_length(self,ko):
         n1 = self.get()
@@ -331,7 +355,7 @@ class MyIntNumber():
     def add(self,number,hc=False,am=False):
         ko = MyIntNumber()
         if hc or am:
-           ko.setRawOld(number.get(),number.get_length(),number.get_sign_bit(),number.get_number_with_sign_bit(),number.get_number_with_sign_bit_length())
+           ko.setRawOld(number.get(),number.get_length(),number.get_sign_bit(),number.get_number_with_sign_bit(),number.get_number_with_sign_bit_length(),number.get_my_binary_number(),number.get_my_binary_number_length(),number.get_my_binary_number_update())
         else:
            ko.set(number)
 
@@ -387,7 +411,7 @@ class MyIntNumber():
     def sub(self,number,hc=False,am=False):
         ko = MyIntNumber()
         if hc or am:
-           ko.setRawOld(number.get(),number.get_length(),number.get_sign_bit(),number.get_number_with_sign_bit(),number.get_number_with_sign_bit_length())
+           ko.setRawOld(number.get(),number.get_length(),number.get_sign_bit(),number.get_number_with_sign_bit(),number.get_number_with_sign_bit_length(),number.get_my_binary_number(),number.get_my_binary_number_length(),number.get_my_binary_number_update())
         else:
            ko.set(number)
         if not hc:
@@ -601,7 +625,10 @@ class MyIntNumber():
     def set_null(self):
         self.mynumber = []
         self.mynumber_length = 0
-        self.mynumber_sign_bit = 0        
+        self.mynumber_sign_bit = 0
+        self.my_binary_number = []
+        self.my_binary_number_length = 0
+        self.my_binary_number_update = False
 
     def is_null(self):
         if ((self.mynumber_length == 0) or (self.mynumber_sign_bit == 0)):
@@ -644,6 +671,7 @@ class MyIntNumber():
            kos = kos.dec()
 
         nms.set_sign_bit(sign_bit*ko_sign_bit)
+        nms.set_my_binary_number_update(False)
         return nms
 
     def div(self,number):
@@ -671,6 +699,7 @@ class MyIntNumber():
            nms = nms.add(kos,False,True)
            no = no.dec()
            nms.set_sign_bit(nsign_bit)
+           nms.set_my_binary_number_update(False)
   
         if not no.is_null():
            no.set_sign_bit(nsign_bit)
@@ -697,6 +726,57 @@ class MyIntNumber():
              nms = nms[0].div(b'2')
              nk = nk.dec()
         return nms[0]
+
+    def get_my_binary_number(self):
+        if (self.my_binary_number_update):
+            return self.my_binary_number
+        
+        self.my_binary_number_update = True
+        sign_bit = self.get_sign_bit()
+        nk = self
+        nk.set_sign_bit(1)
+        nms = [nk,nk]
+        rest = []
+        nm = []
+        while(not nms[0].is_null_or_less()):
+             nms = nms[0].div(b'2')
+             nm = nms[1].get()
+             rest.append(nm[0])
+        rest_len = len(rest)
+        i = rest_len - 1
+        rest_ = []
+        while(i>=0):
+             rest_.append(rest[i])
+             i = i - 1
+        rest = rest_
+        if sign_bit == -1:
+           i = rest_len - 1
+           rest_ = [1,1,1,1,1,1]
+           carry = 1
+           while(i>=0):
+               if(rest[i]==0):
+                  rest[i] = 1
+                  if carry == 1:
+                     rest[i] = 0
+                  else:
+                     carry = 0
+               else:
+                  rest[i] = 0
+                  if carry == 1:
+                     rest[i] = 1
+                     carry = 0
+               i = i - 1
+           
+           i = 0
+           if carry == 1:
+              rest_.append(1)
+           while(i<rest_len):
+                rest_.append(rest[i])
+                i = i + 1
+           rest = rest_
+        self.my_binary_number = rest
+        self.my_binary_number_length = len(self.my_binary_number)
+        return rest
 
     def _fmod(self,x,y):
         return self.___fmod(x,y)
